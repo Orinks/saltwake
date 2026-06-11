@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import logging
 import os
+import sys
 
 from core.paths import DATA_DIR, PROJECT_ROOT
 
@@ -108,8 +109,15 @@ class _BassMusic:
         if self._stream is not None:
             self._fade_out(self._stream, max(1, fade_ms // 2))
             self._stream = None
+        kwargs: dict = {"file": path, "autofree": True}
+        if sys.platform.startswith("linux"):
+            # BASS_UNICODE (UTF-16 paths) is Windows-only; sound_lib handles
+            # macOS itself but passes the flag on Linux, where BASS then
+            # rejects the file. Hand over a filesystem-encoded path instead.
+            kwargs["file"] = path.encode(sys.getfilesystemencoding())
+            kwargs["unicode"] = False
         try:
-            stream = self._FileStream(file=path, autofree=True)
+            stream = self._FileStream(**kwargs)
             stream.set_looping(True)
             stream.set_volume(0.0)
             stream.play()
