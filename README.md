@@ -49,10 +49,13 @@ The easiest way to play is a prebuilt portable build from the
 
 Download the archive for your platform, extract it anywhere, and run the
 game from the extracted `Saltwake` folder — `Saltwake.exe` on Windows,
-`Saltwake` on macOS and Linux. There is nothing to install. The game
-checks for newer releases at the title menu and can download, install,
-and restart itself; switch between stable and snapshot updates in
-Settings under "Update channel".
+`Saltwake` on macOS and Linux. There is nothing to install, and the game
+is truly portable: saves live in a `saves` folder inside the game folder,
+so you can move or copy the whole folder and your progress travels with
+it. The game checks for newer releases at the title menu and can
+download, install, and restart itself — updates replace only the game's
+own files and never touch the `saves` folder. Switch between stable and
+snapshot updates in Settings under "Update channel".
 
 ## Run from source
 
