@@ -36,14 +36,46 @@ with pages about who you were before the water took your memory.
   carry redundant speech, R repeats, T reads status, H explains, and a visual
   mirror shows the last spoken line for sighted players.
 
-## Install and run
+## Download and play
 
-The project uses [uv](https://docs.astral.sh/uv/) for dependency management:
+The easiest way to play is a prebuilt portable build from the
+[releases page](https://github.com/Orinks/saltwake/releases):
+
+- **Stable releases** (`v0.1.0` and so on) are the finished, numbered
+  versions — pick the latest one.
+- **Developer snapshots** (`nightly-...`, marked pre-release) are automatic
+  nightly builds of work in progress: new features sooner, rough edges
+  included.
+
+Download the archive for your platform, extract it anywhere, and run the
+game from the extracted `Saltwake` folder — `Saltwake.exe` on Windows,
+`Saltwake` on macOS and Linux. There is nothing to install. The game
+checks for newer releases at the title menu and can download, install,
+and restart itself; switch between stable and snapshot updates in
+Settings under "Update channel".
+
+## Run from source
+
+You need two tools installed and on your PATH:
+
+- [uv](https://docs.astral.sh/uv/getting-started/installation/) — manages
+  Python and all dependencies for you (it downloads a suitable Python
+  automatically, so a system Python is not required).
+- [git](https://git-scm.com/downloads) — required even after cloning,
+  because one dependency (`sound_lib`) installs straight from a git
+  repository. If `uv sync` fails resolving `sound_lib`, a missing git is
+  almost always why.
 
 ```bash
+git clone https://github.com/Orinks/saltwake.git
+cd saltwake
 uv sync
 uv run python src/main.py
 ```
+
+On Linux you also need SDL and Speech Dispatcher packages from your
+distribution (for example `libsdl2-2.0-0` and `speech-dispatcher` on
+Debian/Ubuntu).
 
 Useful flags and environment variables:
 
@@ -59,6 +91,31 @@ Useful flags and environment variables:
 Saltwake is portable: saves and the rendered music cache live in the
 game's own directory (next to the executable in frozen builds), never in
 per-user system folders.
+
+## Build a standalone copy
+
+`tools/build_release.py` produces the same portable build that the
+releases page ships, using PyInstaller:
+
+```bash
+uv sync --group build
+uv run python tools/build_release.py
+```
+
+This freezes the game into `dist/Saltwake/`, pre-renders all 18 music
+tracks into the bundle so first launch never waits on the composer, boots
+the result once as a smoke check, and archives it as
+`dist/Saltwake-<version>-windows-portable.zip` (or `-macos.zip` /
+`-linux-x64.tar.gz`). Useful flags:
+
+- `--skip-smoke` — skip booting the frozen build.
+- `--tag <label>` — override the version label in the archive name, as the
+  nightly workflow does.
+
+If the build succeeds but the archive seems to vanish on Windows, check
+your antivirus: freshly built unsigned PyInstaller executables are
+sometimes quarantined on sight. Add an exclusion for the `dist/` folder or
+restore the file from quarantine.
 
 ## Controls
 
