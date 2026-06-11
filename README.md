@@ -53,6 +53,12 @@ Useful flags and environment variables:
 - `SALTWAKE_SPEECH_BACKEND=SAPI` — force a specific Prism backend.
 - `SALTWAKE_AUDIO_BACKEND=pygame` — skip BASS and use the pygame.mixer
   audio fallback.
+- `SALTWAKE_DATA_DIR=<path>` — override where saves and the music cache
+  are written.
+
+Saltwake is portable: saves and the rendered music cache live in the
+game's own directory (next to the executable in frozen builds), never in
+per-user system folders.
 
 ## Controls
 

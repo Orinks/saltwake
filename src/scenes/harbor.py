@@ -82,7 +82,8 @@ class HarborScene(Scene):
                      "Read the recovered pages of the book the sea is writing about you."),
             MenuItem("Chronicle", "chronicle", "Your record across every tide."),
             MenuItem("Settings", "settings", "Speech rate, audio, difficulty, save."),
-            MenuItem("Leave the quay and rest", "quit", "Saves and exits the game."),
+            MenuItem("Leave the quay and rest", "quit",
+                     "Saves and returns to the title menu."),
         ]
         vessel = data_loader.vessels()[self._active_vessel()]["name"]
         self.menu = AccessibleMenu(
@@ -151,8 +152,9 @@ class HarborScene(Scene):
             self.game.scenes.push(SettingsScene(self.game))
         elif choice == "quit":
             profile_mod.save(self.game.profile)
-            self.speech.say("Saved. The quay lights stay on for you. Goodbye.")
-            self.game.scenes.quit()
+            self.menu = None
+            self.speech.say("Saved. The quay lights stay on for you.")
+            self.game.scenes.pop()  # back to the title menu
 
     # --- tavern ----------------------------------------------------------------
     def _tavern_menu(self):

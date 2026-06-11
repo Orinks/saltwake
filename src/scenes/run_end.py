@@ -80,6 +80,8 @@ class RunEndScene(Scene):
             return
         if event.key in (pygame.K_RETURN, pygame.K_SPACE):
             from scenes.harbor import HarborScene
-            self.game.scenes.clear_and_push(HarborScene(self.game))
+            # Replace, not clear: the title menu stays at the bottom of the
+            # stack so leaving the quay returns there instead of exiting.
+            self.game.scenes.replace(HarborScene(self.game))
         elif event.key == pygame.K_r:
             self.speech.repeat_last()
