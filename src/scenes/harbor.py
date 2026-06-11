@@ -285,17 +285,9 @@ class HarborScene(Scene):
 
     # --- chronicle ---------------------------------------------------------------------
     def _chronicle(self):
-        p = self.game.profile
-        s = p["stats"]
-        self.speech.say(
-            f"The Chronicle. Tides set out: {p['tides']}. Homecomings: {p['homecomings']}. "
-            f"Wrecks: {p['wrecks']}. Races won: {s['races_won']}. "
-            f"Slaloms cleared: {s['slaloms_cleared']}. Dives completed: {s['dives_completed']}. "
-            f"Storms survived: {s['storms_survived']}. Fish landed: {s['fish_caught']}. "
-            f"Souls rescued: {s['rescues']}. Wardens bested: {s['bosses_beaten']}. "
-            f"Lifetime salvage: {s['salvage_lifetime']}. "
-            f"Almanac pages found: {len(p['almanac'])}. "
-            f"Renown {p['renown']}, level {profile_mod.renown_level(p)}.")
+        from scenes.chronicle_scene import ChronicleScene
+        self.menu = None
+        self.game.scenes.push(ChronicleScene(self.game))
 
     # --- embark -----------------------------------------------------------------------
     def _unlocked_region_ids(self) -> list[str]:
