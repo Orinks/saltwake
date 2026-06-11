@@ -63,6 +63,8 @@ Useful flags and environment variables:
 - **Page Up / Page Down** — speech rate
 - **F2** — music on/off, **F3 / F4** — music volume down/up
 - First-letter navigation works in every menu
+- **How to play** on the title menu opens a paged manual: Left/Right change
+  pages, Up/Down read line by line, Enter reads the whole page
 
 ## Project structure
 

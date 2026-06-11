@@ -5,23 +5,6 @@ import pygame
 from core.menu import AccessibleMenu, MenuItem, BACK
 from core.scenes import Scene
 
-HOW_TO_PLAY = (
-    "Saltwake is a watersports roguelite played by ear. "
-    "You live at Greywater Quay and set out on tides: expeditions across reaches of "
-    "open water. At sea you choose headings, and each heading holds a contest, a story, "
-    "a hazard, or a haul. Contests are boat races, jet ski slaloms, free dives, storm "
-    "crossings, fishing, and rescues, all played with the arrow keys against spoken and "
-    "panned sound cues. "
-    "Salvage you carry converts to pearls when you make it home; a wreck banks only half, "
-    "but a wreck is never the end. The sea returns you to the quay, the town reacts, and "
-    "the story grows: every run, the people of the quay have more to say, and the Drowned "
-    "Almanac fills with pages about who you were before the water took your memory. "
-    "Universal keys: arrow keys navigate, Enter selects, Escape goes back, "
-    "R repeats the last speech, T speaks your status at sea, H explains the focused item. "
-    "Spend pearls on vessels and gear, earn renown to open deeper water, and when you are "
-    "strong enough, follow the story into the Glass Squall."
-)
-
 
 class MainMenuScene(Scene):
     def __init__(self, game):
@@ -36,7 +19,8 @@ class MainMenuScene(Scene):
                          "Greywater Quay is waiting.")
         items = [
             first,
-            MenuItem("How to play", "help", "A spoken guide to everything."),
+            MenuItem("How to play", "help",
+                     "The manual: nine pages, read by page or line by line."),
             MenuItem("Settings", "settings", "Speech, audio, difficulty."),
             MenuItem("Exit", "exit"),
         ]
@@ -59,7 +43,8 @@ class MainMenuScene(Scene):
             from scenes.harbor import HarborScene
             self.game.scenes.push(HarborScene(self.game))
         elif result == "help":
-            self.speech.say(HOW_TO_PLAY)
+            from scenes.help_scene import HelpScene
+            self.game.scenes.push(HelpScene(self.game))
         elif result == "settings":
             from scenes.settings_scene import SettingsScene
             self.game.scenes.push(SettingsScene(self.game))
