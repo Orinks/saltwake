@@ -37,7 +37,10 @@ DEFAULT_PROFILE = {
         "bosses_beaten": 0,
     },
     "settings": {"speech_rate": 50, "audio_volume": 0.5,
-                 "music_volume": 0.35, "music_enabled": True},
+                 "music_volume": 0.35, "music_enabled": True,
+                 # "stable"/"dev"; "" follows the installed build's channel
+                 "update_channel": "",
+                 "skipped_update": ""},
 }
 
 

@@ -19,12 +19,14 @@ Run from the repository root: ``uv run python tools/build_release.py``
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import shutil
 import subprocess
 import sys
 import tarfile
 import zipfile
+from datetime import datetime, timezone
 from pathlib import Path
 
 import tomllib
@@ -73,6 +75,23 @@ def prerender_soundtrack(build_dir: Path) -> None:
     print(f"Soundtrack pre-rendered: {len(rendered)} tracks bundled.")
 
 
+def stamp_build_info(build_dir: Path, label: str) -> None:
+    """Record what this build is, for the in-game updater.
+
+    ``label`` is either a nightly tag (``nightly-20260611``) or a plain
+    version (``0.1.0``); the release tag for the latter is ``v``-prefixed.
+    """
+    nightly = label.startswith("nightly-")
+    info = {
+        "tag": label if nightly else f"v{label}",
+        "channel": "dev" if nightly else "stable",
+        "built_at": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+        "version": project_version(),
+    }
+    with open(build_dir / "build_info.json", "w", encoding="utf-8") as f:
+        json.dump(info, f, indent=2)
+
+
 def smoke_check(build_dir: Path) -> None:
     """Boot the frozen game headless and let it assemble everything."""
     exe = build_dir / (APP_NAME + (".exe" if sys.platform == "win32" else ""))
@@ -115,6 +134,7 @@ def main() -> int:
     if (ROOT / "build").exists():
         shutil.rmtree(ROOT / "build")
     build_dir = run_pyinstaller()
+    stamp_build_info(build_dir, label)
     prerender_soundtrack(build_dir)
     if not args.skip_smoke:
         smoke_check(build_dir)

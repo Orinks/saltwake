@@ -2,11 +2,17 @@
 
 import pygame
 
+from core import updater
 from core.menu import AccessibleMenu, MenuItem, BACK
 from core.scenes import Scene
+from scenes.update_scene import UpdateChecker, UpdatePromptScene
 
 
 class MainMenuScene(Scene):
+    # one startup update check per game session, shared across instances
+    _update_checker = None
+    _update_prompted = False
+
     def __init__(self, game):
         super().__init__(game)
         self.menu = None
@@ -29,9 +35,24 @@ class MainMenuScene(Scene):
             intro="A watersports roguelite where the sea remembers.",
             escapable=False)
         self.menu.open()
+        cls = MainMenuScene
+        if updater.is_frozen() and cls._update_checker is None:
+            cls._update_checker = UpdateChecker(self.game.profile["settings"])
 
     def on_resume(self):
         self.on_enter()
+
+    def update(self, dt):
+        cls = MainMenuScene
+        checker = cls._update_checker
+        if (cls._update_prompted or checker is None
+                or not checker.done.is_set()):
+            return
+        cls._update_prompted = True
+        info = checker.result
+        skipped = self.game.profile["settings"].get("skipped_update", "")
+        if info is not None and info.tag != skipped:
+            self.game.scenes.push(UpdatePromptScene(self.game, info))
 
     def handle_event(self, event):
         if event.type != pygame.KEYDOWN or self.menu is None:

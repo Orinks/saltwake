@@ -1,5 +1,18 @@
 # Changelog
 
+## Unreleased
+
+### Added
+- **Auto-updater.** The packaged game now checks GitHub for new releases
+  at the title menu. When one is found, a fully spoken prompt offers
+  "Download and restart" (downloads the update, swaps it in, and
+  relaunches the game for you), "What's new" (reads the update's changelog
+  line by line), "Remind me later", and "Skip this version". A new
+  Settings entry, "Update channel", picks between stable releases and
+  nightly developer snapshots — nightly builds follow the dev channel by
+  default, stable builds follow stable — and "Check for updates" looks
+  right now. Source checkouts are left alone; git manages those.
+
 ## 0.1.0 — 2026-06-11
 
 The first release of Saltwake: a watersports roguelite where the sea

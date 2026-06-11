@@ -1,7 +1,8 @@
-"""Settings: speech rate, audio volume, tide marks difficulty, save wipe."""
+"""Settings: speech rate, audio volume, tide marks difficulty, updates, save wipe."""
 
 import pygame
 
+from core import updater
 from core.menu import AccessibleMenu, MenuItem, BACK
 from core.scenes import Scene
 from game import profile as profile_mod
@@ -36,6 +37,17 @@ class SettingsScene(Scene):
                 f"Tide marks: {profile['tide_marks']}", "marks",
                 "Difficulty. Each mark makes contests harder and pays ten percent "
                 "more pearls. Left and right adjust."))
+        channel = updater.resolve_channel(
+            settings.get("update_channel", ""), updater.load_build_info())
+        items.append(MenuItem(
+            "Update channel: " + ("developer snapshots" if channel == "dev"
+                                  else "stable releases"),
+            "update_channel",
+            "Stable releases are the finished, numbered versions. Developer "
+            "snapshots are nightly builds of work in progress: new features "
+            "sooner, but rough edges. Enter toggles."))
+        items.append(MenuItem("Check for updates", "check_updates",
+                              "Look for a new version of the game right now."))
         items.append(MenuItem("Erase all progress", "wipe",
                               "Starts the story over from the first arrival. Asks twice."))
         items.append(MenuItem("Back", "back"))
@@ -90,6 +102,19 @@ class SettingsScene(Scene):
             self._build_menu()
         elif result in adjustable:
             self._adjust(result, 1)
+        elif result == "update_channel":
+            settings = self.game.profile["settings"]
+            current = updater.resolve_channel(
+                settings.get("update_channel", ""), updater.load_build_info())
+            settings["update_channel"] = "stable" if current == "dev" else "dev"
+            profile_mod.save(self.game.profile)
+            new = ("developer snapshots" if settings["update_channel"] == "dev"
+                   else "stable releases")
+            self.speech.say(f"Update channel: {new}.")
+            self._build_menu()
+        elif result == "check_updates":
+            from scenes.update_scene import UpdateCheckScene
+            self.game.scenes.push(UpdateCheckScene(self.game))
         elif result == "wipe":
             if not self.confirm_wipe:
                 self.confirm_wipe = True
