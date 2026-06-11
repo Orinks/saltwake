@@ -50,10 +50,8 @@ class SettingsScene(Scene):
             settings["speech_rate"] = rate
             self.speech.say(f"Speech rate {rate}.")
         elif what == "volume":
-            vol = max(0.0, min(1.0, settings["audio_volume"] + delta * 0.1))
+            vol = self.audio.set_volume(settings["audio_volume"] + delta * 0.1)
             settings["audio_volume"] = round(vol, 2)
-            self.audio.volume = vol
-            self.audio._cache.clear()
             self.audio.menu_select()
             self.speech.say(f"Volume {int(vol * 100)} percent.")
         elif what == "music":

@@ -1,7 +1,8 @@
 # Saltwake
 
 A watersports roguelite where the sea remembers. Audio-first, screen-reader-first,
-built on the Freight Fate stack: Python 3.12, Pygame, and Prism speech output.
+built on the Freight Fate stack: Python, Pygame, Prism speech output, and
+BASS audio via sound_lib (with automatic pygame.mixer fallback).
 
 You are the Tideborn: washed up at Greywater Quay with no memory, a brass key,
 and a habit of not drowning. Set out on tides (runs) across reaches of open
@@ -50,6 +51,8 @@ Useful flags and environment variables:
 - `uv run python src/main.py --no-speech` — echo speech to the console (development).
 - `SALTWAKE_NO_SPEECH=1` — disable speech entirely (CI / tests).
 - `SALTWAKE_SPEECH_BACKEND=SAPI` — force a specific Prism backend.
+- `SALTWAKE_AUDIO_BACKEND=pygame` — skip BASS and use the pygame.mixer
+  audio fallback.
 
 ## Controls
 

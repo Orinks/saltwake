@@ -39,8 +39,12 @@ roguelites and nautical narrative games work:
   audio cue has a spoken twin so no information is audio-only.
 - **Universal keys** (R repeat, T status, H help), first-letter menu
   navigation, pause-anywhere, and abandon-anywhere (never a softlock).
-- **Synthesized cues** (numpy + pygame.sndarray) — no assets needed, and
-  cue timbres stay consistent across activities.
+- **Synthesized cues** (numpy, streamed through BASS via sound_lib with a
+  pygame.mixer fallback — Freight Fate's audio engine architecture) — no
+  assets needed, and cue timbres stay consistent across activities. On the
+  BASS path, pan and volume are channel attributes rather than baked into
+  samples, so one cached mono buffer serves every position. With no audio
+  device, BASS's no-sound device keeps the full pipeline running headless.
 - **Speech through the player's own screen reader** via Prism, exactly as
   Freight Fate does: runtime-validated backend choice with priority
   fallback, env-var override, and silent-safe failure.
