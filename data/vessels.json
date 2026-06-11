@@ -1,0 +1,64 @@
+{
+  "vessels": [
+    {
+      "id": "skiff",
+      "name": "Borrowed Skiff",
+      "description": "Odessa's loaner. Smells of bait and old rope, but it floats and it forgives.",
+      "hull": 10,
+      "grit": 10,
+      "cost": 0,
+      "modifiers": {},
+      "unlock_hint": "Yours from the start."
+    },
+    {
+      "id": "wavecutter",
+      "name": "Wavecutter Jet Ski",
+      "description": "Brick's old competition ski, lightning off the line and thin as an eggshell.",
+      "hull": 7,
+      "grit": 12,
+      "cost": 60,
+      "modifiers": {"slalom_skill": 0.2, "race_speed": 0.1, "storm_risk": 0.1},
+      "unlock_hint": "Reach renown level 1, then buy it at the shipyard."
+    },
+    {
+      "id": "pelican",
+      "name": "Pelican Catamaran",
+      "description": "Twin hulls and a stubborn temperament. It shrugs off weather that would crack lesser boats.",
+      "hull": 16,
+      "grit": 9,
+      "cost": 90,
+      "modifiers": {"storm_skill": 0.15, "race_speed": -0.05},
+      "unlock_hint": "Reach renown level 2, then buy it at the shipyard."
+    },
+    {
+      "id": "dredger",
+      "name": "Mudlark Dredger",
+      "description": "A salvage trawler with a winch arm and deep lockers. Slow, greedy, dependable.",
+      "hull": 13,
+      "grit": 10,
+      "cost": 120,
+      "modifiers": {"salvage_gain": 0.25, "dive_skill": 0.1, "race_speed": -0.1},
+      "unlock_hint": "Reach renown level 3, then buy it at the shipyard."
+    },
+    {
+      "id": "swift",
+      "name": "Cobalt Swift",
+      "description": "A regatta hull built for one thing. The water barely notices it passing.",
+      "hull": 9,
+      "grit": 11,
+      "cost": 150,
+      "modifiers": {"race_speed": 0.25, "slalom_skill": 0.1},
+      "unlock_hint": "Win the Shallows regatta, then buy it at the shipyard."
+    },
+    {
+      "id": "lantern_jane",
+      "name": "Lantern Jane",
+      "description": "Raised from Wreckwater plank by plank. She remembers you, and the sea remembers her.",
+      "hull": 14,
+      "grit": 14,
+      "cost": 0,
+      "modifiers": {"race_speed": 0.1, "storm_skill": 0.15, "dive_skill": 0.1, "salvage_gain": 0.1},
+      "unlock_hint": "Follow the Almanac's story to its end."
+    }
+  ]
+}

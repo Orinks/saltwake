@@ -1,0 +1,123 @@
+{
+  "storylets": [
+    {
+      "id": "victory_finale",
+      "arc": "main",
+      "where": "victory",
+      "priority": 100,
+      "title": "The thirty-second soul.",
+      "pages": [
+        "The Undertow does not fall. Nothing falls. That was never what this crossing was for. You hold the Jane through the worst the memory of a storm can do, and at the end of it the great gathered shape of the sea simply, finally, stops, the way a clenched hand stops being a fist, and the lantern light at its heart comes down through the clear water like a diver who has finished her work.",
+        "She is eleven years old. She is nineteen years patient. She stands on the water as if it were a dock, holding her lantern, looking up at the wheelhouse with an expression you remember now in full, because it is the last thing you saw before the dark: total, unbudging confidence that you would come.",
+        "'You took forever,' says Liss, lamp keeper's girl, the thirty-first soul of the Lantern Jane's last run, and holds up her arms to be lifted aboard, exactly as if no time has passed, because for her, held in the sea's unfinished sentence, none has."
+      ],
+      "choices": [
+        {
+          "label": "Lift her aboard and turn for home.",
+          "effects": {"set": {"liss_saved": 1, "debt_balanced": 1}, "renown": 10},
+          "response": [
+            "She weighs nothing and everything. The moment her boots touch the Jane's deck, the Glass Squall lets out nineteen years of held breath in one long exhalation that flattens the sea to silver from horizon to horizon, and through the new stillness you hear the Undertow's voice one last time, no number in it, no instruction. Just, distantly, like a ledger closing: PAID IN FULL. THANK YOU, CAPTAIN.",
+            "Liss inspects the boat all the way home and finds it acceptable. You give her the Keeper's message at the harbor mouth, where the lamp burns down at last to meet her, and what happens on the lighthouse stair when an old man meets the daughter the sea kept young belongs to them, not to this page.",
+            "You make the Jane fast at her old mooring. The tide goes out. The tide comes home. And you, Tideborn, captain, keeper of a balanced book, are free, which the old hands say is the only honest reason to go to sea: because you may."
+          ]
+        },
+        {
+          "label": "Offer to take her place in the sea's keeping.",
+          "effects": {"set": {"liss_saved": 1, "debt_balanced": 1, "offered_yourself": 1}, "renown": 12},
+          "response": [
+            "You say it plainly, the way you said it nineteen years ago through a speaking trumpet in a hundred-knot wind: take me instead, let the child go home. And the sea, with the whole weight of the Undertow behind its voice, does something you have never heard it do. It laughs, low and long, like surf on a kind shore.",
+            "TWICE OFFERED, it says. ONCE WAS ENOUGH. THE DEBT WAS NEVER HER, CAPTAIN. THE DEBT WAS A RESCUE LEFT UNFINISHED. FINISH IT.",
+            "So you lift her aboard, weightless and everything, and the Glass Squall exhales nineteen years in one silver breath, and you carry the lamp keeper's girl home to a lamp that never once went out. The sea keeps what it loves, the saying goes, and returns what it trusts. It has returned everything now. Everything but you, who it trusts most of all, and keeps, gladly, the only way the living can be kept: coming back, tide after tide, because you may."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "epilogue_keeper",
+      "arc": "main",
+      "where": "lighthouse",
+      "priority": 70,
+      "requires": [{"q": "liss_saved", "eq": 1}],
+      "speaker": "The Keeper",
+      "title": "The lamp, retired.",
+      "pages": [
+        "For the first time in nineteen years, the lighthouse lamp is dark, and the headland looks strange without it, like a face with its glasses off. You find Edras and Liss in the lamp room anyway, out of habit and love of the view, playing cards by the light of one small ordinary lantern: hers.",
+        "'She cheats,' says the Keeper, with the joy of a man reporting a miracle. 'Nineteen years in the sea's keeping and she comes back cheating at cards. Her mother cheated. It's hereditary. It's PROOF.' Liss, age eleven going on thirty, deals you in without asking.",
+        "When you leave, Edras follows you out to the gallery rail. 'I lit that lamp for two,' he says quietly. 'You both came home. Whatever the sea wants with you next, captain, you climb this stair and tell me, and an old man will hold the light on you one more time. That's not an offer. That's standing orders.'"
+      ],
+      "effects": {"add": {"affinity_keeper": 2}}
+    },
+    {
+      "id": "epilogue_odessa",
+      "arc": "odessa",
+      "where": "talk_odessa",
+      "priority": 70,
+      "requires": [{"q": "liss_saved", "eq": 1}],
+      "speaker": "Odessa",
+      "title": "The ledger, balanced.",
+      "pages": [
+        "Odessa has the ledger out when you come in, open to the column headed JANE. Thirty-one names, thirty-one ticks, and at the bottom, the name that waited nineteen years for its mark. She ticks it while you watch, square and careful, and then she rules a line under the whole column, the heavy double line harbormasters save for accounts that are closed and correct.",
+        "'I buried an empty coffin,' she says. 'Finest man I ever shipped with. I'm not ashamed of the grief. I'm not even ashamed of how long I refused to believe my own eyes.' She closes the book, and for the first time since you washed in on the night tide, Odessa, harbormaster of Greywater Quay, smiles at you with her whole weathered face. 'Welcome home, captain. Your mooring fees are nineteen years in arrears. First one's paid. Don't make a habit of dying, it's hell on the paperwork.'"
+      ],
+      "effects": {"add": {"affinity_odessa": 2}}
+    },
+    {
+      "id": "epilogue_mirabel",
+      "arc": "mirabel",
+      "where": "talk_mirabel",
+      "priority": 70,
+      "requires": [{"q": "liss_saved", "eq": 1}, {"q": "mirabel_message", "eq": 1}],
+      "speaker": "Mirabel",
+      "title": "The red coat.",
+      "pages": [
+        "Mirabel is wearing the red coat behind the bar, in summer, indoors, and daring the room with her eyebrows to remark on it. Nobody remarks. The Brinehouse has a finely tuned survival instinct.",
+        "'Liss came in yesterday,' she says, pulling your drink. 'Sat right there. Eleven years old and she ordered like a stevedore.' Mirabel polishes the bar, slow. 'She told me the town's last night, the parts the sea kept. Says my mother stood on the harbor steps handing children up into the Jane, all nine runs, and the last thing she said to the water was, tell my girl the coat was always hers.'",
+        "She looks at you, landlady armor fully open now and no apology for it. 'You sailed down my thread, Tideborn, and you brought back the end of it. Free soup for life. I know that doesn't square the books.' She sets the bowl down. 'Nothing squares the books. That's not what soup is for.'"
+      ],
+      "effects": {"add": {"affinity_mirabel": 2}}
+    },
+    {
+      "id": "epilogue_cass",
+      "arc": "cass",
+      "where": "talk_cass",
+      "priority": 70,
+      "requires": [{"q": "liss_saved", "eq": 1}, {"q": "cass_knows", "eq": 1}],
+      "speaker": "Cass Veyle",
+      "title": "The record, standing.",
+      "pages": [
+        "Cass finds you on the quay with two bottles and an expression of disgust so profound it can only be respect. 'Nineteen years,' she says, handing you one. 'I spent my whole career chasing the cross-squall record, and the man who set it spent the same years dead, and then came back, and then BROKE HIS OWN RECORD with an eleven-year-old passenger aboard.' She drinks. 'There is no sporting category for what you are. I checked.'",
+        "'Here's my problem, captain.' She turns the bottle in her hands, and under the swagger, briefly, is the racer who watches your wake the way Nereus watches pages. 'I got fast because fast was the only thing the water respected. You're respected by the entire sea and you barely rev the engine. So teach me the real thing, whatever it is. Reading the water. Hearing it.' A pause; the swagger reboots. 'Obviously I'll still beat you on the flat. Obviously.'"
+      ],
+      "effects": {"add": {"affinity_cass": 2}}
+    },
+    {
+      "id": "epilogue_brick",
+      "arc": "brick",
+      "where": "talk_brick",
+      "priority": 70,
+      "requires": [{"q": "liss_saved", "eq": 1}, {"q": "brick_riding", "eq": 1}],
+      "speaker": "Brick",
+      "title": "Trophies, dusted.",
+      "pages": [
+        "Brick has dusted the trophies. This is quay-wide news. He has also, you note, moved them off the windowsill and onto the shelf behind the bar where memorabilia goes, which is where things live when a man stops needing them at arm's length.",
+        "'Took the ski out past the breakwater this morning,' he says, casual as a heart attack. 'Dawn water. Glass. Did the old run, the full slalom line off the mussel beds.' He turns his glass. 'First time in nine years the water felt like water and not like a court summons.' He looks up, and the old champion grins through, sudden and entire. 'I clocked it, obviously. I'm reformed, not dead. Two seconds off my best. The kid, Liss, she timed me from the wall and called me slow. I'm going to coach her. The sea had better brace itself.'"
+      ],
+      "effects": {"add": {"affinity_brick": 2}}
+    },
+    {
+      "id": "epilogue_nereus",
+      "arc": "nereus",
+      "where": "talk_nereus",
+      "priority": 70,
+      "requires": [{"q": "liss_saved", "eq": 1}],
+      "speaker": "Nereus",
+      "title": "The last page.",
+      "pages": [
+        "Nereus's corner table is clean. You have never seen the wood of it before; it is, against all probability, a rather nice table. The Almanac, rebound in oiled canvas with the wax seals laid in like illuminations, sits closed in the middle of it, finished.",
+        "'The pages stopped,' he says. 'The morning after you brought her in. I waited a week to be sure. The sea has nothing left to mail us.' He puts his hand flat on the cover, a man saying goodbye to a colleague. 'I thought finishing it would feel like an ending. It feels like a town fed back into the world. Mirabel has her mother's letters. Odessa has the harbor logs. The Keeper has the light registry. I gave them all away, captain. It turns out that was the whole point of the post.'",
+        "He slides one page across the table, wax-sealed, unread. 'The very last one to wash up. It's addressed, in your hand, to YOU. I am the most curious man on this coast and I have not opened it, and I want it noted in the record that this nearly killed me.'"
+      ],
+      "effects": {"add": {"affinity_nereus": 2}, "almanac": "page_to_the_captain"}
+    }
+  ]
+}

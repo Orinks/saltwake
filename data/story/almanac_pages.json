@@ -1,0 +1,91 @@
+{
+  "pages": [
+    {
+      "id": "page_market_day",
+      "title": "Market day in Maren's Hollow",
+      "text": [
+        "From a notice board, hand-lettered, the corner stamped with the town seal of Maren's Hollow: a lantern over a wave.",
+        "MARKET DAY, SPRING TIDE. Stalls by the harbor clock from first light. Oysters off the dawn run, courtesy of the Lantern Jane's new schedule and her captain's bad arithmetic, his words, we checked. The school will sell tide-charts drawn by the children, all proceeds to the lifeboat fund, accuracy not guaranteed, charm guaranteed. Ren's stall will have the chowder. Arrive early. You know why. Last market the pot was scraped by nine and the captain himself was turned away, and we all had to hear about it from the wheelhouse for a week.",
+        "In the margin, in the quick certain scrawl: 'I have NEVER once been wrong about arithmetic. The oysters were free because it was a good morning. Log it properly or not at all. — Cpt.'"
+      ]
+    },
+    {
+      "id": "page_school_tides",
+      "title": "The children's tide journal",
+      "text": [
+        "A ruled page from a school exercise book, the entries in six different young hands, kept with ferocious professionalism.",
+        "DAY 12. Neap tide. Low water at the third bell. Mr. Pell says the moon does it. Tomas says the moon is too far away and it is obviously whales. The committee has voted. It is recorded that it is the moon, but Tomas may keep whales as a theory.",
+        "DAY 13. The Jane came in at dusk with her lamp lit and the captain let us sound the bell, ONCE EACH, and Liss got two because she is the lamp keeper's daughter and claims bell seniority. The committee has voted. Bell seniority is real. It is recorded.",
+        "DAY 14. Spring tide building. The water came up the steps to the second mark. The captain says the sea keeps a ledger like Harbormistress Odessa's mother does, everything written down, everything met at the dock. Liss asked him what happens if a page goes missing. He said: then the sea comes looking for it, sprat, so always sign your work. We have all signed. It is recorded."
+      ]
+    },
+    {
+      "id": "page_squall_eve",
+      "title": "The evening before",
+      "text": [
+        "A letter, unfinished, the ink hurried at the end. The hand is a grown woman's, steady and used to lists.",
+        "My girl. Your boat sails at first light and I am too proud to come down to the dock, which we both know, so I am writing instead, which is braver than it looks, ask anyone. The red coat is on your bed. It was never too good for every day. Nothing I made you was ever too good for every day, I only said so because finishing things frightens me, and a coat being worn is a coat being finished, and a daughter sailing is the same.",
+        "Wear it on the boat where I can see it from the steps. Write from the first port. Tell your cousins nothing about the fight, they take your side and they are RIGHT to and I cannot bear it.",
+        "The weather glass is dropping strangely and the gulls have gone up the valley, so I will close this and walk it down to the mail boat myself, and if I see you on the dock I will pretend I was bringing the postmaster his eggs. You know how I am. It has never once meant I love you less. The glass is still dropping. Odd sky now, like smoked",
+        "The letter ends there. It was never posted. The sea delivered it anyway, nineteen years late, sealed in wax, addressed in the only way the sea addresses anything: to whom it concerns."
+      ]
+    },
+    {
+      "id": "page_keepers_log",
+      "title": "From the lighthouse registry",
+      "text": [
+        "The official light registry of the Greywater headland lamp, the entries in a tall upright hand that does not waste motion.",
+        "NIGHT 1. Lamp lit at dusk. Weather: the Squall stands offshore and does not move. Vessels assisted: none. Notes: my daughter is in the water with the Jane's captain. The lamp is lit. The lamp will remain lit.",
+        "NIGHT 30. Lamp lit at dusk. The harbor board writes that the search is formally ended and the light may return to standard schedule. The light is on a standard schedule. The schedule is: lit at dusk, every dusk, until they are home.",
+        "NIGHT 2,190. Six years. A new harbormaster took the office this season, the Jane's deckhand that was, a good appointment. She climbed my stair with the appointment letter and asked, official as you like, whether the headland lamp had requirements. I said oil and patience. She has sent both, every quarter since, logged as harbor maintenance. We did not discuss it further. We have never needed to.",
+        "NIGHT 6,935. Nineteen years tonight. Wind northwest, light. Lamp lit at dusk. Vessels assisted: one, perhaps. There is a new boat working the reaches this season. The way it holds the water is familiar to me. I am an old man and the light plays tricks, but I have kept this log honestly for nineteen years and I will keep it honestly now: tonight I held the beam on that boat's wake longer than navigation requires, and my hands knew it before I did. The lamp is lit. The lamp will remain lit. They are nearly home."
+      ]
+    },
+    {
+      "id": "page_lamp_registry",
+      "title": "The night of the small lamps",
+      "text": [
+        "A circular from the coastal lights authority, the bureaucratic calm of it stretched thin over something it has no forms for.",
+        "TO ALL STATIONS: regarding the night of the storm now commonly called the Glass Squall. Stations are reminded that official reports should record observed facts only. The following observed facts are, however, consistent across fourteen stations and are therefore recorded. At the height of the pressure event, primary lamps at all stations guttered or failed for between four and eleven minutes despite full oil and trimmed wicks. During the same interval, station keepers' private lamps, household lanterns, watch-room lights, and one child's night-light at the Point Pelican station, burned without interruption, several at observed brightness exceeding their rated oil draw.",
+        "Stations are not required to explain this. Stations are required to log it. The sea, as the older keepers say, can argue with infrastructure. File under: miscellaneous, recurring."
+      ]
+    },
+    {
+      "id": "page_dry_shelf",
+      "title": "The dry shelf custom",
+      "text": [
+        "A page in many hands, the standing log of a beacon's dry shelf, where what the sea returns is kept a year and a day against its owner's asking.",
+        "RECEIVED: one fiddle, cased, strings true. Held. Year and a day passed. Held anyway. Keeper's note: it is somebody's. You can hear it is somebody's.",
+        "RECEIVED: one wedding photograph, dock unknown, party of nineteen, all smiling, one blurred gull. Held. The relief crews have taken to naming the gull. Current consensus: Admiral.",
+        "RECEIVED: one ship's bell, brass, small, engraved L. JANE. Keeper's note, first year: held for the captain. Keeper's note, tenth year, different hand: still held for the captain. Keeper's note, nineteenth year, different hand again: the older keepers say the sea returns what it trusts to the ones it trusts. The bell stays on the shelf, polished, and the standing instruction of this station, passed keeper to keeper with the wick-trimming and the tide tables, is one line: WHEN HE COMES, GIVE HIM HIS BELL AND PUT THE KETTLE ON."
+      ]
+    },
+    {
+      "id": "page_jane_manifest",
+      "title": "The Lantern Jane's last manifest",
+      "text": [
+        "The ferry's own log, raised with her from the trench, the seawater stopped at the page's edge as if it had signed an agreement.",
+        "Final entries, the night of the Glass Squall, in the quick certain scrawl, written one-handed by the wheel:",
+        "Run 1. 4 souls aboard. Boards dry.",
+        "Run 2. 3 souls. The harbor clock has stopped. Town dark.",
+        "Run 4. 5 souls. O. handles the deck like she was born to it. Note for the harbor board, if any of us are alive to file it: HIRE THIS ONE.",
+        "Run 6. 2 souls. O. over the side and recovered. Boards dry, deckhand. Boards dry.",
+        "Run 8. 4 souls. Engine past her limits and holding out of pure spite. Good girl, Jane.",
+        "Run 9. 3 souls. That is everyone the water will give me. Thirty-one. The keeper's girl went off the rail at the harbor mouth, run 9, my hand was on her coat. I am turning around.",
+        "The last line is written larger, the pen pressed hard, the entry of a man logging it properly or not at all:",
+        "Run 10. Out: one captain. Intended return: two souls. The sea keeps a ledger. So do I. — Cpt., LANTERN JANE."
+      ]
+    },
+    {
+      "id": "page_to_the_captain",
+      "title": "The last page, addressed to you",
+      "text": [
+        "Wax-sealed, the final page the sea ever posted, addressed in your own hand: TO THE CAPTAIN, WHEN HE IS READY.",
+        "If you are reading this, then you went back into the water for her, and the water, being what it is, kept you both, and being what it is, could not rest until the job was finished, and being what it is, found a way. I am writing this in the wheelhouse between run nine and run ten, because a captain logs his intentions, and because some part of me knows exactly how long this entry may take to deliver.",
+        "So. To the man who washes up on some future shingle with my hands and no memory: I am not sorry. You will want me to be sorry, on the nights the debt feels heavy. I am not. We counted thirty-one up the line and every one of them was worth the wheelhouse, the boat, the name, and the body, and the girl off the rail at the harbor mouth is worth the rest of it, and you know this, because you are me, and we did the arithmetic together, and we have NEVER once been wrong about arithmetic.",
+        "Finish the run. Mind the second layer, the cold's a liar there. And when you have her aboard and the Squall lets out its breath, do the thing we always did at the end of a hard crossing. Ring the bell once for the harbor, once for the boat, and once, quietly, for the water, which keeps what it loves, and returns what it trusts, and has trusted us, you and me, with the longest run a captain ever logged.",
+        "Boards dry. Lines free. Welcome home. — Cpt."
+      ]
+    }
+  ]
+}

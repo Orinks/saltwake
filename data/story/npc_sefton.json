@@ -1,0 +1,73 @@
+{
+  "storylets": [
+    {
+      "id": "sefton_01",
+      "arc": "sefton",
+      "where": "talk_sefton",
+      "priority": 40,
+      "speaker": "Sefton",
+      "title": "The chandler's theology.",
+      "pages": [
+        "Sefton's chandlery smells of tar, hemp, and beeswax, and is organized according to a system Sefton describes as 'alphabetical by danger.' He is whip-thin, sixty-odd, and wears more knotted cord about his person than some vessels carry: a loop at the wrist against squalls, a plait at the throat for fog, and one small grey knot on his left boot that he will not discuss.",
+        "'Rules of the shop,' he says, totting up your order. 'Cash or salvage, no credit past the spring tide, and no whistling.' He fixes you with one pale eye. 'You especially, no whistling. The water listens to you lot. Whistle in my shop and we'll have weather IN THE SHOP.' It is impossible to tell if he is joking. You will learn that this is true of everything Sefton says, and that he prefers it that way, and that he is right slightly too often for comfort."
+      ],
+      "effects": {"set": {"met_sefton": 1}, "add": {"affinity_sefton": 1}}
+    },
+    {
+      "id": "sefton_02",
+      "arc": "sefton",
+      "where": "talk_sefton",
+      "priority": 38,
+      "requires": [{"q": "storms_survived", "gte": 1}],
+      "speaker": "Sefton",
+      "title": "Storm tithe.",
+      "pages": [
+        "You came through a squall and Sefton knows it the way he knows everything, by smelling your jacket. He takes a coil of light line from under the counter, cuts an arm's length, and ties, while you watch, a knot you have never seen: over, under, doubled back through itself, finished with a tuck like a signature.",
+        "'Storm tithe,' he says, pressing it into your hand. 'Old custom. You beat weather, you carry the knot of the weather you beat, else it comes looking for the rematch.' He waves off payment with genuine offense. 'You don't SELL a storm tithe, what do they teach tideborn these days.' Then, as you reach the door: 'My brother keeps a beacon out in the reaches. Tall fool, lamp-tender's hands. If your water takes you past a friendly light, bang on the rail twice for me.'"
+      ],
+      "effects": {"set": {"sefton_tithe": 1}, "add": {"affinity_sefton": 1}}
+    },
+    {
+      "id": "sefton_03",
+      "arc": "sefton",
+      "where": "talk_sefton",
+      "priority": 38,
+      "requires": [{"q": "affinity_sefton", "gte": 2}, {"q": "beacon_brother", "eq": 1}],
+      "speaker": "Sefton",
+      "title": "Two brothers, one argument.",
+      "pages": [
+        "You mention the beacon keeper, the tall one with the lamp-tender's hands who laughed when you banged the rail twice, and Sefton's whole knotted person goes still, then unwinds by a careful inch.",
+        "'Aldous,' he says. 'So he's eating, at least. Good.' He re-coils a rope that needs no re-coiling. 'We had a difference of professional opinion, my brother and I, twenty years back. He holds that you serve the sea by standing a light and trusting folk to steer. I hold that you serve it by selling them sound rope and assuming they won't.' The re-coiling finishes. 'The difference of opinion had words in it we neither of us sell anymore.' He clears his throat, and his voice comes out at half its usual rasp. 'Next time you pass his light. Three bangs on the rail, not two. He'll know the difference. It's an old code of ours. Two is HELLO. Three is COME HOME WHEN THE SEASON TURNS.'"
+      ],
+      "effects": {"set": {"sefton_message": 1}, "add": {"affinity_sefton": 1}}
+    },
+    {
+      "id": "sefton_04",
+      "arc": "sefton",
+      "where": "talk_sefton",
+      "priority": 36,
+      "requires": [{"q": "brothers_reconciled", "eq": 1}],
+      "speaker": "Sefton",
+      "title": "The season turns.",
+      "pages": [
+        "There is a second stool behind Sefton's counter now, and on it, when the weather is foul and the beacon relief boat runs, sits Aldous: taller, quieter, with the same pale eyes aimed out the window at the harbor instead of down at the ledger. The brothers do not appear to talk much. They appear to occupy the same room with enormous satisfaction, which for that family is evidently the entire content of love.",
+        "'He cheats at cribbage,' is all Sefton offers, with the joy of a man reporting a miracle, and rings up your order wrong, in your favor, for the first time in recorded history. On your way out you notice the small grey knot is gone from his left boot. There is a new one on the door lintel instead, tied double, the knot, you now know, for FAMILY ABOARD."
+      ],
+      "effects": {"add": {"affinity_sefton": 2}}
+    },
+    {
+      "id": "sefton_ambient_1",
+      "arc": "sefton",
+      "where": "talk_sefton",
+      "priority": 5,
+      "once": false,
+      "weight": 3,
+      "requires": [{"q": "met_sefton", "eq": 1}],
+      "speaker": "Sefton",
+      "title": "Alphabetical by danger.",
+      "pages": [
+        "Sefton is rearranging stock, which means moving the shackles one shelf further from the candles, on principles he declines to explain. He quizzes you on the day's water, prescribes a knot for it, and ties the knot onto your jacket before you can decline, with fingers faster than any racer on the coast. 'No charge,' he says. 'Invoice goes to the sea. It runs a tab with me, the sea. We have an understanding.'"
+      ]
+    }
+  ]
+}

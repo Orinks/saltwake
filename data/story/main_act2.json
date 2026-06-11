@@ -1,0 +1,91 @@
+{
+  "storylets": [
+    {
+      "id": "ferry_aftermath_odessa",
+      "arc": "main",
+      "where": "talk_odessa",
+      "priority": 54,
+      "requires": [{"q": "seen_pale_ferry", "eq": 1}, {"q": "recognized", "eq": 1}],
+      "speaker": "Odessa",
+      "title": "You saw her.",
+      "pages": [
+        "Word reaches Odessa before you do, because word always does: the tideborn crossed the Pale Ferry's wake and read her stern board. Odessa pours two glasses of the office brandy, which has been opened, by the look of the dust, twice in nineteen years.",
+        "'Lantern Jane,' she says, and the name comes out of her rusty, like an anchor chain that hasn't run in years. 'She still makes the crossing. Every bad night, she runs her route, looking for her captain.' Odessa drinks. 'Boats are like dogs, you know. People say they belong to us. It's the other way. The Jane never accepted the sinking. The sea couldn't keep her down and couldn't let her go, so there she runs, in between, punctual as grief.'",
+        "'Nereus thinks she went down somewhere in Wreckwater when the Squall finally spat her out. If anyone were to find her,' and Odessa is looking at the harbor, not at you, in the manner of someone placing a bet they cannot afford, 'if anyone were to raise her, refit her, put her captain back at her wheel, I think half the wrong in this water would come right on its own. A boat like that doesn't haunt, Tideborn. She waits.'"
+      ],
+      "effects": {"set": {"jane_quest": 1}, "add": {"affinity_odessa": 1}}
+    },
+    {
+      "id": "nereus_trench",
+      "arc": "main",
+      "where": "talk_nereus",
+      "priority": 54,
+      "requires": [{"q": "jane_quest", "eq": 1}, {"q": "cleared_wreckwater", "eq": 1}],
+      "speaker": "Nereus",
+      "title": "What the Leviathan grieves.",
+      "pages": [
+        "'You went down the trench,' Nereus says, before you are through the door. 'Past the Leviathan. And it let you.' He laughs, short and amazed, and sweeps a chart clear. 'Of course it let you. Tideborn, I have been reading this coast for twenty years and I have finally found the index. Listen: the Leviathan is not a beast. The pages call it the sea's grief made round, the weight of everything the water could not give back, swimming in circles over the worst of it. And what does it circle, captain? What is the worst thing this sea is carrying?'",
+        "He pins the chart with both ink-stained hands. A trench mouth, soundings, and his small precise cross. 'The Lantern Jane lies at the bottom of the Leviathan's circle. The sea did not lose her, it has been keeping her. Sound hull, the pages swear, kept the way the wax keeps the pages, because the water cannot bear to let her rot.' His finger taps the cross. 'She can be raised, with a salvage hull, a winch, and the only captain she will rise for. Odessa is already pricing chain. She pretends it's for the harbor. The whole quay is pretending it's for the harbor. We have all gone quietly mad with hope, and it is YOUR fault, and I have never been happier.'"
+      ],
+      "effects": {"set": {"jane_located": 1}, "add": {"affinity_nereus": 1}}
+    },
+    {
+      "id": "raising_the_jane",
+      "arc": "main",
+      "where": "talk_odessa",
+      "priority": 58,
+      "requires": [{"q": "jane_located", "eq": 1}],
+      "speaker": "Odessa",
+      "title": "Raising the Lantern Jane.",
+      "pages": [
+        "It takes the whole quay, in the end, which is the only way anything true gets done on a coast. Odessa's chain and Odessa's bellowing. Sefton's cradles and a quantity of rope he claims to have been saving for a sad occasion or a wedding. Brick on a borrowed barge winch, swearing with real artistry. Nereus reading depths off his charts like a man reading psalms. Cass running line between boats faster than the water can argue. And you, down in the green dark with the shackles, because some work belongs to the captain.",
+        "She comes up at slack water on an evening so calm it feels held, deliberately, by something enormous: the Lantern Jane, streaming nineteen years of sea, her white hull grey but whole, her wheelhouse standing, her name board legible the moment she breaks the surface. Nobody cheers. The quay takes its cap off, all together, without anyone suggesting it.",
+        "And as the cradles take her weight, every lamp in Greywater flickers once, and the bell buoy out past the breakwater rings, hard, three times, in a dead calm. Odessa wipes her face with the back of her wrist and pretends it is winch grease. 'Right,' she says, voice wrecked. 'Refit starts tomorrow. Captain pays for the paint.'"
+      ],
+      "effects": {
+        "set": {"jane_raised": 1, "act3_started": 1},
+        "unlock_vessel": "lantern_jane",
+        "renown": 10,
+        "almanac": "page_jane_manifest"
+      },
+      "choices": [
+        {
+          "label": "Lay your hand on her hull.",
+          "response": [
+            "Under your palm the old wood is cold, wet, and unmistakably awake. You have no memory of her and every memory of her: the knock of her engine, the give of her wheel in a following sea, the particular creak of her boarding step under a particular small girl's particular impatient feet.",
+            "The Glass Squall stands on the horizon, and for the first time since you washed in, it does not look like a wall. It looks like a door somebody is holding shut from the inside, waiting to hear your knock."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lighthouse_act3_brief",
+      "arc": "main",
+      "where": "lighthouse",
+      "priority": 58,
+      "requires": [{"q": "jane_raised", "eq": 1}],
+      "speaker": "The Keeper",
+      "title": "The lamp's last instruction.",
+      "pages": [
+        "Edras has watched the Jane rise from his gallery, and when you climb the hundred and forty steps he is already pouring the tea. His hands, you notice, have a new unsteadiness, and his eyes a new steadiness, as if some long-held tension has finally chosen which part of him to live in.",
+        "'Nineteen years I've burned this lamp,' he says, 'and folk think it's mourning. It isn't. It's navigation. A lamp in a window says: this is home, this is the way, we are not done waiting for you.' He sets down the pot. 'The sea keeps my Liss where the Squall stands. The Undertow holds her the way I hold this light, and neither of us can let go first. Someone has to finish the crossing between us. The Jane will get you in. Your hands will get you through. And when you find her, captain, when you find my girl, you tell her,' and here the Keeper, who has been a lighthouse for nineteen years, is briefly only a father, 'tell her the lamp never went out. Not one night. Tell her she can stop holding hers.'"
+      ],
+      "effects": {"set": {"keepers_message": 1}, "add": {"affinity_keeper": 2}}
+    },
+    {
+      "id": "quay_eve_of_squall",
+      "arc": "main",
+      "where": "talk_mirabel",
+      "priority": 56,
+      "requires": [{"q": "act3_started", "eq": 1}, {"q": "undertow_faced", "eq": 0}],
+      "speaker": "Mirabel",
+      "title": "The night before deep water.",
+      "pages": [
+        "The Brinehouse is full but quiet, the particular quiet of a harbor that knows what tomorrow's tide is for. Mirabel pulls you a chair at the bar end with her own hands, which she does for no one, and stands there a moment with her towel over her shoulder like a bandolier.",
+        "'I grew up in Maren's Hollow,' she says, conversational, as if remarking on the weather, and the bar quiet deepens by a degree. 'Left the morning of the Squall. Had a roaring fight with my mother over nothing, the kind you can only have with somebody you love past sense, and I flounced out on the mail boat to make my fortune. By midnight there was no town to apologize to.' She refills your glass unasked. 'Everyone in this room has a thread running into that water, Tideborn. Tomorrow you sail down all of them at once.'",
+        "She leans in, and the landlady armor opens one seam. 'If the sea really kept the town, if any of it is still down there listening, my mother's name was Ren. The fight was about a red coat. Tell her,' Mirabel's voice holds absolutely level, which is the most expensive thing in the room, 'tell her I wore it at her funeral, and I have worn it every winter since, and she was right, it fits.'"
+      ],
+      "effects": {"set": {"mirabel_message": 1}, "add": {"affinity_mirabel": 2}}
+    }
+  ]
+}

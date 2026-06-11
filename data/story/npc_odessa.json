@@ -1,0 +1,104 @@
+{
+  "storylets": [
+    {
+      "id": "odessa_01",
+      "arc": "odessa",
+      "where": "talk_odessa",
+      "priority": 40,
+      "requires": [{"q": "runs", "gte": 1}],
+      "speaker": "Odessa",
+      "title": "Office hours.",
+      "pages": [
+        "The harbormaster's office is a fortress of paper with a window commanding the whole quay, and Odessa rules it like a gun captain. She hears your report of the day's water without looking up, which you will learn means she is listening with everything she has.",
+        "'Salvage prices are up, the patrol is down a launch, and somebody's been moving the channel markers in the Shallows for a laugh,' she says, stamping something with extreme prejudice. 'That's the harbor report. Yours was better.' She finally looks up. 'You handle water like it's a language. Where'd you learn?' A beat. You both hear the question hit the empty place where your memory should be. 'Right,' she says, going back to her stamps, gentler. 'Ask a stupid question.'"
+      ],
+      "effects": {"add": {"affinity_odessa": 1}}
+    },
+    {
+      "id": "odessa_02",
+      "arc": "odessa",
+      "where": "talk_odessa",
+      "priority": 38,
+      "requires": [{"q": "affinity_odessa", "gte": 2}, {"q": "runs", "gte": 3}],
+      "speaker": "Odessa",
+      "title": "The pencil behind her ear.",
+      "pages": [
+        "You catch the office at slack tide, and Odessa, uncharacteristically, is doing nothing: leaning at the window with the chewed pencil in her fingers, watching a school kid fail to scull a dinghy across the basin.",
+        "'My first command,' she says, without preamble, nodding at the dinghy. 'Eight years old, boat half full of rainwater. A captain I crewed for later used to say everyone's first command is half full of rainwater, the trick is to keep the kid in it anyway.' She realizes she has said this aloud, to you, and the portcullis comes down with an almost audible clang. 'The kid'll figure out the oars. Don't you have a tide to catch?'"
+      ],
+      "effects": {"add": {"affinity_odessa": 1}}
+    },
+    {
+      "id": "odessa_03",
+      "arc": "odessa",
+      "where": "talk_odessa",
+      "priority": 38,
+      "requires": [{"q": "rescues", "gte": 1}],
+      "speaker": "Odessa",
+      "title": "The rescue report.",
+      "pages": [
+        "News of your rescue beat you to harbor, and Odessa has the official report half written when you arrive. She makes you tell it anyway, all of it, twice: the heading, the swell, the tow. Harbormasters collect rescues the way other people collect songs.",
+        "When you finish she sits back. 'Most boats that hear a whistle on the water these days log it as wind,' she says. 'It's safer to be wrong that way. The insurance is cheaper.' She signs the report with her square careful signature, then adds, not quite to you: 'Crewed for a man once who put us beam-on to the worst sea I ever saw, nine times, for strangers. Wind never sounded like wind again after that.' She files the report. 'Good tow, Tideborn. Fuel's on the harbor tonight.'"
+      ],
+      "effects": {"add": {"affinity_odessa": 1}, "pearls": 5}
+    },
+    {
+      "id": "odessa_04",
+      "arc": "odessa",
+      "where": "talk_odessa",
+      "priority": 36,
+      "requires": [{"q": "affinity_odessa", "gte": 4}, {"q": "renown_level", "gte": 2}],
+      "speaker": "Odessa",
+      "title": "What the ledger is for.",
+      "pages": [
+        "You have earned, apparently, the second chair, the one beside the desk instead of in front of it. From here you can see what the visitor's chair is arranged to hide: the back wall of the office, covered corkboard to ceiling with boat photographs. Working boats, racing boats, wrecks. Every one with a small paper tag.",
+        "'Every hull that's called this harbor home since I took the post,' Odessa says, following your eyes. 'The tags are where they ended. Sold south. Broken up. Lost on the Chop, all hands. Lost on the Chop, crew recovered.' She lets you read awhile. 'People think a harbormaster's job is the water. It isn't. The water does what it likes. The job is making sure nothing leaves this basin unrecorded and nothing comes home unmet.' She taps the chewed pencil on the ledger. 'Everything gets written down, Tideborn. Everything gets met at the dock. That's the whole of my religion.'",
+        "There is one photograph at the center of the board with no tag at all: a white ferry, caught mid-turn in bright weather, her rail crowded with waving passengers. You do not ask. The empty tag space has been pinned and repinned so many times the cork is worn to a crater."
+      ],
+      "effects": {"add": {"affinity_odessa": 1}}
+    },
+    {
+      "id": "odessa_05",
+      "arc": "odessa",
+      "where": "talk_odessa",
+      "priority": 36,
+      "requires": [{"q": "recognized", "eq": 1}, {"q": "affinity_odessa", "gte": 5}],
+      "speaker": "Odessa",
+      "title": "Sixteen, again.",
+      "pages": [
+        "She tells it once, completely, on her own terms, with the office door bolted and the brandy out: the night of the Glass Squall, from the deck of the Lantern Jane, as lived by a sixteen-year-old deckhand.",
+        "'Run six, a wave put me over the rail. One second I'm passing a child up the line, next I'm in black water with the town on fire with lightning above me. And a hand takes my collar.' She turns her glass. 'You'd left the wheel. Lashed it, left it, in THAT sea, for a deckhand. Hauled me back over and put me on the wheel while you cleared the fouled davit, and you shouted the only order anyone gave me that whole night that I still hear: BOARDS DRY. Meaning: you stay aboard, you stay alive, whatever else happens tonight. Boards dry.'",
+        "She finishes the glass. 'I made harbormaster on the strength of being the Jane's last deckhand. Spent nineteen years keeping everyone's boards dry from a desk.' She looks at you, sixteen and sixty at once. 'Then the sea washed my captain up below my own office window, and I gave him a skiff that smelled of bait, because grief is a coward. Whatever the water asks of you, captain, this harbor answers for it too. Boards dry. Lines free. Say it back.' And you do."
+      ],
+      "effects": {"set": {"odessa_sworn": 1}, "add": {"affinity_odessa": 2}}
+    },
+    {
+      "id": "odessa_ambient_1",
+      "arc": "odessa",
+      "where": "talk_odessa",
+      "priority": 5,
+      "once": false,
+      "weight": 3,
+      "requires": [{"q": "met_odessa", "eq": 1}],
+      "speaker": "Odessa",
+      "title": "Harbor business.",
+      "pages": [
+        "Odessa is mid-siege against a stack of customs forms. 'Talk while I stamp,' she says. You trade harbor news: the weather building past the breakwater, a buyer up from the south paying silly money for clean salvage, the bait boy's ongoing war with the gulls, which the gulls are winning on points. It is nothing. It is the good kind of nothing, the kind harbors are made of."
+      ]
+    },
+    {
+      "id": "odessa_ambient_2",
+      "arc": "odessa",
+      "where": "talk_odessa",
+      "priority": 5,
+      "once": false,
+      "weight": 2,
+      "requires": [{"q": "odessa_sworn", "eq": 1}],
+      "speaker": "Odessa",
+      "title": "Standing orders.",
+      "pages": [
+        "'Captain,' Odessa says, by way of hello, and goes back to her ledger. That is the whole conversation, and it is somehow also a weather report, a fuel voucher, and a promise that the harbor mouth will be lit whenever you come home. You have been Greywater's business long enough to speak fluent harbormaster."
+      ]
+    }
+  ]
+}

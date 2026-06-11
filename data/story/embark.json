@@ -1,0 +1,102 @@
+{
+  "storylets": [
+    {
+      "id": "embark_first",
+      "arc": "main",
+      "where": "embark",
+      "priority": 50,
+      "requires": [{"q": "runs", "lte": 1}],
+      "title": "First tide.",
+      "pages": [
+        "The skiff's engine catches on the third pull and settles into a tubercular idle. Odessa watches from the office window without appearing to watch. Past the breakwater the Shallows open out, sun on sandbars, channel markers leaning like gossips, and your hands find the tiller as if the tiller had been waiting.",
+        "That is the first strange thing you learn about yourself: you do not know your name, but you know boats. You know them the way lungs know air. Whoever the sea took, before it gave you back, they had salt in every joint."
+      ]
+    },
+    {
+      "id": "embark_second",
+      "arc": "main",
+      "where": "embark",
+      "priority": 40,
+      "requires": [{"q": "runs", "eq": 2}],
+      "title": "Second tide.",
+      "pages": [
+        "Casting off is easier the second time. The quay has started to learn your face: a netmender lifts two fingers from her work, and the boy who runs bait gives you the nod he reserves for people who have not yet sunk. Small coin, but you bank it.",
+        "Out past the marker buoys, the water shifts under the hull, and for half a heartbeat the chop spells something, some pattern your eyes almost read. Then it is waves again. The sea remembers you, Tideborn, even if you don't. It is being patient. It is famous for that."
+      ]
+    },
+    {
+      "id": "embark_third",
+      "arc": "main",
+      "where": "embark",
+      "priority": 40,
+      "requires": [{"q": "runs", "eq": 3}],
+      "title": "Third tide.",
+      "pages": [
+        "Three tides in, the routine has teeth: fuel, lines, weather ear to the wind, and the little brass key tucked warm against your chest. You have stopped asking the key what it opens. It has not stopped feeling like an answer.",
+        "On the way out you pass the lighthouse close enough to see the keeper on his gallery, a tall old figure, still as a stair post, looking not at you but at your wake — at the shape it makes — the way a man might look at handwriting he recognizes."
+      ]
+    },
+    {
+      "id": "embark_fifth",
+      "arc": "main",
+      "where": "embark",
+      "priority": 40,
+      "requires": [{"q": "runs", "eq": 5}],
+      "title": "Fifth tide.",
+      "pages": [
+        "Five tides. The loaner skiff no longer smells of bait; it smells of you, which is to say of salt, engine oil, and stubbornness. Odessa has started leaving the harbor mouth lit a little later in the evening. Nobody mentions it. Everybody knows it.",
+        "You are getting a reputation in the reaches: the tideborn who races the locals, dives the wrecks, hauls in swimmers the patrol gave up on. Word like that travels along a coast faster than weather. Some of it has begun to travel inland of the Glass Squall, where the drowned keep their address, and word that reaches the drowned always, always comes back with interest."
+      ]
+    },
+    {
+      "id": "embark_eighth",
+      "arc": "main",
+      "where": "embark",
+      "priority": 40,
+      "requires": [{"q": "runs", "eq": 8}],
+      "title": "Eighth tide.",
+      "pages": [
+        "By the eighth tide you have stopped counting in days and started counting in water: this many reaches out, this much hull under you, this much breath in the locker. The quay folk say the sea gets into your blood. They have it backwards, you think. The blood was always seawater. The land is the thing you visit.",
+        "And still, under every calm, the question swims: why did it throw you back? You have started to suspect the answer is waiting somewhere past deep water, holding its breath, nineteen years patient."
+      ]
+    },
+    {
+      "id": "embark_twelfth",
+      "arc": "main",
+      "where": "embark",
+      "priority": 40,
+      "requires": [{"q": "runs", "gte": 12}, {"q": "act3_started", "eq": 0}],
+      "title": "Many tides.",
+      "pages": [
+        "You have lost count of the tides, which the old hands say is the moment the sea starts trusting you. Casting off is no longer a departure. It is a conversation resumed mid-sentence.",
+        "The Almanac pages in Nereus's careful wax wrappers, the names in Odessa's ledger, the lamp on the headland: all of it is converging on something. You can feel the story tightening around your hull like a net being hauled, and you have begun to wonder, with no fear you would admit to, who is doing the hauling."
+      ]
+    },
+    {
+      "id": "embark_act3",
+      "arc": "main",
+      "where": "embark",
+      "priority": 60,
+      "requires": [{"q": "act3_started", "eq": 1}, {"q": "undertow_faced", "eq": 0}],
+      "title": "The tide that matters.",
+      "pages": [
+        "Everything is different now and nothing is. Fuel, lines, weather ear. The Glass Squall stands on the horizon like a held note. Somewhere inside it is a town that stopped, a ferry that sank with your name on her wheel, and a girl the sea has kept for nineteen years because you never finished bringing her home.",
+        "Odessa came down to the dock herself this morning. She didn't say good luck. She said what deckhands say, what she said to you a lifetime ago, on a burning black night you are only beginning to remember: 'Boards dry, captain.' And you answered, before you could think: 'Lines free.'"
+      ]
+    },
+    {
+      "id": "embark_postgame",
+      "arc": "main",
+      "where": "embark",
+      "priority": 45,
+      "requires": [{"q": "undertow_faced", "eq": 1}],
+      "once": false,
+      "weight": 1,
+      "title": "A tide, freely chosen.",
+      "pages": [
+        "The strangest thing about setting out, now that the debt is balanced, is how light the boat rides. You go to sea these days because you choose to, which the old hands say is the only honest reason there has ever been.",
+        "The reaches are still rich and still angry. The sea still remembers you. But these days it remembers you the way a friend does, and when the spray comes over the bow it tastes, just faintly, of being welcome."
+      ]
+    }
+  ]
+}

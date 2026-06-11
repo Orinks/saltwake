@@ -1,0 +1,68 @@
+{
+  "storylets": [
+    {
+      "id": "homecoming_first",
+      "arc": "main",
+      "where": "homecoming",
+      "priority": 50,
+      "requires": [{"q": "homecomings", "lte": 1}],
+      "title": "First homecoming.",
+      "pages": [
+        "Coming home is a sound before it is a place: the bell buoy at the harbor mouth, the change in the engine note as the breakwater takes the swell, gulls auditing your catch. Odessa meets you at the scales and counts your salvage twice, which you will learn is her love language.",
+        "'Huh,' she says, at the total. From Odessa, this is a parade."
+      ]
+    },
+    {
+      "id": "homecoming_second",
+      "arc": "main",
+      "where": "homecoming",
+      "priority": 40,
+      "requires": [{"q": "homecomings", "eq": 2}],
+      "title": "The quay learns your wake.",
+      "pages": [
+        "The bait boy spots you past the breakwater and hollers your arrival up the quay, and by the time you tie off there is a small economy waiting: the scalemaster, two buyers, and Mirabel with something hot wrapped in a cloth, because she claims people bargain stupider on an empty stomach and she has a bet on you bargaining smart.",
+        "It is not home, exactly. You have no memory to compare it against. But when the lines are made fast and the catch is sold and the lamps come on along the water, something in your chest unclenches by a degree, and you think: this is what the word was for."
+      ]
+    },
+    {
+      "id": "homecoming_third",
+      "arc": "main",
+      "where": "homecoming",
+      "priority": 40,
+      "requires": [{"q": "homecomings", "eq": 4}],
+      "title": "Regular.",
+      "pages": [
+        "There is a mooring at the quay that has quietly become yours. Nobody assigned it. Harbors decide these things the way flocks decide to turn. Your cleat, your ring, your coil of line that nobody else touches, and on the wall of the Brinehouse, scratched low near the floor by some child with a nail, a little drawing of a boat that the regulars have started calling by your name.",
+        "Odessa logs your salvage and, for the first time, doesn't count it twice. You have become, against all the evidence of your arrival, somebody whose numbers are trusted."
+      ]
+    },
+    {
+      "id": "homecoming_eighth",
+      "arc": "main",
+      "where": "homecoming",
+      "priority": 40,
+      "requires": [{"q": "homecomings", "gte": 7}],
+      "once": false,
+      "weight": 1,
+      "title": "Old salt.",
+      "pages": [
+        "Tides out, tides home. The rhythm has worn a groove in you the way water wears stone: without hurry, without mercy, and somehow into the exact shape that was always waiting inside.",
+        "Tonight the quay smells of rain coming and supper started. Someone is singing in the Brinehouse, badly, with total commitment. The lamps lean their light on the black water. You make the lines fast in the dark without thinking, and the harbor holds you the way harbors are for."
+      ]
+    },
+    {
+      "id": "homecoming_rich",
+      "arc": "main",
+      "where": "homecoming",
+      "priority": 45,
+      "requires": [{"q": "salvage", "gte": 40}],
+      "once": false,
+      "weight": 2,
+      "title": "A heavy boat.",
+      "pages": [
+        "The boat rides low and wallows like a banker, and the quay notices: heavy boats are news. By the time the scales are done there is a respectful little crowd, and the scalemaster says the number twice, once for accuracy and once for theater.",
+        "Odessa initials the ledger and looks at you over it. 'Don't get used to luck,' she says, and then, because she is constitutionally unable to leave it there: 'Get used to skill. Luck drowns. Skill swims home.'"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "storylets": [
+    {
+      "id": "arrival_01",
+      "arc": "main",
+      "where": "quay_arrival",
+      "priority": 100,
+      "title": "The sea hands you back.",
+      "pages": [
+        "You wake with your cheek on wet shingle and the tide combing your hair, below a sea wall the color of old knives. Gulls are discussing you. Somewhere above, a winch complains, a bell knocks twice against a mast, and a woman's voice says, not unkindly, 'That one's breathing. Shame, I just paid for the funeral flowers.'",
+        "You remember the water. You remember it the way you remember a room you grew up in: every current a corridor, every cold layer a stair. You do not remember your name. Where a name should be there is a sound like a wave pulling back over stones, and a single certainty, lodged under your ribs like a splinter of keel: the sea is not done with you. It threw you back the way a fisherman throws back a catch that is somehow, against all sense, too important to eat.",
+        "Around your neck, on a cord gone green with brine, hangs a small brass key. It is the only thing you own. It is warm, which the sea never is."
+      ],
+      "choices": [
+        {
+          "label": "Stand up and meet the voice.",
+          "effects": {"set": {"met_odessa": 1}},
+          "goto": "arrival_02"
+        },
+        {
+          "label": "Lie still a moment longer and listen to the water.",
+          "response": [
+            "The tide breathes in, breathes out. Underneath the rhythm, just once, you hear something that is not water: a voice, deep below hearing, saying a number. Thirty-one. Then it is gone, and the shingle is just shingle."
+          ],
+          "effects": {"set": {"met_odessa": 1, "heard_the_number": 1}},
+          "goto": "arrival_02"
+        }
+      ]
+    },
+    {
+      "id": "arrival_02",
+      "arc": "main",
+      "where": "quay_arrival",
+      "priority": 99,
+      "speaker": "Odessa",
+      "title": "The harbormaster.",
+      "pages": [
+        "She is broad as a bollard and twice as hard to move, with a ledger under one arm and a pencil behind her ear that has clearly been chewed in moments of policy. She looks you over the way she would look over a hull: for rot, for patches, for whether you will float.",
+        "'Greywater Quay,' she says, by way of geography. 'I'm Odessa. Harbormaster, which out here means undertaker's receptionist, mostly. You washed in on the night tide with no boat, no papers, and no name, which makes you the third strangest thing the sea has coughed up this year.' She pauses. Her eyes drop to the brass key at your throat, and something crosses her face, fast, like a fish under a dock. 'Where did you get that?'",
+        "You tell her the truth: you don't know. You don't know anything. The word 'tideborn' is what the quay folk use, she says, for the ones the sea returns. They are rare. They are usually owed something, or they owe something, and the sea, Odessa says, keeps better books than she does."
+      ],
+      "choices": [
+        {
+          "label": "Ask her what the sea could possibly want from you.",
+          "response": [
+            "'If I knew that,' Odessa says, 'I'd be the lighthouse keeper.' She nods up at the headland, where a white tower stands with its lamp turning even in daylight. 'He's been asking the sea a question for nineteen years. It hasn't answered him either.' She writes something in the ledger. 'Rule one of my harbor: nobody drowns hungry. Come on.'"
+          ],
+          "goto": "arrival_03"
+        },
+        {
+          "label": "Ask about the key.",
+          "response": [
+            "Odessa is quiet a moment too long. 'Boat key,' she says at last. 'Old pattern. They stopped cutting that pattern around here a long time ago.' She turns away to lead you up the steps, and you would swear, though her voice stays level, that her knuckles have gone white around the pencil.",
+            "'Keep it under your shirt,' she adds, not looking back. 'Some folk on this quay lost people to the water. No sense showing them ghosts before breakfast.'"
+          ],
+          "effects": {"set": {"asked_about_key": 1}},
+          "goto": "arrival_03"
+        }
+      ]
+    },
+    {
+      "id": "arrival_03",
+      "arc": "main",
+      "where": "quay_arrival",
+      "priority": 98,
+      "title": "Greywater Quay.",
+      "pages": [
+        "The quay assembles itself around you as you climb the sea steps: a tavern called the Brinehouse leaking lamplight and argument; a chandlery whose window is a museum of rope; a shipyard of slips and cradles where hulls sit healing; and everywhere the smell of tar, salt, fish, and weather on its way. People look at you the way harbor people look at the returned: carefully, and then carefully away.",
+        "Odessa stops at the foot of the office stair. 'Here's how it works, Tideborn. The sea around here is rich and angry in equal parts. Folk pay well for salvage, for rescue, for anyone fool enough to race the reaches. You need a living, and the loaner skiff needs someone to scrape the bait smell out of her. That's not charity,' she says, before you can say anything. 'The water sent you back. In my experience it does that when it wants something fetched.'",
+        "She hands you the skiff's papers. The signature line for the previous owner has been inked out, hard, by somebody who pressed down far too long. 'Tides go out, tides come home,' Odessa says. 'Bank what you can carry. And when the sea starts talking to you, and it will, come tell me what it says.'"
+      ],
+      "choices": [
+        {
+          "label": "Take the skiff's papers.",
+          "response": [
+            "The papers are damp before you have walked ten steps. Everything here is. Above the harbor, the lighthouse turns. Out past the breakwater, in the deep water beyond the Shallows, something turns too, slow and patient, keeping its own ledger.",
+            "Welcome to Greywater Quay. The tide goes out at your word."
+          ],
+          "effects": {"set": {"prologue_done": 1}}
+        }
+      ]
+    }
+  ]
+}

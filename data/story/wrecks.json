@@ -1,0 +1,139 @@
+{
+  "storylets": [
+    {
+      "id": "wreck_first",
+      "arc": "undertow",
+      "where": "wreck",
+      "priority": 90,
+      "requires": [{"q": "wrecks", "lte": 1}],
+      "title": "The first time the sea takes the boat and not you.",
+      "pages": [
+        "Drowning, it turns out, has stages, and you get through more of them than anyone should. The cold. The quiet. The strange wide calm at the bottom of the panic. And then, where the dark should close, a current takes you like a hand taking a letter, and you are read, somewhere, by something, and filed under 'not yet.'",
+        "You wake on the shingle below the quay, exactly where you woke the first morning. The tide is combing your hair. The gulls have opinions. Up on the sea wall, the night watch nearly swallows his pipe.",
+        "Deep in your chest, where the splinter of certainty lives, there is a new sensation: a tally mark. The sea is keeping score of what it lends you. One day, you understand with total clarity, it will want the column to balance."
+      ],
+      "choices": [
+        {
+          "label": "Get up. Again.",
+          "response": [
+            "Odessa finds you a blanket and does not ask a single question, which from her is a kind of shouting. On the desk behind her, you notice, the ledger lies open to a page she touches only with her sleeve. The heading, upside down from where you sit, is one word: JANE."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wreck_second",
+      "arc": "undertow",
+      "where": "wreck",
+      "priority": 80,
+      "requires": [{"q": "wrecks", "eq": 2}],
+      "title": "Twice returned.",
+      "pages": [
+        "This time you keep your head through the whole transaction: the water taking everything, the dark turning you over, the current carrying you home with the impersonal tenderness of a postal service. You even hear it again, down where hearing isn't ears: a number. Thirty-one. Said the way a clerk says a sum that will not reconcile.",
+        "The quay treats your return with studied normalcy, which is harbor manners. Only Mirabel breaks form, setting something hot in front of you at the Brinehouse and saying, quietly, 'My gran used to say the sea only returns two kinds of parcel: the ones it loves, and the ones with postage due.' She watches you eat. 'Which are you, I wonder.'"
+      ]
+    },
+    {
+      "id": "wreck_third",
+      "arc": "undertow",
+      "where": "wreck",
+      "priority": 80,
+      "requires": [{"q": "wrecks", "eq": 3}],
+      "title": "A habit of not drowning.",
+      "pages": [
+        "Three boats the sea has taken out from under you now, and three times it has handed you back, and the quay has stopped pretending this is normal. Sefton has begun touching wood when you pass, then touching it again, apologetically, in case the first touch seemed rude. The bait boy asks if it hurts. You tell him the truth: only the bill does.",
+        "That night, the lighthouse beam swings across the shingle where you wash up, and pauses. Beams do not pause. It holds you in the light for one full breath, the way you would hold a page up to read it twice, and then moves on. High on the headland, you think: the keeper knows something about the postage due on parcels like you."
+      ]
+    },
+    {
+      "id": "wreck_fourth",
+      "arc": "undertow",
+      "where": "wreck",
+      "priority": 80,
+      "requires": [{"q": "wrecks", "eq": 4}],
+      "title": "The clerk below.",
+      "pages": [
+        "You are starting to know the way home through the dark, which is not knowledge a living person should have. There is a moment, between the boat going and the shingle coming, when you are held, considered, weighed. This time, in that moment, you ask it straight out, with the last shape your mouth holds: what do you want from me?",
+        "And for the first time, it answers in something other than a number. One word, pressed into you like a stamp into wax, still cooling there when you wake on the stones: FINISH."
+      ]
+    },
+    {
+      "id": "wreck_fifth",
+      "arc": "undertow",
+      "where": "wreck",
+      "priority": 80,
+      "requires": [{"q": "wrecks", "eq": 5}],
+      "title": "Five marks in the column.",
+      "pages": [
+        "Five. Odessa has stopped writing your wrecks in the regular losses page. You saw the book open on her desk: she has given you your own column, in the back, in the section where harbormasters record the things insurance does not believe in. Your column has no heading. Just five small marks, and beside them, in her square careful hand: 'comes back. like before.'",
+        "Like before. You carry those two words around the quay all evening, and they are heavier than the boat you lost."
+      ]
+    },
+    {
+      "id": "wreck_seventh",
+      "arc": "undertow",
+      "where": "wreck",
+      "priority": 80,
+      "requires": [{"q": "wrecks", "gte": 6}, {"q": "wrecks", "lte": 8}],
+      "title": "The sea's own customer.",
+      "pages": [
+        "There is a joke on the quay now, told fondly, the way harbors tell jokes about the weather that kills them: that the sea keeps you on retainer. That you have a mooring down there as well as up here. That the fish have a betting pool.",
+        "You laugh, because the alternative is explaining the truth: that every return is a little slower now, the consideration in the dark a little longer, as if whatever holds the ledger is watching you get closer to the thing it wants finished, and is beginning, after all these years, to hope."
+      ]
+    },
+    {
+      "id": "wreck_many",
+      "arc": "undertow",
+      "where": "wreck",
+      "priority": 70,
+      "requires": [{"q": "wrecks", "gte": 9}],
+      "once": false,
+      "weight": 2,
+      "title": "Old acquaintances.",
+      "pages": [
+        "The dark takes you and hands you home with the efficiency of long practice. There is almost a courtesy to it now, an old ferryman's economy of motion. You wake on the shingle with the tide combing your hair and the gulls already bored of you.",
+        "Up the quay, lamplight and supper smells and somebody laughing in the Brinehouse. The sea has lent you back to all of it one more time. The column gets one more mark. The debt stands. Get up, Tideborn. Tides don't sail themselves."
+      ]
+    },
+    {
+      "id": "wreck_odessa_reaction",
+      "arc": "odessa",
+      "where": "wreck",
+      "priority": 85,
+      "requires": [{"q": "wrecks", "gte": 3}, {"q": "affinity_odessa", "gte": 3}],
+      "speaker": "Odessa",
+      "title": "The harbormaster waits on the shingle.",
+      "pages": [
+        "This time there is a lantern on the beach when you wash in, and a blanket, and Odessa sitting on the gunwale of a beached dory like she has been there for hours, because she has. She does not help you up. She knows better than to make a thing of it. She just waits until you are sitting beside her, dripping, breathing, absurdly alive.",
+        "'I used to wait on this beach when I was a girl,' she says, to the dark water. 'After a bad night. The sea gave some of them back, those years. There was a captain out of Maren's Hollow who used to say the water keeps what it loves and returns what it trusts.' She is quiet a long moment. 'I hated that saying. It meant the ones who stayed down were loved more than mine.'",
+        "She stands, and drops the blanket on your shoulders, and her voice goes back to harbormaster. 'Loaner skiff's fueled. Try to sink it less.' But at the top of the sea steps she stops, without turning. 'It trusts you, Tideborn. That's not nothing. It didn't trust anyone for nineteen years.'"
+      ]
+    },
+    {
+      "id": "wreck_mirabel_reaction",
+      "arc": "mirabel",
+      "where": "wreck",
+      "priority": 84,
+      "requires": [{"q": "wrecks", "gte": 2}, {"q": "affinity_mirabel", "gte": 3}],
+      "speaker": "Mirabel",
+      "title": "Soup, and a question held back.",
+      "pages": [
+        "Mirabel has a rule, posted nowhere, enforced absolutely: the drowned-and-returned eat free. You sit at the end of the Brinehouse bar in a fug of steam and candle smoke while she ladles something into you that tastes of root cellar and rescue.",
+        "'When I was small,' she says, watching you eat, 'my mother told me the sea sends people back when they've left something unsaid. Not undone. Unsaid.' She polishes a glass that is already polished. 'So whenever you find your voice down there, Tideborn, whatever it is you didn't say,' and here her own voice does something small and careful, 'say it loud enough for the rest of us, will you? Some of us have post of our own down there.'"
+      ]
+    },
+    {
+      "id": "wreck_act3",
+      "arc": "main",
+      "where": "wreck",
+      "priority": 95,
+      "requires": [{"q": "act3_started", "eq": 1}, {"q": "undertow_faced", "eq": 0}],
+      "title": "It speaks plainly now.",
+      "pages": [
+        "There is no consideration in the dark this time, no weighing. The current takes you the moment the water closes, urgent, almost rough, and the voice that has only ever said numbers and single words says, clear as a bell in a fog: SHE IS WAITING. THE LAMP IS BURNING DOWN. FINISH IT, CAPTAIN.",
+        "Captain. You wake on the shingle with the word still in your chest, and it fits. That is the terrible thing, the wonderful thing. It fits like the tiller fits your hand.",
+        "The Glass Squall stands on the horizon, patient as a creditor. The sea is done dropping hints."
+      ]
+    }
+  ]
+}

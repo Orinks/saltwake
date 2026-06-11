@@ -1,0 +1,75 @@
+{
+  "storylets": [
+    {
+      "id": "nereus_02",
+      "arc": "nereus",
+      "where": "talk_nereus",
+      "priority": 38,
+      "requires": [{"q": "met_nereus", "eq": 1}, {"q": "dives_completed", "gte": 1}],
+      "speaker": "Nereus",
+      "title": "A diver's catechism.",
+      "pages": [
+        "Nereus, it emerges, was a salvage diver for eleven years before the paper claimed him, and when he hears you have been down in the green dark he subjects you to the old crews' catechism: what did the cold do at the second layer, did you exhale on the way up, did you look BEHIND the wreck, never just inside, always behind, because the sea files things behind.",
+        "You pass, apparently. He produces, from the organized catastrophe of his table, a diver's slate worn smooth at the edges. 'Mine,' he says. 'From the working years. The sea and I had an arrangement: I stopped taking things that were resting, and it stopped showing me things I couldn't put down.' He does not give you the slate. He shows it to you, which from Nereus is the greater intimacy, and on it, in grease pencil faded to a ghost: a tally of dives, stopped mid-stroke at four hundred and one."
+      ],
+      "effects": {"add": {"affinity_nereus": 1}}
+    },
+    {
+      "id": "nereus_03",
+      "arc": "nereus",
+      "where": "talk_nereus",
+      "priority": 38,
+      "requires": [{"q": "almanac_pages", "gte": 4}],
+      "speaker": "Nereus",
+      "title": "The town assembles.",
+      "pages": [
+        "With four pages on the table, the Almanac has begun to do the thing Nereus promised: cohere. He has them laid out in his own ordering, market notice beside harbor log beside a child's school exercise, and he walks you through Maren's Hollow as if walking you down its high street.",
+        "'Here, the chandler's quarter, they argued about paint. Here, the school, the children kept a tide journal, look at the handwriting wobble, that's a six-year-old recording a neap tide with TOTAL professional rigor.' His ink-stained finger hovers, never touching. 'People think drowned towns are tragedies. They were towns first, Tideborn. Long first. The tragedy is one night. The town is ten thousand mornings, and the sea, for reasons you and I are circling, has decided the mornings deserve the better postage.'"
+      ],
+      "effects": {"add": {"affinity_nereus": 1}, "almanac": "page_school_tides"}
+    },
+    {
+      "id": "nereus_04",
+      "arc": "nereus",
+      "where": "talk_nereus",
+      "priority": 36,
+      "requires": [{"q": "affinity_nereus", "gte": 4}, {"q": "almanac_pages", "gte": 6}],
+      "speaker": "Nereus",
+      "title": "Four hundred and two.",
+      "pages": [
+        "You find him not at his table but at the end of the quay, in a borrowed drysuit nineteen years out of fashion, staring at the water with his old slate in his hand. The tally on it, you remember, stops at four hundred and one.",
+        "'Dive four hundred and one,' he says, not turning, 'was the Squall year. A schooner on the Chop. I went down for her strongbox and found her crew still at their stations, and the sea showed me, with great patience, that they were RESTING, and that I had become a man who took things from people who were resting.' The water slaps the pilings. 'I surfaced, sold my gear, and bought a loupe. Eleven years of paper. Safe as houses, paper. It only ever shows you the mornings.'",
+        "He weighs the slate, and then, with the suddenness of a man jumping before the cold can argue, he hands it to you and starts down the ladder. 'The Almanac says there are pages in the shallow wrecks that wax won't have saved much longer. Number four hundred and two, Tideborn. Mark it for me. And mind the second layer; the cold's a liar there.'"
+      ],
+      "effects": {"set": {"nereus_diving": 1}, "add": {"affinity_nereus": 2}}
+    },
+    {
+      "id": "nereus_ambient_1",
+      "arc": "nereus",
+      "where": "talk_nereus",
+      "priority": 5,
+      "once": false,
+      "weight": 3,
+      "requires": [{"q": "met_nereus", "eq": 1}],
+      "speaker": "Nereus",
+      "title": "Archive hours.",
+      "pages": [
+        "Nereus is deep in a page and acknowledges you with one raised tweezer, which in his sign language means: sit, be silent or be useful. You sort wax fragments by curvature for half an hour while he mutters dates, and when you leave he says, with feeling, 'You have steadier hands than the gull I usually get. Come back.' It is unclear, and will remain unclear, whether the gull was a metaphor."
+      ]
+    },
+    {
+      "id": "nereus_ambient_2",
+      "arc": "nereus",
+      "where": "talk_nereus",
+      "priority": 6,
+      "once": false,
+      "weight": 2,
+      "requires": [{"q": "nereus_diving", "eq": 1}],
+      "speaker": "Nereus",
+      "title": "Comparing logbooks.",
+      "pages": [
+        "Nereus dives again, shallow and careful, two mornings a week, and the slate tally is climbing past four hundred and ten. He debriefs you like a fellow professional now, trading layer reports and wreck gossip, and his table holds two loupes, because he assumes, correctly, that sooner or later you will want to read the pages yourself rather than wait for the post."
+      ]
+    }
+  ]
+}

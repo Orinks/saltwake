@@ -1,0 +1,133 @@
+{
+  "storylets": [
+    {
+      "id": "nereus_meet",
+      "arc": "main",
+      "where": "talk_nereus",
+      "priority": 50,
+      "speaker": "Nereus",
+      "title": "The man drowning in paper.",
+      "pages": [
+        "The corner table of the Brinehouse has been annexed by charts, wax paper, tweezers, and a thin man with ink to the elbows who is examining a scrap of waterlogged page through a jeweler's loupe. He registers you the way a heron registers a fish: sudden total attention.",
+        "'You're the tideborn,' he says. 'Excellent. You go where sensible people drown. I am Nereus, and I am reassembling a book.' He gestures at the wreckage of paper with enormous tenderness. 'Nineteen years ago a town called Maren's Hollow went down in one night, inside the storm they now call the Glass Squall. Its records, letters, logs, ledgers, all of it has been washing up ever since, page by page, sealed in wax by a sea that does not usually bother to preserve things. I call it the Drowned Almanac. The sea is mailing us a town, Tideborn. Slowly. And nobody but me is keeping the post.'"
+      ],
+      "choices": [
+        {
+          "label": "Ask why the sea would preserve a drowned town's paperwork.",
+          "effects": {"set": {"met_nereus": 1}, "add": {"affinity_nereus": 1}},
+          "response": [
+            "Nereus's loupe comes down. 'That,' he says, 'is the only question worth asking on this entire coast, and you are the first person to ask it sober.' He leans in. 'The sea keeps what it loves and returns what it trusts, the old saying goes. I believe it is neither. I believe the sea is trying to finish something, and it lacks the hands.' He looks at yours. 'Bring me pages. Dive sites, beacon caches, the deep reaches. The wax keeps them whole. I'll read you every word, and together we will find out what the water wants finished.'"
+          ]
+        },
+        {
+          "label": "Offer to keep an eye out for pages, and leave it at that.",
+          "effects": {"set": {"met_nereus": 1}},
+          "response": [
+            "'Casual interest,' Nereus says, returning to his loupe. 'It won't last. The Almanac gets everyone who touches it. Page by page, like a tide coming in over a beach you thought you were standing safely up.' He waves you off with the tweezers. 'Bring me what you find. The sea will make sure you find some. It has been very insistent lately, and it started, I note for the record, the very week you washed in.'"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nereus_first_page",
+      "arc": "main",
+      "where": "talk_nereus",
+      "priority": 48,
+      "requires": [{"q": "met_nereus", "eq": 1}, {"q": "almanac_pages", "gte": 1}],
+      "speaker": "Nereus",
+      "title": "The first page read aloud.",
+      "pages": [
+        "Nereus unwraps your salvaged page with the ritual care of a surgeon, eases the wax apart, and goes very still. 'Harbor log,' he breathes. 'Maren's Hollow harbor log, the spring before the Squall. Listen.' And he reads, and a drowned town clears its throat and speaks: tonnage and tides, a dispute over mooring fees, a note that the ferry Lantern Jane will add a dawn run for the oyster crews, signed by the harbormaster in a square careful hand.",
+        "'Look at this annotation,' Nereus says, tilting the page. In the margin, in different handwriting, quick and certain, leaning into the wind of its own speed: 'Approved. She'll take the extra run if I have to row it myself.' Nereus taps it. 'The Jane's captain. Signs everything with that scrawl. Half the pages I have carry it somewhere. The whole town seems to have run through that one set of hands.'",
+        "Something in your chest turns over, slow, like a hull righting. The handwriting is doing the thing the chop did on your second tide out: almost spelling something."
+      ],
+      "effects": {"add": {"affinity_nereus": 1}}
+    },
+    {
+      "id": "nereus_handwriting",
+      "arc": "main",
+      "where": "talk_nereus",
+      "priority": 55,
+      "requires": [
+        {"q": "met_nereus", "eq": 1},
+        {"q": "almanac_pages", "gte": 2},
+        {"q": "cleared_shallows", "eq": 1}
+      ],
+      "speaker": "Nereus",
+      "title": "The handwriting.",
+      "pages": [
+        "Nereus has your skiff's papers on the table when you come in, next to an Almanac page, and a look on his face like a man who has checked his arithmetic four times and hated the answer more each time. 'Sit,' he says. You sit. 'When you signed for the loaner skiff, Odessa filed the papers. I borrowed them. Professional disease.' He turns both documents to face you. 'Tideborn. Look.'",
+        "On the Almanac page: the captain's scrawl, quick and certain, leaning into its own wind. 'Approved. She'll take the extra run if I have to row it myself.' On your skiff papers, where you signed nameless: a mark, quick and certain, leaning the same way, the same. Not similar. The same.",
+        "The Brinehouse goes on around you, lamps and laughter and the sea against the wall, and in the middle of it you sit looking at proof, in your own hand, that you have been dead for nineteen years.",
+        "'I have not told anyone,' Nereus says quietly. 'Not Odessa, who was a deckhand on the Jane that night and has kept a column in her ledger ever since. Not the Keeper, who lights that lamp for a passenger who never came home. It is your handwriting, captain. It is your story. You should be the one who finishes reading it.'"
+      ],
+      "effects": {
+        "set": {"handwriting_known": 1, "lighthouse_open": 1},
+        "add": {"affinity_nereus": 2}
+      },
+      "choices": [
+        {
+          "label": "Ask about the Lantern Jane's last night.",
+          "response": [
+            "'The Squall came up out of a clear evening,' Nereus says. 'No warning, no weather. The town had one boat fast enough and one captain fool enough, and between them they made nine runs into that storm. Thirty-one souls pulled out of the water. The pages say the captain went back for a thirty-second.' He straightens his charts, which do not need straightening. 'The pages stop there. The lighthouse has burned every night since. Go up the stair, captain. The Keeper has been waiting nineteen years for somebody to climb it.'"
+          ]
+        },
+        {
+          "label": "Say nothing. Climb the lighthouse stair when your hands stop shaking.",
+          "response": [
+            "Nereus nods, and turns back to his pages, and grants you the enormous mercy of pretending to be absorbed. As you reach the door, he says, without looking up: 'For the record, Tideborn. The sea returns what it trusts. Nineteen years, and you are what it chose to send back. Whatever you find up that stair, remember it chose well.'"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lighthouse_first",
+      "arc": "main",
+      "where": "lighthouse",
+      "priority": 60,
+      "requires": [{"q": "handwriting_known", "eq": 1}],
+      "speaker": "The Keeper",
+      "title": "Nineteen years of light.",
+      "pages": [
+        "The lighthouse stair is one hundred and forty steps and the Keeper's voice comes down to meet you at step ninety: 'Took you long enough.' Not unkind. Just true, the way everything in a lighthouse is true: stone, lamp, list of the lost.",
+        "Edras the Keeper is tall and old and folded like a sea chart, and he does not ask your name. He looks at you for a long moment in the lamp's turning light, and then he says, 'I watched a man hold a wheel through the worst water this coast has ever made. Nine runs. I held the light on him for every one. A man learns a silhouette, holding light on it all night.' The lamp turns. 'Hello, captain.'",
+        "He puts a kettle on the lamp-room stove, because lighthouse keepers solve the unbearable with tea, and he tells you the one thing Nereus's pages could not: 'My daughter, Liss. Lamp keeper's girl, eleven years old, helping load the last run because nobody could ever stop her helping. The wave took the boat sideways and took her out of your hands. You went in after her. Neither of you came up.' The kettle ticks. 'The sea gave you back, nineteen years late, with the postage still owing. It keeps what it cannot finish, captain. It has my girl. And you are the only unfinished business it has ever returned.'"
+      ],
+      "effects": {
+        "set": {"met_keeper": 1, "act2_started": 1, "liss_known": 1},
+        "almanac": "page_keepers_log"
+      },
+      "choices": [
+        {
+          "label": "Promise him you will finish the rescue.",
+          "effects": {"set": {"promised_keeper": 1}, "add": {"affinity_keeper": 2}},
+          "response": [
+            "Edras looks at you for a long time, and the lamp turns twice before he answers. 'The last thing you said to me, nineteen years ago, through a speaking trumpet in a hundred-knot wind, was: I will bring her back or I will not come back.' He hands you tea strong enough to stand a spoon in. 'You are a man of your word, captain. It just runs a little behind schedule. Get strong. Get a hull worth the water. The Squall will not open for a borrowed skiff, and I would rather wait longer than watch the sea file you under finished business of the wrong kind.'"
+          ]
+        },
+        {
+          "label": "Tell him you don't remember being that captain.",
+          "effects": {"add": {"affinity_keeper": 1}},
+          "response": [
+            "'No,' Edras says, simply. 'The drowned don't keep their own memories. The sea holds those. You'll get them back the way everything comes back on this coast: page by page, tide by tide.' He turns to the lamp, trims the wick that does not need trimming. 'Memory is not what makes a promise binding, captain. The promise is. Yours is down there, eleven years old, holding a lantern. Whenever you're ready, the stair is one hundred and forty steps, and the first one is the hard one.'"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "odessa_ledger_jane",
+      "arc": "main",
+      "where": "talk_odessa",
+      "priority": 52,
+      "requires": [{"q": "act2_started", "eq": 1}, {"q": "recognized", "eq": 0}],
+      "speaker": "Odessa",
+      "title": "The column headed JANE.",
+      "pages": [
+        "Odessa's office smells of ink, tar, and the particular dust of paper that has been wept on and dried, years ago, carefully. She has the ledger open when you come in, to the page you saw upside down your first wrecked morning. The heading says JANE. The column below it is names, thirty-one of them, each with a tick. At the bottom, one name with no tick at all.",
+        "'You've been up the lighthouse,' she says. It is not a question; the whole quay watches that stair. 'So you know what the old man thinks you are.' She closes the ledger, gently, the way you close a door on a sleeping child. 'I was sixteen. Deckhand on the Jane. I hauled half those names out of the water myself while a man with your build and your hands and your damned calm voice held us trim through waves the size of churches.'",
+        "She looks at you, finally, all the way, the way she has been not-looking since the morning the sea handed you back at her feet. 'I'm not ready to call you captain. The captain was the finest man I ever shipped with and I buried him in a service with an empty coffin, and grief like that doesn't take kindly to being asked for a refund.' Her jaw sets. 'But I gave you his mooring. I gave you his skiff. Whatever's left of me that was sixteen knew you off the tide line in one look. Go prove the rest of me wrong or right, Tideborn. Either way, do it on the water. That's where he'd be.'"
+      ],
+      "effects": {"set": {"recognized": 1}, "add": {"affinity_odessa": 2}}
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "storylets": [
+    {
+      "id": "brick_01",
+      "arc": "brick",
+      "where": "talk_brick",
+      "priority": 40,
+      "speaker": "Brick",
+      "title": "The man by the window.",
+      "pages": [
+        "The big man at the window table has a wall of jet ski trophies behind him and a fortress of empty glasses in front of him, and he is watching the harbor the way an exile watches a border. The trophies are engraved BRYK MOLENAAR, which the quay has sensibly sanded down to Brick.",
+        "'Coastal champion, six years running,' he says, when he catches you reading the engraving. He raises his glass to the trophies, ironically, like toasting a portrait of an ancestor he owes money to. 'Don't look so impressed. Any idiot can be brave for six years. It's year seven that sorts you.' He does not explain year seven. The whole tavern's careful unlistening explains it for him."
+      ],
+      "effects": {"set": {"met_brick": 1}, "add": {"affinity_brick": 1}}
+    },
+    {
+      "id": "brick_02",
+      "arc": "brick",
+      "where": "talk_brick",
+      "priority": 38,
+      "requires": [{"q": "slaloms_cleared", "gte": 1}],
+      "speaker": "Brick",
+      "title": "Critique.",
+      "pages": [
+        "Brick heard about your slalom run before your hull was dry, because retired champions have a spy network that would embarrass a navy. He makes you walk the line buoy by buoy, eyes closed, while he interrogates: where was the chop coming from, where was your weight, did you carve the fifth gate or did you lean on the throttle like a coward and a tourist.",
+        "'Hmf,' he says at the end, which from Brick is a podium finish. 'You ride like you learned on boats. All patience. A ski isn't a boat, Tideborn. A boat you sail. A ski you ARGUE with.' He pulls a stub of pencil from behind his ear, exactly the way Odessa does, and sketches the line you should have taken on the table in spilled beer. It is, you realize, watching the wet line dry, the fastest racing tutorial on the coast, free, from a man who cannot currently look at open water without his hands shaking."
+      ],
+      "effects": {"add": {"affinity_brick": 1}}
+    },
+    {
+      "id": "brick_03",
+      "arc": "brick",
+      "where": "talk_brick",
+      "priority": 38,
+      "requires": [{"q": "affinity_brick", "gte": 2}, {"q": "seen_pale_ferry", "eq": 1}],
+      "speaker": "Brick",
+      "title": "Year seven.",
+      "pages": [
+        "You mention the Pale Ferry, because you crossed her wake and lived, and the table goes still. Brick's glass stops halfway. Then, with the deliberateness of a man choosing to open a door he has been guarding for years, he sets it down.",
+        "'Year seven,' he says. 'The big invitational, out on the Chop. I was leading. I was ALWAYS leading. And she came through the race line, the Ferry, dead across my bow, close enough to read the name board.' His hands flatten on the table, holding it down. 'Everyone else swears she was never there. Cameras got fog. But I put my ski over rather than touch her wake, and I was in the water forty minutes before the launch found me, and the whole time, Tideborn, the whole time, there was a sound under me. A town's worth of voices, far down, all saying one word, over and over, very politely.' He looks at you. 'They were saying WAIT.'",
+        "He picks the glass back up, and his hands are honest about it. 'Never raced again. Never told anyone the word. But you crossed her wake and the sea handed you back, so you tell me, since you're the expert.' His voice drops to its lowest gear. 'What are they all waiting FOR?'"
+      ],
+      "effects": {"set": {"brick_truth": 1}, "add": {"affinity_brick": 2}}
+    },
+    {
+      "id": "brick_04",
+      "arc": "brick",
+      "where": "talk_brick",
+      "priority": 36,
+      "requires": [{"q": "brick_truth", "eq": 1}, {"q": "slaloms_cleared", "gte": 3}],
+      "speaker": "Brick",
+      "title": "The dawn deal.",
+      "pages": [
+        "Brick corners you with the gravity of a man who has rehearsed all night. 'Here's the deal. You keep riding my old lines out there, you keep coming back alive, and I'll coach you proper. Lines, weight, throttle theory, the whole catechism. In exchange,' and he turns his glass exactly once, 'you let me stand on the wall and watch. That's it. That's the whole price. I need to remember what it looks like when the water doesn't win.'",
+        "From that morning on, it is a fixture of the quay: the tideborn running the slalom line at first light, and the old champion on the sea wall with a stopwatch and a voice like a docking foghorn, alive again one observed run at a time. The regulars start calling it the cheapest theater on the coast. Nobody, not once, calls it what it is, because the quay has manners about miracles."
+      ],
+      "effects": {"set": {"brick_coaching": 1}, "add": {"affinity_brick": 1}}
+    },
+    {
+      "id": "brick_05",
+      "arc": "brick",
+      "where": "talk_brick",
+      "priority": 36,
+      "requires": [{"q": "brick_coaching", "eq": 1}, {"q": "act3_started", "eq": 1}],
+      "speaker": "Brick",
+      "title": "Back on the water.",
+      "pages": [
+        "He does it without announcement, which is how all the truly difficult things get done on this quay. You come in from a tide and there is Brick, not on the wall, but on the water, idling his old competition ski just inside the breakwater, sitting the chop with the stiffness of a man wearing his own past as a borrowed coat.",
+        "'Don't,' he warns, before you can say anything. 'Don't make it a thing.' He blips the throttle, twice. The old ski answers like it has been waiting nine years, because it has. 'You're about to take that big white boat into the place every voice in this water has been waiting on,' he says, eyes on the horizon where the Glass Squall stands. 'When the waiting ends, when whatever's down there finally gets to stop saying WAIT, I figured,' and the throttle blips again, covering whatever his voice does, 'I figured the water and me should be back on speaking terms by then. So we can celebrate proper.'"
+      ],
+      "effects": {"set": {"brick_riding": 1}, "add": {"affinity_brick": 2}}
+    },
+    {
+      "id": "brick_ambient_1",
+      "arc": "brick",
+      "where": "talk_brick",
+      "priority": 5,
+      "once": false,
+      "weight": 3,
+      "requires": [{"q": "met_brick", "eq": 1}],
+      "speaker": "Brick",
+      "title": "Throttle theory.",
+      "pages": [
+        "Brick is conducting a seminar for an audience of one bored dockhand and a cat, on the subject of why modern skis are too forgiving and forgiveness makes slow riders. You are conscripted as a second listener immediately. It is, despite everything, a genuinely excellent seminar. The cat leaves at the halfway point, which Brick notes, with dignity, is exactly when it gets good."
+      ]
+    },
+    {
+      "id": "brick_ambient_2",
+      "arc": "brick",
+      "where": "talk_brick",
+      "priority": 6,
+      "once": false,
+      "weight": 2,
+      "requires": [{"q": "brick_coaching", "eq": 1}],
+      "speaker": "Brick",
+      "title": "Stopwatch verdicts.",
+      "pages": [
+        "Brick reads your latest times off his stopwatch like a magistrate reading charges, finds you guilty of a soft entry on the third buoy, and sentences you to hearing about how he took that same buoy in the spring invitational of his fourth season. The story has improved since you last heard it. The wave is bigger. The margin is smaller. The crowd, by now, numbers in the implausible thousands. You would not trade it for an accurate one."
+      ]
+    }
+  ]
+}

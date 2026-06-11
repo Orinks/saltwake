@@ -1,0 +1,39 @@
+[project]
+name = "saltwake"
+version = "0.1.0"
+description = "An accessible, audio-first watersports roguelite where the sea remembers"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [{ name = "Orinks" }]
+keywords = ["game", "accessibility", "audio-game", "screen-reader", "roguelite", "watersports"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Games/Entertainment :: Role-Playing",
+]
+dependencies = [
+    "pygame>=2.6",
+    "prismatoid>=0.16",
+    "numpy>=1.26",
+]
+
+[project.urls]
+Repository = "https://github.com/Orinks/saltwake"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

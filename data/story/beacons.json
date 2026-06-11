@@ -1,0 +1,69 @@
+{
+  "storylets": [
+    {
+      "id": "beacon_aldous_meet",
+      "arc": "sefton",
+      "where": "beacon",
+      "priority": 40,
+      "requires": [{"q": "sefton_tithe", "eq": 1}],
+      "speaker": "Aldous",
+      "title": "The keeper of the friendly light.",
+      "pages": [
+        "This beacon's keeper comes down the lamp stair two at a time when you bang the rail twice: tall, weathered, with the careful hands of a man who trims wicks for a living and the pale eyes of exactly one family on this coast.",
+        "'Two bangs,' he says, wonder in it. 'Nobody's rung two bangs on my rail in twenty years. You've been in my brother's shop.' He laughs, and the laugh is Sefton's, escaped from a thinner cage. 'Aldous. The fool sells rope, I stand light, and between us we've not said a word in twenty years over which of us loves the water properly.' He feeds you lamp-room tea, stronger than the Keeper's, which you had not believed possible. 'Tell me everything about the quay. Lie where necessary. Beacon men live on news the way lamps live on oil.'"
+      ],
+      "effects": {"set": {"beacon_brother": 1}}
+    },
+    {
+      "id": "beacon_aldous_message",
+      "arc": "sefton",
+      "where": "beacon",
+      "priority": 42,
+      "requires": [{"q": "sefton_message", "eq": 1}, {"q": "brothers_reconciled", "eq": 0}],
+      "speaker": "Aldous",
+      "title": "Three bangs on the rail.",
+      "pages": [
+        "You bang the rail three times, and the sound is still rolling across the water when the lamp room window flies open above you. Aldous stands frozen in it, a man hit by twenty years arriving all at once.",
+        "'Three,' he says, mostly to himself. 'He rang three.' He comes down the stair slowly this time, one step at a time, like a man carrying something full to the brim. At the rail he grips your shoulder hard enough to leave weather of its own. 'The season turns at the spring tide,' he says. 'The relief boat runs that week. Tell the rope-selling old fool,' and his voice does exactly what Sefton's did, breaks in exactly the same place, the way a code shared is a thing shared, 'tell him to put the cribbage board where the customers can't see it. I'll not be beaten at cribbage in PUBLIC.'"
+      ],
+      "effects": {"set": {"brothers_reconciled": 1}, "renown": 2}
+    },
+    {
+      "id": "beacon_keeper_tale_1",
+      "arc": "lore",
+      "where": "beacon",
+      "priority": 20,
+      "title": "The beacon keeper's tale: the lamp that argued.",
+      "pages": [
+        "The keeper of this beacon, against all regulation, keeps two lamps burning: the great one above, and a small brass one in the window of the watch room, and the small one, the keeper swears, is the senior partner. 'Was my predecessor's. The night of the Glass Squall, the records say every light on this coast guttered in the pressure drop, all but the small brass ones, the household lamps, the lamps people lit for SOMEONE rather than for shipping in general.'",
+        "The keeper turns the little lamp's wick up a thumb's width, out of respect. 'My theory? The sea can argue with infrastructure. It cannot argue with love. Cup of tea before you go?'"
+      ],
+      "effects": {"almanac": "page_lamp_registry"}
+    },
+    {
+      "id": "beacon_keeper_tale_2",
+      "arc": "lore",
+      "where": "beacon",
+      "priority": 18,
+      "requires": [{"q": "act2_started", "eq": 1}],
+      "title": "The beacon keeper's tale: the dry shelf.",
+      "pages": [
+        "Inside this beacon, above the tide line of the worst recorded storm, there is a shelf the keepers call the dry shelf, and on it, by tradition older than the beacon's stones, anything the sea returns is kept for one year and a day in case its owner comes asking.",
+        "Tonight the dry shelf holds: a child's boot, a fiddle in its case with the strings still true, a photograph of a wedding party on a dock you do not recognize, and a ship's bell, small, brass, green with age, engraved L. JANE. The keeper watches you read it. 'Been there nineteen years,' she says quietly. 'Year and a day came and went, and not one of us had the heart. I'd say it's been waiting, captain.' News travels, even out here. Especially out here. 'Take your bell.'"
+      ],
+      "effects": {"set": {"janes_bell": 1}, "almanac": "page_dry_shelf"}
+    },
+    {
+      "id": "beacon_ambient_1",
+      "arc": "lore",
+      "where": "beacon",
+      "priority": 5,
+      "once": false,
+      "weight": 3,
+      "title": "Lamplight and ledger-talk.",
+      "pages": [
+        "The beacon keeper trades you the customary courtesies of the friendly lights: weather honest and weather suspected, which reaches are paying salvage, which buyer at the quay is weighing light this season. You leave warmer than you came, which is the entire engineering purpose of a friendly beacon, whatever the charts say about navigation."
+      ]
+    }
+  ]
+}

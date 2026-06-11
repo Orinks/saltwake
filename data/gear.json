@@ -1,0 +1,60 @@
+{
+  "gear": [
+    {
+      "id": "patched_wetsuit",
+      "name": "Patched Wetsuit",
+      "cost": 25,
+      "description": "Sefton swears the patches are the strongest part. Adds two grit.",
+      "modifiers": {"grit_max": 2}
+    },
+    {
+      "id": "brass_compass",
+      "name": "Brass Compass",
+      "cost": 35,
+      "description": "It points home, mostly. Hear more detail about each heading before you choose.",
+      "modifiers": {"scout": 1}
+    },
+    {
+      "id": "salvage_net",
+      "name": "Salvage Net",
+      "cost": 45,
+      "description": "Knotted by someone who hated losing things. Drifting caches yield more.",
+      "modifiers": {"salvage_gain": 0.15}
+    },
+    {
+      "id": "lucky_bobber",
+      "name": "Lucky Bobber",
+      "cost": 30,
+      "description": "Bright red, chewed by something. Fish find it irresistible.",
+      "modifiers": {"fishing_skill": 0.15}
+    },
+    {
+      "id": "tow_rope",
+      "name": "Braided Tow Rope",
+      "cost": 40,
+      "description": "Rated for more than your boat weighs. Rescues hold together longer.",
+      "modifiers": {"rescue_skill": 0.15}
+    },
+    {
+      "id": "flare_kit",
+      "name": "Flare Kit",
+      "cost": 50,
+      "description": "One bright way out. Once per tide, escape a squall before it bites.",
+      "tags": ["escape_squall"]
+    },
+    {
+      "id": "hull_plates",
+      "name": "Riveted Hull Plates",
+      "cost": 70,
+      "description": "Ugly, heavy, wonderful. Adds three to maximum hull.",
+      "modifiers": {"hull_max": 3}
+    },
+    {
+      "id": "storm_anchor",
+      "name": "Storm Anchor",
+      "cost": 55,
+      "description": "A sea anchor cut for squall work. Storm crossings punish you less.",
+      "modifiers": {"storm_skill": 0.1}
+    }
+  ]
+}

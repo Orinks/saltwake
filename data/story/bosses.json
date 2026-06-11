@@ -1,0 +1,96 @@
+{
+  "storylets": [
+    {
+      "id": "boss_regatta_first",
+      "arc": "main",
+      "where": "boss_regatta_champion",
+      "priority": 60,
+      "title": "The Shallows Regatta.",
+      "pages": [
+        "At the seaward edge of the Shallows the locals hold their regatta wherever the sandbars allow, a course of battered gates and inherited grudges. Today the boat to beat is a low white hull called Persimmon, helmed by a silver-haired woman who has, the spectators inform you, won this water since before you were born. They look at you when they say it, and then look harder, as if the phrase had snagged on something.",
+        "The starter skiff raises its flag. The Persimmon's helmswoman studies your lines, your hands, your wake, and calls across the water, conversational: 'You hold your tiller like a ghost I used to race. Try to lose honestly.'"
+      ]
+    },
+    {
+      "id": "boss_regatta_repeat",
+      "arc": "main",
+      "where": "boss_regatta_champion",
+      "priority": 10,
+      "once": false,
+      "title": "The regatta, again.",
+      "pages": [
+        "The gates are reset, the grudges re-inherited, and the Persimmon waits at the line with her engine purring like a satisfied verdict. The helmswoman tips two fingers off her cap brim at you. Around the Shallows, this is either a greeting or a declaration of war, and the distinction has never once mattered."
+      ]
+    },
+    {
+      "id": "boss_ferry_first",
+      "arc": "main",
+      "where": "boss_ferry_ghost",
+      "priority": 60,
+      "title": "The Pale Ferry.",
+      "pages": [
+        "Every coast has one story the sailors will not tell in harbor, and the Chop's is this: on bad nights, in the worst of the weather, a ferry runs where no route has run for nineteen years. White hull gone grey, windows lit with no lamps behind them, wake that doesn't disperse. She makes for a town that is not there anymore. The patrol logs her as 'atmospheric phenomenon.' The fishermen log her by going home.",
+        "Tonight the weather is bad, and there she is, off your beam, matching your course: the Pale Ferry, running her route through the bones of the storm. The water she has passed through stands rough and wrong, and the only way forward is through her wake.",
+        "As you commit, your eye catches her stern board, streaming water that fell nineteen years ago. You know what it says before you can possibly read it. LANTERN JANE."
+      ],
+      "effects": {"set": {"seen_pale_ferry": 1}}
+    },
+    {
+      "id": "boss_ferry_repeat",
+      "arc": "main",
+      "where": "boss_ferry_ghost",
+      "priority": 10,
+      "once": false,
+      "title": "Her route never changes.",
+      "pages": [
+        "The Pale Ferry runs her route again, punctual as grief, and her wake stands across your course like a wall of bad weather. You know her stern board now. You know what she is, even if you cannot yet say it aloud. Through, captain. The only way has only ever been through."
+      ]
+    },
+    {
+      "id": "boss_leviathan_first",
+      "arc": "main",
+      "where": "boss_leviathan_wake",
+      "priority": 60,
+      "title": "The Leviathan's Wake.",
+      "pages": [
+        "In the heart of Wreckwater the masts stand thickest, a drowned forest, and beneath them the bottom drops away into a trench the charts mark with the old cartographers' honesty: DEEP. Something lives down there that the salvage crews call the Leviathan, though no one has seen more of it than its wake, a slow displacement of the whole sea, as if the water were making room.",
+        "Today the wake has stopped over the richest wreck field on the coast, and the water lies still and breathless above the trench. The divers' rule is absolute: never go down while the Leviathan holds the bottom. The Almanac's rule, in handwriting you have begun to dread recognizing, is different. Page ninety-one: 'It does not guard the wrecks. It grieves them. Bring it proof the grieving can end.'",
+        "Below you, the deep clears its throat."
+      ]
+    },
+    {
+      "id": "boss_leviathan_repeat",
+      "arc": "main",
+      "where": "boss_leviathan_wake",
+      "priority": 10,
+      "once": false,
+      "title": "The deep, holding court.",
+      "pages": [
+        "The Leviathan's wake stands over the trench again, the sea making its vast slow room. Down through the cold layers, past the drowned forest, the bottom waits with its hoard and its grief. You check your breath, and you go where the divers' rule says never."
+      ]
+    },
+    {
+      "id": "boss_undertow_first",
+      "arc": "main",
+      "where": "boss_the_undertow",
+      "priority": 60,
+      "title": "The Undertow.",
+      "pages": [
+        "Inside the Glass Squall there is no weather anymore, only memory with the volume turned all the way up. The drowned town stands below you through water clear as a lens: Maren's Hollow, streets and chimneys and the harbor clock stopped at nineteen minutes past three. And rising through the middle of it, gathering the sea to itself like a figure gathering a cloak, comes the thing that has been writing to you in numbers and single words since the night it first read you.",
+        "The Undertow does not have a face. It has everyone's. It builds itself out of the remembered, and near its heart, where a heart would be, a small light burns: a girl's shape, holding a lantern, nineteen years patient. Liss. The thirty-first soul. The unfinished line in the ledger.",
+        "The sea speaks, and for once it does not press the words into you. It simply says them, in a voice like the tide turning: YOU CAME BACK, CAPTAIN. FINISH THE RESCUE."
+      ]
+    },
+    {
+      "id": "boss_undertow_repeat",
+      "arc": "main",
+      "where": "boss_the_undertow",
+      "priority": 10,
+      "once": false,
+      "title": "It is still waiting.",
+      "pages": [
+        "The Squall parts to let you in, the town turns its drowned face up, and the Undertow rises to meet you with the lantern light burning steady at its heart. No anger in it. No hurry. The sea has waited nineteen years; it can wait another tide. But you can hear, under the vast patience, the lamp burning down."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "regions": [
+    {
+      "id": "shallows",
+      "name": "The Shallows",
+      "tier": 0,
+      "rows": 5,
+      "difficulty": 1.0,
+      "description": "Bright water over sandbars, close enough to Greywater Quay to hear the gulls fighting over the fish market.",
+      "node_weights": {"activity": 52, "event": 22, "beacon": 10, "cache": 10, "hazard": 6},
+      "activities": ["boat_race", "jetski_slalom", "fishing", "rescue_tow", "dive_salvage"],
+      "boss": "regatta_champion",
+      "boss_name": "the Shallows Regatta",
+      "unlock": {}
+    },
+    {
+      "id": "chop",
+      "name": "The Chop",
+      "tier": 1,
+      "rows": 6,
+      "difficulty": 1.25,
+      "description": "Open water where three currents argue. The waves never agree on a direction and neither do the people you meet out here.",
+      "node_weights": {"activity": 48, "event": 24, "beacon": 9, "cache": 9, "hazard": 10},
+      "activities": ["boat_race", "jetski_slalom", "fishing", "rescue_tow", "dive_salvage", "storm_run"],
+      "boss": "ferry_ghost",
+      "boss_name": "the Pale Ferry",
+      "unlock": {"renown_level": 2}
+    },
+    {
+      "id": "wreckwater",
+      "name": "Wreckwater",
+      "tier": 2,
+      "rows": 6,
+      "difficulty": 1.5,
+      "description": "A drowned shipping lane. Masts stand out of the swell like grave markers, and the salvage is rich because nobody sensible comes.",
+      "node_weights": {"activity": 44, "event": 26, "beacon": 8, "cache": 12, "hazard": 10},
+      "activities": ["dive_salvage", "storm_run", "rescue_tow", "boat_race", "jetski_slalom", "fishing"],
+      "boss": "leviathan_wake",
+      "boss_name": "the Leviathan's Wake",
+      "unlock": {"renown_level": 4}
+    },
+    {
+      "id": "glass_squall",
+      "name": "The Glass Squall",
+      "tier": 3,
+      "rows": 7,
+      "difficulty": 1.8,
+      "description": "A storm that never moves and never ends, standing on the horizon like a wall of smoked glass. Maren's Hollow drowned beneath it.",
+      "node_weights": {"activity": 40, "event": 30, "beacon": 7, "cache": 8, "hazard": 15},
+      "activities": ["storm_run", "dive_salvage", "boat_race", "jetski_slalom", "rescue_tow"],
+      "boss": "the_undertow",
+      "boss_name": "the Undertow itself",
+      "unlock": {"quality": "act3_started"}
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "storylets": [
+    {
+      "id": "mirabel_01",
+      "arc": "mirabel",
+      "where": "talk_mirabel",
+      "priority": 40,
+      "speaker": "Mirabel",
+      "title": "House rules.",
+      "pages": [
+        "The Brinehouse runs on three posted rules, painted on a board over the bar in a confident hand: NO POLITICS PAST THE SECOND LAMP. SETTLE TABS BEFORE WEATHER. THE STOVE DECIDES. The woman enforcing them is somewhere past fifty, built like a figurehead, and reads you in one bartender's glance: new, salt-stained, hungry, and carrying something heavier than a duffel.",
+        "'Tideborn, is it. I'm Mirabel. The stove's decided you're having the chowder.' It is not a menu, it is a verdict, and it is the best thing you can remember eating, which you concede is a low bar, and she laughs like a gull and stands you the first bowl. 'Eat. The quay's full of stories about you already. I find people lie slower on a full stomach.'"
+      ],
+      "effects": {"set": {"met_mirabel": 1}, "add": {"affinity_mirabel": 1}}
+    },
+    {
+      "id": "mirabel_02",
+      "arc": "mirabel",
+      "where": "talk_mirabel",
+      "priority": 38,
+      "requires": [{"q": "fish_caught", "gte": 1}],
+      "speaker": "Mirabel",
+      "title": "The fish bargain.",
+      "pages": [
+        "Word that you land fish travels from the scales to the Brinehouse kitchen in under an hour, and Mirabel ambushes you with a proposition and a knife she continues to sharpen throughout, purely, she insists, from habit.",
+        "'Standing offer. Anything silver and fresh comes to my kitchen first, and you eat free the night you bring it. The stove,' she adds, with theological gravity, 'has decided it likes you.' The deal is struck on a handshake dusted with flour. From this night on, there is a place at the bar end that is, in the unwritten ledger every tavern keeps, yours."
+      ],
+      "effects": {"add": {"affinity_mirabel": 1}}
+    },
+    {
+      "id": "mirabel_03",
+      "arc": "mirabel",
+      "where": "talk_mirabel",
+      "priority": 38,
+      "requires": [{"q": "affinity_mirabel", "gte": 2}, {"q": "runs", "gte": 4}],
+      "speaker": "Mirabel",
+      "title": "After the second lamp.",
+      "pages": [
+        "Late, the bar thinning out, Mirabel douses the second lamp, which by house law ends politics and begins the truer conversations. She pours herself a small one, which you have never seen, and nods at the dark window where the lighthouse beam crosses and recrosses.",
+        "'I wasn't born here,' she says. 'Came up the coast on the mail boat, years back, with one bag and a temper. This quay takes in flotsam, always has. Half the regulars washed in from somewhere they don't toast.' She turns her glass once. 'You'll find folk here don't ask where you're from, Tideborn. We ask what you're for. It's a kinder question. Most of us are still working on the answer.'"
+      ],
+      "effects": {"add": {"affinity_mirabel": 1}}
+    },
+    {
+      "id": "mirabel_04",
+      "arc": "mirabel",
+      "where": "talk_mirabel",
+      "priority": 36,
+      "requires": [{"q": "affinity_mirabel", "gte": 4}, {"q": "fish_caught", "gte": 3}],
+      "speaker": "Mirabel",
+      "title": "The recipe.",
+      "pages": [
+        "Tonight the kitchen door is propped, which is an honor with steam coming off it, and Mirabel teaches you the chowder while the stove watches. The recipe is a genealogy: the leeks done the way a woman named Ren did them, the cream measured in a chipped cup with a painted wren, the thyme added off the heat, always off the heat, 'because she'd haunt me else.'",
+        "'My mother's,' Mirabel says, to the pot, the chipped cup held a moment longer than stirring requires. 'Everything in this kitchen worth eating is hers. Everything else is my own foolishness with pepper.' She closes the recipe back into its tin, and the tin into the drawer, with the gentleness people save for the things that cannot be replaced. 'There. Now somebody else on this coast knows it off the page. The stove and my mother can both rest easier.'"
+      ],
+      "effects": {"set": {"knows_rens_chowder": 1}, "add": {"affinity_mirabel": 1}}
+    },
+    {
+      "id": "mirabel_05",
+      "arc": "mirabel",
+      "where": "talk_mirabel",
+      "priority": 36,
+      "requires": [{"q": "act2_started", "eq": 1}, {"q": "affinity_mirabel", "gte": 5}],
+      "speaker": "Mirabel",
+      "title": "Where the mail boat sailed from.",
+      "pages": [
+        "She has heard, of course. The quay has one bloodstream and the lighthouse stair empties straight into it: the tideborn climbed the hundred and forty steps, and the Keeper called him captain. Mirabel works the bar all evening with her usual roaring competence, and only at close, with the chairs up, does she stop in front of you and set down the towel like a flag of truce.",
+        "'The mail boat I came in on,' she says, 'sailed out of Maren's Hollow the morning of the Squall. I was eighteen and furious about a coat, and I left my whole family on that dock waving, except my mother, who wouldn't come down, because we'd fought.' Her voice is level, which costs what it costs. 'You're him. The Jane's captain. The man who went back nine times.' Her chin comes up. 'My cousins were runs four and seven, Tideborn. They lived. They're grandmothers down the coast now, the both of them.' And then Mirabel, who is built like a figurehead, takes your face in two flour-dusted hands and kisses your forehead like a blessing being paid back nineteen years late. 'The chowder was never free,' she says. 'It was an installment.'"
+      ],
+      "effects": {"set": {"mirabel_truth": 1}, "add": {"affinity_mirabel": 2}}
+    },
+    {
+      "id": "mirabel_ambient_1",
+      "arc": "mirabel",
+      "where": "talk_mirabel",
+      "priority": 5,
+      "once": false,
+      "weight": 3,
+      "requires": [{"q": "met_mirabel", "eq": 1}],
+      "speaker": "Mirabel",
+      "title": "The stove decides.",
+      "pages": [
+        "The Brinehouse does its evening roar: dominoes slapping, a netmender holding court about a wave she swears was square, the stove issuing verdicts. Mirabel slides yours across without being asked and leans on the bar exactly long enough to extract the day's news from you, which she will have redistributed, lightly edited for drama, by morning. It is the quay's true postal system, and you are pleased to report you are now on the route."
+      ]
+    },
+    {
+      "id": "mirabel_ambient_2",
+      "arc": "mirabel",
+      "where": "talk_mirabel",
+      "priority": 6,
+      "once": false,
+      "weight": 2,
+      "requires": [{"q": "mirabel_truth", "eq": 1}],
+      "speaker": "Mirabel",
+      "title": "An installment.",
+      "pages": [
+        "Your bowl is full before you reach the bar. 'Installment,' Mirabel says, daring you to argue. Around the Brinehouse, the regulars have learned the new constellation of facts the way harbors learn everything, by osmosis and eavesdropping, and they treat you with a careful, fierce normalcy that is this coast's highest honor: the captain eats his chowder in peace."
+      ]
+    }
+  ]
+}

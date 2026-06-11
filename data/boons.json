@@ -1,0 +1,103 @@
+{
+  "boons": [
+    {
+      "id": "gullwind",
+      "name": "Gullwind",
+      "rarity": "common",
+      "description": "A following wind that smells of feathers. Your hulls run faster.",
+      "modifiers": {"race_speed": 0.12}
+    },
+    {
+      "id": "otters_grace",
+      "name": "Otter's Grace",
+      "rarity": "common",
+      "description": "Forgiveness in the turn. The first buoy you miss in a slalom costs you nothing.",
+      "modifiers": {"slalom_skill": 0.05},
+      "tags": ["free_miss"]
+    },
+    {
+      "id": "pearl_sense",
+      "name": "Pearl Sense",
+      "rarity": "common",
+      "description": "You feel the weight of sunken things. Dives yield more salvage.",
+      "modifiers": {"dive_skill": 0.1, "salvage_gain": 0.1}
+    },
+    {
+      "id": "deep_lungs",
+      "name": "Deep Lungs",
+      "rarity": "common",
+      "description": "The cold stops arguing with your chest. Longer breath underwater.",
+      "modifiers": {"breath": 3}
+    },
+    {
+      "id": "storm_soul",
+      "name": "Storm Soul",
+      "rarity": "common",
+      "description": "You stop flinching at thunder. Squalls do less harm to your hull.",
+      "modifiers": {"storm_skill": 0.15}
+    },
+    {
+      "id": "barnacle_hide",
+      "name": "Barnacle Hide",
+      "rarity": "common",
+      "description": "The hull grows a stubborn crust. Maximum hull increased by two.",
+      "modifiers": {"hull_bonus": 2}
+    },
+    {
+      "id": "tide_favor",
+      "name": "Tide's Favor",
+      "rarity": "rare",
+      "description": "The sea tips its hand toward you. All salvage gains increased.",
+      "modifiers": {"salvage_gain": 0.2}
+    },
+    {
+      "id": "mirror_calm",
+      "name": "Mirror Calm",
+      "rarity": "rare",
+      "description": "Once, when everything goes wrong, it simply will not have happened.",
+      "tags": ["reroll_fail"]
+    },
+    {
+      "id": "line_singer",
+      "name": "Line Singer",
+      "rarity": "rare",
+      "description": "Fishing line hums in your hands like a tuned string. Fish fight fair.",
+      "modifiers": {"fishing_skill": 0.2}
+    },
+    {
+      "id": "wake_reader",
+      "name": "Wake Reader",
+      "rarity": "rare",
+      "description": "You read the water two beats ahead. Race and slalom cues come earlier.",
+      "modifiers": {"cue_time": 0.15}
+    },
+    {
+      "id": "lifeline",
+      "name": "Lifeline",
+      "rarity": "rare",
+      "description": "Someone below is watching out for you. Rescues go smoother.",
+      "modifiers": {"rescue_skill": 0.2}
+    },
+    {
+      "id": "undertow_mark",
+      "name": "Mark of the Undertow",
+      "rarity": "deep",
+      "description": "A cold brand on the wrist that aches near deep water. Salvage and renown flow to you, and the sea watches with interest.",
+      "modifiers": {"salvage_gain": 0.25, "renown_gain": 1}
+    },
+    {
+      "id": "drowned_chorus",
+      "name": "Drowned Chorus",
+      "rarity": "deep",
+      "description": "Voices under the hull sing the hazards before they arrive. All contests come easier.",
+      "modifiers": {"race_speed": 0.08, "slalom_skill": 0.08, "dive_skill": 0.08, "storm_skill": 0.08, "fishing_skill": 0.08, "rescue_skill": 0.08}
+    },
+    {
+      "id": "lanterns_eye",
+      "name": "Lantern's Eye",
+      "rarity": "deep",
+      "description": "The lighthouse beam follows you out past where it should reach. Hull damage from any source is softened.",
+      "modifiers": {"damage_soak": 1}
+    }
+  ]
+}

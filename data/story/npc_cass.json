@@ -1,0 +1,88 @@
+{
+  "storylets": [
+    {
+      "id": "cass_01",
+      "arc": "cass",
+      "where": "talk_cass",
+      "priority": 40,
+      "speaker": "Cass Veyle",
+      "title": "The rival introduces herself.",
+      "pages": [
+        "She is leaning on the Brinehouse wall with the studied carelessness of someone who practiced leaning, race leathers half unzipped, salt drying in her dark hair, and she has clearly been waiting for you because she begins without hello: 'Cass Veyle. Fastest thing on this coast. You're the tideborn everyone's misquoting.'",
+        "She circles you once, the way racers walk a rival's hull. 'I watched you come through the harbor mouth yesterday. You took the dogleg off the north mark flat, in chop, in that embarrassing skiff.' Her eyes narrow with the specific outrage of the very talented encountering the inexplicable. 'Nobody local takes that line. The last person who took that line is in a folk song. So here is my formal position, Tideborn: I don't know what you are, but you're MINE to beat. Race well out there. I don't lap traffic, I lap competition.'"
+      ],
+      "effects": {"set": {"met_cass": 1}, "add": {"affinity_cass": 1}}
+    },
+    {
+      "id": "cass_02",
+      "arc": "cass",
+      "where": "talk_cass",
+      "priority": 38,
+      "requires": [{"q": "races_won", "gte": 1}],
+      "speaker": "Cass Veyle",
+      "title": "Scouting report.",
+      "pages": [
+        "You won on open water and Cass appears within the hour, holding two drinks, handing you one like a subpoena. 'Sit. Debrief.' She has, it turns out, reconstructed your entire race from spectator gossip and harbor telescope, and her questions are surgical: why the wide entry at gate three, what you heard in the chop at the halfway mark, why you eased, EASED, on the final straight when any sane racer would have buried the throttle.",
+        "'Because the wake off the committee boat was about to cross the line,' you say, and Cass goes silent for the length of an entire swallow.",
+        "'You heard a wake,' she says, 'before it arrived.' She puts her glass down with the click of a decision being filed. 'Right. New formal position. You're not just mine to beat. You're mine to STUDY. The folk song took the dogleg flat too, you know. Same line. Same ease before the wake.' Her grin is all regatta. 'I intend to figure out what that means before anyone else on this quay does. I'm fast everywhere, Tideborn. Including conclusions.'"
+      ],
+      "effects": {"add": {"affinity_cass": 1}}
+    },
+    {
+      "id": "cass_03",
+      "arc": "cass",
+      "where": "talk_cass",
+      "priority": 38,
+      "requires": [{"q": "races_won", "gte": 3}, {"q": "affinity_cass", "gte": 2}],
+      "speaker": "Cass Veyle",
+      "title": "Why fast.",
+      "pages": [
+        "Past midnight, after a race day, with the quay lamps doubling themselves in still water, Cass is briefly, dangerously honest. 'You want to know why fast?' She doesn't wait. 'Grew up on the Flats, south coast. Tide farm. Everything there is slow: the water, the seasons, the dying. My mother spent forty years being patient and the sea never once noticed her.' Cass turns her empty glass upside down on the rail, a racer's toast to the finished. 'So I decided the water WOULD notice me. It would have no choice. I'd be the loudest, fastest, rudest thing on it until it looked up.'",
+        "She glances at you sideways. 'And then you wash in. And the sea doesn't just notice you, it DELIVERS you, like post. Like it knows your name.' The grin comes back, but it is running on one engine. 'I'm not jealous, Tideborn. I'm taking notes. There's a difference. The difference is jealousy quits.'"
+      ],
+      "effects": {"add": {"affinity_cass": 2}}
+    },
+    {
+      "id": "cass_04",
+      "arc": "cass",
+      "where": "talk_cass",
+      "priority": 36,
+      "requires": [{"q": "handwriting_known", "eq": 1}, {"q": "affinity_cass", "gte": 3}],
+      "speaker": "Cass Veyle",
+      "title": "The folk song, footnoted.",
+      "pages": [
+        "Cass slams a sheaf of paper on the table: race archives, copied in her aggressive shorthand from the coastal federation records, three towns down the coast. 'The cross-squall record,' she announces. 'Set nineteen years ago, the same season Maren's Hollow drowned. Unbroken since. I've been chasing it my whole career, and the federation lists the holder as RETIRED, which is bureaucrat for drowned.' Her finger comes down on the faded name like a checkered flag.",
+        "'Captain. Lantern Jane. Maren's Hollow.' She watches your face with a racer's reflexes and gets, evidently, everything she came for. 'I KNEW it. The dogleg, the wake-hearing, Odessa's face every time you dock. The folk song is sitting in my tavern drinking my round.' She leans back, vindicated, delighted, and underneath it, genuinely shaken. 'I've been chasing a dead man's number my whole life, Tideborn. Do me the courtesy of being hard to beat now that you're available. I have NOTES.'"
+      ],
+      "effects": {"set": {"cass_knows": 1}, "add": {"affinity_cass": 2}}
+    },
+    {
+      "id": "cass_ambient_1",
+      "arc": "cass",
+      "where": "talk_cass",
+      "priority": 5,
+      "once": false,
+      "weight": 3,
+      "requires": [{"q": "met_cass", "eq": 1}],
+      "speaker": "Cass Veyle",
+      "title": "Trash talk, artisanal.",
+      "pages": [
+        "Cass reviews your latest outing with the merciless generosity of a true rival: two compliments, precisely engineered to carry an insult each, and one piece of advice so good you will be using it for the rest of your career. She finishes her drink and points at you on the way out. 'Water's fast tomorrow, Tideborn. Try to be on it.'"
+      ]
+    },
+    {
+      "id": "cass_ambient_2",
+      "arc": "cass",
+      "where": "talk_cass",
+      "priority": 6,
+      "once": false,
+      "weight": 2,
+      "requires": [{"q": "cass_knows", "eq": 1}],
+      "speaker": "Cass Veyle",
+      "title": "Notes on a folk song.",
+      "pages": [
+        "Cass has taken to carrying a small black notebook labeled, in defiant capitals, HOW THE CAPTAIN DOES IT. She declines to show you the contents. 'Proprietary,' she says. You have seen her, after your races, writing in it furiously, and once, after a race you lost, crossing something out with what looked like real disappointment, muttering that legends have NO right to soft entries on the third gate."
+      ]
+    }
+  ]
+}
