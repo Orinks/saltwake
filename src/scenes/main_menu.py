@@ -29,6 +29,7 @@ class MainMenuScene(Scene):
         self.menu = None
 
     def on_enter(self):
+        self.game.music.play("saltwake_theme")
         profile = self.game.profile
         returning = profile["tides"] > 0 or profile["seen_storylets"]
         first = MenuItem("Continue" if returning else "Begin", "start",

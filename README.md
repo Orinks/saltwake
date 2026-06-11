@@ -23,6 +23,13 @@ with pages about who you were before the water took your memory.
   Hades way: priority-picked beats keyed to run count, wrecks, deeds, and
   relationships, on a Sunless Sea style quality/storylet engine. Three acts,
   six NPC arcs, a finale inside the Glass Squall, and post-game epilogues.
+- **An 18-track procedural soundtrack** (~13 minutes of looped music)
+  synthesized entirely from code and data — a title theme, the quay, all
+  four regions, every activity, two boss themes, and wreck, homecoming, and
+  victory pieces. Tracks render from `data/music.json` on first launch and
+  cache as WAVs; `tools/render_soundtrack.py` pre-renders the lot. Music
+  sits under the speech and cue layer by design: it sets scenes, never
+  carries information.
 - **Accessibility is the design**, not a feature: everything is spoken via
   Prism (NVDA, JAWS, SAPI, VoiceOver, Speech Dispatcher, and more), all cues
   carry redundant speech, R repeats, T reads status, H explains, and a visual
@@ -51,6 +58,7 @@ Useful flags and environment variables:
 - **Escape** — back, skip to choices, abandon an activity
 - **R** — repeat last speech, **T** — status at sea, **H** — help for the focused item
 - **Page Up / Page Down** — speech rate
+- **F2** — music on/off, **F3 / F4** — music volume down/up
 - First-letter navigation works in every menu
 
 ## Project structure

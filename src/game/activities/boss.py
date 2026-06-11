@@ -13,6 +13,7 @@ BOSSES = {
         "renown": 6,
         "salvage": 10,
         "quality": "cleared_shallows",
+        "music": "warden",
     },
     "ferry_ghost": {
         "scene": StormRunScene,
@@ -21,6 +22,7 @@ BOSSES = {
         "renown": 8,
         "salvage": 14,
         "quality": "cleared_chop",
+        "music": "warden",
     },
     "leviathan_wake": {
         "scene": DiveSalvageScene,
@@ -29,6 +31,7 @@ BOSSES = {
         "renown": 10,
         "salvage": 18,
         "quality": "cleared_wreckwater",
+        "music": "warden",
     },
     "the_undertow": {
         "scene": StormRunScene,
@@ -37,6 +40,7 @@ BOSSES = {
         "renown": 15,
         "salvage": 25,
         "quality": "cleared_glass_squall",
+        "music": "undertow",
     },
 }
 

@@ -61,6 +61,7 @@ class HarborScene(Scene):
 
     def _main_menu(self):
         self.mode = "main"
+        self.game.music.play("greywater_quay")
         profile = self.game.profile
         level = profile_mod.renown_level(profile)
         items = [

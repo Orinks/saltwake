@@ -1,0 +1,259 @@
+{
+  "tracks": [
+    {
+      "id": "saltwake_theme",
+      "title": "Saltwake (Title Theme)",
+      "mood": "wide water at first light; the whole story waiting",
+      "tempo": 72, "root": 62, "mode": "lydian", "bars": 16, "seed": 101,
+      "progression": [0, 5, 3, 4, 0, 5, 1, 4],
+      "voices": {
+        "pad": {"level": 0.62, "detune": 0.35},
+        "bass": {"level": 0.4, "pattern": "light"},
+        "arp": {"level": 0.3, "rate": 2, "rest": 0.2},
+        "melody": {"level": 0.5, "density": 0.45},
+        "surf": {"level": 0.3}
+      }
+    },
+    {
+      "id": "greywater_quay",
+      "title": "Greywater Quay",
+      "mood": "tar, rope, gulls, and supper started; home, working",
+      "tempo": 92, "root": 57, "mode": "dorian", "bars": 16, "seed": 102,
+      "progression": [0, 0, 3, 4, 0, 6, 3, 4],
+      "voices": {
+        "pad": {"level": 0.4, "detune": 0.3},
+        "bass": {"level": 0.55, "pattern": "pulse"},
+        "arp": {"level": 0.45, "rate": 2, "rest": 0.15},
+        "melody": {"level": 0.55, "density": 0.6},
+        "perc": {"level": 0.22, "style": "light"},
+        "surf": {"level": 0.18}
+      }
+    },
+    {
+      "id": "quiet_lines",
+      "title": "Quiet Lines",
+      "mood": "lamplight on paper; the Almanac read slowly",
+      "tempo": 60, "root": 60, "mode": "major", "bars": 12, "seed": 103,
+      "progression": [0, 3, 5, 4, 0, 3],
+      "voices": {
+        "pad": {"level": 0.6, "detune": 0.2},
+        "arp": {"level": 0.28, "rate": 1, "rest": 0.3},
+        "melody": {"level": 0.4, "density": 0.35},
+        "surf": {"level": 0.22}
+      }
+    },
+    {
+      "id": "the_shallows",
+      "title": "The Shallows",
+      "mood": "sun on sandbars, easy throttle, nothing owed yet",
+      "tempo": 104, "root": 64, "mode": "major", "bars": 16, "seed": 104,
+      "progression": [0, 4, 5, 3, 0, 4, 1, 4],
+      "voices": {
+        "pad": {"level": 0.45, "detune": 0.3},
+        "bass": {"level": 0.5, "pattern": "pulse"},
+        "arp": {"level": 0.5, "rate": 2, "rest": 0.1},
+        "melody": {"level": 0.5, "density": 0.55},
+        "perc": {"level": 0.25, "style": "light"},
+        "surf": {"level": 0.2}
+      }
+    },
+    {
+      "id": "the_chop",
+      "title": "The Chop",
+      "mood": "three currents arguing; commit or go home",
+      "tempo": 112, "root": 59, "mode": "minor", "bars": 16, "seed": 105,
+      "progression": [0, 0, 5, 4, 0, 2, 5, 4],
+      "voices": {
+        "pad": {"level": 0.45, "detune": 0.4},
+        "bass": {"level": 0.6, "pattern": "drive"},
+        "arp": {"level": 0.42, "rate": 2, "rest": 0.12},
+        "melody": {"level": 0.45, "density": 0.5},
+        "perc": {"level": 0.3, "style": "drive"},
+        "surf": {"level": 0.25}
+      }
+    },
+    {
+      "id": "wreckwater",
+      "title": "Wreckwater",
+      "mood": "a drowned shipping lane; masts like grave markers",
+      "tempo": 66, "root": 52, "mode": "phrygian", "bars": 16, "seed": 106,
+      "progression": [0, 1, 0, 5, 0, 1, 3, 5],
+      "voices": {
+        "pad": {"level": 0.65, "detune": 0.5},
+        "bass": {"level": 0.45, "pattern": "light"},
+        "melody": {"level": 0.35, "density": 0.3},
+        "surf": {"level": 0.4}
+      }
+    },
+    {
+      "id": "glass_squall",
+      "title": "The Glass Squall",
+      "mood": "a storm that never moves; memory with the volume up",
+      "tempo": 76, "root": 54, "mode": "whole", "bars": 16, "seed": 107,
+      "progression": [0, 2, 4, 1, 0, 3, 5, 1],
+      "voices": {
+        "pad": {"level": 0.7, "detune": 0.6},
+        "arp": {"level": 0.35, "rate": 3, "rest": 0.25},
+        "melody": {"level": 0.3, "density": 0.3},
+        "perc": {"level": 0.2, "style": "light"},
+        "surf": {"level": 0.45}
+      }
+    },
+    {
+      "id": "open_throttle",
+      "title": "Open Throttle",
+      "mood": "gates ahead, wake behind, the pacer at your shoulder",
+      "tempo": 128, "root": 62, "mode": "mixolydian", "bars": 16, "seed": 108,
+      "progression": [0, 6, 4, 0, 0, 6, 3, 4],
+      "voices": {
+        "pad": {"level": 0.35, "detune": 0.3},
+        "bass": {"level": 0.65, "pattern": "drive"},
+        "arp": {"level": 0.55, "rate": 4, "rest": 0.08},
+        "melody": {"level": 0.45, "density": 0.6},
+        "perc": {"level": 0.35, "style": "drive"}
+      }
+    },
+    {
+      "id": "buoy_dance",
+      "title": "Buoy Dance",
+      "mood": "carve left, carve right, the line tightening",
+      "tempo": 124, "root": 64, "mode": "dorian", "bars": 16, "seed": 109,
+      "progression": [0, 3, 0, 4, 0, 3, 6, 4],
+      "voices": {
+        "bass": {"level": 0.6, "pattern": "pulse"},
+        "arp": {"level": 0.6, "rate": 4, "rest": 0.06},
+        "melody": {"level": 0.42, "density": 0.55},
+        "perc": {"level": 0.32, "style": "drive"},
+        "surf": {"level": 0.15}
+      }
+    },
+    {
+      "id": "beneath",
+      "title": "Beneath",
+      "mood": "the green dark; pings and held breath",
+      "tempo": 56, "root": 50, "mode": "minor", "bars": 12, "seed": 110,
+      "progression": [0, 5, 3, 4, 0, 5],
+      "voices": {
+        "pad": {"level": 0.66, "detune": 0.45},
+        "arp": {"level": 0.3, "rate": 1, "rest": 0.3},
+        "melody": {"level": 0.3, "density": 0.25},
+        "surf": {"level": 0.35}
+      }
+    },
+    {
+      "id": "teeth_of_the_wind",
+      "title": "Teeth of the Wind",
+      "mood": "gusts with intent; counter-steer or swim",
+      "tempo": 116, "root": 55, "mode": "phrygian", "bars": 16, "seed": 111,
+      "progression": [0, 1, 0, 1, 0, 5, 1, 0],
+      "voices": {
+        "pad": {"level": 0.5, "detune": 0.55},
+        "bass": {"level": 0.62, "pattern": "drive"},
+        "arp": {"level": 0.4, "rate": 3, "rest": 0.15},
+        "perc": {"level": 0.4, "style": "storm"},
+        "surf": {"level": 0.4}
+      }
+    },
+    {
+      "id": "line_and_lure",
+      "title": "Line and Lure",
+      "mood": "patience with a hook in it",
+      "tempo": 78, "root": 60, "mode": "mixolydian", "bars": 12, "seed": 112,
+      "progression": [0, 4, 0, 6, 0, 4],
+      "voices": {
+        "pad": {"level": 0.45, "detune": 0.25},
+        "bass": {"level": 0.45, "pattern": "light"},
+        "arp": {"level": 0.38, "rate": 2, "rest": 0.2},
+        "melody": {"level": 0.45, "density": 0.4},
+        "surf": {"level": 0.3}
+      }
+    },
+    {
+      "id": "heave_to",
+      "title": "Heave To",
+      "mood": "a whistle on the water; urgent, hopeful",
+      "tempo": 108, "root": 57, "mode": "minor", "bars": 16, "seed": 113,
+      "progression": [0, 5, 2, 4, 0, 5, 3, 4],
+      "voices": {
+        "pad": {"level": 0.48, "detune": 0.35},
+        "bass": {"level": 0.55, "pattern": "pulse"},
+        "arp": {"level": 0.42, "rate": 2, "rest": 0.12},
+        "melody": {"level": 0.5, "density": 0.55},
+        "perc": {"level": 0.28, "style": "drive"},
+        "surf": {"level": 0.22}
+      }
+    },
+    {
+      "id": "warden",
+      "title": "The Reach Warden",
+      "mood": "the end of the reach stands up to meet you",
+      "tempo": 120, "root": 55, "mode": "minor", "bars": 16, "seed": 114,
+      "progression": [0, 0, 1, 4, 0, 5, 1, 4],
+      "voices": {
+        "pad": {"level": 0.55, "detune": 0.5},
+        "bass": {"level": 0.65, "pattern": "drive"},
+        "arp": {"level": 0.45, "rate": 4, "rest": 0.1},
+        "melody": {"level": 0.4, "density": 0.45},
+        "perc": {"level": 0.38, "style": "storm"},
+        "surf": {"level": 0.2}
+      }
+    },
+    {
+      "id": "undertow",
+      "title": "The Undertow",
+      "mood": "everyone's face at once; the ledger opened",
+      "tempo": 84, "root": 50, "mode": "phrygian", "bars": 20, "seed": 115,
+      "progression": [0, 1, 5, 0, 3, 1, 4, 0, 1, 4],
+      "voices": {
+        "pad": {"level": 0.7, "detune": 0.7},
+        "bass": {"level": 0.6, "pattern": "pulse"},
+        "arp": {"level": 0.4, "rate": 3, "rest": 0.18},
+        "melody": {"level": 0.42, "density": 0.4},
+        "perc": {"level": 0.35, "style": "storm"},
+        "surf": {"level": 0.5}
+      }
+    },
+    {
+      "id": "driftwood",
+      "title": "Driftwood",
+      "mood": "the shingle again; one more mark in the column",
+      "tempo": 58, "root": 53, "mode": "minor", "bars": 12, "seed": 116,
+      "progression": [0, 5, 3, 0, 4, 5],
+      "voices": {
+        "pad": {"level": 0.6, "detune": 0.3},
+        "melody": {"level": 0.4, "density": 0.3},
+        "surf": {"level": 0.4}
+      }
+    },
+    {
+      "id": "homecoming",
+      "title": "Homecoming",
+      "mood": "the bell buoy, the scales, lamplight on black water",
+      "tempo": 84, "root": 62, "mode": "major", "bars": 16, "seed": 117,
+      "progression": [0, 3, 4, 0, 5, 3, 4, 0],
+      "voices": {
+        "pad": {"level": 0.55, "detune": 0.3},
+        "bass": {"level": 0.45, "pattern": "light"},
+        "arp": {"level": 0.4, "rate": 2, "rest": 0.15},
+        "melody": {"level": 0.55, "density": 0.5},
+        "perc": {"level": 0.18, "style": "light"},
+        "surf": {"level": 0.25}
+      }
+    },
+    {
+      "id": "lanterns_lit",
+      "title": "Every Lantern Lit",
+      "mood": "the debt balanced; the Squall exhales nineteen years",
+      "tempo": 76, "root": 62, "mode": "lydian", "bars": 16, "seed": 118,
+      "progression": [0, 4, 5, 3, 0, 4, 1, 0],
+      "voices": {
+        "pad": {"level": 0.68, "detune": 0.4},
+        "bass": {"level": 0.4, "pattern": "light"},
+        "arp": {"level": 0.45, "rate": 2, "rest": 0.12},
+        "melody": {"level": 0.58, "density": 0.5},
+        "perc": {"level": 0.15, "style": "light"},
+        "surf": {"level": 0.3}
+      }
+    }
+  ]
+}

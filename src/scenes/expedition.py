@@ -66,6 +66,8 @@ class ExpeditionScene(Scene):
 
     def _present_row(self):
         self.mode = "row"
+        from core.music import REGION_TRACKS
+        self.game.music.play(REGION_TRACKS.get(self.run.region["id"]))
         row = self.run.current_row()
         if row[0]["type"] == "boss":
             self._begin_boss(row[0])
@@ -267,9 +269,10 @@ class ExpeditionScene(Scene):
 
         def start_fight():
             scene_cls = boss["scene"]
-            self.game.scenes.push(scene_cls(self.game, self.run, self._boss_done,
-                                            difficulty_mult=boss["mult"],
-                                            title=boss["title"]))
+            scene = scene_cls(self.game, self.run, self._boss_done,
+                              difficulty_mult=boss["mult"], title=boss["title"])
+            scene.music_track = boss.get("music")
+            self.game.scenes.push(scene)
         if not maybe_play(self.game, f"boss_{node['kind']}", run=self.run,
                           on_close=start_fight):
             self.speech.say(f"The end of the reach. {boss['title']} stands between you "

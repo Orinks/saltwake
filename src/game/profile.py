@@ -36,7 +36,8 @@ DEFAULT_PROFILE = {
         "salvage_lifetime": 0,
         "bosses_beaten": 0,
     },
-    "settings": {"speech_rate": 50, "audio_volume": 0.5},
+    "settings": {"speech_rate": 50, "audio_volume": 0.5,
+                 "music_volume": 0.35, "music_enabled": True},
 }
 
 

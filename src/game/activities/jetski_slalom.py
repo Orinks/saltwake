@@ -8,6 +8,7 @@ from game import boons as boons_mod
 class JetskiSlalomScene(ActivityScene):
     NAME = "Jet ski slalom"
     SKILL_KEY = "slalom_skill"
+    MUSIC = "buoy_dance"
     INTRO = ("A slalom line of buoys, each calling from the side you must cut around. "
              "The line starts easy and tightens. Three missed buoys and you wash out.")
     CONTROLS = "Left and right arrows carve around each buoy as it calls."

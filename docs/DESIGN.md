@@ -75,6 +75,22 @@ region. Content keys to all of them, so the same tavern visit yields new
 material as the player's history accumulates — the Hades trick, on a
 Failbetter engine.
 
+## The soundtrack
+
+Eighteen tracks, all procedural: `core/composer.py` renders each spec in
+`data/music.json` (tempo, root, mode, chord progression in scale degrees,
+and six voices — pad, bass, arp, melody, percussion, surf) to a seeded,
+deterministic stereo WAV. Specs are the source of truth; audio is a build
+artifact cached in `assets/music/` (gitignored). Region themes darken with
+depth (lydian Shallows → whole-tone Glass Squall), each activity has its
+own tempo and temperament, and the run endings get somber, warm, and
+triumphant pieces respectively.
+
+Accessibility rule for music: it is atmosphere only. Every piece of
+information the score hints at (region, danger, outcome) is also spoken,
+music defaults to a low mix under speech and cues, and F2/F3/F4 control it
+from anywhere without entering a menu.
+
 ## Extending the corpus
 
 Add a JSON file to `data/story/`. The integrity tests enforce: unique ids,

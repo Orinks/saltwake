@@ -39,6 +39,7 @@ class ActivityScene(Scene):
     SKILL_KEY = None          # e.g. "race_speed"; adds to player competence
     INTRO = ""                # spoken once at start
     CONTROLS = ""             # spoken with the intro and on H
+    MUSIC = None              # soundtrack id; bosses override via music_track
 
     def __init__(self, game, run, on_complete, difficulty_mult: float = 1.0):
         super().__init__(game)
@@ -68,6 +69,7 @@ class ActivityScene(Scene):
 
     # --- lifecycle ----------------------------------------------------------
     def on_enter(self):
+        self.game.music.play(getattr(self, "music_track", None) or self.MUSIC)
         self.speech.say(f"{self.NAME}. {self.INTRO}")
         self.speech.queue(f"{self.CONTROLS} Press Enter when ready. "
                           "During play: R repeats, T for status, Escape to abandon.")

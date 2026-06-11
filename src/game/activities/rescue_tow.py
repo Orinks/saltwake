@@ -8,6 +8,7 @@ from game.activities.base import ActivityScene, ActivityResult
 class RescueTowScene(ActivityScene):
     NAME = "Rescue"
     SKILL_KEY = "rescue_skill"
+    MUSIC = "heave_to"
     INTRO = ("A whistle on the water, somebody in trouble. First, home in: a call sounds "
              "from a direction, answer with that arrow, left, right, or up for dead ahead. "
              "Three good turns puts you alongside. Then the tow: keep the drifting tone "

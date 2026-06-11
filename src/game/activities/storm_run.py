@@ -7,6 +7,7 @@ from game.activities.cue_runner import CueRunner
 class StormRunScene(ActivityScene):
     NAME = "Storm crossing"
     SKILL_KEY = "storm_skill"
+    MUSIC = "teeth_of_the_wind"
     INTRO = ("A wall of weather between you and the far side. Gusts hit from the sides: "
              "steer INTO them, press the arrow opposite the gust. When a wave rises dead "
              "ahead, brace with the down arrow. Every mistake costs hull.")

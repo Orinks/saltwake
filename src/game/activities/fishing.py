@@ -8,6 +8,7 @@ from game.activities.base import ActivityScene, ActivityResult
 class FishingScene(ActivityScene):
     NAME = "Fishing"
     SKILL_KEY = "fishing_skill"
+    MUSIC = "line_and_lure"
     INTRO = ("Something heavy noses the bait. When the line sings high, the fish is tired: "
              "reel with space. When the tone drops low, it is running: hands off, or give "
              "line with the down arrow to ease the strain. Reel against a run and the line snaps.")

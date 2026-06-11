@@ -21,6 +21,7 @@ os.environ.setdefault("PYGAME_HIDE_SUPPORT_PROMPT", "hide")
 import pygame
 
 from core.audio import AudioManager, NullAudio
+from core.music import MusicManager, NullMusic
 from core.scenes import SceneManager
 from core.speech import Speech, NullSpeech
 from game import profile as profile_mod
@@ -28,11 +29,12 @@ from story.engine import StoryEngine
 
 
 class GameContext:
-    """Everything scenes need: speech, audio, profile, story, scene stack."""
+    """Everything scenes need: speech, audio, music, profile, story, scenes."""
 
-    def __init__(self, speech, audio, profile, story):
+    def __init__(self, speech, audio, music, profile, story):
         self.speech = speech
         self.audio = audio
+        self.music = music
         self.profile = profile
         self.story = story
         self.scenes = SceneManager()
@@ -42,15 +44,20 @@ class GameContext:
 
 def build_context(no_speech: bool = False, silent: bool = False) -> GameContext:
     profile = profile_mod.load_or_create()
+    settings = profile["settings"]
     if silent:
         speech = NullSpeech()
         audio = NullAudio()
+        music = NullMusic()
     else:
         speech = Speech(enabled=not no_speech)
-        audio = AudioManager(volume=profile["settings"].get("audio_volume", 0.5))
-        speech.adjust_rate(profile["settings"].get("speech_rate", 50) - speech.rate)
+        audio = AudioManager(volume=settings.get("audio_volume", 0.5))
+        music = MusicManager(volume=settings.get("music_volume", 0.35),
+                             enabled=settings.get("music_enabled", True)
+                             and audio.enabled)
+        speech.adjust_rate(settings.get("speech_rate", 50) - speech.rate)
     story = StoryEngine()
-    return GameContext(speech, audio, profile, story)
+    return GameContext(speech, audio, music, profile, story)
 
 
 def self_test() -> int:
@@ -117,6 +124,15 @@ def main() -> int:
                 game.speech.say(f"Speech rate {game.speech.adjust_rate(5)}.")
             elif event.type == pygame.KEYDOWN and event.key == pygame.K_PAGEDOWN:
                 game.speech.say(f"Speech rate {game.speech.adjust_rate(-5)}.")
+            elif event.type == pygame.KEYDOWN and event.key == pygame.K_F2:
+                on = game.music.toggle()
+                game.profile["settings"]["music_enabled"] = on
+                game.speech.say(f"Music {'on' if on else 'off'}.")
+            elif event.type == pygame.KEYDOWN and event.key in (pygame.K_F3, pygame.K_F4):
+                delta = -0.05 if event.key == pygame.K_F3 else 0.05
+                vol = game.music.set_volume(game.music.volume + delta)
+                game.profile["settings"]["music_volume"] = round(vol, 2)
+                game.speech.say(f"Music volume {int(vol * 100)} percent.")
             elif scene:
                 scene.handle_event(event)
         scene = game.scenes.current

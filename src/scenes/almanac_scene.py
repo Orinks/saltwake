@@ -26,6 +26,7 @@ class AlmanacScene(Scene):
         self.page_index = 0
 
     def on_enter(self):
+        self.game.music.play("quiet_lines")
         self._build_menu()
 
     def _build_menu(self):

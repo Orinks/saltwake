@@ -3,6 +3,7 @@ __pycache__/
 venv/
 .venv/
 saves/
+assets/music/
 .pytest_cache/
 dist/
 build/

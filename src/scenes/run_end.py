@@ -20,6 +20,9 @@ class RunEndScene(Scene):
         self.summary_spoken = False
 
     def on_enter(self):
+        track = {"wreck": "driftwood", "victory": "lanterns_lit"}.get(
+            self.run.outcome, "homecoming")
+        self.game.music.play(track)
         if not self.summary_spoken:
             self._settle()
             self.summary_spoken = True

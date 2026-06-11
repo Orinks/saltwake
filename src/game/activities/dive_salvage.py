@@ -15,6 +15,7 @@ from game import boons as boons_mod
 class DiveSalvageScene(ActivityScene):
     NAME = "Dive salvage"
     SKILL_KEY = "dive_skill"
+    MUSIC = "beneath"
     INTRO = ("Something worth having sits on the bottom. Sonar pings mark it: the side "
              "the ping leans is the way to swim, and a deeper voice means it lies below "
              "you. Get on top of it and grab it, then get back to air before your breath runs out.")

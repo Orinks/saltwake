@@ -7,6 +7,7 @@ from game.activities.cue_runner import CueRunner
 class BoatRaceScene(ActivityScene):
     NAME = "Boat race"
     SKILL_KEY = "race_speed"
+    MUSIC = "open_throttle"
     INTRO = ("A course of buoy gates is laid out ahead. Each gate calls from its side of "
              "the water. Hit the matching arrow, left, right, or up for dead ahead, "
              "before the gate passes. Clean gates build speed.")
