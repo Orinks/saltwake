@@ -68,7 +68,8 @@ class RunEndScene(Scene):
         else:
             opening = "You ride the tide home with the catch lashed down and the light failing kindly."
         level = profile_mod.renown_level(self.game.profile)
-        self.speech.say(
+        # Queue: the line that ended the run may still be speaking.
+        self.speech.queue(
             f"{opening} Tide {self.game.profile['tides']} is over. "
             f"Salvage banked: {self.banked} pearls. Renown gained: {self.renown_gained}, "
             f"renown level {level}. "

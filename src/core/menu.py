@@ -37,12 +37,15 @@ class AccessibleMenu:
         self.escapable = escapable
         self.index = 0
 
-    def open(self) -> None:
+    def open(self, interrupt: bool = True) -> None:
+        """Announce the menu. Pass ``interrupt=False`` when speech was just
+        spoken (a purchase result, an NPC line) so the announcement queues
+        behind it instead of cutting it off."""
         parts = [self.title]
         if self.intro:
             parts.append(self.intro)
         parts.append(f"{len(self.items)} options. Use up and down arrows, Enter to select.")
-        self.speech.say(" ".join(parts))
+        self.speech.say(" ".join(parts), interrupt=interrupt)
         if self.items:
             self.speech.queue(self._item_text())
 
@@ -51,9 +54,9 @@ class AccessibleMenu:
         suffix = "" if item.enabled else ", unavailable"
         return f"{item.speak_label}{suffix}. {self.index + 1} of {len(self.items)}."
 
-    def speak_current(self) -> None:
+    def speak_current(self, interrupt: bool = True) -> None:
         if self.items:
-            self.speech.say(self._item_text())
+            self.speech.say(self._item_text(), interrupt=interrupt)
 
     def _move(self, delta: int) -> None:
         if not self.items:

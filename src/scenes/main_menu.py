@@ -34,7 +34,9 @@ class MainMenuScene(Scene):
             "Saltwake.", items, self.speech, self.audio,
             intro="A watersports roguelite where the sea remembers.",
             escapable=False)
-        self.menu.open()
+        # Never interrupt: on resume the popped scene may have just spoken
+        # its closing line (for example the save confirmation from the quay).
+        self.menu.open(interrupt=False)
         cls = MainMenuScene
         if updater.is_frozen() and cls._update_checker is None:
             cls._update_checker = UpdateChecker(self.game.profile["settings"])

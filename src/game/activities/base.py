@@ -70,7 +70,8 @@ class ActivityScene(Scene):
     # --- lifecycle ----------------------------------------------------------
     def on_enter(self):
         self.game.music.play(getattr(self, "music_track", None) or self.MUSIC)
-        self.speech.say(f"{self.NAME}. {self.INTRO}")
+        # Queue: a boss intro line may still be speaking when the fight starts.
+        self.speech.say(f"{self.NAME}. {self.INTRO}", interrupt=False)
         self.speech.queue(f"{self.CONTROLS} Press Enter when ready. "
                           "During play: R repeats, T for status, Escape to abandon.")
 

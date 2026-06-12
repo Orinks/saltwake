@@ -61,7 +61,8 @@ class ExpeditionScene(Scene):
             region = self.run.region
             parts.append(f"{region['name']}. {region['description']}")
         parts.append(describe_weather(self.run.sea_state))
-        self.speech.say(" ".join(parts))
+        # Queue: the cast-off announcement or embark beat may still be talking.
+        self.speech.say(" ".join(parts), interrupt=False)
         self._present_row()
 
     def _present_row(self):
@@ -78,7 +79,8 @@ class ExpeditionScene(Scene):
         self.menu = AccessibleMenu(
             f"Leg {self.run.row_index + 1} of {len(self.run.chart)}. Choose a heading.",
             items, self.speech, self.audio, escapable=False)
-        self.menu.open()
+        # Callers always speak first (region, weather, event outcomes).
+        self.menu.open(interrupt=False)
 
     def handle_event(self, event):
         if event.type != pygame.KEYDOWN:
@@ -103,6 +105,8 @@ class ExpeditionScene(Scene):
                 self.menu = None
                 if result == "press_on":
                     self.run.advance_region()
+                    # on_enter no-ops unless the scene is in row mode.
+                    self.mode = "row"
                     self.on_enter()
                 else:
                     self._end_run("homecoming")
@@ -145,7 +149,7 @@ class ExpeditionScene(Scene):
         self._after_node()
 
     # --- beacon -----------------------------------------------------------------
-    def _begin_beacon(self):
+    def _begin_beacon(self, interrupt: bool = True):
         self.mode = "beacon"
         items = [
             MenuItem("Rest a while", "rest", "Recover grit."),
@@ -157,7 +161,7 @@ class ExpeditionScene(Scene):
         ]
         self.menu = AccessibleMenu("A friendly beacon. Lamplit, sheltered, briefly safe.",
                                    items, self.speech, self.audio, escapable=False)
-        self.menu.open()
+        self.menu.open(interrupt=interrupt)
 
     def _beacon_choice(self, choice):
         if choice == "rest":
@@ -180,14 +184,14 @@ class ExpeditionScene(Scene):
                 return
             self._after_node()
             return
-        self.menu.speak_current()
+        self.menu.speak_current(interrupt=False)
 
     def _begin_tiding(self):
         offers = boons_mod.grant_random(self.run, self.run.rng,
                                         rarity_bias=self.run.region.get("tier", 0) / 3)
         if not offers:
             self.speech.say("The water has nothing more to offer this tide.")
-            self._begin_beacon()
+            self._begin_beacon(interrupt=False)
             return
         self.mode = "tiding"
         self._offers = offers
@@ -212,7 +216,7 @@ class ExpeditionScene(Scene):
             self.speech.say(f"{boon['name']}. {boon['description']}")
         else:
             self.speech.say("You let the offer sink. Somewhere below, something shrugs.")
-        self._begin_beacon()
+        self._begin_beacon(interrupt=False)
 
     # --- hazard -------------------------------------------------------------------
     def _begin_hazard(self):
@@ -320,7 +324,7 @@ class ExpeditionScene(Scene):
             f"The reach is yours. Salvage aboard: {self.run.salvage}. "
             f"Hull {self.run.hull} of {self.run.hull_max}.",
             items, self.speech, self.audio, escapable=False)
-        self.menu.open()
+        self.menu.open(interrupt=False)
 
     # --- transitions --------------------------------------------------------------------
     def _after_node(self):
@@ -328,12 +332,13 @@ class ExpeditionScene(Scene):
             self._end_run("wreck")
             return
         if self.run.grit <= 0:
-            self.speech.say("Your arms are gone and the horizon will not argue. "
-                            "Exhaustion makes the choice for you.")
+            self.speech.queue("Your arms are gone and the horizon will not argue. "
+                              "Exhaustion makes the choice for you.")
             self._end_run("homecoming", exhausted=True)
             return
         self.run.advance_row()
-        self.speech.say(describe_weather(self.run.sea_state))
+        # Queue behind the node's outcome text instead of cutting it off.
+        self.speech.queue(describe_weather(self.run.sea_state))
         self._present_row()
 
     def _end_run(self, outcome: str, exhausted: bool = False):

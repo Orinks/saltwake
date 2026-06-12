@@ -2,6 +2,25 @@
 
 ## Unreleased
 
+### Fixed
+- **Story choice responses are no longer cut off.** Picking a choice used
+  to queue its response and immediately return to the menu underneath,
+  whose announcement interrupted the response before it was heard —
+  every choice without a follow-up storylet appeared to respond silently.
+  Responses are now read like story pages: Enter or down arrow advances,
+  up arrow re-reads, R repeats, Escape skips, and the scene only closes
+  after the last line.
+- **Speech no longer talks over itself across the game.** Menus that
+  reopen right after an announcement (shipyard purchases, chandlery,
+  tavern small talk, beacon rest and patch, Tiding picks, the save
+  confirmation) now queue behind it instead of cutting it off. Sea event
+  outcomes, region descriptions, weather reports, boss intros, and the
+  end-of-tide summary are likewise read in full.
+- **Pressing on into the next region no longer hangs the game.** Winning
+  a reach warden and choosing to continue left the expedition without a
+  menu; the new region now announces itself and presents its first
+  heading.
+
 ### Added
 - **Auto-updater.** The packaged game now checks GitHub for new releases
   at the title menu. When one is found, a fully spoken prompt offers

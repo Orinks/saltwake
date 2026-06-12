@@ -50,6 +50,8 @@ class HarborScene(Scene):
 
     def on_resume(self):
         # Rebuild whichever menu the player was in when a sub-scene popped.
+        # Never interrupt: the popped scene may have just spoken its
+        # closing line (a storylet response, a saved-game confirmation).
         rebuild = {
             "main": self._main_menu,
             "tavern": self._tavern_menu,
@@ -57,9 +59,9 @@ class HarborScene(Scene):
             "chandlery": self._chandlery_menu,
         }.get(self.mode)
         if rebuild:
-            rebuild()
+            rebuild(interrupt=False)
 
-    def _main_menu(self):
+    def _main_menu(self, interrupt: bool = True):
         self.mode = "main"
         self.game.music.play("greywater_quay")
         profile = self.game.profile
@@ -92,7 +94,7 @@ class HarborScene(Scene):
             intro=(f"Pearls: {profile['pearls']}. Renown level {level}. "
                    f"Vessel: {vessel}."),
             escapable=False)
-        self.menu.open()
+        self.menu.open(interrupt=interrupt)
 
     def _active_vessel(self) -> str:
         vid = self.game.profile.get("active_vessel", "skiff")
@@ -129,13 +131,13 @@ class HarborScene(Scene):
             if not maybe_play(self.game, "talk_odessa"):
                 self.speech.say("Odessa glances up from the ledger. \"Nothing new on my desk. "
                                 "Go make something happen, Tideborn.\"")
-                self._main_menu()
+                self._main_menu(interrupt=False)
         elif choice == "lighthouse":
             self.menu = None
             if not maybe_play(self.game, "lighthouse"):
                 self.speech.say("The lamp turns. The Keeper does not. \"Come back when the "
                                 "sea has said something worth repeating.\"")
-                self._main_menu()
+                self._main_menu(interrupt=False)
         elif choice == "shipyard":
             self._shipyard_menu()
         elif choice == "chandlery":
@@ -157,14 +159,14 @@ class HarborScene(Scene):
             self.game.scenes.pop()  # back to the title menu
 
     # --- tavern ----------------------------------------------------------------
-    def _tavern_menu(self):
+    def _tavern_menu(self, interrupt: bool = True):
         self.mode = "tavern"
         items = [MenuItem(label, value=npc_id) for npc_id, label in NPCS]
         items.append(MenuItem("Back to the quay", value="back"))
         self.menu = AccessibleMenu(
             "The Brinehouse. Low beams, lamp smoke, the day's arguments in progress.",
             items, self.speech, self.audio)
-        self.menu.open()
+        self.menu.open(interrupt=interrupt)
 
     def _tavern_choice(self, choice):
         if choice == "back":
@@ -182,7 +184,7 @@ class HarborScene(Scene):
                 "sefton": "Sefton ties a knot, unties it, ties it better. \"Sea's holding its breath. Bad sign or no sign at all.\"",
             }
             self.speech.say(fallbacks.get(npc_id, "They have nothing new to say, yet."))
-            self._tavern_menu()
+            self._tavern_menu(interrupt=False)
 
     # --- shipyard ----------------------------------------------------------------
     def _vessel_available(self, vid: str) -> tuple[bool, str]:
@@ -194,7 +196,7 @@ class HarborScene(Scene):
             return False, "The story has not unlocked this hull yet."
         return True, ""
 
-    def _shipyard_menu(self):
+    def _shipyard_menu(self, interrupt: bool = True):
         self.mode = "shipyard"
         profile = self.game.profile
         active = self._active_vessel()
@@ -217,7 +219,7 @@ class HarborScene(Scene):
         self.menu = AccessibleMenu(
             f"The shipyard. Pearls: {profile['pearls']}. Press H on any hull for details.",
             items, self.speech, self.audio)
-        self.menu.open()
+        self.menu.open(interrupt=interrupt)
 
     def _shipyard_choice(self, choice):
         action, vid = choice
@@ -238,10 +240,10 @@ class HarborScene(Scene):
             self.audio.big_success()
             self.speech.say(f"Sold. {vessel['name']} is yours and waiting at the dock. "
                             f"{profile['pearls']} pearls remain.")
-        self._shipyard_menu()
+        self._shipyard_menu(interrupt=False)
 
     # --- chandlery ----------------------------------------------------------------
-    def _chandlery_menu(self):
+    def _chandlery_menu(self, interrupt: bool = True):
         self.mode = "chandlery"
         profile = self.game.profile
         items = []
@@ -259,7 +261,7 @@ class HarborScene(Scene):
             f"Sefton's chandlery. Rope, tar, and opinions. Pearls: {profile['pearls']}. "
             "Press H for what each item does.",
             items, self.speech, self.audio)
-        self.menu.open()
+        self.menu.open(interrupt=interrupt)
 
     def _chandlery_choice(self, choice):
         action, gid = choice
@@ -270,7 +272,7 @@ class HarborScene(Scene):
             self.menu = None
             if not maybe_play(self.game, "talk_sefton"):
                 self.speech.say("Sefton shrugs. \"Stock's what you hear. Sea's what you get.\"")
-                self._chandlery_menu()
+                self._chandlery_menu(interrupt=False)
             return
         if action == "buy":
             profile = self.game.profile
@@ -281,7 +283,7 @@ class HarborScene(Scene):
             self.audio.coin()
             self.speech.say(f"{item['name']} bought and stowed. It works on every tide from "
                             f"now on. {profile['pearls']} pearls remain.")
-        self._chandlery_menu()
+        self._chandlery_menu(interrupt=False)
 
     # --- chronicle ---------------------------------------------------------------------
     def _chronicle(self):
