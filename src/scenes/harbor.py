@@ -83,6 +83,11 @@ class HarborScene(Scene):
             MenuItem("The Drowned Almanac", "almanac",
                      "Read the recovered pages of the book the sea is writing about you."),
             MenuItem("Chronicle", "chronicle", "Your record across every tide."),
+            MenuItem("Ties", "ties", "Where you stand with the people of the quay."),
+            MenuItem("Memories", "memories",
+                     "Go back through the story you've heard, teller by teller."),
+            MenuItem("Achievements", "achievements",
+                     "The coast's marks: made, waiting, and secret."),
             MenuItem("Settings", "settings", "Speech rate, audio, difficulty, save."),
             MenuItem("Leave the quay and rest", "quit",
                      "Saves and returns to the title menu."),
@@ -95,6 +100,10 @@ class HarborScene(Scene):
                    f"Vessel: {vessel}."),
             escapable=False)
         self.menu.open(interrupt=interrupt)
+        # Catch-all for unlocks earned anywhere speech was too busy: queued,
+        # so it reads after the menu announcement.
+        from game import achievements
+        achievements.announce(self.game)
 
     def _active_vessel(self) -> str:
         vid = self.game.profile.get("active_vessel", "skiff")
@@ -148,6 +157,18 @@ class HarborScene(Scene):
             self.game.scenes.push(AlmanacScene(self.game))
         elif choice == "chronicle":
             self._chronicle()
+        elif choice == "ties":
+            from scenes.relationships_scene import RelationshipsScene
+            self.menu = None
+            self.game.scenes.push(RelationshipsScene(self.game))
+        elif choice == "memories":
+            from scenes.memories_scene import MemoriesScene
+            self.menu = None
+            self.game.scenes.push(MemoriesScene(self.game))
+        elif choice == "achievements":
+            from scenes.achievements_scene import AchievementsScene
+            self.menu = None
+            self.game.scenes.push(AchievementsScene(self.game))
         elif choice == "settings":
             from scenes.settings_scene import SettingsScene
             self.menu = None
@@ -161,7 +182,10 @@ class HarborScene(Scene):
     # --- tavern ----------------------------------------------------------------
     def _tavern_menu(self, interrupt: bool = True):
         self.mode = "tavern"
-        items = [MenuItem(label, value=npc_id) for npc_id, label in NPCS]
+        crowd = list(NPCS)
+        if profile_mod.get_quality(self.game.profile, "liss_saved"):
+            crowd.append(("liss", "Liss, the lamp keeper's girl, holding court"))
+        items = [MenuItem(label, value=npc_id) for npc_id, label in crowd]
         items.append(MenuItem("Back to the quay", value="back"))
         self.menu = AccessibleMenu(
             "The Brinehouse. Low beams, lamp smoke, the day's arguments in progress.",
@@ -182,6 +206,7 @@ class HarborScene(Scene):
                 "nereus": "Nereus doesn't look up from his charts. \"Unless you've brought me a page, I am professionally asleep.\"",
                 "cass": "Cass looks you over like a race she's already won. \"Rest day? Didn't think you believed in those.\"",
                 "sefton": "Sefton ties a knot, unties it, ties it better. \"Sea's holding its breath. Bad sign or no sign at all.\"",
+                "liss": "Liss is doing tide arithmetic in chalk and defending it from the rag. \"Homework,\" she says darkly, the way other sailors say 'weather.' \"A keeper's girl logs her water. I'm logging.\" The chalk squeaks with rigor.",
             }
             self.speech.say(fallbacks.get(npc_id, "They have nothing new to say, yet."))
             self._tavern_menu(interrupt=False)

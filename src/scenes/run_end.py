@@ -53,6 +53,8 @@ class RunEndScene(Scene):
         profile["renown"] += renown
         self.renown_gained = renown
         profile["stats"]["salvage_lifetime"] += run.salvage
+        from game import achievements
+        achievements.announce(self.game)  # before save, so unlocks persist
         profile_mod.save(profile)
 
     def _speak_summary(self):

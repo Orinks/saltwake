@@ -70,6 +70,34 @@
       "pages": [
         "Nereus dives again, shallow and careful, two mornings a week, and the slate tally is climbing past four hundred and ten. He debriefs you like a fellow professional now, trading layer reports and wreck gossip, and his table holds two loupes, because he assumes, correctly, that sooner or later you will want to read the pages yourself rather than wait for the post."
       ]
+    },
+    {
+      "id": "nereus_timetable",
+      "arc": "nereus",
+      "where": "talk_nereus",
+      "priority": 37,
+      "requires": [{"q": "met_nereus", "eq": 1}, {"q": "affinity_nereus", "gte": 2}, {"q": "dives_completed", "gte": 2}],
+      "speaker": "Nereus",
+      "title": "The dawn run, printed.",
+      "pages": [
+        "Nereus has something rare on the table tonight: not handwriting, print. A ferry timetable, typeset, official, the Lantern Jane's summer schedule, salvaged whole in its wax like a fly in amber. 'Do you know how few printed pages the sea has posted?' he says. 'Nine. Nine, out of hundreds. The sea does not much care for print, Tideborn. Print is what a town says to strangers. The sea has been sending us what the town said to itself.'",
+        "But this page it kept, and when he walks you through it you see why: the margins. The neat printed grid of crossings is annotated in the quick certain scrawl until the print is nearly an afterthought, fares waived and noted, a dawn run added, a crossing held eleven minutes for a late wedding party, and beside the last sailing of the day, in the smallest writing on the page: 'Never miss this one. The lamp waits up.' Nereus rewraps it with his surgeon's tenderness. 'A schedule,' he says, 'is a promise typeset. I have read every page the sea has sent, and I tell you professionally: this town believed its boat the way other towns believe the tide tables. Take it. It should live with whoever keeps the promise now.'"
+      ],
+      "effects": {"add": {"affinity_nereus": 1}, "almanac": "page_ferry_timetable"}
+    },
+    {
+      "id": "nereus_postgame",
+      "arc": "nereus",
+      "where": "talk_nereus",
+      "priority": 34,
+      "requires": [{"q": "liss_saved", "eq": 1}],
+      "speaker": "Nereus",
+      "title": "Greywater, living.",
+      "pages": [
+        "The clean table did not stay clean, and you are relieved to see it: Nereus has a new book open, blank pages, good paper, and across the cover in his careful archivist's hand: GREYWATER, LIVING. VOLUME ONE. 'I spent twenty years reading a drowned town's mornings,' he says, 'and it taught me exactly one thing worth a book: nobody writes the mornings down while they're having them. So.' He taps the page. 'I interview the quay now. Mirabel gave me the history of the stove, which has OPINIONS, it turns out, going back three landladies. Sefton lied to me about knots for two hours, magnificently. The bait boy's war with the gulls runs to four pages and I have had to open a file.'",
+        "He dips his pen and looks at you with the sudden total attention of the heron he has always been. 'Entry the first, though, I saved. Sit down, captain. Start where you like. The shingle, the key, the first tide out, I'll keep up.' And you realize, as the pen starts to move, that the sea kept its records of you for nineteen years, and now the land intends to keep its own, and between the two ledgers you are, for the first time in either life, thoroughly written down."
+      ],
+      "effects": {"set": {"nereus_new_book": 1}, "add": {"affinity_nereus": 1}}
     }
   ]
 }

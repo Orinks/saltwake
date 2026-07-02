@@ -128,9 +128,29 @@ class ExpeditionScene(Scene):
         elif kind == "hazard":
             self._begin_hazard()
 
+    # Chance of a loose Almanac page riding along with a successful haul.
+    PAGE_CHANCES = {"dives_completed": 0.35, "fish_caught": 0.2}
+
+    def _maybe_loose_page(self, chance: float):
+        """Loose pages surface once Nereus has taught you to notice them."""
+        if not profile_mod.get_quality(self.game.profile, "met_nereus"):
+            return
+        if self.run.rng.random() >= chance:
+            return
+        from game import almanac
+        page = almanac.draw_loose(self.game.profile, self.run.rng)
+        if page is not None:
+            self.audio.coin()
+            self.speech.queue("And something else, wax-sealed and bone dry: "
+                              f"a page for the Drowned Almanac. {page['title']}.")
+
     def _activity_done(self, result):
+        from game import achievements
         self._award(result.renown, result.stat)
         self.run.log.append(result.headline)
+        if result.success:
+            self._maybe_loose_page(self.PAGE_CHANCES.get(result.stat, 0.0))
+        achievements.announce(self.game)
         self._after_node()
 
     def _generic_event(self):
@@ -146,6 +166,7 @@ class ExpeditionScene(Scene):
         self.audio.coin()
         self.speech.say(f"A drifting cache, lashed to a pallet and half sunk. "
                         f"You winch it aboard. {amount} salvage.")
+        self._maybe_loose_page(0.15)
         self._after_node()
 
     # --- beacon -----------------------------------------------------------------

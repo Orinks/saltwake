@@ -22,6 +22,7 @@ DEFAULT_PROFILE = {
     "qualities": {},
     "seen_storylets": {},
     "almanac": [],
+    "achievements": {},
     "unlocked_vessels": ["skiff"],
     "owned_gear": [],
     "unlocked_regions": ["shallows"],
@@ -55,7 +56,8 @@ def load_or_create() -> dict:
     # Backfill any keys added since the save was written.
     merged = new_profile()
     for key, value in data.items():
-        if key in ("stats", "settings", "qualities", "seen_storylets") and isinstance(value, dict):
+        if key in ("stats", "settings", "qualities", "seen_storylets",
+                   "achievements") and isinstance(value, dict):
             merged[key].update(value)
         else:
             merged[key] = value

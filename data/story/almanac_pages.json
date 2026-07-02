@@ -1,7 +1,35 @@
 {
+  "volumes": [
+    {
+      "id": "town",
+      "title": "Volume one: The Town",
+      "description": "Maren's Hollow as it lived: markets, school, quarrels, customs."
+    },
+    {
+      "id": "ferry",
+      "title": "Volume two: The Ferry",
+      "description": "The Lantern Jane, her captain, her crew, and her promises."
+    },
+    {
+      "id": "squall",
+      "title": "Volume three: The Squall Year",
+      "description": "The night of the Glass Squall and the year that followed."
+    },
+    {
+      "id": "coast",
+      "title": "Volume four: The Coast",
+      "description": "Beacons, keepers, floating markets, and the sea's older customs."
+    },
+    {
+      "id": "mornings",
+      "title": "Volume five: The New Mornings",
+      "description": "Living pages. The post resumed, forward addresses only."
+    }
+  ],
   "pages": [
     {
       "id": "page_market_day",
+      "volume": "town",
       "title": "Market day in Maren's Hollow",
       "text": [
         "From a notice board, hand-lettered, the corner stamped with the town seal of Maren's Hollow: a lantern over a wave.",
@@ -11,6 +39,7 @@
     },
     {
       "id": "page_school_tides",
+      "volume": "town",
       "title": "The children's tide journal",
       "text": [
         "A ruled page from a school exercise book, the entries in six different young hands, kept with ferocious professionalism.",
@@ -21,6 +50,7 @@
     },
     {
       "id": "page_squall_eve",
+      "volume": "squall",
       "title": "The evening before",
       "text": [
         "A letter, unfinished, the ink hurried at the end. The hand is a grown woman's, steady and used to lists.",
@@ -32,6 +62,7 @@
     },
     {
       "id": "page_keepers_log",
+      "volume": "squall",
       "title": "From the lighthouse registry",
       "text": [
         "The official light registry of the Greywater headland lamp, the entries in a tall upright hand that does not waste motion.",
@@ -43,6 +74,7 @@
     },
     {
       "id": "page_lamp_registry",
+      "volume": "squall",
       "title": "The night of the small lamps",
       "text": [
         "A circular from the coastal lights authority, the bureaucratic calm of it stretched thin over something it has no forms for.",
@@ -52,6 +84,7 @@
     },
     {
       "id": "page_dry_shelf",
+      "volume": "coast",
       "title": "The dry shelf custom",
       "text": [
         "A page in many hands, the standing log of a beacon's dry shelf, where what the sea returns is kept a year and a day against its owner's asking.",
@@ -62,6 +95,7 @@
     },
     {
       "id": "page_jane_manifest",
+      "volume": "ferry",
       "title": "The Lantern Jane's last manifest",
       "text": [
         "The ferry's own log, raised with her from the trench, the seawater stopped at the page's edge as if it had signed an agreement.",
@@ -78,6 +112,7 @@
     },
     {
       "id": "page_to_the_captain",
+      "volume": "ferry",
       "title": "The last page, addressed to you",
       "text": [
         "Wax-sealed, the final page the sea ever posted, addressed in your own hand: TO THE CAPTAIN, WHEN HE IS READY.",
@@ -85,6 +120,497 @@
         "So. To the man who washes up on some future shingle with my hands and no memory: I am not sorry. You will want me to be sorry, on the nights the debt feels heavy. I am not. We counted thirty-one up the line and every one of them was worth the wheelhouse, the boat, the name, and the body, and the girl off the rail at the harbor mouth is worth the rest of it, and you know this, because you are me, and we did the arithmetic together, and we have NEVER once been wrong about arithmetic.",
         "Finish the run. Mind the second layer, the cold's a liar there. And when you have her aboard and the Squall lets out its breath, do the thing we always did at the end of a hard crossing. Ring the bell once for the harbor, once for the boat, and once, quietly, for the water, which keeps what it loves, and returns what it trusts, and has trusted us, you and me, with the longest run a captain ever logged.",
         "Boards dry. Lines free. Welcome home. — Cpt."
+      ]
+    },
+    {
+      "id": "page_ferry_timetable",
+      "volume": "ferry",
+      "title": "The Lantern Jane's summer timetable",
+      "text": [
+        "A printed timetable, typeset at some coastal jobbing press, the grid of crossings nearly lost under nineteen years of marginalia in the quick certain scrawl.",
+        "MAREN'S HOLLOW AND GREYWATER QUAY, SUMMER SAILINGS, FERRY LANTERN JANE. First crossing at the dawn bell, added this season for the oyster crews, in the margin: 'They asked in March. It's June. Log the delay as the harbor board's, not mine.' Fares as posted, children carried free, in the margin, itemized with care: 'Also free: the schoolteacher on exam days, anyone carrying a fiddle if they'll play it, all brides, all mourners, and Mrs. Pell on Thursdays for reasons the wheelhouse declines to enter into the record.'",
+        "Beside the mid-day crossing: 'Held eleven minutes on the 14th for the Attmore wedding party. The sea was consulted and did not object. The harbor clock and I have agreed to differ.' Beside the last sailing of the day, in the smallest writing on the page: 'Never miss this one. The lamp waits up.'",
+        "At the foot, where the printer set THE COMPANY THANKS THE PUBLIC FOR ITS CUSTOM, the scrawl has crossed out THE PUBLIC and written above it, pressed hard: THE TOWN. The company thanks the town. It was never custom. It was a promise, typeset."
+      ]
+    },
+    {
+      "id": "page_lamp_locker",
+      "volume": "ferry",
+      "title": "The lamp locker's standing orders",
+      "text": [
+        "A card, taped inside the lid of a small locker under the Lantern Jane's wheelhouse step, dry as the day it was written. The hand is the quick certain scrawl, taking, for once, its time.",
+        "STANDING ORDERS, LAMP LOCKER, FERRY LANTERN JANE. One: this locker belongs to the lamp keeper's girl, aged eight at the time of this writing and expected to dispute the age in the margin. In the margin, in a child's careful capitals: NINE NOW. KEEP THE LOG PROPERLY.",
+        "Two: the lantern rides in its cradle on every crossing, lit from the boat's own oil, because a light that helps should never have to ask. Three: the toffee tin is hers, the photograph is mine, the arrangement is final and has been ratified by the wheelhouse, the galley, and a show of hands at the Hollow's harbor steps. Four: in weather, she goes below, the lantern stays in the cradle, and neither of them argues. This order has never once been successfully enforced and is retained for the record.",
+        "Five, and this one the whole boat holds to: LAMP OIL FIRST. TOFFEE AFTER. HER LIGHT RIDES HOME, WHATEVER ELSE SWIMS. Signed, Cpt., LANTERN JANE. Witnessed, in the careful capitals: L., LAMP KEEPER. SENIOR."
+      ]
+    },
+    {
+      "id": "page_fiddle_claimed",
+      "volume": "coast",
+      "title": "The dry shelf, discharged",
+      "text": [
+        "A page in many hands, the standing log of a beacon's dry shelf, the entries suddenly close together after nineteen years of patience.",
+        "DISCHARGED: one sextant, to a son with his father's squint. He held it to the light and read the beacon's own position off the evening star, first try. The instrument is in working order. So, we judge, is the family.",
+        "DISCHARGED: one doll, to two sisters, by solemn agreement to alternate custody at the season's turn. The agreement was negotiated on this station and witnessed by the keeper, the relief keeper, and the Admiral, who attended without being invited, as is his practice.",
+        "DISCHARGED: one fiddle, cased, strings true, to a granddaughter up from the south coast. She played it before she claimed it, one tune, the old crossing song they used to sing on the ferry run, and the keeper's official log for that hour reads only: LIGHT BURNING. WEATHER FAIR. WORK SUSPENDED, ALL HANDS LISTENING.",
+        "REMAINING IN SERVICE: one gull, blurred in the official photograph, rank of Admiral, retained by unanimous vote of the relief crews. Some things the sea returned. Some things it issued. The distinction is above this station's pay grade, and the shelf, for the first time in nineteen years, is dusted and bare and ready for ordinary weather."
+      ]
+    },
+    {
+      "id": "page_first_morning",
+      "volume": "mornings",
+      "title": "The new tide journal, day one",
+      "text": [
+        "A page of school-ruled paper, copied and sealed in fresh wax by a sea that has apparently decided the collection continues. The original hangs in the Greywater schoolroom.",
+        "GREYWATER QUAY TIDE JOURNAL, VOLUME ONE, DAY ONE. Kept by the school, supervised by the harbor, inspected without anyone asking her to by L., LAMP KEEPER, SENIOR, APPRENTICE CAPTAIN. Low water at the second bell. Weather fair, wind northwest, one committee member claims she smelled a storm and has been overruled but her theory is retained, because that is the correct procedure for theories.",
+        "The committee has voted on the following and it is recorded: the moon does the tides, whales remain a theory in good standing, the bait boy's gull is not a member, and the captain's boat came home at slack water riding low, which the committee finds is the best kind of low. Bell seniority has been explained to the new members. It is real. It is recorded.",
+        "At the foot of the page, in the supervising hand, careful capitals leaning, just slightly, into the wind of their own speed, the way an inherited thing leans: EVERYTHING GETS WRITTEN DOWN. EVERYTHING GETS MET AT THE DOCK. SIGN YOUR WORK. And every entry on the page is signed, every one, because the sea comes looking for missing pages, and this town, of all towns, keeps its log properly."
+      ]
+    },
+    {
+      "id": "page_chandlers_quarrel",
+      "volume": "town",
+      "loose": true,
+      "title": "The great paint dispute",
+      "text": [
+        "Minutes of the Maren's Hollow traders' association, kept by a secretary running out of patience and margins.",
+        "ITEM FOUR: the color of the chandlers' row. Mr. Odger holds that a chandlery should be painted sensible grey, as it has been since his grandfather. Mrs. Vasse holds that grey is why nobody can find the row in fog, and proposes yellow. Mr. Odger proposes that Mrs. Vasse paint HERSELF yellow. The chair proposes tea.",
+        "ITEM FOUR, CONTINUED, THREE MEETINGS LATER: the ferry captain, asked to arbitrate on the grounds of being the only party everyone owes money to, ruled as follows: the row goes yellow, because he steers home by it in fog and grey is no color to come home to, and Mr. Odger's door goes grey, because a man's door is his own argument. Both parties claim total victory. The row is yellow to this day, and in fog, the fishermen say, you can find the Hollow by it. Could. Could find it."
+      ]
+    },
+    {
+      "id": "page_lifeboat_fund",
+      "volume": "town",
+      "loose": true,
+      "title": "The lifeboat fund ledger",
+      "text": [
+        "A subscription page from the Maren's Hollow lifeboat fund, the amounts in a neat clerk's hand, the notes in everyone else's.",
+        "Received: the proceeds of the school's tide-chart sale, delivered by committee, counted three times at the committee's insistence, correct at the third counting as at the first. Received: one week's takings from Ren's stall, marked 'for the boat, not the plaque, and I'll know.' Received: from the crew of the Lantern Jane, their race winnings from the summer regatta, entire, with the note: 'We have a boat. Buy the town one.'",
+        "Received: anonymous, four times a year, regular as quarter days, a sum the clerk has marked only 'the usual, from the usual.' The margin, in a different hand, adds: everyone knows it is the beacon keeper's brother, the chandler's boy who moved to the light. Nobody says so. The fund is how that family talks."
+      ]
+    },
+    {
+      "id": "page_harbor_clock",
+      "volume": "town",
+      "loose": true,
+      "title": "The harbor clock's maintenance log",
+      "text": [
+        "The winding log of the Maren's Hollow harbor clock, kept by its custodian with the gravity of state papers.",
+        "WEEK 340. Wound, oiled, correct. The ferry captain continues to hold that the clock runs two minutes proud, on no better evidence than, quote, the tide. The clock is a certified instrument. The tide is water. I have written to the ferry company.",
+        "WEEK 341. The ferry company has replied that their captain sets his watch by the harbor clock and his opinions by the tide, and that the company has learned not to come between the two. Unhelpful.",
+        "WEEK 352. Year's end. For the record, and only for the record: on the equinox the certified instrument and the tide disagreed by two minutes, and the oyster crews, who go by the captain, made the slack water, and the mail packet, which goes by me, did not. I have adjusted the clock. I have NOT written to the ferry company. A custodian may know a thing without hearing about it from a wheelhouse for a week."
+      ]
+    },
+    {
+      "id": "page_rens_prices",
+      "volume": "town",
+      "loose": true,
+      "title": "Ren's stall: the price board",
+      "text": [
+        "A slate price board, the lettering worn and rewritten so many seasons the older prices ghost through the new.",
+        "CHOWDER, BY THE BOWL: what you'd pay elsewhere, less a bit, because elsewhere isn't chowder. BREAD: fresh till it's gone, then toasted, then don't ask. THE HEEL OF THE LOAF: not for sale. It is spoken for by the harbor cats, who have an account, which they settle in mice and attitude.",
+        "SECONDS: free to anyone under twelve, over eighty, or off a night crossing. NO CREDIT, except: schoolteachers in exam week, the lifeboat crew always, and anyone wearing a coat their mother made them, because a coat like that means somebody is loved and skint, and this stall has been both.",
+        "At the bottom, small, in the same hand: complaints to the management. Compliments to my daughter, gone up the coast, who I am told runs a kitchen of her own now. Tell her the stove decides. She'll know what it means."
+      ]
+    },
+    {
+      "id": "page_school_whales",
+      "volume": "town",
+      "loose": true,
+      "title": "On whales: a formal submission",
+      "text": [
+        "A school exercise page, the handwriting fierce with conviction, submitted, by the stamp, to the tide journal committee for official consideration.",
+        "ON WHALES, BY TOMAS, AGE NINE AND A HALF. Mr. Pell says the moon does the tides because of PULLING. I have thought about this. The moon is very far away and has never once been seen touching the water. Whales are IN the water and are ENORMOUS. When a whale dives, the water must go somewhere. This is called DISPLACEMENT and is real, I checked.",
+        "THEREFORE: small tides are small whales, spring tides are all the whales diving together, and the terrible flood in grandfather's time was obviously something even bigger, which proves my theory has ROOM IN IT for further discoveries, which Mr. Pell says is what a good theory has.",
+        "The committee's ruling, appended in a chair-girl's confident hand: the committee finds that it is still the moon, but that Tomas argued PROPERLY, with evidence, and is promoted to Keeper of Theories. The whales remain a theory in good standing. It is recorded."
+      ]
+    },
+    {
+      "id": "page_gull_bylaw",
+      "volume": "town",
+      "loose": true,
+      "title": "Bylaw seventeen: concerning gulls",
+      "text": [
+        "A page of the Maren's Hollow town ordinances, much amended, the amendments losing confidence as they descend.",
+        "BYLAW SEVENTEEN. No person shall feed the gulls within the market bounds. AMENDMENT ONE: no person except Ren, whose arrangement with the gulls predates this bylaw and, the council suspects, this council. AMENDMENT TWO: the gull known as the Magistrate, who holds the post office roof, is exempt, having established custom. AMENDMENT THREE: gulls attending the school's outdoor lessons are deemed pupils and are the schoolmaster's problem.",
+        "AMENDMENT FOUR, in a tired hand: the council wishes it minuted that the gulls have not signed anything, honor nothing, and regard the entire legal apparatus of this town as a buffet with extra steps. The bylaw stands. The gulls also stand, on the courthouse roof, at this moment, watching the clerk carry the lunch he has foolishly not concealed. The council extends its sympathy to the clerk."
+      ]
+    },
+    {
+      "id": "page_hollow_song",
+      "volume": "town",
+      "loose": true,
+      "title": "The crossing song",
+      "text": [
+        "A song sheet, hand-copied, the tune marked only as 'the one everyone knows,' which on this coast is notation enough.",
+        "Verse: The water's wide and the evening's grey, and the lamp on the headland shows the way, and it's pull, my darling, and don't look down, for the boat comes back to the lantern town. Chorus: Boards dry, lines free, that's the word from the boat to me, and the word from me to the boat's the same: come home, come home, by the lantern's flame.",
+        "Verse the last: And if some night the water calls, and the wave stands up and the darkness falls, then hold, my darling, hold hard and wait, for the ferry runs early and the ferry runs late, and there's never a soul gone out on the foam, but the boat and the lamp will call them home.",
+        "In the margin, in the quick certain scrawl, the only music criticism the captain is known to have committed: 'They sing this AT me in the Anchor on my birthday every year. Verse the last is bad arithmetic and worse navigation. I have never once been late.' Beneath it, later, in pencil, in a lamp keeper's tall upright hand: 'He wept the whole chorus. Log it properly or not at all.'"
+      ]
+    },
+    {
+      "id": "page_washing_lines",
+      "volume": "town",
+      "loose": true,
+      "title": "Correspondence concerning washing lines",
+      "text": [
+        "Two letters, pinned together, the pinhole rusted through both, which is its own kind of binding.",
+        "The first: Mrs. Attmore, I write regarding your washing line, which crosses my yard, and has crossed it these eleven years, and from which, this morning, a quantity of wet linen descended upon my prize marrows. I do not ask for the line to move. I ask, as I have asked annually, for stronger pegs. Yours in ongoing endurance, T. Odger.",
+        "The second: Mr. Odger, the pegs are the pegs my mother used and her mother before her, and they have dropped linen on three generations of your family's marrows, which, I would gently note, have won the fair every one of those years, watered as they are by the best-laundered water in the Hollow. Some arrangements, Mr. Odger, are older than the both of us and wiser than complaint. The line stays. The pegs stay. Come for supper as usual Thursday. Yours entirely, E. Attmore."
+      ]
+    },
+    {
+      "id": "page_winter_lamps",
+      "volume": "town",
+      "loose": true,
+      "title": "The custom of the window lamps",
+      "text": [
+        "A page from a Hollow almanac of local customs, printed for visitors, annotated for truth.",
+        "It is the custom of Maren's Hollow, from the first winter gale to the spring tide, to burn a small lamp in the seaward window of every house where somebody is out on the water. Visitors will note that the town glitters on winter nights, and are advised that this is not decoration and should not be complimented as such. Each lamp is one person's worth of light. The town can read itself at a glance on a bad night: who is out, who is home, whose window has gone dark and needs neighbors sent round.",
+        "In the margin, one annotation, no hand you know: the year the fever kept the fleet ashore a month, the windows burned anyway, every one, and when the schoolmaster asked old Mrs. Vasse who the whole town could possibly be waiting up for, she said: the season, child. Somebody has to show the spring the way in."
+      ]
+    },
+    {
+      "id": "page_janes_launch",
+      "volume": "ferry",
+      "loose": true,
+      "title": "The naming of the Lantern Jane",
+      "text": [
+        "The shipwright's record of a launch, the official portions brief, the unofficial portions the reason the page was kept.",
+        "Launched this day from the Hollow yard: one ferry, white, sound, forty-one foot, engine fitted and sworn at. Name to be decided by public subscription, one vote per subscriber, which the yard wishes minuted was the harbor board's idea.",
+        "Names proposed and defeated: SPIRIT OF COMMERCE (the board's own, four votes, all board members). THE MARGARET ROSE (Mrs. Vasse, campaigning). THE WHALE'S FRIEND (the school, seventeen votes, disqualified on a technicality the school disputes to this day). Names proposed and carried: LANTERN JANE, on a landslide, after old Jane Marle, forty years the keeper of the harbor light before the new tower went up, who met every late boat of her working life at the top of the stair with a lamp and never once, in forty years, went to bed while the count was short.",
+        "The record closes: the new captain, asked at the launch what he thought of sailing a boat named for a woman who wouldn't sleep till everyone was home, said that he could think of no better standing orders, and had the name painted twice the regulation size."
+      ]
+    },
+    {
+      "id": "page_deckhand_letter",
+      "volume": "ferry",
+      "loose": true,
+      "title": "A letter of application",
+      "text": [
+        "A letter on lined paper, the handwriting fifteen years old and trying very hard to be forty.",
+        "To the captain, ferry Lantern Jane. Sir. I am writing to apply for the post of deckhand, which I am aware is not vacant. I am strong, I do not get seasick, I can splice, whip, and reeve, I learned the engine from watching through the hatch, which I am aware you know about, and I keep accounts. I am fifteen. I am aware of that too.",
+        "You will hear that my mother forbids it. This is accurate. She says the water is no place for our family. Our family has kept the Hollow's books for three generations, and I have read them, sir, all of them, and by my accounting this family has always been owed one sailor and I am calling in the debt. I will be at the dock at the dawn run every morning until you say yes. Respectfully, O.",
+        "Beneath, in the quick certain scrawl: 'Kept this. Said no twice, for her mother's sake. She was at the dock forty-one mornings. On the forty-second her mother came down with her, handed me the girl's boots, and said: if she drowns, I drown you. Fair terms. Hired. Best hands I ever shipped. Note to the file: one day this coast will work for HER, and it will be lucky.'"
+      ]
+    },
+    {
+      "id": "page_fare_disputes",
+      "volume": "ferry",
+      "loose": true,
+      "title": "The wheelhouse book of fare disputes",
+      "text": [
+        "A notebook page headed FARE DISPUTES, RESOLVED, kept in the wheelhouse, the resolutions running strongly in one direction.",
+        "DISPUTE: passenger held that a hen in a basket is luggage, not livestock. RESOLVED: for the passenger. The hen rode as luggage and laid an egg in transit, which the wheelhouse ruled was a fare, paid. DISPUTE: two brothers, one ticket, each holding the other had bought his own. RESOLVED: the wheelhouse carried both, on the grounds that the argument was worth the fare, and it was, all eleven miles of it.",
+        "DISPUTE: Mrs. Pell, Thursdays. Mrs. Pell holds that she paid for a lifetime ticket in the old company's day and has the paper to prove it. The paper is a raffle stub. RESOLVED: for Mrs. Pell, in perpetuity, because she is eighty-one, her son is at the far landing, and the day this boat charges a mother for Thursday is the day it deserves to sink. Entered in the timetable as company policy. The company will find out when it audits.",
+        "At the foot of the page, a summary in the scrawl, done at some year's end: disputes this season, thirty-one. Found for the passenger, thirty. Found for the company, one, and I regret it yet. Revenue lost: trivial. Revenue gained: a town that thinks the boat is theirs. It is. That was always the arithmetic."
+      ]
+    },
+    {
+      "id": "page_engine_log",
+      "volume": "ferry",
+      "loose": true,
+      "title": "The Jane's engine log",
+      "text": [
+        "An engine-room log page, oil-thumbed, the entries in the blunt hand of a working engineer with opinions.",
+        "TUESDAY. She started on the second pull, which she does when the weather glass is dropping, don't ask me how, I just log it. Packed the aft gland. The captain asked could she do the dawn run AND the late crossing this season. Told him she's a forty-one-foot ferry, not a cavalry horse. He said she didn't hear that, did she. Went down and apologized to the engine. This is my life now.",
+        "FRIDAY. Squall out of the northeast on the evening run. She held revs through green water over the bow, which by her own manual she cannot do. Logged as: exceeded specification, cause unknown, cause suspected. The captain talks to her at the wheel, low, when the passengers can't hear. I have stopped logging it as eccentric. On this boat it is a maintenance procedure.",
+        "SUNDAY. Day of rest, all but the bilge checks. Found the lamp keeper's girl in my engine room, drawing the flywheel for school. Asked her what the picture was for. She said: so when I crew this boat I'll know her insides. Told her deckhands don't need the insides. She said she wasn't going to be a deckhand. Logged, because everything on this boat gets logged: future management inspected the engine today. Engine approved."
+      ]
+    },
+    {
+      "id": "page_oyster_petition",
+      "volume": "ferry",
+      "loose": true,
+      "title": "The oyster crews' petition",
+      "text": [
+        "A petition, stained by salt water and, by the smell that has outlived nineteen years and a sea burial, oysters.",
+        "TO THE FERRY COMPANY, MARCH. We the undersigned, being the oyster crews of Maren's Hollow, petition for a dawn crossing, the beds being best at first light and the current schedule serving, quote, bankers and lie-abeds. Signed by eleven crews, four with names, seven with marks, one with a small drawing of an oyster the clerk has ruled counts.",
+        "The company's reply, appended in June, in company language: the proposal is under review pending seasonal analysis of demonstrated demand. The captain's annotation, across the company's reply, in the scrawl: 'The demonstrated demand rows out at four in the dark, you towering clerks. Dawn run starts Monday. She'll take the extra run if I have to row it myself. Bill me.'",
+        "And beneath that, added small and later: 'First dawn run made with eleven crews aboard and the sun coming up the color of the inside of a shell. The clerks can keep the profits. I'm keeping the mornings.'"
+      ]
+    },
+    {
+      "id": "page_dog_manifest",
+      "volume": "ferry",
+      "loose": true,
+      "title": "Manifest: animals carried",
+      "text": [
+        "A supplementary manifest page, ruled for cargo, repurposed by long custom for passengers of another kind.",
+        "CARRIED THIS SEASON: goats, eleven, of which one, Bella, ate the manifest for August, see August, which does not exist. Hens, beyond counting, see the egg ledger. One pig, wedding-bound, garlanded, seasick, comforted by the entire lower deck in shifts. Bees, two hives, quiet crossing, the beekeeper says they like the engine note and the wheelhouse has agreed to take it as a compliment.",
+        "DOGS: all of them, whenever they please. The company's regulation requiring dogs to be leashed is displayed in the wheelhouse, where the dogs, who cannot read, have never once consulted it. Special note: the harbor dog of no fixed ownership, plaited collar, answers to nothing, boards when he judges the weather wants watching and stations himself at the bow. The crew have entered him in the book as BOSUN, rank: supervisory. He has crossed forty times. He has paid nothing. The wheelhouse ruling on the fare stands: some passengers are cargo, some are crew, and the difference is not who bought a ticket."
+      ]
+    },
+    {
+      "id": "page_glass_barometer",
+      "volume": "squall",
+      "loose": true,
+      "title": "The instrument-maker's memorandum",
+      "text": [
+        "A memorandum in a precise, shaken hand, from the coast's instrument-maker to the maritime board, written the week after.",
+        "Sirs. You ask for a technical account of the instruments on the night in question. Here is what I can certify. Every barometer of my making between the Flats and the Neck fell that evening past the bottom of its engraved scale, which I had believed a physical impossibility, the scale being bounded by the weight of the sky itself. Three instruments cracked their tubes. One, at the Hollow's harbor office, I am told by the survivors, fell until the mercury stood in a configuration my trade has no name for, and then rose eleven points in a minute as the storm arrived, as if the sky had inhaled.",
+        "You ask what manner of weather does this. Sirs, none. Weather is pressure and water and wind. What crossed this coast had those as a coat has buttons. The fishermen have started calling it the Glass Squall, for the way the sea inside it stood up smooth and clear, like a lens, like it wanted the town seen plainly one last time. I am an instrument-maker. I certify what my instruments say. They say we should use the fishermen's word, and be civil about it."
+      ]
+    },
+    {
+      "id": "page_search_notices",
+      "volume": "squall",
+      "loose": true,
+      "title": "The notice board, after",
+      "text": [
+        "Notices from the Greywater harbor board wall, the week after the Squall, taken down at some point and folded together with care by someone who could not throw them away.",
+        "SOUGHT: any word of the mail packet CORMORANT, out of the Hollow the morning prior. Found, appended later, in the harbormaster's square hand: safe at the Neck, all souls, engine trouble, the lucky kind. SOUGHT: the crews of the oyster beds. Found, appended: all eleven crews accounted for, having been at the dawn beds west of the point, outside the water that rose. The dawn run is why. Let it be written somewhere permanent: the dawn run is why.",
+        "SOUGHT: any survivor of the town itself. This notice is the largest, and the space below it for appending is the largest, and it holds, in the harbormaster's hand, pressed hard: thirty-one, landed at Greywater by the ferry LANTERN JANE across nine crossings of the worst sea in living memory. Names posted at the office. And beneath that, smaller, later, in the same hand gone quiet: and two still out. The lamp on the headland will be kept lit. Any vessel with word is begged to bring it to the harbormaster at any hour. Any hour. Any year."
+      ]
+    },
+    {
+      "id": "page_lifeboat_log",
+      "volume": "squall",
+      "loose": true,
+      "title": "The Greywater lifeboat's log",
+      "text": [
+        "A lifeboat station log page, the entries timed to the minute, the handwriting deteriorating with the weather and refusing to stop.",
+        "21:40. Signal rockets sighted over the water toward the Hollow. Crew mustered, nine of nine. 21:55. Launched into the worst sea this station has recorded. 22:30. Unable to weather the point. Waves in excess of anything the boat is certified for. Made three attempts. 23:10. Recalled by the station master, over the crew's objection, the objection is entered in this log at the crew's demand: all nine wished to try a fourth time.",
+        "23:40. Stood down, not one of us in our beds. From the station roof watched a single vessel's lights working the water off the Hollow, in and out, in and out, where the certified boat could not live. Identified by her lamp pattern as the ferry LANTERN JANE. Entered in the log at the station master's own order, for whoever reads this in some easier year: this station launched three times and was beaten. That ferry crossed nine times. We do not know how, and we are lifeboatmen, we know what the word how costs. Whatever is ever said of this night, the log of this station says: the ferry did not fail. The ferry was the only thing on the water that didn't."
+      ]
+    },
+    {
+      "id": "page_first_wax_page",
+      "volume": "squall",
+      "loose": true,
+      "title": "Nereus's note on the first page",
+      "text": [
+        "A note in an archivist's careful hand, filed as the first item of a collection that did not yet know it was one.",
+        "Filed this day: one page, recovered by a shrimper off the Neck, brought to me because, quote, you like paper. It is a page of a harbor ledger, sealed in grey wax of no manufacture I can identify, bone dry at its heart after a season in open water. The wax parts like it wants to be read and reseals like it wants to be kept. I have been a diver and an archivist and I have never handled an object that had intentions before.",
+        "The page is from Maren's Hollow. The Hollow has been under the Squall for a year. There should be nothing left of its paper but fish food and regret, and instead the sea has begun, there is no other honest verb, POSTING it. I have taken a corner table at the Brinehouse with good light. I have told the landlady I may be some time. She looked at the wax, and at me, and said the corner table's mine as long as the post keeps coming. I believe we both suspect the same impossible thing. I believe the sea is not done with that town. Filed under: the Drowned Almanac, page the first. There will be more. I have never been more certain of anything I cannot defend."
+      ]
+    },
+    {
+      "id": "page_empty_coffin",
+      "volume": "squall",
+      "loose": true,
+      "title": "Order of service",
+      "text": [
+        "A printed order of service, creased into eighths, as if carried in a pocket for years, which it was.",
+        "IN MEMORIAM: the captain of the ferry LANTERN JANE, lost with his ship in the Glass Squall, in the act of returning for the last of his passengers. Service at the Greywater seamen's chapel. The order of proceedings: the crossing hymn. Remarks by the harbor board. Remarks by the survivors of the Hollow, thirty-one, who have asked that it be printed here, where it cannot be misplaced, that every one of them stands in this chapel because one man would not stop counting.",
+        "The committal: an empty coffin, by the custom of the coast for those the sea keeps, carried by six, followed by the town. In the margin of this copy, in a young woman's hand, square and careful and pressed very hard: he is not in the box. The sea keeps what it loves and returns what it trusts, and I am sixteen and I hate the saying, but if it is true, then it has to give him back someday, and when it does I will be at this harbor, and I will have his mooring ready, and everything will be written down and everything will be met at the dock. Signed, where a signature does not belong, as if swearing in: O."
+      ]
+    },
+    {
+      "id": "page_relief_fund",
+      "volume": "squall",
+      "loose": true,
+      "title": "The relief subscription",
+      "text": [
+        "A subscription sheet for the relief of the Hollow's survivors, opened at Greywater the morning after, the column of givers longer than the page.",
+        "From the fishing fleet: one day's catch, entire, and the same each week till the winter, which they gave, every week, and would not be thanked. From the Brinehouse: beds above the bar for as long as needed, and the landlady's note: the stove has been told. It has decided soup, indefinitely. From the chandlery: rope, canvas, boots, and blankets, invoiced to an account marked THE SEA, ITS TAB, which the chandler maintains is a real account and, on the evidence of this coast, may be right.",
+        "Smaller entries, a coin at a time, from names and marks and one drawing of an oyster. And at the foot, unsigned, in cord instead of ink: a small grey knot, tied to the collection box handle, of a pattern the older folk recognized and did not explain to the younger, because some subscriptions are made in the only currency grief has small change of. The clerk's note beside it says merely: received, one knot. Value: entered in a ledger this office does not keep, but which is kept."
+      ]
+    },
+    {
+      "id": "page_beacon_recipes",
+      "volume": "coast",
+      "loose": true,
+      "title": "The keepers' tea",
+      "text": [
+        "A recipe card, copied and recopied between beacon stations for so many years that the corrections have corrections.",
+        "THE TEA, STANDARD ISSUE, ALL STATIONS. Take the big pot. No, the BIG pot. Tea: double what the landsman's tin advises, then a spoon for the pot, then a spoon for the weather. Water at the full boil, none of your sighing kettles. Steep until a spoon stands upright unassisted, this is the certification test and is not a joke, a spoon that leans is a spoon that lies.",
+        "Additions, by station: Point Pelican takes it with condensed milk. The Neck takes it black and is proud of it, which is the Neck all over. One station, unnamed in this copy, adds a knot of rum on nights the dry shelf receives, for the shelf's sake, the keeper says, and no authority has cared to argue.",
+        "At the foot, the custom that makes it a document worth the sea's postage: the pot is never emptied while a boat is unaccounted for on the station's water. Cold tea is poured for the missing and the pot refilled, and there are stations on this coast, the card notes without drama, where a cup has been standing poured for years. Wash the cup when they're home. Not before."
+      ]
+    },
+    {
+      "id": "page_raft_market_rules",
+      "volume": "coast",
+      "loose": true,
+      "title": "The raft market's rules, regrettably written down",
+      "text": [
+        "A sheet of sailcloth, written on in tar pencil, nailed to a market raft by somebody who has since been argued with in every margin.",
+        "THE RULES, it says, SINCE APPARENTLY WE NEED THEM WRITTEN. One: no paperwork. Objection, in a second hand: this IS paperwork. Ruling, in the first: this is CLOTH. Two: all trades final at the splash, meaning once goods cross the gap between hulls, done is done, and the gap is the notary. Three: news is free, rumors cost a drink, prophecy is priced by the prophet and refunds are between you and fate.",
+        "Four: no selling to the sea's own post. Wax-sealed pages are carried free to whoever they find, always, by anyone, and the market wishes it recorded, on cloth, in tar, that it once refused an inland buyer's open purse on this rule, and would again, and the woman in oilskins who runs the third raft added, and the whole market signed under it: the sea pays better than money. It pays in weather you survive.",
+        "Five: the dog eats first. Nobody remembers ratifying this one. It is nonetheless the oldest rule, and the market's founding legend, disputed only in detail, is that the dog proposed it himself."
+      ]
+    },
+    {
+      "id": "page_challenge_buoy_slate",
+      "volume": "coast",
+      "loose": true,
+      "title": "The first slate of the challenge buoy",
+      "text": [
+        "A slate, cracked and retired, the earliest of the challenge buoy's records, the times weathered to ghosts but the manners preserved.",
+        "FASTEST TO THE WRECK POST AND BACK, the heading runs, and then the covenant, scratched deep so it would outlast the scores: any boat may run, any hour, any weather fool enough to allow it. Witnesses optional, gulls sufficient. Lie about your time and the buoy will know, this is not superstition, ask the man who tried, whose initials are scratched OUT below, the only excommunication in the buoy's history.",
+        "The ghost times descend the slate, initials of racers two generations gone. Near the foot, one entry has been rubbed almost to nothing by nineteen years of thumbs, resting there, remembering: a time faster than everything above it by an embarrassment, run in a cross-squall, witnessed, the slate notes, by three crews who all swore off racing the same afternoon. The initials are a C, and something, and the coast knows what they were, and the racers who touch the ghost for luck before their runs say only: fastest thing that ever crossed this water, and it wasn't even his trade. He was a ferryman. Imagine if he'd been SERIOUS."
+      ]
+    },
+    {
+      "id": "page_patrol_memo",
+      "volume": "coast",
+      "loose": true,
+      "title": "Patrol memorandum: atmospheric phenomena",
+      "text": [
+        "An internal memorandum of the coastal patrol, stamped, initialed, and quietly mutinous.",
+        "TO ALL LAUNCHES: further to repeated sightings, on bad nights, of a vessel matching the description of a ferry lost nineteen years since. Command reminds all crews that official logs are legal documents. Sightings are to be recorded as ATMOSPHERIC PHENOMENON pending guidance. Guidance has been pending, a crew has annotated, for nineteen years.",
+        "Appended, unofficially, in several hands, as launch crews rotated through: Launch four confirms the phenomenon holds a heading. Atmospheric phenomena do not hold headings. Launch two confirms the phenomenon dips to a correct salute when overhauled, which no weather has ever paid this service. Launch four again: tonight the phenomenon crossed our bow toward the Squall, and our compass wept salt water for an hour, and the duty officer logged it as CONDENSATION, and we let him, because he is young.",
+        "Final annotation, older hand, senior stripe: log her as weather if command insists. But this coast knows a boat on her rounds when it sees one, and the day she finds what she's looking for, this service will render honors, regulations be hanged. Until then: eyes open, engines quiet, and give the lady sea-room."
+      ]
+    },
+    {
+      "id": "page_bosun_provenance",
+      "volume": "coast",
+      "loose": true,
+      "title": "An inquiry into Bosun",
+      "text": [
+        "A page of correspondence collected by a down-coast naturalist attempting, with visibly failing confidence, a biography of a dog.",
+        "From the harbormaster at the Neck: Bosun has boarded vessels at this port for as long as my records run. My records run thirty-one years. I am aware of the arithmetic. I decline to pursue it. From a shrimper at Point Pelican: he came aboard ahead of the gale of the year eight, sat at the bow, and we followed his ears home through fog you could shovel. Whatever he is, he is good at it.",
+        "From the woman in oilskins, raft market, third raft: you are asking the wrong question, inlander. The question is not how old is the dog. The question is: has any vessel carrying that dog ever been lost. Write to every harbor on this coast. I will wait.",
+        "The naturalist's closing note: I wrote to every harbor on this coast. The answer is no. Forty years of weather, and the answer is no, not one. I am abandoning this biography and buying the dog a herring. Some provenances are not for tracing. They are for being grateful about, and the plaited collar, I am reliably informed, is renewed every few years by the chandler at Greywater, who, asked who pays for it, says the account is marked THE SEA, and is up to date."
+      ]
+    },
+    {
+      "id": "page_knot_primer",
+      "volume": "coast",
+      "loose": true,
+      "title": "A family primer of knots",
+      "text": [
+        "Pages from a child's primer, hand-drawn, two sets of small fingerprints in the tar smudges, the knots drawn with terrible skill and total love.",
+        "THE KNOTS AND THEIR WORDS, it is headed, and beneath, in an adult's crabbed correction: their MEANINGS, words are for people who can't tie. The bowline, which means: I will not slip. The rolling hitch, which means: I will not slide. The storm tithe, drawn with special care, doubled back through itself, which means: I beat the weather and I am carrying the receipt.",
+        "The fog plait, for the throat, which means: I will find my way. The family-aboard knot, doubled, which means what it says and is tied over doors. And last, drawn small, the grey knot, which the child's hand has labeled: for missing someone, and the adult's hand has not corrected.",
+        "On the back page, a game of tied initials, two brothers' worth, and a rhyme for remembering the storm tithe that ends: over, under, home again, tuck the tail and count to ten, and if the sea should ask you why, tell it: brothers tied this. Boards stay dry."
+      ]
+    },
+    {
+      "id": "page_leviathan_soundings",
+      "volume": "coast",
+      "loose": true,
+      "title": "Soundings over the trench",
+      "text": [
+        "A salvage crew's soundings log, the columns of depths giving way, partway down the page, to something no column was ruled for.",
+        "Soundings, Wreckwater trench, morning, calm. Forty fathoms. Forty-one. Forty-one. Then, entered in a steadier hand than the moment can have deserved: no bottom. The line ran to its end and swung free, and the water under us moved, all of it, together, the way a floor moves when something beneath the house turns over in its sleep.",
+        "We hauled and stood off, and the master, who has salvaged this coast for forty years, gave the order the crews have repeated ever since, and we set it down here exactly, for the instruction of whoever works this water after us: that below us is not a fish and not a current. That is the sea keeping something, the way you keep a thing you cannot bear to look at and cannot bear to lose. We do not go down while it holds the bottom. Not for any strongbox ever cast. Grief that size, you leave to its rounds, and if a day ever comes that it lets a diver past, then whoever that diver is, the sea will have its reasons, and the rest of us should stand off and pray for them both.",
+        "The page is signed by the whole crew. Below the signatures, added in the quick certain scrawl of a reader nineteen years later: 'Reasons confirmed. — Cpt.'"
+      ]
+    },
+    {
+      "id": "page_refit_bill",
+      "volume": "mornings",
+      "loose": true,
+      "after": "jane_raised",
+      "title": "Bill of works: the Lantern Jane",
+      "text": [
+        "The shipyard's bill of works for the refit of a raised ferry, itemized, and then annotated into something no shipyard has ever billed before.",
+        "Hull: recaulked, refastened, found sound, the yard notes, impossibly sound, and has stopped putting the adverb in writing because the surveyor kept crossing it out. Engine: stripped, cleaned, turned over on the first pull, at which the engineer, it is minuted, left the shed for a while. Paint: white, twice the regulation coats. Name board: original, restored, twice the regulation size, as per standing orders nobody could produce in writing but everybody could recite.",
+        "The account: labor, waived, the yard's men having refused wages for her, to a man, and taken payment instead in the coin the margin records: each man's name entered in her new log as yard crew of the LANTERN JANE, which their grandchildren can read someday. Materials, part paid in pearls by the captain, part in chain by the harbor office, part in rope by the chandlery, invoice marked PAID IN FULL with a small white knot tied through the page, and the clerk's helpless note: filing declines to explain how one files a knot. Filing has been overruled. The knot stays in the book."
+      ]
+    },
+    {
+      "id": "page_liss_first_log",
+      "volume": "mornings",
+      "loose": true,
+      "after": "liss_saved",
+      "title": "First solo entry",
+      "text": [
+        "A page of the new tide journal, the supervising hand absent for once, the entry flying solo and knowing it.",
+        "TIDE JOURNAL, SOLO ENTRY THE FIRST, BY L., LAMP KEEPER, SENIOR, APPRENTICE CAPTAIN. Weather: fair, wind light, the water in a good mood, you can tell because the harbor smells like coins. Low water at the second bell, CONFIRMED PERSONALLY, feet wet, worth it.",
+        "Observations: the captain's boat went out at dawn and I logged it OUT and I will log it HOME BY SUPPER because that is the standing arrangement and it gets KEPT. Brick did the slalom line in the outer harbor and I timed him and he is getting faster, which he says is impossible at his age, which means he is doing it on purpose. Dad played cards with me till the second lamp and cheated. I let him. It is his lamp.",
+        "Note for the committee, who will read this Monday: I was eleven for nineteen years and I am going to be twelve on the spring tide, and the committee is invited, and there will be chowder, Mirabel says the stove already decided. Everything is written down. Everything got met at the dock. Signed, L., because you always sign your work, the sea checks."
+      ]
+    },
+    {
+      "id": "page_lamp_decommission",
+      "volume": "mornings",
+      "loose": true,
+      "after": "liss_saved",
+      "title": "Correspondence on a lamp's retirement",
+      "text": [
+        "Two letters, filed together by the coastal lights authority, which has learned, over the years, when it is beaten.",
+        "The first, official: TO THE KEEPER, GREYWATER HEADLAND. The authority notes that the headland lamp has ceased scheduled operation. As the station is charted as active, the keeper is required to resume standard schedule or file for decommission. Forms enclosed.",
+        "The second, the reply, in a tall upright hand that does not waste motion: Sirs. I kept your lamp on standard schedule for nineteen years, which we both know was not your schedule. The light this station was actually burning has come home, and I am keeping HER schedule now, which is: cards after supper, lessons on the water with the captain, and a small lantern in the gallery window, lit at dusk, not for navigation. File the station how you like. I recommend the classification your own circular invented the year the Squall came: miscellaneous, recurring. The stair remains one hundred and forty steps and the kettle remains on. Visitors welcome. Forms returned, unfilled, with respect and without apology. E., Keeper. The authority's filing note, appended: station reclassified, keeper retained, classification as recommended. The authority knows a standing light when it sees one."
+      ]
+    },
+    {
+      "id": "page_market_notice_greywater",
+      "volume": "mornings",
+      "loose": true,
+      "after": "liss_saved",
+      "title": "Market day at Greywater Quay",
+      "text": [
+        "A market notice, hand-lettered, stamped with a seal the coast has not seen used in nineteen years: a lantern over a wave, pressed in new ink by an old stamp.",
+        "MARKET DAY, SPRING TIDE, GREYWATER QUAY. Stalls along the sea wall from first light. Oysters off the dawn beds, courtesy of crews who remember what a dawn run is worth. The school will sell tide-charts drawn by the children, all proceeds to the lifeboat fund, accuracy improving, charm unchanged. REN'S, BY WAY OF MIRABEL, will have the chowder. Arrive early. You know why. You have ALWAYS known why.",
+        "Amusements: the challenge buoy sprint, entries at the wall, current holder disgustingly confident. Knots, judged, all ages, the chandlery's cup to the winner, the chandler's brother judging, the chandler protesting the judging in advance and annually. The harbor clock is correct, by order of the harbormaster, who checked it against the tide, and the tide, for the first time in anyone's memory, agreed with the paperwork.",
+        "At the foot, in the margin, in a hand quick and certain: 'Attendance is not compulsory. It only feels that way. First bowl's mine. I have a standing arrangement with the management, one generation removed. — Cpt.'"
+      ]
+    },
+    {
+      "id": "page_veterans_entry",
+      "volume": "mornings",
+      "loose": true,
+      "after": "liss_saved",
+      "title": "The invitational: veterans' class",
+      "text": [
+        "The coastal federation's posted entry list for the invitational, veterans' class, with the federation clerk's processing notes.",
+        "ENTRY ONE: B. MOLENAAR, coastal champion, six consecutive years, entered under his own name for the first time in nine seasons. Second, countersigned: the entry the whole office came to look at, see file. Clerk's note: his hands shook filling in the address. His lap times, submitted for seeding, did not shake at all. Seeded first. Some paperwork is a pleasure.",
+        "ENTRY TWO: C. VEYLE, current champion, entered with the annotation, in her own aggressive shorthand, that she is aware the veterans' class is not her class, and is entering the open class as usual, and is filing this note in the veterans' file anyway so that ENTRY ONE sees it: about time, old man. Try to keep the third buoy honest. Clerk's note: filed as requested. The federation does not have a form for whatever this coast is becoming. The federation has stopped minding.",
+        "APPENDED, race week: spectator advisory. The sea wall will be crowded. The timing wall has been reinforced. A stopwatch of record has been appointed, age twelve, seniority: bell. All boats will be met at the dock."
+      ]
+    },
+    {
+      "id": "page_federation_record",
+      "volume": "mornings",
+      "loose": true,
+      "after": "liss_saved",
+      "title": "Correction to the record book",
+      "text": [
+        "A page of the coastal racing federation's record book, with a correction slip pasted in, initialed by the full committee.",
+        "CROSS-SQUALL RECORD. Holder: see correction. Original entry, nineteen years standing: holder RETIRED, record preserved unbeaten, category closed to further attempts by order of the safety committee, the conditions being deemed unreproducible. Correction slip, new: holder ACTIVE. Category reopened. Record REBROKEN by the holder, witnessed, timed, ratified, margin: indecent. Passenger carried during record attempt: one, aged eleven, seniority bell, whose signature appears on the ratification beside the timekeepers', the committee having been given to understand that on that boat, everything gets signed.",
+        "Committee minute, appended: the federation is aware that ratifying a record set by a man previously carried in this book as lost with his vessel creates certain archival difficulties. The archivist has been consulted. The archivist, a Greywater man, replied that the coast's books have carried stranger corrections for nineteen years and the trick, quote, is to write the truth down and let the categories catch up. Minuted, carried, filed. The categories are catching up."
+      ]
+    },
+    {
+      "id": "page_greywater_living",
+      "volume": "mornings",
+      "loose": true,
+      "after": "liss_saved",
+      "title": "From Greywater, Living: the stove",
+      "text": [
+        "An excerpt from GREYWATER, LIVING, VOLUME ONE, in the archivist's careful hand, the scholarly apparatus fighting a losing action against the subject matter.",
+        "Chapter the third: the Brinehouse stove, an oral history. The stove came up the coast on a lugger sixty years ago and has outlasted four landladies, two chimney fires, and every opinion ever held against it. The present landlady states, for the record, that the stove decides the menu, and the researcher's attempts to establish this as metaphor have failed on the following evidence: the stove will not draw for a dish it has vetoed. Three witnesses. Separate occasions. The researcher has abandoned the metaphor theory and had the chowder.",
+        "The stove's known rulings include: soup for the drowned-and-returned, always and free. Chowder by Ren's recipe on market days, the stove having apparently ratified the recipe's return with, quote, the best draw in living memory. And once, on a night the whole quay remembers, the stove went out entire, of its own judgment, from the hour a boat went into the Glass Squall until the hour her lights came back over the horizon, whereupon it lit itself. The researcher notes he can no longer certify what is chimney physics and what is love, records that on this coast the distinction may not be load-bearing, and closes the chapter."
+      ]
+    },
+    {
+      "id": "page_cribbage_ledger",
+      "volume": "mornings",
+      "loose": true,
+      "after": "brothers_reconciled",
+      "title": "The cribbage ledger",
+      "text": [
+        "A ledger page ruled for stock-taking, requisitioned for a purpose the chandlery's filing system has classified, in pencil, as PERSONAL, ONGOING.",
+        "THE SCORE, it is headed, TWENTY YEARS SUSPENDED, PLAY RESUMED. The columns run S. and A., and the totals are close enough to be a scandal. Disputed hands are entered in red and adjudicated in the margins: the hand of the spring tide, in which A. claims a flush that S. maintains was tabled after the count, remains under appeal, the appointed arbiter, one visiting captain, having ruled, quote, that he would sooner arbitrate the weather.",
+        "Partway down, the scorekeeping changes character, and whoever kept it stopped pretending it was about the cards: A. stayed the whole week of the gales. S. rowed out for the relief boat's run himself, at his age, the fool. A. brought the lamp-room chair down for the shop window, says the light's better here in winter. It is not. The light is the same. Entered anyway, because this ledger records what matters and the columns were never really counting points. Current standing: two brothers, one shop, twenty years recovered at approximately one hand of cribbage per evening. The ledger rules this a winning position for all parties and play continues."
+      ]
+    },
+    {
+      "id": "page_new_dry_shelf",
+      "volume": "mornings",
+      "loose": true,
+      "after": "liss_saved",
+      "title": "The dry shelf: ordinary weather",
+      "text": [
+        "The standing log of a beacon's dry shelf, resumed after the great emptying, the entries suddenly, gloriously mundane.",
+        "RECEIVED: one oar, sound, stenciled with a smack's name. Claimed within the week by a skipper who admitted, under the keeper's tea, that he'd thrown it at a gull. The gull is understood to be well. RECEIVED: one child's toy boat, blue, rigged with real if optimistic knots. Claimed in two days by a small owner who inspected it for damage with a professionalism the keeper describes as familiar down to the eyebrows, this coast breeding a certain kind of harbor child, apparently, in every generation.",
+        "RECEIVED: one hat. Unclaimed. It is a terrible hat. The relief crews have voted that the sea may keep the next one. Keeper's note, at the season's close: a year of receipts and every one of them ordinary, lost by accident, returned by current, claimed by the living. Nineteen years this shelf held its breath, and now it does the job the custom was built for, and the Admiral supervises, and the kettle is on, and the log is pleased to record: nothing on this shelf is waiting for anybody. May it be written every year. Nothing on this shelf is waiting."
+      ]
+    },
+    {
+      "id": "page_janes_new_schedule",
+      "volume": "mornings",
+      "loose": true,
+      "after": "liss_saved",
+      "title": "The Jane's new schedule",
+      "text": [
+        "A single card, posted in the wheelhouse window of the ferry Lantern Jane at her Greywater mooring, in the quick certain scrawl, taking its time.",
+        "SAILINGS: as the captain pleases, which is often. FARES: settled nineteen years ago, all lines, in full. CHILDREN: carried free, obviously. DOGS: crew. CHARTERS: the harbor may ask, the school may ask on shorter notice, the lifeboat fund owns her hull outright one day a season and knows it. THE DAWN RUN: rides again when the oyster crews ask. They know how to ask. It takes eleven of them and a petition, and one of them should draw an oyster on it, for form's sake. The wheelhouse will pretend to deliberate.",
+        "THE LATE CROSSING: retired. The lamp no longer waits up. It doesn't need to. The boat knows her way home in the dark now the same way everyone on this coast does: because home stayed put, and kept its light on, until she got there. Signed, for the company, such as it is: Cpt., LANTERN JANE, and countersigned beneath, in careful capitals climbing toward their inheritance: L., LAMP KEEPER, SENIOR, and a small drawing of a lantern over a wave, which needs no explaining, on this water, to anyone."
       ]
     }
   ]

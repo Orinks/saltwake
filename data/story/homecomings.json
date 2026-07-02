@@ -63,6 +63,32 @@
         "The boat rides low and wallows like a banker, and the quay notices: heavy boats are news. By the time the scales are done there is a respectful little crowd, and the scalemaster says the number twice, once for accuracy and once for theater.",
         "Odessa initials the ledger and looks at you over it. 'Don't get used to luck,' she says, and then, because she is constitutionally unable to leave it there: 'Get used to skill. Luck drowns. Skill swims home.'"
       ]
+    },
+    {
+      "id": "homecoming_jane_home",
+      "arc": "main",
+      "where": "homecoming",
+      "priority": 55,
+      "requires": [{"q": "jane_raised", "eq": 1}],
+      "title": "Home, past her mooring.",
+      "pages": [
+        "Coming through the harbor mouth you pass her where she lies: the Lantern Jane, fast at her old mooring, white paint new, brass bright, riding the evening swell with the settled patience of a boat that has stopped listening for a recall. Every homecoming threads past her now, and every skipper on the quay, you have noticed, alters course a half-point to pass her close, the way you'd touch a doorframe on the way in.",
+        "As your wake reaches her she moves on it, bow rising once, easy, like a nod. The old hands swear boats don't greet. The old hands also, every one of them, nod back."
+      ]
+    },
+    {
+      "id": "homecoming_postgame",
+      "arc": "main",
+      "where": "homecoming",
+      "priority": 42,
+      "once": false,
+      "weight": 2,
+      "requires": [{"q": "undertow_faced", "eq": 1}],
+      "title": "The harbor, after.",
+      "pages": [
+        "The bell buoy, the breakwater, the engine note settling: the old liturgy of coming in, unchanged, and changed entirely. The headland stands dark where the great lamp used to turn, and nobody's boat is the worse for it, and in the lighthouse gallery a small lantern burns anyway, lit for love and not for need, which is the whole difference between a vigil and a welcome.",
+        "On the sea wall, if the tide is right, an eleven-year-old with a stopwatch logs you in and finds your time acceptable. At the scales, Odessa counts your salvage once. In the Brinehouse window, lamplight and the day's arguments, holding your seat. You make the lines fast in the dark without thinking. Somewhere out past the breakwater the water turns over, easy, keeping its ledger, and your page in it says only what the best pages say: nothing owing. See you tomorrow."
+      ]
     }
   ]
 }

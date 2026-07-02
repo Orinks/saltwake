@@ -99,6 +99,34 @@
       "pages": [
         "'Captain,' Odessa says, by way of hello, and goes back to her ledger. That is the whole conversation, and it is somehow also a weather report, a fuel voucher, and a promise that the harbor mouth will be lit whenever you come home. You have been Greywater's business long enough to speak fluent harbormaster."
       ]
+    },
+    {
+      "id": "odessa_06",
+      "arc": "odessa",
+      "where": "talk_odessa",
+      "priority": 34,
+      "requires": [{"q": "jane_raised", "eq": 1}, {"q": "affinity_odessa", "gte": 4}],
+      "speaker": "Odessa",
+      "title": "The photograph, tagged.",
+      "pages": [
+        "The second chair is yours now without asking, and from it you notice what has changed on the corkboard wall: the photograph at the center, the white ferry caught mid-turn in bright weather, her rail crowded with waving passengers. For nineteen years the space beneath it was pinned and repinned into a crater. Tonight there is a tag on it, square and careful and final: RAISED. REFIT. IN SERVICE.",
+        "Odessa follows your eyes and does not pretend otherwise; you are past that, the two of you. 'Hardest tag I ever wrote,' she says. 'Not for the words. The words were a pleasure. For the pin.' She turns back to her stamping. 'Nineteen years I couldn't write anything under that boat that was true, and a harbormaster doesn't write things that aren't. Now look at it. Cleanest entry on the board.' A pause, one stamp's worth. 'There's room under yours too, captain, when the day comes. I intend it to say DIED ASHORE, AGED IMPOSSIBLE, OWING ME MOORING FEES. Don't spoil my record-keeping.'"
+      ],
+      "effects": {"add": {"affinity_odessa": 1}}
+    },
+    {
+      "id": "odessa_ambient_3",
+      "arc": "odessa",
+      "where": "talk_odessa",
+      "priority": 6,
+      "once": false,
+      "weight": 2,
+      "requires": [{"q": "liss_saved", "eq": 1}],
+      "speaker": "Odessa",
+      "title": "Junior inspections.",
+      "pages": [
+        "There is a second desk in the harbormaster's office now, ankle-height stack of forms, pencil chewed in solidarity, and behind it Liss conducts what the quay has learned to call junior inspections. Today's findings, delivered to Odessa with total gravity: the bait boy is running a gull-protection racket, two fenders on the ferry slip are, quote, TIRED, and a visiting yacht has been rude about the Brinehouse and should be charged the special rate. Odessa reviews the report, initials it, and files it in the drawer she keeps for documents that are legally nothing and worth the whole cabinet. 'I'm training my replacement,' she tells you, daring comment. 'Thirty-year program. So far she's ahead of schedule.'"
+      ]
     }
   ]
 }

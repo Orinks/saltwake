@@ -83,6 +83,49 @@
       "pages": [
         "Cass has taken to carrying a small black notebook labeled, in defiant capitals, HOW THE CAPTAIN DOES IT. She declines to show you the contents. 'Proprietary,' she says. You have seen her, after your races, writing in it furiously, and once, after a race you lost, crossing something out with what looked like real disappointment, muttering that legends have NO right to soft entries on the third gate."
       ]
+    },
+    {
+      "id": "cass_05",
+      "arc": "cass",
+      "where": "talk_cass",
+      "priority": 34,
+      "requires": [{"q": "liss_saved", "eq": 1}, {"seen": "epilogue_cass"}],
+      "speaker": "Cass Veyle",
+      "title": "First lesson.",
+      "pages": [
+        "She asked to be taught, so you teach her, and the first lesson nearly ends the friendship: half a mile off the mussel beds, dawn glass, and the instruction is to cut the engine and do nothing. Cass Veyle, fastest thing on this coast, sits in the silence of her own dead motor with the expression of a woman being audited. 'This is a prank,' she decides, at minute four. 'This is revenge for the capsize thing.' Minute nine: 'I can hear my own HAIR, Tideborn.' Minute fifteen: silence, actual silence, and you watch the racer's fidget drain out of her hands one finger at a time.",
+        "At minute twenty-two she sits up so fast the hull rocks. 'Boat,' she says. 'Coming round the head. Two engines, no, one engine badly tuned, and it's, ' she stops, staring at the empty headland, at the water, at her own ears. A full ten seconds later, a badly tuned one-engine workboat rounds the head. Cass turns to you with the stunned outrage of a woman who has just caught the universe keeping a second set of books. 'It was in the WATER,' she says. 'The wake got here before the boat did. It's ALL in the water. Everything's in the water, and you people just LISTEN to it, and nobody TOLD me.' She restarts her engine, then, on reflection, cuts it again. 'One more minute,' says the fastest thing on the coast."
+      ],
+      "effects": {"set": {"cass_listening": 1}, "add": {"affinity_cass": 1}}
+    },
+    {
+      "id": "cass_06",
+      "arc": "cass",
+      "where": "talk_cass",
+      "priority": 32,
+      "requires": [{"q": "cass_listening", "eq": 1}, {"q": "races_won", "gte": 5}],
+      "speaker": "Cass Veyle",
+      "title": "The rematch.",
+      "pages": [
+        "She calls it at the bar, in front of witnesses, the way racers make things irrevocable: the old harbor course, dawn tide, first across the line and no excuses ever again. The whole quay turns out, because the whole quay always knows. Brick holds the stopwatch. Liss holds Brick's spare stopwatch, in case, she announces, of CORRUPTION.",
+        "And she beats you. Clean. Not on the flat, where she was always faster, but at the dogleg off the north mark, YOUR dogleg, where she comes in wide, eases, eases, in chop, with the whole race on the throttle, and you hear what she heard a half-second after she heard it: the crossing wake off the fishing fleet, arriving. She takes the line by a hull and a half and does not whoop. She circles back, dead serious, and demands, before accepting so much as a cheer: 'Tell me you didn't ease up. Look at me and tell me.' You look at her and tell her the truth: you were flat out, and she raced the water, not the boat, and the water chose her. Cass Veyle receives this the way harbormasters receive clean paperwork. Then, and only then, she whoops, once, loud enough to be logged at the lighthouse.",
+        "In the Brinehouse afterward the notebook comes out, the black one, HOW THE CAPTAIN DOES IT, and in front of the assembled regulars she crosses out CAPTAIN and writes, in her aggressive shorthand, WATER. 'New edition,' she says. 'Considerably harder syllabus.' She buys your drink. It is, she is at pains to clarify, not sentiment. It is prize money."
+      ],
+      "effects": {"set": {"cass_heard": 1}, "add": {"affinity_cass": 2}}
+    },
+    {
+      "id": "cass_ambient_3",
+      "arc": "cass",
+      "where": "talk_cass",
+      "priority": 7,
+      "once": false,
+      "weight": 2,
+      "requires": [{"q": "cass_heard", "eq": 1}],
+      "speaker": "Cass Veyle",
+      "title": "The listening racer.",
+      "pages": [
+        "The quay has adjusted, with some ceremony, to the new Cass Veyle, who can be found some mornings drifting engine-off in the harbor mouth with her eyes shut, and who threatened the last person who asked if she was broken down. 'Training,' she says now, pre-emptively, as you pass. Her results this season are obscene and she knows it, and she credits, in interviews with the coastal federation's newsletter, quote, a technical adviser who prefers boats to publicity. She still wins loud. She listens quiet. The water, by every sign, is enjoying the conversation."
+      ]
     }
   ]
 }

@@ -1,0 +1,60 @@
+{
+  "storylets": [
+    {
+      "id": "keeper_02",
+      "arc": "keeper",
+      "where": "lighthouse",
+      "priority": 40,
+      "requires": [{"q": "met_keeper", "eq": 1}],
+      "speaker": "The Keeper",
+      "title": "The lamp code.",
+      "pages": [
+        "Tea in the lamp room, the beam going round above like a patient thought. Tonight Edras teaches you the code, because, he says, you invented half of it and it is embarrassing that the lamp knows it and the captain doesn't. 'Long, long, short: HOLDING. That's the lamp's word. It means the light is kept, the watch is stood, we are not done waiting. Short, short, long: RECEIVED, COMING. That's the boat's word. Yours.'",
+        "'Liss learned it before her letters,' he says, trimming the wick that does not need trimming. 'The Jane used to run the late crossing in the dark of the year, and my girl would flash her lantern from the wheelhouse, and I'd answer from up here, and between us we'd hand the boat home across eleven miles of black water like two people carrying a table.' The lamp turns. 'Nineteen years I've sent HOLDING at the dark, captain. You are the first thing the water ever sent back that could learn the answer.'"
+      ],
+      "effects": {"set": {"knows_lamp_code": 1}, "add": {"affinity_keeper": 1}}
+    },
+    {
+      "id": "keeper_03",
+      "arc": "keeper",
+      "where": "lighthouse",
+      "priority": 38,
+      "requires": [{"q": "met_keeper", "eq": 1}, {"q": "affinity_keeper", "gte": 2}],
+      "speaker": "The Keeper",
+      "title": "Three times wrong.",
+      "pages": [
+        "'You are not the first tideborn I went to look at,' Edras says, out of a long comfortable silence, the way lighthouse keepers say everything. 'Word would come up the coast: the sea gave one back, at Pelican Point, at the Neck, away south past the Flats. Three times in nineteen years I closed the lamp room, took the mail boat, and went to see with my own eyes.' He turns his cup a quarter turn, his one tell. 'Three times it was some other harbor's miracle. A good one, every time. Somebody's son. Somebody's wife. I stood at the back and was glad for them until I could not breathe, and then I came home and lit the lamp.'",
+        "'The fourth time,' he says, 'I did not go. The fourth time, the sea washed its parcel up below my own headland, at the feet of the Jane's own deckhand, with the Jane's own key around its neck.' He looks at you over the cup, sixty years of weather and one intact ember of mischief. 'It knows I am old, captain. It saved me the boat fare.'"
+      ],
+      "effects": {"add": {"affinity_keeper": 1}}
+    },
+    {
+      "id": "keeper_ambient_1",
+      "arc": "keeper",
+      "where": "lighthouse",
+      "priority": 5,
+      "once": false,
+      "weight": 3,
+      "requires": [{"q": "met_keeper", "eq": 1}],
+      "speaker": "The Keeper",
+      "title": "The watch, stood.",
+      "pages": [
+        "One hundred and forty steps, and at the top of them, the coast's most reliable fact: Edras, the kettle, and the view. He gives you the water as only a man who has watched one piece of it for decades can: which reach is lying about its weather, where the salvage crews are working shy of the patrol, what the gulls did at noon that he has not seen them do since the spring the herring came early. You drink your tea. The lamp turns. Below, the whole harbor goes about its business inside the oldest lighted room in the world."
+      ]
+    },
+    {
+      "id": "keeper_ambient_2",
+      "arc": "keeper",
+      "where": "lighthouse",
+      "priority": 8,
+      "once": false,
+      "weight": 2,
+      "requires": [{"q": "liss_saved", "eq": 1}],
+      "speaker": "The Keeper",
+      "title": "Light, kept for love.",
+      "pages": [
+        "The great lamp stands dark now, retired with full honors, and the lamp room is lit instead by one small lantern and an ongoing card game that Edras is losing with enormous satisfaction. 'She dealt from the bottom,' he reports, proudly, as you come off the stair. 'I taught her that. Her grandmother taught it to me.' Liss deals you in without asking. Out the gallery windows the coast gets along on buoys and stars, and nobody drowns for the lack of the beam, and the keeper keeps what was always the true light of this tower anyway, which is the company at the top of the stairs."
+      ]
+    }
+  ]
+}

@@ -11,8 +11,8 @@ from story.engine import StoryEngine, Storylet, check_requirements
 
 KNOWN_OPS = {"eq", "ne", "gt", "gte", "lt", "lte"}
 KNOWN_EFFECT_KEYS = {
-    "set", "add", "pearls", "renown", "almanac", "unlock_vessel",
-    "unlock_region", "salvage", "hull", "grit", "supplies",
+    "set", "add", "pearls", "renown", "almanac", "almanac_loose",
+    "unlock_vessel", "unlock_region", "salvage", "hull", "grit", "supplies",
 }
 
 
@@ -32,13 +32,13 @@ def _all_requirements(reqs):
 
 
 def test_corpus_loads_and_is_substantial(engine):
-    assert len(engine.storylets) >= 60
+    assert len(engine.storylets) >= 140
     words = 0
     for s in engine.storylets.values():
         words += sum(len(p.split()) for p in s.pages)
         for c in s.choices:
             words += sum(len(p.split()) for p in c.get("response", []))
-    assert words > 8000, f"story corpus unexpectedly small: {words} words"
+    assert words > 20000, f"story corpus unexpectedly small: {words} words"
 
 
 def test_goto_targets_exist(engine):
@@ -68,15 +68,35 @@ def test_effect_keys_are_known(engine):
 
 
 def test_almanac_effects_reference_real_pages(engine):
+    """Named grants must exist; every page is either named or loose-pool."""
     with open(os.path.join(STORY_DIR, "almanac_pages.json"), encoding="utf-8") as f:
-        page_ids = {p["id"] for p in json.load(f)["pages"]}
+        pages = json.load(f)["pages"]
+    page_ids = {p["id"] for p in pages}
+    loose_ids = {p["id"] for p in pages if p.get("loose")}
     referenced = set()
     for s in engine.storylets.values():
         for effects in [s.effects] + [c.get("effects", {}) for c in s.choices]:
             if "almanac" in effects:
                 referenced.add(effects["almanac"])
     assert referenced <= page_ids, f"missing pages: {referenced - page_ids}"
-    assert page_ids <= referenced, f"unobtainable pages: {page_ids - referenced}"
+    obtainable = referenced | loose_ids
+    assert page_ids <= obtainable, f"unobtainable pages: {page_ids - obtainable}"
+
+
+def test_loose_page_gates_are_real_qualities(engine):
+    """Every "after" gate must be a quality some storylet actually sets."""
+    with open(os.path.join(STORY_DIR, "almanac_pages.json"), encoding="utf-8") as f:
+        pages = json.load(f)["pages"]
+    settable = set()
+    for s in engine.storylets.values():
+        for effects in [s.effects] + [c.get("effects", {}) for c in s.choices]:
+            settable |= set(effects.get("set", {}))
+            settable |= set(effects.get("add", {}))
+    settable.add("undertow_faced")  # set by the run-end settlement, not a storylet
+    for page in pages:
+        if "after" in page:
+            assert page["after"] in settable, \
+                f"{page['id']} gates on unknown quality {page['after']}"
 
 
 def test_unlock_vessels_exist(engine):

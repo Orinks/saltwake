@@ -5,7 +5,12 @@
       "arc": "lore",
       "where": "sea_event",
       "priority": 30,
-      "requires": [{"q": "met_nereus", "eq": 1}],
+      "requires": [
+        {
+          "q": "met_nereus",
+          "eq": 1
+        }
+      ],
       "title": "Something pale in the water.",
       "pages": [
         "A pale rectangle rides the swell off your bow, too regular for foam. Brought alongside on the boathook, it proves to be exactly what Nereus described: a page, sealed in seamless grey wax, cool to the touch and bone dry at its heart. The sea's own post, addressed, apparently, to whoever troubles to stop."
@@ -13,12 +18,21 @@
       "choices": [
         {
           "label": "Take it aboard for Nereus.",
-          "effects": {"almanac": "page_market_day", "add": {"affinity_nereus": 1}},
-          "response": ["You stow it in the dry locker. For the rest of the leg, you would swear the water rides a half-point kinder."]
+          "effects": {
+            "almanac": "page_market_day",
+            "add": {
+              "affinity_nereus": 1
+            }
+          },
+          "response": [
+            "You stow it in the dry locker. For the rest of the leg, you would swear the water rides a half-point kinder."
+          ]
         },
         {
           "label": "Leave it. Some post is not yours to read.",
-          "response": ["You let it ride. The page circles the hull once, twice, with what can only be called patience, and then makes off purposefully to the southeast, where, you realize later, the next boat out of Greywater would be. The sea does not take refusal personally. It simply re-addresses."]
+          "response": [
+            "You let it ride. The page circles the hull once, twice, with what can only be called patience, and then makes off purposefully to the southeast, where, you realize later, the next boat out of Greywater would be. The sea does not take refusal personally. It simply re-addresses."
+          ]
         }
       ]
     },
@@ -27,7 +41,11 @@
       "arc": "lore",
       "where": "sea_event",
       "priority": 28,
-      "requires": [{"seen": "sea_wax_page_1"}],
+      "requires": [
+        {
+          "seen": "sea_wax_page_1"
+        }
+      ],
       "title": "The post again.",
       "pages": [
         "Another wax-sealed page, riding the chop with the unbothered air of registered mail. This one is heavier, double-sealed, and has, unless the light is lying, a faint warmth to it, like a thing recently held."
@@ -35,8 +53,12 @@
       "choices": [
         {
           "label": "Bring it aboard.",
-          "effects": {"almanac": "page_squall_eve"},
-          "response": ["Into the dry locker it goes. Behind you, very far down, something enormous turns over with what sounds, absurdly, like relief."]
+          "effects": {
+            "almanac": "page_squall_eve"
+          },
+          "response": [
+            "Into the dry locker it goes. Behind you, very far down, something enormous turns over with what sounds, absurdly, like relief."
+          ]
         }
       ]
     },
@@ -52,13 +74,21 @@
       "choices": [
         {
           "label": "Idle through slowly and listen.",
-          "effects": {"grit": 1},
-          "response": ["You cut the engine and drift the eddy's edge while the sea hums over its work. It costs you ten minutes and pays you back something rarer. Your hands are steadier the rest of the day."]
+          "effects": {
+            "grit": 1
+          },
+          "response": [
+            "You cut the engine and drift the eddy's edge while the sea hums over its work. It costs you ten minutes and pays you back something rarer. Your hands are steadier the rest of the day."
+          ]
         },
         {
           "label": "Salvage the bottles. Glass is glass.",
-          "effects": {"salvage": 3},
-          "response": ["You net the orchestra a section at a time. The music thins, protests, and ends. Glass is glass, and salvage is salvage, and if the swell slaps the hull a touch harder on the way out, that is certainly coincidence."]
+          "effects": {
+            "salvage": 3
+          },
+          "response": [
+            "You net the orchestra a section at a time. The music thins, protests, and ends. Glass is glass, and salvage is salvage, and if the swell slaps the hull a touch harder on the way out, that is certainly coincidence."
+          ]
         }
       ]
     },
@@ -67,7 +97,12 @@
       "arc": "lore",
       "where": "sea_event",
       "priority": 15,
-      "requires": [{"q": "races_won", "gte": 1}],
+      "requires": [
+        {
+          "q": "races_won",
+          "gte": 1
+        }
+      ],
       "title": "The challenge buoy.",
       "pages": [
         "Someone has anchored a buoy out here painted in racing checks, with a slate hanging from it on a lanyard and a grease pencil on a string. The slate reads: FASTEST TO THE WRECK POST AND BACK. Below, a column of initials and times, weathered to ghosts at the top, fresh at the bottom. The freshest says C.V., with a time that raises your eyebrows."
@@ -75,12 +110,22 @@
       "choices": [
         {
           "label": "Run the course and chalk your time.",
-          "effects": {"grit": -1, "renown": 2, "set": {"chalked_the_buoy": 1}},
-          "response": ["You run it flat out, alone, witnessed by gulls, which is somehow the most honest racing there is. Your time goes under Cass's initials. Hers was better, on flat water. Yours was in chop. The slate doesn't record conditions. Racers' slates never do, and that is half of why racers argue."]
+          "effects": {
+            "grit": -1,
+            "renown": 2,
+            "set": {
+              "chalked_the_buoy": 1
+            }
+          },
+          "response": [
+            "You run it flat out, alone, witnessed by gulls, which is somehow the most honest racing there is. Your time goes under Cass's initials. Hers was better, on flat water. Yours was in chop. The slate doesn't record conditions. Racers' slates never do, and that is half of why racers argue."
+          ]
         },
         {
           "label": "Leave the slate be.",
-          "response": ["You note the course for a faster day. The buoy bobs, patient. Challenge buoys are never in a hurry. They are made entirely of other people's spare time."]
+          "response": [
+            "You note the course for a faster day. The buoy bobs, patient. Challenge buoys are never in a hurry. They are made entirely of other people's spare time."
+          ]
         }
       ]
     },
@@ -96,8 +141,14 @@
       "choices": [
         {
           "label": "Carry Bosun to the next landing.",
-          "effects": {"set": {"met_bosun": 1}},
-          "response": ["Bosun supervises your boat-handling all the way in, with occasional editorial sneezes, and steps ashore at the first dock as if concluding an inspection. A waterman there nods to the dog with visible respect. 'That's Bosun,' he says, as if that settles everything. On this coast, apparently, it does."]
+          "effects": {
+            "set": {
+              "met_bosun": 1
+            }
+          },
+          "response": [
+            "Bosun supervises your boat-handling all the way in, with occasional editorial sneezes, and steps ashore at the first dock as if concluding an inspection. A waterman there nods to the dog with visible respect. 'That's Bosun,' he says, as if that settles everything. On this coast, apparently, it does."
+          ]
         }
       ]
     },
@@ -106,7 +157,12 @@
       "arc": "undertow",
       "where": "sea_event",
       "priority": 35,
-      "requires": [{"q": "act2_started", "eq": 1}],
+      "requires": [
+        {
+          "q": "act2_started",
+          "eq": 1
+        }
+      ],
       "title": "A word on the glass.",
       "pages": [
         "The water goes glass-calm in the space of three breaths, not weather but attention, the sea holding still the way a room holds still when someone is about to speak. And in the flat silence, against your hull, in the smallest possible wavelets, comes a rhythm you know without learning it: long, long, short. The old lamp code. The one the lighthouse still flashes seaward every night. It means HOLDING. It means STILL HERE.",
@@ -115,8 +171,17 @@
       "choices": [
         {
           "label": "Answer on the rail: short, short, long. RECEIVED. COMING.",
-          "effects": {"set": {"answered_liss": 1}, "add": {"sea_grace": 1}},
-          "response": ["You beat the answer on the rail with your fist, and the glass calm holds one heartbeat longer, like an exhale, and then the chop comes back and the sea is just the sea again. For the rest of this tide, the water reads easier, the cues come kinder. Somewhere below, somebody is showing off for you."]
+          "effects": {
+            "set": {
+              "answered_liss": 1
+            },
+            "add": {
+              "sea_grace": 1
+            }
+          },
+          "response": [
+            "You beat the answer on the rail with your fist, and the glass calm holds one heartbeat longer, like an exhale, and then the chop comes back and the sea is just the sea again. For the rest of this tide, the water reads easier, the cues come kinder. Somewhere below, somebody is showing off for you."
+          ]
         }
       ]
     },
@@ -132,12 +197,19 @@
       "choices": [
         {
           "label": "Split it by the old rule: line cuts the net.",
-          "effects": {"renown": 2, "salvage": 2},
-          "response": ["You quote the rule every chandler's wall carries: first line aboard owns to the knot, the rest swims free. Both crews grumble, which is how you know it lands fair, and the net is divided with dramatic sighing. They each pitch a token share onto your deck, arbiter's cut, custom of the coast. The story will reach the Brinehouse before you do, improved."]
+          "effects": {
+            "renown": 2,
+            "salvage": 2
+          },
+          "response": [
+            "You quote the rule every chandler's wall carries: first line aboard owns to the knot, the rest swims free. Both crews grumble, which is how you know it lands fair, and the net is divided with dramatic sighing. They each pitch a token share onto your deck, arbiter's cut, custom of the coast. The story will reach the Brinehouse before you do, improved."
+          ]
         },
         {
           "label": "Stand off and let them sort it.",
-          "response": ["You give the dispute sea-room. Behind you the volume crests, breaks, and resolves, as these things usually do, into two crews having lunch together on the larger boat. The coast's quarrels are weather: loud, brief, and nobody's business to steer into."]
+          "response": [
+            "You give the dispute sea-room. Behind you the volume crests, breaks, and resolves, as these things usually do, into two crews having lunch together on the larger boat. The coast's quarrels are weather: loud, brief, and nobody's business to steer into."
+          ]
         }
       ]
     },
@@ -146,7 +218,12 @@
       "arc": "lore",
       "where": "sea_event",
       "priority": 12,
-      "requires": [{"q": "region_index", "gte": 1}],
+      "requires": [
+        {
+          "q": "region_index",
+          "gte": 1
+        }
+      ],
       "title": "The raft market.",
       "pages": [
         "Lashed rafts, lanterns, and absolutely no paperwork: one of the floating markets that assemble out past patrol range, where the coast's stranger commerce changes hands. A woman in oilskins sells knots that hum. A boy trades charts of places he insists exist on alternate tides. And everyone, everyone, knows who you are, and is far too polite about it."
@@ -154,12 +231,19 @@
       "choices": [
         {
           "label": "Trade salvage for supplies.",
-          "effects": {"salvage": -4, "supplies": 2},
-          "response": ["The rates are piratical and the company is worth it. You leave with full lockers, two new rumors, and an unsigned warning, pressed into your palm with the change, that the Chop is angrier than the season explains."]
+          "effects": {
+            "salvage": -4,
+            "supplies": 2
+          },
+          "response": [
+            "The rates are piratical and the company is worth it. You leave with full lockers, two new rumors, and an unsigned warning, pressed into your palm with the change, that the Chop is angrier than the season explains."
+          ]
         },
         {
           "label": "Just take the gossip and go.",
-          "response": ["The market's news, free with any browsing: salvage prices are climbing, the patrol has stopped logging the Pale Ferry as weather, and somebody far inland is paying for wax-sealed pages, sight unseen, which the entire market, on principle, refuses to sell. The sea's post goes where it is addressed, says the woman in oilskins, and the rafts murmur agreement."]
+          "response": [
+            "The market's news, free with any browsing: salvage prices are climbing, the patrol has stopped logging the Pale Ferry as weather, and somebody far inland is paying for wax-sealed pages, sight unseen, which the entire market, on principle, refuses to sell. The sea's post goes where it is addressed, says the woman in oilskins, and the rafts murmur agreement."
+          ]
         }
       ]
     },
@@ -168,7 +252,12 @@
       "arc": "lore",
       "where": "sea_event",
       "priority": 16,
-      "requires": [{"q": "met_cass", "eq": 1}],
+      "requires": [
+        {
+          "q": "met_cass",
+          "eq": 1
+        }
+      ],
       "title": "Veyle, inverted.",
       "pages": [
         "A racing hull lies turtled in the swell ahead, and sitting on its upturned bottom, wringing out her jacket with the dignity of a cat in a bath, is Cass Veyle. 'Not one word,' she calls across the water. 'The wave was square. SQUARE, Tideborn. Brick will back me up. There are precedents.'"
@@ -176,13 +265,26 @@
       "choices": [
         {
           "label": "Right her boat and tow her to the line.",
-          "effects": {"add": {"affinity_cass": 2}, "grit": -1},
-          "response": ["Between your winch and her swearing, the hull comes over and her engine, eventually, forgives her. She holds station alongside a moment before opening the throttle. 'This never happened,' she says, 'and also, I owe you one, and also, the wave was square.' All three statements, you understand, are now permanently true."]
+          "effects": {
+            "add": {
+              "affinity_cass": 2
+            },
+            "grit": -1
+          },
+          "response": [
+            "Between your winch and her swearing, the hull comes over and her engine, eventually, forgives her. She holds station alongside a moment before opening the throttle. 'This never happened,' she says, 'and also, I owe you one, and also, the wave was square.' All three statements, you understand, are now permanently true."
+          ]
         },
         {
           "label": "Circle once, slowly, before helping.",
-          "effects": {"add": {"affinity_cass": 1}},
-          "response": ["You take one full, leisurely, unforgivable lap of the capsized champion. Cass watches you the whole way around with the expression of a woman composing a eulogy. Yours. Then you put the line across and she takes it, and the corner of her mouth fails to entirely hold its position. 'Fine,' she concedes. 'That's the kind of thing I'd do.'"]
+          "effects": {
+            "add": {
+              "affinity_cass": 1
+            }
+          },
+          "response": [
+            "You take one full, leisurely, unforgivable lap of the capsized champion. Cass watches you the whole way around with the expression of a woman composing a eulogy. Yours. Then you put the line across and she takes it, and the corner of her mouth fails to entirely hold its position. 'Fine,' she concedes. 'That's the kind of thing I'd do.'"
+          ]
         }
       ]
     },
@@ -191,7 +293,12 @@
       "arc": "undertow",
       "where": "sea_event",
       "priority": 30,
-      "requires": [{"q": "region_index", "gte": 2}],
+      "requires": [
+        {
+          "q": "region_index",
+          "gte": 2
+        }
+      ],
       "title": "The drowned forest speaks.",
       "pages": [
         "Among the standing masts of Wreckwater the sound carries strangely, and today it carries something that is not gull, not halyard, not hull-knock: voices, far down, many of them, in the layered murmur of a town square. Not distressed. Not haunting. Just living, at the bottom of the light, the way Brick heard them: patient.",
@@ -200,12 +307,21 @@
       "choices": [
         {
           "label": "Cut the engine and drift over them awhile.",
-          "effects": {"add": {"sea_grace": 1}, "grit": 1},
-          "response": ["You drift, and listen, and are listened to. No words survive the distance. The tone does: the particular sound of a town that believes its boat is coming. When you restart the engine it catches first pull, and runs, the whole leg, sweet as new."]
+          "effects": {
+            "add": {
+              "sea_grace": 1
+            },
+            "grit": 1
+          },
+          "response": [
+            "You drift, and listen, and are listened to. No words survive the distance. The tone does: the particular sound of a town that believes its boat is coming. When you restart the engine it catches first pull, and runs, the whole leg, sweet as new."
+          ]
         },
         {
           "label": "Press on. You'll come for them properly or not at all.",
-          "response": ["You hold your course and your throttle, and the murmur follows you to the edge of the masts without reproach. They have waited nineteen years. They can read a wake. They know purpose when it passes over them."]
+          "response": [
+            "You hold your course and your throttle, and the murmur follows you to the edge of the masts without reproach. They have waited nineteen years. They can read a wake. They know purpose when it passes over them."
+          ]
         }
       ]
     },
@@ -213,7 +329,7 @@
       "id": "sea_generic_squall_kindness",
       "arc": "lore",
       "where": "sea_event",
-      "priority": 8,
+      "priority": 10,
       "once": false,
       "weight": 2,
       "title": "Kindness in the weather window.",
@@ -223,12 +339,18 @@
       "choices": [
         {
           "label": "Run in company awhile.",
-          "effects": {"supplies": 1},
-          "response": ["You match her pace through the worst of the building chop and part at the channel fork with a trade across the rails: your spare line for a parcel of her catch. No names exchanged. None needed. The coast keeps this ledger loosely and forgets no entries."]
+          "effects": {
+            "supplies": 1
+          },
+          "response": [
+            "You match her pace through the worst of the building chop and part at the channel fork with a trade across the rails: your spare line for a parcel of her catch. No names exchanged. None needed. The coast keeps this ledger loosely and forgets no entries."
+          ]
         },
         {
           "label": "Signal your thanks and run your own race.",
-          "response": ["You trade horn blasts, the short courteous code, and pull ahead. Some tides are for company and some are for the throttle, and a good skipper reads which is which without offense."]
+          "response": [
+            "You trade horn blasts, the short courteous code, and pull ahead. Some tides are for company and some are for the throttle, and a good skipper reads which is which without offense."
+          ]
         }
       ]
     },
@@ -237,7 +359,12 @@
       "arc": "undertow",
       "where": "sea_event",
       "priority": 25,
-      "requires": [{"q": "liss_known", "eq": 1}],
+      "requires": [
+        {
+          "q": "liss_known",
+          "eq": 1
+        }
+      ],
       "title": "A lantern, floating.",
       "pages": [
         "A small lantern rides the swell ahead, upright, lit, in open water, burning a clean steady flame that the spray cannot reach. It is not drifting. It is holding station, the way a child holds a light up for someone working: here, see better, I am helping.",
@@ -246,8 +373,14 @@
       "choices": [
         {
           "label": "Dip your ensign to it as you pass.",
-          "effects": {"add": {"sea_grace": 1}},
-          "response": ["You give the lantern full honors, dipped colors and a hand over your heart, and the flame stands a little taller, the unmistakable posture of an eleven-year-old being taken seriously. It lights your course past the worst of the shoal water and goes out, politely, only when you are through."]
+          "effects": {
+            "add": {
+              "sea_grace": 1
+            }
+          },
+          "response": [
+            "You give the lantern full honors, dipped colors and a hand over your heart, and the flame stands a little taller, the unmistakable posture of an eleven-year-old being taken seriously. It lights your course past the worst of the shoal water and goes out, politely, only when you are through."
+          ]
         }
       ]
     },
@@ -258,7 +391,12 @@
       "priority": 10,
       "once": false,
       "weight": 2,
-      "requires": [{"q": "fish_caught", "gte": 1}],
+      "requires": [
+        {
+          "q": "fish_caught",
+          "gte": 1
+        }
+      ],
       "title": "Reading the birds.",
       "pages": [
         "Working birds, a tight wheeling tower of them, mark bait pushed to the surface by something feeding below. Every waterman on the coast reads this page the same way: fish, free, for the quick."
@@ -266,12 +404,239 @@
       "choices": [
         {
           "label": "Work the edge of the school.",
-          "effects": {"salvage": 2, "supplies": 1},
-          "response": ["Twenty productive minutes under the screaming auditors. You leave the school still working, taking what the edge offers, which is the old agreement, and the birds bank and rejoin without recording a complaint."]
+          "effects": {
+            "salvage": 2,
+            "supplies": 1
+          },
+          "response": [
+            "Twenty productive minutes under the screaming auditors. You leave the school still working, taking what the edge offers, which is the old agreement, and the birds bank and rejoin without recording a complaint."
+          ]
         },
         {
           "label": "Leave the school to the birds.",
-          "response": ["You stand off and let the tower wheel. Some days the watching is worth more than the catch, and the sea, which keeps accounts of restraint as carefully as of greed, notes it."]
+          "response": [
+            "You stand off and let the tower wheel. Some days the watching is worth more than the catch, and the sea, which keeps accounts of restraint as carefully as of greed, notes it."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sea_lamp_reach",
+      "arc": "undertow",
+      "where": "sea_event",
+      "priority": 26,
+      "requires": [
+        {
+          "q": "promised_keeper",
+          "eq": 1
+        },
+        {
+          "q": "undertow_faced",
+          "eq": 0
+        }
+      ],
+      "title": "The beam, past its rated reach.",
+      "pages": [
+        "You are far out tonight, farther than any chart gives the Greywater lamp, and yet here it comes across the black water: the beam, arriving where it has no business arriving, laying itself along your course like a hand on a shoulder. The lights authority rates that lamp to eleven miles. You are not going to tell them. Neither, you suspect, is the lamp.",
+        "It crosses you once, pauses, in the way that beams do not pause, and then it speaks, in the slow deliberate occlusions of a man working the shutter by hand at the top of a hundred and forty steps: long, long, short. HOLDING. The watch is stood. We are not done waiting. It is aimed at the Squall, and it is aimed at whatever swims beneath you keeping its ledger, and it is aimed, tonight, at you."
+      ],
+      "choices": [
+        {
+          "label": "Answer with the masthead light: short, short, long.",
+          "effects": {
+            "add": {
+              "sea_grace": 1
+            }
+          },
+          "response": [
+            "RECEIVED. COMING. You work your masthead light by hand, clumsy against his fluency, and the great beam holds on you one full turn, which from a lighthouse is an embrace, and then goes back to its sweep. All the rest of that leg, the water carries you like something spoken for."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sea_cass_drifting",
+      "arc": "cass",
+      "where": "sea_event",
+      "priority": 16,
+      "requires": [
+        {
+          "q": "cass_listening",
+          "eq": 1
+        }
+      ],
+      "title": "The fastest thing on the coast, stopped.",
+      "pages": [
+        "A racing hull sits dead in the water ahead, engine off, drifting beam-on to the swell, and your rescue instincts are halfway to the throttle before you see the figure aboard: upright, cross-legged on the engine cowling, eyes shut, entirely well. Cass Veyle, training. She holds up one finger without opening her eyes: wait. The chop slaps out its slow syllables against her hull. Whatever it says, she is getting some of it, because the corner of her mouth keeps twitching toward triumph."
+      ],
+      "choices": [
+        {
+          "label": "Cut your engine and drift alongside awhile.",
+          "effects": {
+            "add": {
+              "affinity_cass": 1
+            }
+          },
+          "response": [
+            "You listen together, two boats and the water's long sentences, and neither of you speaks until the tide turns the hulls. 'The fishing fleet's coming home early,' Cass says at last, eyes still shut. 'And something big went through the deep channel an hour ago, and the water hasn't stopped talking about it.' She opens one eye. 'Well? Grade me.' You grade her: correct, twice. The whoop scatters gulls for half a mile."
+          ]
+        },
+        {
+          "label": "Pass wide and leave the lesson undisturbed.",
+          "response": [
+            "You give her sea-room and silence, the two courtesies racers never ask for and always log. As you clear her stern she raises one hand, not opening her eyes: acknowledgment, from one student of the water to the faculty. The story will not appear in the Brinehouse, because some training is proprietary."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sea_bosun_smack",
+      "arc": "lore",
+      "where": "sea_event",
+      "priority": 10,
+      "once": false,
+      "weight": 2,
+      "requires": [
+        {
+          "q": "met_bosun",
+          "eq": 1
+        }
+      ],
+      "title": "The inspector, aboard elsewhere.",
+      "pages": [
+        "A fishing smack labors past on the opposite tack, and stationed at her bow, ears set to the wind, in the exact posture of a harbormaster reviewing paperwork, rides a dog you know. Bosun. The smack's skipper follows your glance and shrugs with the resignation of the audited. 'Came aboard at the third dock,' he calls across. 'Wouldn't say why. We're hoping to pass inspection by the Neck.'"
+      ],
+      "choices": [
+        {
+          "label": "Exchange salutes with the committee of one.",
+          "response": [
+            "You give Bosun the two-finger salute the coast reserves for working officials. Bosun returns one editorial sneeze, which you have learned can mean anything from CARRY ON to NOTED WITH CONCERN, and the smack labors away toward whatever errand the dog has assigned it. On this coast, some traffic is beyond the harbormaster's jurisdiction, and everybody involved prefers it that way."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sea_wreckwater_after",
+      "arc": "undertow",
+      "where": "sea_event",
+      "priority": 32,
+      "requires": [
+        {
+          "q": "undertow_faced",
+          "eq": 1
+        },
+        {
+          "q": "region_index",
+          "gte": 2
+        }
+      ],
+      "title": "The drowned forest, quiet.",
+      "pages": [
+        "The masts of Wreckwater stand as they always stood, but the sound between them has changed, and it takes you half the passage to name how: the murmur is gone. The town-square patience that used to pool under your hull, the layered voices saying WAIT to anyone who could hear them, all of it has gone home, wherever home is for the finished. What is left is just water on old wood, which is its own kind of hymn.",
+        "And then, as your wake threads the last of the masts, it comes, once, all together, from everywhere and nowhere, from nineteen years and ten thousand mornings: not a word, not a number. Just the feeling of a whole town, wherever it is now, turning to watch your boat go by, warm as a window at dusk. Then the reach is only a reach, salvage and seabirds, and it is somehow the most peaceful water on the coast."
+      ],
+      "choices": [
+        {
+          "label": "Drift a moment among the masts, hat in hand.",
+          "effects": {
+            "grit": 1
+          },
+          "response": [
+            "You stand bareheaded in the silence the way the quay stood when the Jane came up, and the drowned forest grants you what it grants nobody else: the sense of a door, closed gently, from the other side, by people who got where they were going. You take that steadiness with you the rest of the tide."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sea_ferry_farewell",
+      "arc": "undertow",
+      "where": "sea_event",
+      "priority": 33,
+      "requires": [
+        {
+          "q": "liss_saved",
+          "eq": 1
+        }
+      ],
+      "title": "The last crossing of the Pale Ferry.",
+      "pages": [
+        "Fair weather, mid-afternoon, the worst possible conditions for a ghost, and there she is anyway, one last time: the Pale Ferry, far off your beam, grey-white and punctual, running the route to a town that no longer needs one. She has never appeared in daylight. She has never appeared in calm. She is not, you understand with sudden certainty, appearing now for the route's sake at all. The real Jane sits fast at her mooring in Greywater, raised and painted and paid for. This is the echo, come to see for itself.",
+        "She alters course, which she has never done in nineteen years of anyone's records, and crosses your wake, close, her rail empty, her windows lit with the last low sun instead of the old wrong glow. And as she passes she dips her colors to you, the full salute, vessel to vessel, the honor of the sea rendered by the sea itself. By the time you have your own ensign down and up again she is thin as weather on the horizon, and then she is weather, and then the afternoon is empty in a way that feels, at last, like a room properly swept."
+      ],
+      "choices": [
+        {
+          "label": "Ring your bell three times across the water.",
+          "effects": {
+            "add": {
+              "sea_grace": 1
+            }
+          },
+          "response": [
+            "Once for the harbor. Once for the boat. Once, quietly, for the water. The horizon takes the third note and keeps it, and the patrol log for this afternoon will read, in the dry hand of a patrolman who has stopped pretending: ATMOSPHERIC PHENOMENON, RESOLVED. ALL VESSELS ACCOUNTED FOR. INCLUDING HER."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sea_new_page",
+      "arc": "lore",
+      "where": "sea_event",
+      "priority": 30,
+      "requires": [
+        {
+          "q": "liss_saved",
+          "eq": 1
+        }
+      ],
+      "title": "The post, resumed.",
+      "pages": [
+        "Nereus said the pages stopped, and Nereus is never wrong about paper, so the pale rectangle riding the swell off your bow should not exist. You bring it alongside anyway. The wax is new, still faintly glossy, sealed by the same seamless hand as all the years of drowned mail, but the page inside, when you hold it to the light, is fresh: white paper, school-ruled, the ink not a season old.",
+        "It is a copy. The sea has copied something, carefully, the way a proud relation copies out a certificate, and posted it to you: the first page of a tide journal, kept by the children of Greywater's school, in six young hands and one supervising eleven-year-old's ferocious marginalia. The original, you know for a fact, is on a desk ashore. The sea simply wanted it in the collection. Nineteen years it mailed you a drowned town's mornings. Now, with the debt paid and the ledger ruled off, it has started collecting the mornings that are still happening."
+      ],
+      "choices": [
+        {
+          "label": "Take it aboard for the Almanac.",
+          "effects": {
+            "almanac": "page_first_morning"
+          },
+          "response": [
+            "Into the dry locker, alongside nineteen years of its ancestors. Somewhere below, something enormous and satisfied resumes its rounds. The post office is open again, and this time, all the addresses are above water."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sea_loose_page",
+      "arc": "lore",
+      "where": "sea_event",
+      "priority": 10,
+      "once": false,
+      "weight": 3,
+      "requires": [
+        {
+          "q": "met_nereus",
+          "eq": 1
+        }
+      ],
+      "title": "The sea's post, riding the swell.",
+      "pages": [
+        "A pale rectangle rides the chop off your bow with the unbothered patience of registered mail: another of the sea's wax-sealed pages, cool to the touch and bone dry at its heart, addressed the only way the sea addresses anything. To whoever troubles to stop."
+      ],
+      "choices": [
+        {
+          "label": "Bring it aboard for the collection.",
+          "effects": {
+            "almanac_loose": 1
+          },
+          "response": [
+            "Into the dry locker it goes. The water rides a half-point kinder the rest of the leg, which is either current or gratitude, and on this coast nobody has ever needed the two told apart."
+          ]
+        },
+        {
+          "label": "Leave it for the next boat.",
+          "response": [
+            "You let it ride. The page circles the hull once, unoffended, and makes off toward the shipping lanes. The sea does not take refusal personally. It simply re-addresses."
+          ]
         }
       ]
     }

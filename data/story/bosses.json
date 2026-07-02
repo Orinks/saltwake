@@ -91,6 +91,44 @@
       "pages": [
         "The Squall parts to let you in, the town turns its drowned face up, and the Undertow rises to meet you with the lantern light burning steady at its heart. No anger in it. No hurry. The sea has waited nineteen years; it can wait another tide. But you can hear, under the vast patience, the lamp burning down."
       ]
+    },
+    {
+      "id": "boss_regatta_postgame",
+      "arc": "main",
+      "where": "boss_regatta_champion",
+      "priority": 20,
+      "once": false,
+      "requires": [{"q": "liss_saved", "eq": 1}],
+      "title": "The regatta, with history.",
+      "pages": [
+        "The gates are set and the Persimmon waits at the line, and her silver-haired helmswoman looks you over with the particular satisfaction of a woman whose ghost story turned out to be true and then turned up to race. 'I said you held your tiller like a ghost I used to race,' she calls across the water. 'I'd like it noted I never said WHICH ghost, and I'd like it noted I was RIGHT.' The starter skiff raises its flag. 'Well, captain. Same rules as ever on this water: try to lose honestly.'"
+      ]
+    },
+    {
+      "id": "boss_ferry_postgame",
+      "arc": "main",
+      "where": "boss_ferry_ghost",
+      "priority": 20,
+      "once": false,
+      "requires": [{"q": "liss_saved", "eq": 1}],
+      "title": "The crossing, unhaunted.",
+      "pages": [
+        "The Chop still brews its bad nights, and tonight is one, but the route through it is only weather now: no grey hull off your beam, no windows lit from nowhere, no wake standing wrong across the sea. The Pale Ferry has made her last crossing and gone wherever finished stories go, and the water she used to sail is just hard water, which is enough for anyone.",
+        "Still, at the worst of it, threading the same line she used to run, you would swear the waves come at you in her old rhythm, easier than the night deserves, as if the route itself remembered being held, and held. Some habits outlive even their ghosts. Through, captain. The way was always through."
+      ]
+    },
+    {
+      "id": "boss_leviathan_postgame",
+      "arc": "main",
+      "where": "boss_leviathan_wake",
+      "priority": 20,
+      "once": false,
+      "requires": [{"q": "debt_balanced", "eq": 1}],
+      "title": "The circle, unwound.",
+      "pages": [
+        "The Leviathan still holds the trench, but the circle has changed: wider now, slower, the vast displacement of it moving through the drowned forest with the aimless ease of a watchman whose watch has ended and who walks the rounds anyway, out of old love for the route. The salvage crews have noticed. The divers' rule still stands, because rules should, but the water over the trench has lost its held-breath weight.",
+        "As you come over the deep, the great wake turns, once, alongside you, matching your course the way a dog falls in at a heel, and far below, something the size of the sea's own grief sounds, a single note, more felt than heard, like a bell rung once in a green cathedral. Not warning. Not welcome. Just the sound the deep makes when it recognizes the boat above it, and approves, and lets the bottom lie easy under your keel."
+      ]
     }
   ]
 }

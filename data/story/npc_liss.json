@@ -1,0 +1,84 @@
+{
+  "storylets": [
+    {
+      "id": "liss_01",
+      "arc": "liss",
+      "where": "talk_liss",
+      "priority": 50,
+      "requires": [{"q": "liss_saved", "eq": 1}],
+      "speaker": "Liss",
+      "title": "What the key opens.",
+      "pages": [
+        "The Brinehouse has a new center of gravity: eleven years old, seated on the bar itself in defiance of at least two posted rules, adjudicating a dispute between grown ferrymen about a wave neither of them can prove. Liss stops mid-ruling when you come in. Her eyes go, the way they always go, to the cord around your neck. 'You still haven't opened it,' she says, in the scandalized tones of someone discovering a present unwrapped in February. 'You've had it the WHOLE TIME. Come on.' She does not ask whether you are busy. Bell seniority, apparently, extends to captains.",
+        "She leads you down the evening quay at a trot, aboard the Jane, and kneels at the wheelhouse step you have crossed a hundred times since the refit. A deckboard lifts on a hinge you have never once seen, which is, you suspect, the sea's idea of a running joke, and under it sits a small brass lock gone green with nineteen years of weather. The key on its cord fits like a word finally remembered. It turns with a click you feel in your back teeth.",
+        "The lamp locker. Dry inside as a chapel. A cradle of oiled wood, sized for a small lantern and padded with sailcloth: her seat, her post, the berth her light rode on every crossing. A tin of striped toffee, fused by the years into geology. A photograph, crew and captain on a sunlit dock, and on the captain's shoulders a girl holding a lantern overhead like a second sun. And taped inside the lid, in the quick certain scrawl, the locker's standing orders: LAMP OIL FIRST. TOFFEE AFTER. HER LIGHT RIDES HOME, WHATEVER ELSE SWIMS. 'See,' says Liss, quiet for once in her life. 'You always kept my place.'"
+      ],
+      "effects": {"set": {"key_answered": 1}, "add": {"affinity_liss": 2}, "almanac": "page_lamp_locker"},
+      "choices": [
+        {
+          "label": "Set her lantern in the cradle where it belongs.",
+          "response": [
+            "She hands it up and you set it in, and it fits the way the key fit, the way your hands fit the wheel: like a sentence finishing. Liss inspects the arrangement and finds it correct. 'Toffee's mine, though,' she adds, with the moral confidence of the only living claimant, and the harbor's smallest, oldest cargo is delivered at last, where the sea can watch."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liss_02",
+      "arc": "liss",
+      "where": "talk_liss",
+      "priority": 45,
+      "requires": [{"q": "key_answered", "eq": 1}],
+      "speaker": "Liss",
+      "title": "Bell seniority.",
+      "pages": [
+        "You find her aboard the Jane before you, cross-legged on the deck with a rag and the bell, polishing brass that is already blinding. 'You do it wrong,' she informs you, by way of good morning. 'At the end of a hard crossing. You rang it three times and you always rushed the third one. Dad timed you once from the gallery. He kept a LOG.' She holds the striker out, handle first, the way you taught her to pass anything aboard a boat, nineteen years ago, in another life, and both of you know it.",
+        "So you ring it properly, under supervision: once for the harbor, once for the boat, and once, quietly, unhurried, for the water. The third note goes out over the evening chop and does not entirely stop, the way a bell in a fog does not entirely stop, and out past the breakwater the water flattens for the length of one held breath. Long, long, short, say the smallest wavelets against the hull. HOLDING. Still here. Always will be, now, the way a town is."
+      ],
+      "effects": {"set": {"liss_bell": 1}, "add": {"affinity_liss": 1}}
+    },
+    {
+      "id": "liss_03",
+      "arc": "liss",
+      "where": "talk_liss",
+      "priority": 40,
+      "requires": [{"q": "liss_bell", "eq": 1}],
+      "speaker": "Liss",
+      "title": "The apprentice.",
+      "pages": [
+        "She corners you with a slate, one of Nereus's, worn smooth at the edges, and a proposal she has clearly drafted, redrafted, and had witnessed. 'I want to learn the water. Properly. Not the way Brick teaches it, all throttle and shouting, though I am ALSO learning that. The way you do it. The listening way.' She holds up the slate. On it, in careful chalk: LESSON ONE, and a space left blank for whatever lesson one turns out to be.",
+        "You point out that the water kept her nineteen years, that she has been closer to it than any living sailor. Liss rolls her eyes with her whole body, a skill she has brought back from the deep intact. 'Being POST doesn't teach you to be POSTMAN,' she says, and there is no arguing with that, because it is the truest thing said on this quay all season. Her father's terms come down the lighthouse stair the next morning, in the tall upright hand that does not waste motion: SHE LEARNS FROM THE CAPTAIN OR NOT AT ALL. BOARDS DRY. BOTH OF YOU.",
+        "So it begins: the lamp keeper's girl, the loaner slate, and the oldest curriculum on the coast. Lesson one, you write in the blank space, and she reads it aloud slowly, weighing it: EVERYTHING GETS WRITTEN DOWN. EVERYTHING GETS MET AT THE DOCK. 'That's Odessa's,' she objects. Yes, you say. Good curriculum borrows. It is recorded."
+      ],
+      "effects": {"set": {"liss_apprentice": 1}, "add": {"affinity_liss": 1}}
+    },
+    {
+      "id": "liss_ambient_1",
+      "arc": "liss",
+      "where": "talk_liss",
+      "priority": 5,
+      "once": false,
+      "weight": 3,
+      "requires": [{"q": "liss_saved", "eq": 1}],
+      "speaker": "Liss",
+      "title": "Holding court.",
+      "pages": [
+        "Liss is at the window table doing her homework, which tonight consists of tide arithmetic set by Nereus, throttle theory set by Brick, and a column of her own invention headed THINGS THE GROWN-UPS GOT WRONG TODAY, which is the longest of the three. She reports the quay's news to you with the crisp delivery of a harbor official: the gulls are winning again, Mirabel's stove has decided it dislikes a food critic from down the coast, and Odessa let her stamp a customs form, once, supervised, and it was, she wants this logged accurately, the greatest moment of her second life so far."
+      ]
+    },
+    {
+      "id": "liss_ambient_2",
+      "arc": "liss",
+      "where": "talk_liss",
+      "priority": 7,
+      "once": false,
+      "weight": 2,
+      "requires": [{"q": "liss_apprentice", "eq": 1}],
+      "speaker": "Liss",
+      "title": "Lesson reports.",
+      "pages": [
+        "Your apprentice debriefs you on the week's water like a fellow professional: what the chop said under the breakwater at slack tide, which she is starting to hear, and what it said off the mussel beds, which she is not, yet, and has logged as PENDING rather than admit. The slate fills a line at a time in careful chalk. At the bottom, beneath the lessons, she has added a standing entry in the quick certain capitals of somebody else's handwriting she has decided to inherit: HER LIGHT RIDES HOME, WHATEVER ELSE SWIMS. When you ask about it she shrugs, exactly the way you shrug. 'Standing orders,' she says. 'You wrote them. I'm just keeping the log properly.'"
+      ]
+    }
+  ]
+}

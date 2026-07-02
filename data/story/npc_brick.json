@@ -97,6 +97,35 @@
       "pages": [
         "Brick reads your latest times off his stopwatch like a magistrate reading charges, finds you guilty of a soft entry on the third buoy, and sentences you to hearing about how he took that same buoy in the spring invitational of his fourth season. The story has improved since you last heard it. The wave is bigger. The margin is smaller. The crowd, by now, numbers in the implausible thousands. You would not trade it for an accurate one."
       ]
+    },
+    {
+      "id": "brick_storm_notes",
+      "arc": "brick",
+      "where": "talk_brick",
+      "priority": 37,
+      "requires": [{"q": "storms_survived", "gte": 2}, {"q": "affinity_brick", "gte": 2}],
+      "speaker": "Brick",
+      "title": "What the weather sounded like.",
+      "pages": [
+        "You came through weather, and Brick wants the sound of it. Not the tactics, not the line you took; the sound. He listens with his eyes shut while you give it to him honestly: the note the wind found in the rigging, the flat wrong hush in the troughs, the drum of it on the hull like something asking to be let in.",
+        "'People think the fear is the problem,' he says at the end, eyes still shut. 'It isn't. Fear's just the water's way of getting your attention. The trick isn't to stop being afraid. Nobody stops. The trick is to keep your hands half a second ahead of it, so the fear rides passenger instead of taking the wheel.' He opens his eyes, and for a moment the six-year champion is fully in the room. 'You keep your hands ahead. I've watched you do it. That's not tideborn magic, that's craft, and craft is the only thing on this coast I still say prayers to. Go ride something.'"
+      ],
+      "effects": {"add": {"affinity_brick": 1}}
+    },
+    {
+      "id": "brick_06",
+      "arc": "brick",
+      "where": "talk_brick",
+      "priority": 34,
+      "requires": [{"q": "liss_saved", "eq": 1}, {"q": "brick_riding", "eq": 1}],
+      "speaker": "Brick",
+      "title": "The entry form.",
+      "pages": [
+        "There is a paper on the window table, face down, and Brick is sitting behind it like a man guarding a live shell. He turns it over when you sit. It is the entry form for the coastal invitational, the big one, out on the Chop, the race he led for six years and has not started in nine. Veterans' class. Every field filled out in block capitals pressed hard enough to emboss the table, and at the bottom, the name: BRYK MOLENAAR.",
+        "'Filled it out four times,' he says. 'Burned three. This one made it to the tavern, which is the furthest any of them's got.' He slides the pen across. 'Regulations want a second. Somebody to countersign, stand on the wall, and haul me out if the water changes its mind about our arrangement.' He does not quite look at you. 'I'd have asked the kid, but she's eleven, and her handwriting's worse than the captain's.'",
+        "You sign. Brick looks at the two names sharing the paper for a long moment, then folds it once, square, and puts it in his breast pocket like a man stowing his own heart for the crossing. 'Right,' he says, and his voice only needs one run at it. 'Training starts Thursday. Wall duty's dawn to eight. Bring the stopwatch. Not the kid's. She's altered it. It lies in her favor.'"
+      ],
+      "effects": {"set": {"brick_entered": 1}, "add": {"affinity_brick": 1}}
     }
   ]
 }

@@ -2,10 +2,13 @@
 
 Arrow through the entries instead of sitting through one long report.
 Enter re-reads the focused entry with its flavor line; H does the same.
+"Copy to clipboard" at the bottom (or C anywhere in the menu) puts the
+whole record on the system clipboard as plain text, ready to paste.
 """
 
 import pygame
 
+from core import clipboard
 from core.menu import AccessibleMenu, MenuItem, BACK
 from core.scenes import Scene
 from game import profile as profile_mod
@@ -49,6 +52,13 @@ def chronicle_entries(profile: dict) -> list[tuple[str, str]]:
     ]
 
 
+def chronicle_text(profile: dict) -> str:
+    """The whole Chronicle as plain text, one entry per line."""
+    lines = [f"Saltwake: the Chronicle of {profile.get('name', 'Tideborn')}."]
+    lines += [text for text, _ in chronicle_entries(profile)]
+    return "\n".join(lines)
+
+
 class ChronicleScene(Scene):
     def __init__(self, game):
         super().__init__(game)
@@ -57,20 +67,37 @@ class ChronicleScene(Scene):
     def on_enter(self):
         items = [MenuItem(text, value=("entry", text, help_text), help_text=help_text)
                  for text, help_text in chronicle_entries(self.game.profile)]
+        items.append(MenuItem("Copy the Chronicle to the clipboard",
+                              value=("copy", None, None),
+                              help_text="Puts your whole record on the clipboard "
+                                        "as plain text, ready to paste anywhere."))
         items.append(MenuItem("Close the Chronicle", value=("back", None, None)))
         self.menu = AccessibleMenu(
             "The Chronicle.", items, self.speech, self.audio,
-            intro="Your record across every tide.")
+            intro="Your record across every tide. C copies it to the clipboard.")
         self.menu.open()
+
+    def _copy(self):
+        if clipboard.copy_text(chronicle_text(self.game.profile)):
+            self.audio.menu_select()
+            self.speech.say("Chronicle copied to the clipboard.")
+        else:
+            self.speech.say("Copying failed. No clipboard is available here.")
 
     def handle_event(self, event):
         if event.type != pygame.KEYDOWN or self.menu is None:
+            return
+        if event.key == pygame.K_c:
+            self._copy()
             return
         result = self.menu.handle_event(event)
         if result is None:
             return
         if result is BACK or result[0] == "back":
             self.game.scenes.pop()
+            return
+        if result[0] == "copy":
+            self._copy()
             return
         _, text, help_text = result
         self.speech.say(f"{text}. {help_text}")

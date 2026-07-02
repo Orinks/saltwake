@@ -101,6 +101,8 @@ class StoryletScene(Scene):
         self.speech.queue("Enter for more." if len(lines) > 1 else "Enter to continue.")
 
     def _close(self):
+        from game import achievements
+        achievements.announce(self.game)  # queued, so nothing is talked over
         self.game.scenes.pop()
         if self.on_close:
             self.on_close()

@@ -96,6 +96,35 @@
       "pages": [
         "Your bowl is full before you reach the bar. 'Installment,' Mirabel says, daring you to argue. Around the Brinehouse, the regulars have learned the new constellation of facts the way harbors learn everything, by osmosis and eavesdropping, and they treat you with a careful, fierce normalcy that is this coast's highest honor: the captain eats his chowder in peace."
       ]
+    },
+    {
+      "id": "mirabel_free_table",
+      "arc": "mirabel",
+      "where": "talk_mirabel",
+      "priority": 37,
+      "requires": [{"q": "rescues", "gte": 2}, {"q": "affinity_mirabel", "gte": 3}],
+      "speaker": "Mirabel",
+      "title": "The corner table.",
+      "pages": [
+        "The swimmer you hauled out of the chop this week is at the corner table by the stove, wrapped in someone's spare jumper, being fed by Mirabel on the house and at volume. You have noticed this before without seeing it: that table is never sold. The drowned-and-returned eat there, and the shipwrecked, and once, memorably, an entire capsized wedding party, and the reckoning never comes.",
+        "'I came up this coast on the mail boat with one bag and a temper,' Mirabel says, catching you noticing, 'and the first night, a landlady I never learned the name of sat me at her stove and fed me until I stopped shaking, and when I tried to pay she looked at me like I'd offered to pay for the tide.' She wipes the taps, done with the subject, almost. 'You keep pulling them out of the water, Tideborn. I'll keep the table. Between the two of us that's the whole rescue, you know. Half of drowning happens after they're ashore.'"
+      ],
+      "effects": {"add": {"affinity_mirabel": 1}}
+    },
+    {
+      "id": "mirabel_06",
+      "arc": "mirabel",
+      "where": "talk_mirabel",
+      "priority": 34,
+      "requires": [{"q": "liss_saved", "eq": 1}, {"q": "knows_rens_chowder", "eq": 1}],
+      "speaker": "Mirabel",
+      "title": "Ren's stall.",
+      "pages": [
+        "Greywater holds its spring-tide market, the first since the water gave everything back, and down among the stalls by the harbor clock there is one with a new-painted sign in a confident hand: REN'S, BY WAY OF MIRABEL. The chowder pot is the big one. The queue forms before the paint on the sign is dry, because the quay can smell a legend at forty yards.",
+        "You get the story between ladlefuls. 'Nineteen years I made that recipe for a tavern and told nobody whose it was,' Mirabel says, working like a stoker, red coat sleeves rolled. 'Then an eleven-year-old walks into my bar and tells me my mother's stall was the best thing about market day in Maren's Hollow, that Ren used to save her a heel of bread to feed the harbor cats, that the whole town queued in the rain for this pot. Under her own name, mind. REN'S.' The ladle points at the sign, steady as a compass. 'So. Grand reopening. New premises. Same management, one generation removed.'",
+        "The pot is scraped by nine, to the minute, and Liss, arriving at ten past with Brick's stopwatch still around her neck, is turned away in accordance with tradition and then immediately handed the bowl Mirabel held back, in accordance with the older tradition underneath it. The market roars on. Somewhere in it, unmistakably, a town that drowned nineteen years ago is having its morning after all."
+      ],
+      "effects": {"add": {"affinity_mirabel": 1}, "renown": 2}
     }
   ]
 }

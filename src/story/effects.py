@@ -32,6 +32,15 @@ def apply_effects(effects: dict, profile: dict, run=None) -> list[str]:
         if page not in profile["almanac"]:
             profile["almanac"].append(page)
             messages.append("A page for the Drowned Almanac. It is added to your collection.")
+    if "almanac_loose" in effects:
+        from game import almanac
+        for _ in range(int(effects["almanac_loose"])):
+            page = almanac.draw_loose(profile)
+            if page is None:
+                messages.append("The wax is empty this time: every loose page "
+                                "the sea is posting, you already hold.")
+                break
+            messages.append(f"A wax-sealed page for the Drowned Almanac: {page['title']}.")
     if "unlock_vessel" in effects:
         vid = effects["unlock_vessel"]
         if vid not in profile["unlocked_vessels"]:

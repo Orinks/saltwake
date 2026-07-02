@@ -134,6 +134,33 @@
         "Captain. You wake on the shingle with the word still in your chest, and it fits. That is the terrible thing, the wonderful thing. It fits like the tiller fits your hand.",
         "The Glass Squall stands on the horizon, patient as a creditor. The sea is done dropping hints."
       ]
+    },
+    {
+      "id": "wreck_liss_scolding",
+      "arc": "liss",
+      "where": "wreck",
+      "priority": 92,
+      "requires": [{"q": "liss_saved", "eq": 1}],
+      "speaker": "Liss",
+      "title": "Someone waits on the shingle now.",
+      "pages": [
+        "You wake on the shingle to the tide combing your hair and a lantern held eight inches from your face by an eleven-year-old at the outer limit of her patience. Liss has the blanket, the flask, and the spot, Odessa's old spot, on the gunwale of the beached dory, which was formally handed over, you will learn, with training in how to sit on it. What she does not have is any of the harbor's practiced calm about your habits.",
+        "'You SANK,' she says, wielding the blanket like an arrest warrant. 'You're not supposed to sink. You're supposed to be the one who DOESN'T sink. I had to hear it from the BAIT BOY.' She wraps you with furious competence, checks your eyes the way her father taught her, both of them pretending she isn't doing it, and delivers the verdict of the whole small tribunal of her face: 'The sea can borrow you. Fine. Everyone borrows you. But I logged you OUT at dawn and the log says HOME BY SUPPER, and,' she taps the slate, where it is, in fact, written, 'the log,' tap, 'gets kept,' tap, 'PROPERLY.' Above the two of you, the dark lighthouse says nothing, and the small lantern in its gallery window burns like a held tongue."
+      ]
+    },
+    {
+      "id": "wreck_postgame",
+      "arc": "undertow",
+      "where": "wreck",
+      "priority": 88,
+      "once": false,
+      "weight": 2,
+      "requires": [{"q": "undertow_faced", "eq": 1}],
+      "title": "Walked home.",
+      "pages": [
+        "The boat goes and the water takes you, and there is no weighing anymore, no ledger opened, no number pressed into you like a stamp. What there is, in the dark between the going and the shingle, is company: the current at your collar has the feel of an arm through yours, and the long haul shoreward has the unhurried rhythm of a friend seeing a friend to the door at the end of a late night, neither of you needing to talk.",
+        "You wake on the shingle. The tide combs your hair, finds nothing owing in it, and lets you be. No tally mark. No postage due. Just the loss of a good boat, which stings honestly, the way things sting when they are only what they are. Up the quay the lamps are on and somebody is holding supper. The sea keeps what it loves, the saying goes, and returns what it trusts, and these days, you and it both know the account it keeps you in: current, and in good standing, and welcome back any tide."
+      ]
     }
   ]
 }
