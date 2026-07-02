@@ -28,7 +28,10 @@ class RunEndScene(Scene):
             self.summary_spoken = True
             hook = {"wreck": "wreck", "victory": "victory"}.get(self.run.outcome,
                                                                 "homecoming")
-            if maybe_play(self.game, hook, on_close=self._speak_summary):
+            # Pass the finished run: end-of-tide storylets can then see the
+            # salvage aboard and the vessel that carried it.
+            if maybe_play(self.game, hook, run=self.run,
+                          on_close=self._speak_summary):
                 return
         self._speak_summary()
 

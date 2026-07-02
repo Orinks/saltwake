@@ -1,0 +1,141 @@
+{
+  "storylets": [
+    {
+      "id": "embark_jane_first",
+      "arc": "jane",
+      "where": "embark",
+      "priority": 55,
+      "requires": [{"q": "vessel_lantern_jane", "eq": 1}],
+      "title": "Her wheel, your hands.",
+      "pages": [
+        "The first time you take the Lantern Jane out under your own hands, the quay finds reasons to be on the sea wall. Nobody says anything. Sefton coils a rope that needed no coiling, Odessa inspects a bollard, the bait boy openly stares, and the whole harbor performs the elaborate coastal theater of not watching a ghost story put to sea.",
+        "Her engine catches on the first pull, which forty-one-foot ferries do not do, and her wheel comes alive in your hands with the specific, patient give of a boat that has spent nineteen years remembering exactly this weight on exactly these spokes. You take her through the harbor mouth, and the swell meets her bow the way a crowd parts for somebody known, and somewhere between the breakwater and open water you stop being a man steering a boat and resume being a thing there was never a word for: the Jane, underway, whole. Boards dry. Lines free. Tide's out, captain."
+      ]
+    },
+    {
+      "id": "jane_sea_way",
+      "arc": "jane",
+      "where": "sea_event",
+      "priority": 24,
+      "requires": [{"q": "vessel_lantern_jane", "eq": 1}],
+      "title": "The sea makes way.",
+      "pages": [
+        "You notice it first in the crossing chop off the point, where every hull on this coast takes a wet beating: the Jane doesn't. The waves arrive, consider her, and go long, the set spacing itself to her stride like an old dance partner. It is not weather. The other boats working the point are pitching like kettles.",
+        "The old hands have a phrase for boats the water favors, boats that ride a half-sea kinder than the day deserves: sea-kept. They use it carefully, the way you use words that might be listening. There has only ever been one boat on this coast that the term simply, flatly describes, and you are standing in her wheelhouse, and the sea is making way, because for nineteen years it held her like a kept promise and it has not fallen out of the habit of being careful with her."
+      ],
+      "choices": [
+        {
+          "label": "Ease the throttle and let her run her own pace awhile.",
+          "effects": {"grit": 1},
+          "response": ["You give her the water and she takes it, finding the seam in the swell like a hand finding a banister in the dark. For a few miles you are a passenger on your own boat, and it is the most restful work you have done in weeks. Whatever the sea and the Jane worked out between them, down there in the long dark, it did not include forgetting each other."]
+        }
+      ]
+    },
+    {
+      "id": "jane_sea_crossing",
+      "arc": "jane",
+      "where": "sea_event",
+      "priority": 22,
+      "requires": [{"q": "vessel_lantern_jane", "eq": 1}, {"q": "liss_saved", "eq": 1}],
+      "title": "A crossing, requested.",
+      "pages": [
+        "A workboat flags you down in open water, which is ordinary, except that nobody aboard is in trouble. A family, dressed carefully, the grandmother holding the rail like a woman holding a church pew. 'You're her,' the skipper calls across, meaning the boat, not you. 'My mother was runs two and five.' He says it the way this coast says everything that matters: flat, so it will stand up.",
+        "The grandmother wants a crossing. Not to anywhere. A crossing: out and back over the water where the Hollow lies, on the boat that carried her out of it, with her grandchildren aboard, so the family's account of itself has a middle and not just a before and an after."
+      ],
+      "choices": [
+        {
+          "label": "Take them across. All of them.",
+          "effects": {"renown": 2},
+          "response": ["They come aboard the way people board a boat they have heard about at every kitchen table of their lives. Over the drowned town the grandmother stands at the rail and says nothing at great length, and the children, briefed and solemn, sound the bell once each, and one of them gets two, on the grounds, she explains, of being the eldest, and you do not correct the custom she has independently reinvented. You put them back aboard their boat an hour later. No fare is offered. No fare has ever been taken on that run. The wheelhouse book records it the old way: souls carried, all landed, boards dry."]
+        },
+        {
+          "label": "Promise them the crossing on a kinder day.",
+          "response": ["The swell is building and you are loaded deep, and a captain's first cargo is the truth: not today. The skipper nods, satisfied rather than disappointed, because a boat that won't cut corners with his grandmother is exactly the boat the stories promised. 'Spring tide, then,' he calls, making it an appointment. The grandmother lifts one hand off the rail, halfway between a wave and a blessing, and you carry that the rest of the tide instead."]
+        }
+      ]
+    },
+    {
+      "id": "jane_sea_bells",
+      "arc": "jane",
+      "where": "sea_event",
+      "priority": 20,
+      "requires": [{"q": "vessel_lantern_jane", "eq": 1}, {"q": "liss_bell", "eq": 1}],
+      "title": "The channel answers.",
+      "pages": [
+        "Running the buoyed channel at dusk, you ring her bell for the turn, the way the rules require and nobody bothers to do, and the first channel buoy rings back. Once, clean, unmistakable, in a flat calm, with no wake within a mile of it.",
+        "Then the second buoy. Then the third, passing the sound down the channel ahead of you like lamplighters walking a street, the whole buoyed mile ringing you through, one bell at a time. The patrol logs bell buoys as wind. There is no wind. There is a ferry called the Lantern Jane coming down the channel at dusk, and the coast's oldest ironmongery turning out to see her home."
+      ],
+      "choices": [
+        {
+          "label": "Answer the last buoy: one ring, quietly, for the water.",
+          "effects": {"add": {"sea_grace": 1}},
+          "response": ["You give the channel's end the third ring, the unhurried one, and the buoy holds its silence afterward the way a room holds it after grace. Some boats carry cargo. Some carry mail. Hers was always the other thing, the thing bells are for: the news, traveling ahead of her, that everyone is coming home."]
+        }
+      ]
+    },
+    {
+      "id": "embark_jane_dawn_run",
+      "arc": "jane",
+      "where": "embark",
+      "priority": 46,
+      "requires": [{"q": "vessel_lantern_jane", "eq": 1}, {"q": "liss_apprentice", "eq": 1}],
+      "title": "The dawn run, revived.",
+      "pages": [
+        "There is a light in the wheelhouse when you come down to the dock in the dark, and it is not burglars, because burglars do not do tide arithmetic. Liss, in oilskins sized down by Mirabel and dignity sized for a harbormaster, has her lantern lit in the lamp locker's cradle and the slate ruled for the day. 'Dawn run,' she says, as if reminding you of a schedule that has existed continuously since before her second birthday. 'Lesson four is watches. I looked ahead. You need crew for watches. I,' she taps the slate, where it is written, 'am crew.'",
+        "Her father's terms arrive by lamplight from the headland while you are still formulating an argument: one flash, long, steady. Permission, rendered in the only language older than her stubbornness. So the Lantern Jane makes the dawn run again, oyster boats saluting her out of the dark, her old light riding in its cradle where it rode every crossing of her working life, held now the way it was held then, by a lamp keeper, senior, aged twelve at the spring tide, who spends the whole run out at the rail counting the water like an heiress reviewing the estate."
+      ],
+      "effects": {"add": {"affinity_liss": 1}}
+    },
+    {
+      "id": "homecoming_jane_sailed",
+      "arc": "jane",
+      "where": "homecoming",
+      "priority": 57,
+      "requires": [{"q": "vessel_lantern_jane", "eq": 1}],
+      "title": "Bringing her home.",
+      "pages": [
+        "Boats have been coming through the Greywater harbor mouth for two hundred years, and the quay has a settled liturgy for all of them: the scales, the gulls, the studied disinterest. It has no liturgy for this one, because for nineteen years, this one coming home was the town's shorthand for the impossible, and now here she is in the evening light with her wake spreading gold and her captain at the wheel, and the harbor simply stops, all of it, mid-task, and watches the Lantern Jane come in.",
+        "You bring her alongside with the half-turn and the touch of reverse that her hull asked for the moment you were close enough to hear it, and she kisses the fenders like the nineteen years were a rumor. On the wall, somebody starts it, nobody will ever admit who: not a cheer, the other thing, the low sound a harbor makes in its chest when a ledger balances. Odessa is at the office window. She does not wave. She writes something in the book, one line, and you know the shape of it from here: IN. ON TIME."
+      ]
+    },
+    {
+      "id": "boss_leviathan_jane",
+      "arc": "jane",
+      "where": "boss_leviathan_wake",
+      "priority": 22,
+      "requires": [{"q": "vessel_lantern_jane", "eq": 1}],
+      "title": "The keeper and the kept.",
+      "pages": [
+        "The Leviathan's wake stands over the trench where it has always stood, the sea's grief walking its rounds, and then your hull crosses the edge of its circle and everything changes at once. The vast displacement stops. The water goes still from horizon to horizon, not held, not breathless: attentive.",
+        "For nineteen years, whatever moves down there kept the Lantern Jane the way the wax kept the pages: whole, against all sense, because it could not bear the alternative. It circled her. It grieved over her. It was, in the only grammar the deep has, her keeper. And now she passes over the trench under power, painted, crewed, bell bright, alive, and the deep rises, not to the surface, never that, but toward it, close enough that the water bulges with the size of the attention, and holds there, reading her hull the way Nereus reads a recovered page.",
+        "What it does then, the salvage crews will argue about in the Brinehouse for a generation: the whole trench sounds, once, a note more felt than heard, and the sea over the deep lies down flat and shining, the way water does in the lee of something enormous being, for one moment, at peace. The old grief kept her. The old grief gets to see how that turned out. You take her across the still water at half throttle, unhurried, because some processions you do not rush."
+      ]
+    },
+    {
+      "id": "boss_undertow_jane_return",
+      "arc": "jane",
+      "where": "boss_the_undertow",
+      "priority": 22,
+      "requires": [{"q": "vessel_lantern_jane", "eq": 1}, {"q": "liss_saved", "eq": 1}],
+      "title": "The town sees its boat.",
+      "pages": [
+        "The Glass Squall stands quiet now, a calm eye where the worst water on the coast used to be, and Maren's Hollow lies below through water clear as a lens: streets, chimneys, the harbor clock stopped at nineteen past three. The town at rest. The crossing is only weather these days. Except today the boat making it is the Lantern Jane.",
+        "As her shadow passes down the drowned high street, along the route she ran ten thousand mornings, the light changes below. Not voices; the voices went home. Something simpler, older: every window of the sunken town, street by street, catches the sun at once, the whole Hollow flashing bright from below the way a town's windows flash when a boat they know rounds the point. The old signal. The one that needs no lamp oil and no code: SEEN YOU. WELCOME BACK.",
+        "It lasts as long as her shadow takes to cross the town, and then the water is just clear water over old stones. You ring the bell once for the harbor below, once for the boat, and take her on through the eye and out the far side, where the living reaches are waiting. Some routes retire. Hers, it turns out, just changed what it carries: proof, twice a season or so, whenever her keel happens over the Hollow, that the boat came home, and the debt stayed paid, and somebody still makes the run."
+      ]
+    },
+    {
+      "id": "wreck_jane",
+      "arc": "jane",
+      "where": "wreck",
+      "priority": 91,
+      "requires": [{"q": "vessel_lantern_jane", "eq": 1}],
+      "title": "The sea returns them both.",
+      "pages": [
+        "The water takes the Lantern Jane out from under you, and in the second before the cold gets loud you have time for one whole thought, and it is not about drowning: NOT AGAIN. NOT HER.",
+        "You wake on the shingle to the tide combing your hair, and you are up and running the sea wall with your boots still full, because the quay's lamps are burning and there is a crowd at her mooring, and you shove through it braced for grief, and stop. The Lantern Jane rides at her ring, streaming, whole, her lines made fast in knots you recognize because the sea has watched this harbor tie knots for two hundred years. She is impossible. She is also, the bait boy reports breathlessly, warm, like a horse walked home.",
+        "Nobody saw her come in. Nobody ever sees. The sea kept that boat for nineteen years, and if it has resolved, in whatever ledger it keeps its resolutions, that the Lantern Jane does not sink again, ever, under any weather, then that is a standing order the whole ocean apparently intends to honor. Odessa arrives in her nightcoat, checks the lines, and delivers the harbor's official position on the miracle: 'Mooring fee's the same either way, captain.' But she has a hand flat on the hull as she says it, and she leaves it there a long time."
+      ]
+    }
+  ]
+}

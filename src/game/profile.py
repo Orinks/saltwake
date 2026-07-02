@@ -129,5 +129,8 @@ def build_context(profile: dict, run=None) -> dict:
             "salvage": run.salvage,
             "region_index": run.region_index,
             "at_sea": 1,
+            # Which hull is under you: lets story react to the boat itself,
+            # e.g. {"q": "vessel_lantern_jane", "eq": 1}.
+            f"vessel_{run.vessel_id}": 1,
         })
     return ctx

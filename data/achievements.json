@@ -408,6 +408,12 @@
      "requires": [{"seen": "wreck_liss_scolding"}]},
     {"id": "no_paperwork", "category": "secrets", "name": "No Paperwork", "hidden": true,
      "description": "Trade at the raft market, out past patrol range, where the gap between hulls is the notary.",
-     "requires": [{"seen": "sea_night_market"}]}
+     "requires": [{"seen": "sea_night_market"}]},
+    {"id": "her_wheel", "category": "secrets", "name": "Her Wheel, Your Hands", "hidden": true,
+     "description": "Take the Lantern Jane to sea under your own hands, while the whole quay pretends not to watch.",
+     "requires": [{"seen": "embark_jane_first"}]},
+    {"id": "seen_you_welcome_back", "category": "secrets", "name": "Seen You. Welcome Back.", "hidden": true,
+     "description": "Sail her over the town she served, and be answered window by window.",
+     "requires": [{"seen": "boss_undertow_jane_return"}]}
   ]
 }

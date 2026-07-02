@@ -36,6 +36,15 @@
   the Almanac reader is reorganized into Nereus's five volumes (The
   Town, The Ferry, The Squall Year, The Coast, The New Mornings), each
   with spoken found-of-total counts.
+- **The Lantern Jane post-game strand.** The story engine can now see
+  which hull is under you, and she uses it: a first cast-off under your
+  own hands, the sea making way for a sea-kept boat, a family asking for
+  a crossing over the Hollow, the channel buoys ringing her home, the
+  dawn run revived with a lamp keeper (senior) aboard, a homecoming the
+  whole quay stops for, the Leviathan meeting the boat it kept, the
+  drowned town flashing its windows at her shadow, and an answer to the
+  question nobody wanted to ask: what happens if you wreck her. Two new
+  hidden achievements ride along (131 total).
 - **129 achievements, easy to hard, all rooted in the story.** Six
   spoken categories at the quay — The Tide That Turned, The Quay, The
   Water, Tides and Salt, The Post, and Deep Cuts — covering every story
@@ -68,6 +77,10 @@
   inside the bundle.
 
 ### Fixed
+- **End-of-tide storylets can finally see the finished run.** The
+  run-end hook never passed the run along, so the "heavy boat"
+  homecoming beat (gated on salvage aboard) could never trigger. It
+  fires now, and vessel- and salvage-gated endings work in general.
 - **Story choice responses are no longer cut off.** Picking a choice used
   to queue its response and immediately return to the menu underneath,
   whose announcement interrupted the response before it was heard —

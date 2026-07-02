@@ -15,6 +15,7 @@ from core.scenes import Scene
 # Arc id -> spoken group label, in reading order.
 ARC_GROUPS = [
     ("main", "The tide that turned: the main story"),
+    ("jane", "The Lantern Jane"),
     ("odessa", "Odessa"),
     ("mirabel", "Mirabel"),
     ("brick", "Brick"),
