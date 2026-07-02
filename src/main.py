@@ -68,8 +68,21 @@ def self_test() -> int:
     game = build_context(silent=True)
     arcs = game.story.count_by_arc()
     total = sum(arcs.values())
+    assert total >= 140, f"story corpus missing from this build: {total} storylets"
     print(f"Story: {total} storylets across {len(arcs)} arcs: "
           + ", ".join(f"{a}={n}" for a, n in sorted(arcs.items())))
+    # Gate the bundle on its data: a build that boots but shipped without
+    # these files would fail silently in front of a player instead.
+    from game import achievements, almanac
+    pages, volumes = almanac.pages(), almanac.volumes()
+    assert len(pages) >= 50 and len(volumes) == 5, \
+        f"almanac data missing or truncated: {len(pages)} pages, {len(volumes)} volumes"
+    achs = achievements.all_achievements()
+    assert len(achs) >= 100, f"achievements data missing or truncated: {len(achs)}"
+    category_ids = {c["id"] for c in achievements.categories()}
+    assert all(a["category"] in category_ids for a in achs)
+    print(f"Content: {len(pages)} almanac pages in {len(volumes)} volumes, "
+          f"{len(achs)} achievements in {len(category_ids)} categories.")
     from scenes.main_menu import MainMenuScene
     from scenes.harbor import HarborScene
     from game.run import RunState

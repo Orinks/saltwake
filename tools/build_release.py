@@ -41,6 +41,41 @@ def project_version() -> str:
         return tomllib.load(f)["project"]["version"]
 
 
+NATIVE_EXTS = {".dll", ".dylib", ".so"}
+
+
+def _native_files(root: Path) -> list[Path]:
+    return [p for p in root.rglob("*")
+            if p.is_file() and p.suffix.lower() in NATIVE_EXTS]
+
+
+def verify_release_dependencies() -> None:
+    """Fail early when this platform's build would ship broken.
+
+    A wheel that installed without its native libraries produces a build
+    that freezes fine and then has no speech or no audio on players'
+    machines. Catch that before spending the build time, and check the
+    game data the bundle step copies wholesale.
+    """
+    import importlib
+
+    for module in ("pygame", "numpy", "prism", "sound_lib"):
+        importlib.import_module(module)
+
+    for module, label in (("sound_lib", "sound_lib BASS audio"),
+                          ("prism", "Prism speech")):
+        pkg_root = Path(importlib.import_module(module).__file__).parent
+        if not _native_files(pkg_root):
+            raise RuntimeError(
+                f"{label} native libraries are missing for this platform "
+                f"under {pkg_root}")
+
+    for required in ("story", "music.json", "vessels.json", "regions.json",
+                     "boons.json", "gear.json", "achievements.json"):
+        if not (ROOT / "data" / required).exists():
+            raise RuntimeError(f"release data is missing: data/{required}")
+
+
 def run_pyinstaller() -> Path:
     """Freeze the game; returns the onedir build directory."""
     cmd = [
@@ -128,9 +163,17 @@ def main() -> int:
                         help="release label override, e.g. nightly-20260611")
     parser.add_argument("--skip-smoke", action="store_true",
                         help="skip booting the frozen build")
+    parser.add_argument("--check-dependencies", action="store_true",
+                        help="only verify release-critical runtime dependencies")
     args = parser.parse_args()
 
+    if args.check_dependencies:
+        verify_release_dependencies()
+        print("Release dependency check passed.")
+        return 0
+
     label = args.tag or project_version()
+    verify_release_dependencies()
     if (ROOT / "build").exists():
         shutil.rmtree(ROOT / "build")
     build_dir = run_pyinstaller()

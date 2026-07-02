@@ -2,6 +2,71 @@
 
 ## Unreleased
 
+### Added
+- **A big story content update** (~7,500 new words, 37 new storylets,
+  now ~24,500 words across 140+ storylets):
+  - **What the brass key opens.** The key you washed in with finally has
+    an answer, and Liss is the one holding it. After the finale she joins
+    the Brinehouse regulars with her own arc: the lamp locker, bell
+    seniority, and an apprenticeship.
+  - **The Keeper gets his own visits.** New lighthouse storylets teach
+    you the lamp code, and tell you about the three tideborn he went to
+    see before you.
+  - **Every NPC arc grows**: Odessa tags the untagged photograph, Mirabel
+    reopens Ren's stall and explains the corner table, Brick fills out
+    the invitational entry form and trades storm fears, Nereus reads you
+    the Jane's printed timetable and starts a book about the living,
+    Cass learns to hear the water and finally beats you fair, and the
+    chandler brothers invent a knot for a debt the sea paid back.
+  - **The world answers the ending.** New post-finale beats nearly
+    everywhere: the Pale Ferry's last crossing, the drowned forest gone
+    quiet, the Leviathan's circle unwound, the regatta champion vindicated,
+    wrecks where the sea walks you home as a friend, Liss waiting furious
+    on the shingle, new homecomings, a beacon dry shelf finally emptying,
+    and the sea's post resuming with living mail.
+  - **Four new Drowned Almanac pages**, including the Jane's annotated
+    summer timetable and the lamp locker's standing orders.
+- **The Drowned Almanac grows to 50 pages, bound in five volumes.**
+  Thirty-eight new "loose pages" — town bylaws, ferry logs, letters,
+  lifeboat records, beacon customs, and post-finale living mail — now
+  wash up from gameplay: successful dives, fishing hauls, drifting
+  caches, wax-page sea events, and pages held for you at friendly
+  beacons, each a random page you don't yet hold. Marquee pages stay
+  story-granted, the New Mornings volume arrives with the ending, and
+  the Almanac reader is reorganized into Nereus's five volumes (The
+  Town, The Ferry, The Squall Year, The Coast, The New Mornings), each
+  with spoken found-of-total counts.
+- **129 achievements, easy to hard, all rooted in the story.** Six
+  spoken categories at the quay — The Tide That Turned, The Quay, The
+  Water, Tides and Salt, The Post, and Deep Cuts — covering every story
+  milestone, relationship, activity, and collection, with 37 hidden
+  marks that stay "a secret the sea is keeping" until earned so the
+  list never spoils the story. Unlocks are announced with queued speech
+  and a fanfare the moment they land (storylets, activity results, run
+  end, or back at the quay), and persist in the save.
+- **Ties.** A new quay menu that speaks where you stand with every
+  character you've met: a named closeness level per person (from
+  "strangers, so far" to "family in all but paper"), with Enter or H
+  reading the regard and the story bonds you've forged.
+- **Memories.** Another new quay menu: every storylet you have seen stays
+  re-readable, grouped by teller (the main story, each character, the sea
+  itself), with the Almanac's reading controls. What people said stays
+  said.
+- **Copy the Chronicle.** The Chronicle can now put your whole record on
+  the system clipboard as plain text, ready to paste — press C anywhere
+  in it, or pick the new "Copy the Chronicle to the clipboard" entry.
+
+### Changed
+- **Release gate, Freight Fate style.** Nightly developer snapshots now
+  build from the `dev` branch instead of `main`, so changes soak in
+  snapshots before a stable is tagged from `main`. Every build first
+  passes the test suite, the headless self-test, and a new dependency
+  check (`build_release.py --check-dependencies`) that verifies the
+  Prism and BASS native libraries and the game data before any build
+  time is spent; the frozen build's smoke test now also asserts the
+  story corpus, almanac volumes, and achievements actually shipped
+  inside the bundle.
+
 ### Fixed
 - **Story choice responses are no longer cut off.** Picking a choice used
   to queue its response and immediately return to the menu underneath,

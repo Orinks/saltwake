@@ -20,10 +20,19 @@ with pages about who you were before the water took your memory.
   (boons), permadeath that banks half and never erases story, pearls and
   renown meta-progression, six vessels, permanent gear, and post-victory
   Tide Marks difficulty.
-- **A novel-scale story** (~17,500 words across 100+ storylets) told the
+- **A novel-scale story** (~24,500 words across 140+ storylets) told the
   Hades way: priority-picked beats keyed to run count, wrecks, deeds, and
   relationships, on a Sunless Sea style quality/storylet engine. Three acts,
-  six NPC arcs, a finale inside the Glass Squall, and post-game epilogues.
+  eight character arcs, a finale inside the Glass Squall, and a post-game
+  where the whole coast answers the ending. Ties shows where you stand
+  with everyone, and Memories keeps every storylet you've heard
+  re-readable, grouped by teller.
+- **A 50-page Drowned Almanac in five volumes**: marquee pages granted by
+  the story, plus a pool of loose pages that wash up from dives, fishing,
+  caches, and beacons — the sea posting you a drowned town, page by page.
+- **129 story-rooted achievements** from first tide to salt-proof legend,
+  in six browsable categories, with hidden marks that never spoil the
+  story and spoken unlock announcements.
 - **An 18-track procedural soundtrack** (~13 minutes of looped music)
   synthesized entirely from code and data — a title theme, the quay, all
   four regions, every activity, two boss themes, and wreck, homecoming, and
@@ -34,7 +43,8 @@ with pages about who you were before the water took your memory.
 - **Accessibility is the design**, not a feature: everything is spoken via
   Prism (NVDA, JAWS, SAPI, VoiceOver, Speech Dispatcher, and more), all cues
   carry redundant speech, R repeats, T reads status, H explains, and a visual
-  mirror shows the last spoken line for sighted players.
+  mirror shows the last spoken line for sighted players. The Chronicle can
+  copy your whole record to the clipboard for sharing.
 
 ## Download and play
 
@@ -129,6 +139,9 @@ the result once as a smoke check, and archives it as
 - `--skip-smoke` — skip booting the frozen build.
 - `--tag <label>` — override the version label in the archive name, as the
   nightly workflow does.
+- `--check-dependencies` — verify the release-critical runtime pieces
+  (Prism and BASS native libraries, the game data) without building.
+  CI runs this as a release gate before every build.
 
 If the build succeeds but the archive seems to vanish on Windows, check
 your antivirus: freshly built unsigned PyInstaller executables are
