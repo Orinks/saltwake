@@ -51,7 +51,8 @@ roguelites and nautical narrative games work:
 
 ## The story architecture
 
-Three acts, ~17,500 words, 106 storylets in 9 arcs:
+Three acts, ~26,000 words, 145 storylets in 11 arcs (plus a 50-page,
+~10,000-word Drowned Almanac in five volumes):
 
 1. **Act 1 — The Tideborn.** Arrival, the loop established, the Almanac
    project with Nereus. Gate: clear the Shallows + 2 almanac pages →
@@ -65,11 +66,13 @@ Three acts, ~17,500 words, 106 storylets in 9 arcs:
    framing, then post-game epilogue beats for every major NPC and an
    open-ended post-game loop.
 
-Six NPC arcs (Odessa, Mirabel, Brick, Nereus, Cass, Sefton) progress on
-**affinity** (earned in conversation choices) crossed with **deeds**
-(races won, rescues, dives, storms survived), so different playstyles
-open different people first. Repeatable ambient beats keep every hook
-point alive between arc beats.
+Eight character arcs (Odessa, Mirabel, Brick, Nereus, Cass, Sefton, the
+Keeper, and one post-game arrival) progress on **affinity** (earned in
+conversation choices) crossed with **deeds** (races won, rescues, dives,
+storms survived), so different playstyles open different people first.
+Repeatable ambient beats keep every hook point alive between arc beats,
+and post-finale variants answer the ending at nearly every hook so the
+post-game world never replays pre-finale text.
 
 ## Deepening with each run
 
@@ -94,6 +97,42 @@ Accessibility rule for music: it is atmosphere only. Every piece of
 information the score hints at (region, danger, outcome) is also spoken,
 music defaults to a low mix under speech and cues, and F2/F3/F4 control it
 from anywhere without entering a menu.
+
+## Setting and era
+
+Saltwake is deliberately unpinned from real history: a fictional coast in
+a storybook maritime mid-century — call it the **lamp-and-engine era**.
+Time is dated only relative to itself ("nineteen years since the Squall"),
+never to a calendar year, which keeps the coast floating outside the real
+world the way Sunless Sea and Hades handle time.
+
+What exists: motor launches, jet skis, and competition hulls; typeset
+jobbing presses; cameras; mercury weather glasses; insurance paperwork,
+customs stamps, and a coastal racing federation with a newsletter;
+condensed milk at the beacons; wetsuits and flare kits at the chandlery.
+Social texture is roughly 1930s–50s: harbormasters and chandlers, folk
+customs, empty-coffin funerals, mail boats — with the anachronistic
+watersports gear waved in because the game is about watersports, and the
+sea being older than all of it.
+
+What pointedly does not exist: radio, telephones, electric light as
+infrastructure, anything digital. Lighthouses burn oil and trimmed wicks;
+messages travel by lamp code, bell, bangs on a beacon rail, mail boat,
+and the tavern.
+
+That absence is load-bearing, not an oversight, and it is the setting's
+one hard rule for new content:
+
+> **No communication faster than light on water.** News moves at the
+> speed of a boat, a beam, or a bell. Nobody owns a wireless set.
+
+Nearly the entire plot depends on information moving slowly and
+physically: a keeper can spend nineteen years not knowing, rescue happens
+because somebody *hears* a whistle, two brothers can feud by knot-code,
+and the sea itself gets to be the postal service. Give this coast radios
+and the central mystery collapses in a week. When writing new storylets
+or almanac pages, date things only relative to the Squall, and check any
+new gadget against the lists above.
 
 ## Extending the corpus
 

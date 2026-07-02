@@ -148,17 +148,120 @@ your antivirus: freshly built unsigned PyInstaller executables are
 sometimes quarantined on sight. Add an exclusion for the `dist/` folder or
 restore the file from quarantine.
 
-## Controls
+## How to play
 
-- **Arrow keys** — navigate menus; steer, carve, dive, and brace at sea
-- **Enter / Space** — select, advance story pages, reel
-- **Escape** — back, skip to choices, abandon an activity
-- **R** — repeat last speech, **T** — status at sea, **H** — help for the focused item
-- **Page Up / Page Down** — speech rate
-- **F2** — music on/off, **F3 / F4** — music volume down/up
-- First-letter navigation works in every menu
-- **How to play** on the title menu opens a paged manual: Left/Right change
-  pages, Up/Down read line by line, Enter reads the whole page
+The full manual also lives in the game: **How to play** on the title menu
+opens a paged spoken version of everything below (Left/Right change pages,
+Up/Down read line by line, Enter reads the whole page).
+
+### The loop
+
+You are the Tideborn. From Greywater Quay you **embark on tides** — runs
+across reaches of open water. Each leg of the sea chart offers two or
+three headings: a contest, something on the water, a friendly beacon,
+drifting salvage, or rough water. Choose one and commit. At the end of a
+reach a warden waits; beat it and you can press deeper or turn for home.
+Salvage converts to pearls **in full** when you make it home, **half** if
+you wreck — and a wreck costs nothing else. Renown, story, almanac pages,
+and friendships all survive. Between tides, spend pearls at the quay and
+talk to people; every run moves the story.
+
+### Menus
+
+| Key | Action |
+| --- | --- |
+| Up / Down | Navigate |
+| Enter / Space | Select |
+| Escape | Back |
+| Home / End | First / last item |
+| Any letter | Jump to the next item starting with it |
+| H | What the focused item does |
+| R | Repeat the last speech |
+
+### At sea
+
+| Key | Action |
+| --- | --- |
+| Arrow keys | Steer, carve, dive, brace — each contest speaks its rules first |
+| Enter / Space | Start a contest; grab; reel |
+| T | Status: hull, grit, salvage, position, weather |
+| R | Repeat the last speech |
+| Escape | Abandon a contest (a failure, never a trap) |
+| Page Up / Page Down | Speech rate, anywhere |
+| F2, F3 / F4 | Music on/off, volume down/up |
+
+### The six contests
+
+Every contest begins with spoken rules; Enter starts, three rising tones
+count you in. Cues are stereo-panned sound with a spoken twin — nothing is
+audio-only.
+
+- **Boat race** — gates call from a side: answer left, right, or up for
+  dead ahead. Clean gates build speed; beat the pacer across the line.
+- **Jet ski slalom** — buoys alternate sides, tempo climbs. Carve with
+  left and right; three misses washes you out.
+- **Dive salvage** — sonar pings lean toward the cache; lower pitch means
+  deeper than you. Down descends, up ascends, left and right swim, Space
+  grabs. Surface at depth zero before your breath runs out.
+- **Storm crossing** — steer *into* the gusts: gust on the left, press
+  right; gust on the right, press left; deep tone dead ahead, brace with
+  down. Mistakes cost hull.
+- **Fishing** — when the line sings high, reel with Space; when the tone
+  drops low, hands off or give line with down. Reel against a run and the
+  line snaps.
+- **Rescue tow** — answer the whistle's direction three times to come
+  alongside, then keep the drifting tow tone centered; brace with down
+  when they panic.
+
+Reach wardens are harder, themed versions of these with their own music
+and their own opinions.
+
+### Greywater Quay
+
+The Brinehouse tavern (the regulars, whose stories deepen with your
+renown, your deeds, and your visits), the harbormaster's office (ledgers
+and the main story), the shipyard (vessels, each with its own handling),
+the chandlery (permanent gear), the Drowned Almanac (recovered lore, in
+five volumes), the Chronicle (your record, copyable to the clipboard with
+C), Ties (where you stand with everyone), Memories (re-read any story
+you've heard), and Achievements (129 marks, from first tide to legend).
+
+### Tips and tricks
+
+- **Talk to everyone between every tide.** Story beats gate on your run
+  count, deeds, and how well people know you — a quiet answer today is a
+  new scene after your next homecoming.
+- **Vary your contests.** Different people care about different deeds:
+  racers notice wins, the kitchen notices fish, the whole coast notices
+  rescues. Playing one activity forever leaves stories locked.
+- **Grit is the run's fuel.** Contests spend it, exhaustion ends the tide.
+  Rest at beacons, and treat a low-grit deep push with suspicion.
+- **Carry a spare supply.** Beacons patch three hull for one supply, and
+  rough water can be skirted for a supply instead of risking the hull.
+- **Check T before committing.** Weather changes leg by leg; a dive in
+  glass calm and a dive in a running sea are different propositions.
+- **Take the Tiding.** Beacon boons last the whole tide and stack. Listen
+  to the water even when you don't need the rest.
+- **Escape is always safe.** Abandoning a contest costs the attempt — no
+  reward, no shame, never a trap. If the weather turned mid-slalom, living
+  to carve tomorrow is a strategy, not a defeat.
+- **Buy gear early.** Chandlery gear is permanent and works on every tide;
+  the cheap pieces pay for themselves within a run or two, and the compass
+  warns you which headings sound ugly.
+- **Match the boat to the plan.** Vessels trade hull, grit, and contest
+  skills; a salvage tide and a race day want different hulls.
+- **Wrecking is progress.** Half the salvage still banks, the story
+  reacts, and some things can only be learned by coming back. Don't play
+  scared.
+- **Bank before you're rich.** Early on, coming home with a modest haul
+  beats wrecking with a heavy one — renown and gear compound.
+- **Loose Almanac pages ride along.** Once you've met the right person at
+  the tavern, pages wash up with dives, fishing hauls, and caches, and
+  friendly beacons hold them for you. Collectors dive deep and stop for
+  wax on the water.
+- **After the credits, keep sailing.** The post-game has its own beats,
+  Tide Marks raise the difficulty for richer banking, and the sea still
+  has things to say.
 
 ## Project structure
 
