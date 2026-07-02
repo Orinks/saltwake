@@ -1,0 +1,122 @@
+{
+  "storylets": [
+    {
+      "id": "deliver_rens_thimble",
+      "arc": "keepsakes",
+      "where": "talk_mirabel",
+      "priority": 44,
+      "requires": [{"q": "keepsake_rens_thimble", "eq": 1}],
+      "speaker": "Mirabel",
+      "title": "The stove's metronome.",
+      "pages": [
+        "You set the thimble on the bar without a word, because some deliveries make their own introductions, and Mirabel stops mid-pour. She does not pick it up at once. She dries her hands first, both of them, thoroughly, the way you gird for something, and then she takes it and turns it once in the lamplight, and the Brinehouse's proprietor, who has faced down brawls and health inspectors, goes sixteen years old over a scrap of kitchen brass.",
+        "'She used to tap it on the pot rim,' Mirabel says. 'While she thought. Tak, tak, tak. The stove's metronome. I'd forgotten it, do you understand me, I have spent nineteen years keeping her recipe and I had LOST the sound of her thinking, and there it is.' She taps it, once, on the rail of the bar. Tak. Her eyes close. 'There she is.'",
+        "The thimble goes up behind the bar on a loop of Sefton's cord, next to the tin with the recipe, where the steam can reach it. That night, the regulars swear, the chowder is better than it has ever been, and nobody can say why, and Mirabel just smiles like a woman whose kitchen finally has all its instruments."
+      ],
+      "effects": {"deliver_keepsake": "rens_thimble", "add": {"affinity_mirabel": 1}, "renown": 1}
+    },
+    {
+      "id": "deliver_odessa_whistle",
+      "arc": "keepsakes",
+      "where": "talk_odessa",
+      "priority": 44,
+      "requires": [{"q": "keepsake_odessa_whistle", "eq": 1}],
+      "speaker": "Odessa",
+      "title": "Crew issue.",
+      "pages": [
+        "Odessa checks the crew lists before she will even hold it, because the harbormaster verifies provenance, that is the whole religion. The ledger comes down, the page turns, her square careful finger stops on a line, and the office goes very quiet. FERRY LANTERN JANE, DECK CREW, ISSUED: ONE WHISTLE, BRASS, CHAIN. NAME: her own, aged sixteen, in a clerk's hand nineteen years drowned.",
+        "'It went over with me,' she says. 'Run six. When the wave took me off the rail, I had it in my teeth, mid-signal.' She weighs it in her palm, and then Odessa, harbormaster of Greywater Quay, does the least dignified thing you have ever seen her do: she steps out onto the office balcony and blows it, one long blast, deck-crew loud, across her whole harbor. Every head on the quay comes up. Two boats answer on their horns out of pure reflex.",
+        "'Still works,' she reports, entirely composed, going back to her stamps. But the whistle does not go into a drawer. It goes around her neck, under the collar, where crew issue lives, and you notice in the weeks after that her voice carries a little less far on the dock, because a woman with her whistle back doesn't need to shout."
+      ],
+      "effects": {"deliver_keepsake": "odessa_whistle", "add": {"affinity_odessa": 1}, "renown": 1}
+    },
+    {
+      "id": "deliver_brick_medal",
+      "arc": "keepsakes",
+      "where": "talk_brick",
+      "priority": 44,
+      "requires": [{"q": "keepsake_brick_medal", "eq": 1}],
+      "speaker": "Brick",
+      "title": "Thrown properly.",
+      "pages": [
+        "Brick knows what it is from across the room, the way you know your own handwriting. 'Year six,' he says, before you reach the table. 'The last one I won. I stood on the sea wall the week after year seven and threw it as far as a frightened man can throw, which,' he takes it, turns it, and the old champion's mouth does something complicated, 'was apparently not far enough.'",
+        "The tavern holds its breath, expecting the story to go dark, and instead Brick starts to laugh, low and genuine, shaking his head at the medal like it's an old rival pulling up alongside. 'Nine years it sat down there with the voices, and now the water hands it back. You know what that is? That's the sea returning my deposit. Item one, gold, slightly used. It means the account's closing out.' He polishes it on his sleeve, out of pure old habit, and sets it on the table between you, face up.",
+        "It does not join the trophies on the shelf. He gives it, the following week, to the coastal federation, for the veterans' class: a prize for the rider who finishes last and finishes anyway. The engraving on the back is new, and it is the whole of Brick's theology in four words: THE WATER KEEPS SCORE."
+      ],
+      "effects": {"deliver_keepsake": "brick_medal", "add": {"affinity_brick": 1}, "renown": 1}
+    },
+    {
+      "id": "deliver_aldous_letter",
+      "arc": "keepsakes",
+      "where": "talk_sefton",
+      "priority": 44,
+      "requires": [{"q": "keepsake_aldous_letter", "eq": 1}],
+      "speaker": "Sefton",
+      "title": "Post, twenty years late.",
+      "pages": [
+        "Sefton reads the address, recognizes the hand, and puts the letter down on the counter unopened. 'That'll be the apology,' he says, to the room, in the tone of a man identifying a species of gull. 'He posted one, the second year. Mail packet went down off the Neck, everyone saved, post lost. He took it for a sign and never wrote another. I know all this,' he adds, 'because I did exactly the same thing the same winter, and MY letter is in the same water somewhere, and if you ever fetch that one up I'll deny every word of it.'",
+        "He waits for the relief boat, because a twenty-year letter gets read by its addressee's family entire, and when Aldous next sits the counter stool the oilskin is cut open with the shop knife, ceremonially, and the brothers read it together, one page between them, at the pace of the slower reader, which each maintains is the other.",
+        "The letter, it emerges, is one paragraph of apology and four pages of cribbage strategy, because their family has exactly one language and it is played on a board. 'I was RIGHT in this letter,' Aldous announces, vindicated across two decades. 'You were WRONG in it,' Sefton counters, 'which is why the sea held it as evidence.' The letter goes up the wall in a frame Sefton absolutely will not admit to having had made in advance. The cribbage ledger records the evening as a draw, which everyone present understands to be the family's word for perfect."
+      ],
+      "effects": {"deliver_keepsake": "aldous_letter", "add": {"affinity_sefton": 1}, "renown": 1}
+    },
+    {
+      "id": "deliver_liss_slate",
+      "arc": "keepsakes",
+      "where": "talk_liss",
+      "priority": 44,
+      "requires": [{"q": "keepsake_liss_slate", "eq": 1}],
+      "speaker": "Liss",
+      "title": "Her own hand, met again.",
+      "pages": [
+        "She knows it the way you knew the Jane's wheel: hands first, understanding after. The slate comes out of the wax-cloth and Liss goes still, and the Brinehouse, which has learned to read her weather, goes quietly about its business at half volume.",
+        "'Day twelve,' she reads, in a voice trying very hard to be a committee chair's. 'Neap tide. Low water at the third bell. Mr. Pell says the moon does it. Tomas says whales.' Her chalk-dusted finger stops on the ruled line. 'This is mine. This is my writing. I wrote this when I was,' and here the arithmetic that has never once frightened her lands, soft as a wave in harbor, 'when I was eleven the first time.' She looks up at you, and for one moment she is the whole strange sum of herself: the girl who wrote it, the light that waited, the apprentice with chalk on her fingers. 'My hand's the same,' she says, wondering. 'Nineteen years, and my hand's the same. That's proof of something. I'm going to figure out what.'",
+        "The slate is presented to the tide journal committee at the next meeting as a founding document, with a formal reading, minutes, and one vote of thanks to the sea, carried unanimously, the gulls abstaining. It hangs in the schoolroom now, above the new journal, and at the bottom of it, added in fresh chalk in the same careful capitals, one line for the record: KEPT PROPERLY. IT IS RECORDED."
+      ],
+      "effects": {"deliver_keepsake": "liss_slate", "add": {"affinity_liss": 1}, "renown": 1}
+    },
+    {
+      "id": "deliver_attmore_ring",
+      "arc": "keepsakes",
+      "where": "talk_nereus",
+      "priority": 44,
+      "requires": [{"q": "keepsake_attmore_ring", "eq": 1}],
+      "speaker": "Nereus",
+      "title": "Initials are an address.",
+      "pages": [
+        "'E.A. and T.O.,' Nereus reads, loupe to the gold, and his archivist's calm lasts exactly that long. 'AND THE MARROWS. Tideborn, do you know what you have brought me?' He is already pulling pages: the washing-line letters, the fair records, the wedding notice. 'Elsbeth Attmore and Theodore Odger. Eleven years of correspondence about pegs. Two prize gardens over one fence. The whole Hollow had a standing wager on them, and the ferry held the mid-day crossing eleven minutes for the wedding party, and the harbor clock's custodian never forgave anybody.'",
+        "The rest he tracks down through the beacon logs, quietly, over a fortnight: the granddaughter, the one already coming north at the season's turn for a wedding photograph on a dry shelf. Party of nineteen, all smiling, one blurred gull. He writes ahead. The letter says only that the coast is holding one further item of estate, and that it has kept its engraving.",
+        "She claims the ring at the beacon with the photograph in her other hand, and the keeper of that station, a woman not given to poetry, logs the discharge in the standing book where you will read it someday: RECEIVED, ONE WEDDING BAND, TWICE ENGRAVED, THRICE STUBBORN. HELD NINETEEN YEARS. DELIVERED TO ITS OWN BLOOD, WHO WEARS IT ON A CHAIN, AND WHO LAUGHED AT THE MARROWS EXACTLY THE WAY THE LETTERS PROMISED SHE WOULD."
+      ],
+      "effects": {"deliver_keepsake": "attmore_ring", "add": {"affinity_nereus": 1}, "renown": 1}
+    },
+    {
+      "id": "thimble_after",
+      "arc": "keepsakes",
+      "where": "talk_mirabel",
+      "priority": 8,
+      "once": false,
+      "weight": 1,
+      "requires": [{"q": "delivered_rens_thimble", "eq": 1}],
+      "speaker": "Mirabel",
+      "title": "Tak, tak, tak.",
+      "pages": [
+        "On slow evenings, when the chowder is thinking, Mirabel reaches up without looking and taps the thimble on its cord, once, twice, three times, the stove's metronome keeping the time it always kept. She does not know she does it. The whole Brinehouse knows she does it, and the whole Brinehouse would sooner go over the sea wall than mention it. Some repairs you do not point at. You just keep the room warm around them."
+      ]
+    },
+    {
+      "id": "whistle_after",
+      "arc": "keepsakes",
+      "where": "talk_odessa",
+      "priority": 8,
+      "once": false,
+      "weight": 1,
+      "requires": [{"q": "delivered_odessa_whistle", "eq": 1}],
+      "speaker": "Odessa",
+      "title": "One blast, harbor-wide.",
+      "pages": [
+        "You were on the quay the day the salvage crews' argument went from loud to stupid, fenders swinging, and the whole harbor heard it: one whistle blast off the office balcony, long, brass, deck-crew certain, a sound with nineteen years of authority saved up and no doubt whatsoever about being obeyed. The argument stopped mid-syllable. Both crews found urgent work. Odessa went back to her stamps. The whistle has been blown exactly once in anger since it came home, and once, the quay agrees, appears to be the necessary annual budget."
+      ]
+    }
+  ]
+}

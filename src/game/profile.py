@@ -23,6 +23,8 @@ DEFAULT_PROFILE = {
     "seen_storylets": {},
     "almanac": [],
     "achievements": {},
+    "keepsakes": [],            # carried, awaiting their owners
+    "keepsakes_delivered": [],
     "unlocked_vessels": ["skiff"],
     "owned_gear": [],
     "unlocked_regions": ["shallows"],
@@ -122,7 +124,18 @@ def build_context(profile: dict, run=None) -> dict:
         "slaloms_cleared": profile["stats"].get("slaloms_cleared", 0),
         "dives_completed": profile["stats"].get("dives_completed", 0),
         "storms_survived": profile["stats"].get("storms_survived", 0),
+        "keepsakes_carried": len(profile.get("keepsakes", [])),
+        "keepsakes_delivered": len(profile.get("keepsakes_delivered", [])),
+        "keepsakes_found": (len(profile.get("keepsakes", []))
+                            + len(profile.get("keepsakes_delivered", []))),
     })
+    # What you carry, and what you have carried home: lets delivery beats
+    # gate on {"q": "keepsake_rens_thimble"} and follow-ups on
+    # {"q": "delivered_rens_thimble"}.
+    for kid in profile.get("keepsakes", []):
+        ctx[f"keepsake_{kid}"] = 1
+    for kid in profile.get("keepsakes_delivered", []):
+        ctx[f"delivered_{kid}"] = 1
     if run is not None:
         ctx.update({
             "hull": run.hull,

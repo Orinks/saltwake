@@ -24,6 +24,7 @@ ARC_GROUPS = [
     ("sefton", "Sefton and Aldous"),
     ("keeper", "Edras, the Keeper"),
     ("liss", "Liss"),
+    ("keepsakes", "Keepsakes, carried home"),
     ("undertow", "The sea itself"),
     ("lore", "Small tides: moments in the reaches"),
 ]

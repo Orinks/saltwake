@@ -1,0 +1,46 @@
+{
+  "keepsakes": [
+    {
+      "id": "rens_thimble",
+      "name": "A brass thimble, sea-smoothed",
+      "found": "Down among the salvage, small and deliberate as a full stop: a brass thimble, kitchen-worn, polished bright by nineteen years of patient water.",
+      "hint": "Kitchen brass, needle-marked. Somebody at the Brinehouse would know work like this.",
+      "after": "met_mirabel"
+    },
+    {
+      "id": "odessa_whistle",
+      "name": "A bosun's whistle on a green chain",
+      "found": "Caught in the netting, a bosun's whistle, its chain corroded green, its tone, when you dare one soft note, impossibly clear.",
+      "hint": "Deck gear, old pattern, crew-issued. The harbormaster's office keeps the crew lists.",
+      "after": "met_odessa"
+    },
+    {
+      "id": "brick_medal",
+      "name": "A championship medal on a rotted ribbon",
+      "found": "Wedged behind the wreck, where the sea files things: a medal, gold under the tarnish, and a name under the gold. B. MOLENAAR.",
+      "hint": "The engraving still reads. So will the man by the window.",
+      "after": "brick_truth"
+    },
+    {
+      "id": "aldous_letter",
+      "name": "A letter in oilskin, stamped and unsent",
+      "found": "An oilskin packet, sealed with care by somebody who meant it: a letter, stamped for the coastal mail, never delivered. The address is a chandlery.",
+      "hint": "Twenty years late is still post. The chandlery is still there.",
+      "after": "brothers_reconciled"
+    },
+    {
+      "id": "liss_slate",
+      "name": "A school slate, ruled for tides",
+      "found": "In a wax-cloth wrap the water plainly respected: a school slate, chalk ruled into careful columns, the heading still legible. TIDE JOURNAL. KEEP PROPERLY.",
+      "hint": "You know exactly one committee that would want this back.",
+      "after": "liss_saved"
+    },
+    {
+      "id": "attmore_ring",
+      "name": "A wedding band, twice engraved",
+      "found": "Alone in a salt-fused strongbox, a wedding band of worked gold, engraved inside twice over: E.A., and T.O., and squeezed between them, AND THE MARROWS.",
+      "hint": "Initials are an address, if you know an archivist.",
+      "after": "liss_saved"
+    }
+  ]
+}

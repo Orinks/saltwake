@@ -41,6 +41,15 @@ def apply_effects(effects: dict, profile: dict, run=None) -> list[str]:
                                 "the sea is posting, you already hold.")
                 break
             messages.append(f"A wax-sealed page for the Drowned Almanac: {page['title']}.")
+    if "keepsake" in effects:
+        from game import keepsakes
+        found = keepsakes.grant(profile, effects["keepsake"])
+        if found is not None:
+            messages.append(f"Found, and kept dry: {found['name']}. {found['hint']}")
+    if "deliver_keepsake" in effects:
+        from game import keepsakes
+        keepsakes.deliver(profile, effects["deliver_keepsake"])
+        # The delivery scene tells its own story; no system message needed.
     if "unlock_vessel" in effects:
         vid = effects["unlock_vessel"]
         if vid not in profile["unlocked_vessels"]:

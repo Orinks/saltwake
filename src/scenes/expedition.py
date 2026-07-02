@@ -144,12 +144,29 @@ class ExpeditionScene(Scene):
             self.speech.queue("And something else, wax-sealed and bone dry: "
                               f"a page for the Drowned Almanac. {page['title']}.")
 
+    def _maybe_keepsake(self) -> bool:
+        """Rarely, a dive brings up something personal. The sea files
+        things behind the wreck; sometimes they are somebody's."""
+        if self.run.rng.random() >= 0.12:
+            return False
+        from game import keepsakes
+        keepsake = keepsakes.draw(self.game.profile, self.run.rng)
+        if keepsake is None:
+            return False
+        self.audio.big_success()
+        self.speech.queue(f"And behind the wreck, where the sea files things: "
+                          f"{keepsake['name']}. {keepsake['hint']} "
+                          "It rides home in your sea chest.")
+        return True
+
     def _activity_done(self, result):
         from game import achievements
         self._award(result.renown, result.stat)
         self.run.log.append(result.headline)
         if result.success:
-            self._maybe_loose_page(self.PAGE_CHANCES.get(result.stat, 0.0))
+            # A personal find preempts the post: one discovery per haul.
+            if not (result.stat == "dives_completed" and self._maybe_keepsake()):
+                self._maybe_loose_page(self.PAGE_CHANCES.get(result.stat, 0.0))
         achievements.announce(self.game)
         self._after_node()
 

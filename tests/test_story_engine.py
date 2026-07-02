@@ -12,6 +12,7 @@ from story.engine import StoryEngine, Storylet, check_requirements
 KNOWN_OPS = {"eq", "ne", "gt", "gte", "lt", "lte"}
 KNOWN_EFFECT_KEYS = {
     "set", "add", "pearls", "renown", "almanac", "almanac_loose",
+    "keepsake", "deliver_keepsake",
     "unlock_vessel", "unlock_region", "salvage", "hull", "grit", "supplies",
 }
 

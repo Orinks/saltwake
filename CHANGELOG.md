@@ -36,6 +36,17 @@
   the Almanac reader is reorganized into Nereus's five volumes (The
   Town, The Ferry, The Squall Year, The Coast, The New Mornings), each
   with spoken found-of-total counts.
+- **Keepsakes: the sea returns what was somebody's.** Deep dives can now
+  surface personal objects the water kept — a thimble, a whistle, a
+  medal, a letter twenty years late, a school slate, a twice-engraved
+  ring — each with a spoken hint about who might know it. They ride in a
+  new Sea chest menu at the quay, and carrying one to its owner plays a
+  delivery scene: memories recovered, families traced, accounts settled.
+  Emotional, cozy, and the game's premise in miniature: the sea holds
+  people's memories and gives them back attached to things. Keepsakes
+  gate themselves behind the story so nothing surfaces before its owner
+  could receive it, follow-up beats linger after delivery, and three new
+  achievements mark the courier work (134 total).
 - **The Lantern Jane post-game strand.** The story engine can now see
   which hull is under you, and she uses it: a first cast-off under your
   own hands, the sea making way for a sea-kept boat, a family asking for

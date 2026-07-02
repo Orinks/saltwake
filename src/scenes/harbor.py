@@ -88,6 +88,8 @@ class HarborScene(Scene):
                      "Go back through the story you've heard, teller by teller."),
             MenuItem("Achievements", "achievements",
                      "The coast's marks: made, waiting, and secret."),
+            MenuItem("Sea chest", "sea_chest",
+                     "Keepsakes the water gave back, and who they belong to."),
             MenuItem("Settings", "settings", "Speech rate, audio, difficulty, save."),
             MenuItem("Leave the quay and rest", "quit",
                      "Saves and returns to the title menu."),
@@ -169,6 +171,10 @@ class HarborScene(Scene):
             from scenes.achievements_scene import AchievementsScene
             self.menu = None
             self.game.scenes.push(AchievementsScene(self.game))
+        elif choice == "sea_chest":
+            from scenes.sea_chest_scene import SeaChestScene
+            self.menu = None
+            self.game.scenes.push(SeaChestScene(self.game))
         elif choice == "settings":
             from scenes.settings_scene import SettingsScene
             self.menu = None

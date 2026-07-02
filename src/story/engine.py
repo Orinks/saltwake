@@ -34,7 +34,8 @@ Effects:
     {"set": {"name": 2}, "add": {"affinity_odessa": 1},
      "pearls": 5, "salvage": -2, "hull": -1, "grit": -1, "supplies": 1,
      "unlock_vessel": "id", "unlock_region": "id", "almanac": "page_id",
-     "renown": 1, "keepsake": "id"}
+     "almanac_loose": 1, "renown": 1,
+     "keepsake": "id", "deliver_keepsake": "id"}
 """
 
 import json

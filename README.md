@@ -259,6 +259,10 @@ you've heard), and Achievements (129 marks, from first tide to legend).
   the tavern, pages wash up with dives, fishing hauls, and caches, and
   friendly beacons hold them for you. Collectors dive deep and stop for
   wax on the water.
+- **Dive for keepsakes.** Rarely, a dive brings up something personal the
+  sea was keeping. Check the Sea chest at the quay for the hint about who
+  might know it, then carry it home. Deliveries are their own reward, and
+  also an actual reward.
 - **After the credits, keep sailing.** The post-game has its own beats,
   Tide Marks raise the difficulty for richer banking, and the sea still
   has things to say.
