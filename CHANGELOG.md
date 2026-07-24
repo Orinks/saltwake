@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.2.0 — 2026-07-24
+
 ### Added
 - **A big story content update** (~7,500 new words, 37 new storylets,
   now ~24,500 words across 140+ storylets):
