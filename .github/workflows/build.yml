@@ -75,6 +75,7 @@ jobs:
               USER_FACING_PATHS=$(git diff --name-only "$LAST_TAG"..HEAD -- \
                 src/ \
                 data/ \
+                installer/ \
                 pyproject.toml \
                 tools/build_release.py | sed '/^$/d')
 
@@ -142,12 +143,68 @@ jobs:
           uv run python tools/build_release.py
           --tag "${{ needs.prepare.outputs.is_nightly == 'true' && needs.prepare.outputs.tag || needs.prepare.outputs.version }}"
 
+      - name: Package AppImage
+        if: matrix.os == 'ubuntu-latest'
+        timeout-minutes: 15
+        run: >
+          uv run python installer/build_appimage.py
+          --tag "${{ needs.prepare.outputs.is_nightly == 'true' && needs.prepare.outputs.tag || needs.prepare.outputs.version }}"
+
+      - name: Smoke test AppImage on Fedora
+        if: matrix.os == 'ubuntu-latest'
+        timeout-minutes: 15
+        run: |
+          cat > fedora-smoke.sh <<'EOF'
+          set -e
+          dnf install -y -q alsa-lib xorg-x11-server-Xvfb dejavu-sans-fonts >/dev/null
+          cd /work
+          appimage=$(find dist -maxdepth 1 -name 'Saltwake-*-linux-x86_64.AppImage' -print -quit)
+          if [ -z "$appimage" ]; then
+            echo "AppImage was not created."
+            exit 1
+          fi
+          chmod +x "$appimage"
+          # No SALTWAKE_DATA_DIR: let AppRun pick the writable home itself,
+          # the same path players exercise.
+          export SALTWAKE_NO_SPEECH=1
+          export HOME=/tmp
+          set +e
+          timeout 60s "$appimage" --appimage-extract-and-run --self-test > fedora-smoke.log 2>&1
+          selftest_status=$?
+          timeout 25s xvfb-run -a "$appimage" --appimage-extract-and-run >> fedora-smoke.log 2>&1
+          launch_status=$?
+          set -e
+          cat fedora-smoke.log
+          if grep -E "error while loading shared libraries|cannot open shared object file" fedora-smoke.log; then
+            echo "AppImage is missing a shared library on Fedora."
+            exit 1
+          fi
+          if grep -E "cannot register existing type|GLib-GObject-CRITICAL" fedora-smoke.log; then
+            echo "AppImage hit the GLib/GIO duplicate type-registration crash on Fedora."
+            exit 1
+          fi
+          if [ "$selftest_status" -ne 0 ]; then
+            echo "AppImage self-test failed with status $selftest_status on Fedora."
+            exit "$selftest_status"
+          fi
+          # The container has no audio device; the game is expected to fall
+          # back to the BASS no-sound device and keep running until timeout
+          # (124). Exit 0 (clean quit) is also fine.
+          if [ "$launch_status" -ne 0 ] && [ "$launch_status" -ne 124 ]; then
+            echo "AppImage exited unexpectedly with status $launch_status on Fedora."
+            exit "$launch_status"
+          fi
+          echo "Fedora smoke test passed (self-test=$selftest_status, launch=$launch_status)."
+          EOF
+          docker run --rm -v "$PWD:/work" fedora:43 bash /work/fedora-smoke.sh
+
       - uses: actions/upload-artifact@v7
         with:
           name: ${{ matrix.label }}
           path: |
             dist/Saltwake-*.zip
             dist/Saltwake-*.tar.gz
+            dist/Saltwake-*.AppImage
 
   release:
     name: Release

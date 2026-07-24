@@ -1,0 +1,29 @@
+#!/bin/bash
+# AppImage entry point. Bundled libraries live in usr/lib; the PyInstaller
+# dist keeps its own layout under opt/saltwake with rpaths patched by
+# linuxdeploy to reach usr/lib.
+HERE="$(dirname "$(readlink -f "$0")")"
+export LD_LIBRARY_PATH="$HERE/usr/lib${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+
+# The squashfs the game runs from is read-only, so the portable layout
+# (saves and music cache next to the executable) needs a writable home:
+# a Saltwake folder next to the AppImage file when that directory is
+# writable, XDG data otherwise. SALTWAKE_DATA_DIR always wins if set.
+if [ -z "${SALTWAKE_DATA_DIR:-}" ]; then
+    if [ -n "${APPIMAGE:-}" ] && [ -w "$(dirname "$APPIMAGE")" ]; then
+        data_dir="$(dirname "$APPIMAGE")/Saltwake"
+    else
+        data_dir="${XDG_DATA_HOME:-$HOME/.local/share}/saltwake"
+    fi
+    mkdir -p "$data_dir"
+    export SALTWAKE_DATA_DIR="$data_dir"
+fi
+
+# Seed the pre-rendered soundtrack into the writable home so first launch
+# never has to compose (the game looks for its music cache there).
+if [ ! -d "$SALTWAKE_DATA_DIR/assets/music" ] && [ -d "$HERE/opt/saltwake/assets/music" ]; then
+    mkdir -p "$SALTWAKE_DATA_DIR/assets"
+    cp -r "$HERE/opt/saltwake/assets/music" "$SALTWAKE_DATA_DIR/assets/music"
+fi
+
+exec "$HERE/opt/saltwake/Saltwake" "$@"

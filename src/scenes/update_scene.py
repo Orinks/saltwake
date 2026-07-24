@@ -178,19 +178,25 @@ class UpdateDownloadScene(Scene):
         self.done = threading.Event()
         self.new_root = None
         self.staging = None
+        self.manual_path = None   # set when the install can't swap itself
         self.error = None
         self.progress = 0.0       # 0..1, written by the worker thread
         self._spoken_quarter = 0
         self._finished = False
+        self._auto = True
         self._thread = None
 
     def on_enter(self):
         if self._thread is not None:
             return
+        self._auto = updater.can_auto_apply()
         mb = self.info.asset_size / 1e6
         size = f", {mb:.0f} megabytes" if mb else ""
-        self.speech.say(f"Downloading {self.info.title}{size}. The game will "
-                        "restart when the download finishes. "
+        finish = ("The game will restart when the download finishes."
+                  if self._auto else
+                  "This install can't replace itself, so you'll be told "
+                  "where the new version is saved.")
+        self.speech.say(f"Downloading {self.info.title}{size}. {finish} "
                         "Press Escape to cancel.")
         self._thread = threading.Thread(target=self._work, daemon=True)
         self._thread.start()
@@ -201,8 +207,17 @@ class UpdateDownloadScene(Scene):
             archive = updater.download(
                 self.info, self.staging,
                 progress=self._on_progress, cancelled=self.cancelled)
-            self.new_root = updater.extract(archive, self.staging / "unpacked")
-            archive.unlink(missing_ok=True)
+            if not self._auto:
+                # A read-only install location: keep the verified download
+                # somewhere findable instead of dead-ending after the fact.
+                self.manual_path = updater.keep_for_manual_install(archive)
+            elif archive.name.endswith(".AppImage"):
+                # The AppImage is the whole update; nothing to unpack.
+                self.new_root = archive
+            else:
+                self.new_root = updater.extract(archive,
+                                                self.staging / "unpacked")
+                archive.unlink(missing_ok=True)
         except updater.UpdateCancelled:
             pass
         except Exception as exc:
@@ -227,6 +242,13 @@ class UpdateDownloadScene(Scene):
             return
         self._finished = True
         if self.cancelled.is_set():
+            self.game.scenes.pop()
+        elif self.manual_path is not None:
+            self.speech.say("Download complete. This copy of the game sits "
+                            "in a folder it can't write to, so it can't "
+                            "swap itself. The new version was saved to "
+                            f"{self.manual_path}. Install it yourself, then "
+                            "restart the game.")
             self.game.scenes.pop()
         elif self.error or self.new_root is None:
             self.speech.say(self.error or "The download failed.")
