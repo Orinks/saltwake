@@ -67,6 +67,16 @@ download, install, and restart itself — updates replace only the game's
 own files and never touch the `saves` folder. Switch between stable and
 snapshot updates in Settings under "Update channel".
 
+On Linux there is also a single-file
+`Saltwake-<version>-linux-x86_64.AppImage`: download it, mark it
+executable (`chmod +x`), and run it — no extraction, and it works on
+non-Debian distributions (every AppImage is boot-tested on Fedora before
+release). Saves and the music cache live in a `Saltwake` folder next to
+the AppImage when that directory is writable, or under
+`~/.local/share/saltwake` otherwise; set `SALTWAKE_DATA_DIR` to choose
+your own spot. To update the AppImage, download the newer file from the
+releases page — the in-game updater is for the extracted-folder builds.
+
 ## Run from source
 
 You need two tools installed and on your PATH:
@@ -142,6 +152,14 @@ the result once as a smoke check, and archives it as
 - `--check-dependencies` — verify the release-critical runtime pieces
   (Prism and BASS native libraries, the game data) without building.
   CI runs this as a release gate before every build.
+
+On Linux, `installer/build_appimage.py` packages the freshly built
+`dist/Saltwake/` into the release AppImage (run it after
+`tools/build_release.py`). It downloads pinned linuxdeploy and AppImage
+runtime tools on first use, keeps host-integration libraries (GLib,
+D-Bus, OpenSSL) out of the bundle so the game integrates with whatever
+distribution it lands on, and writes
+`dist/Saltwake-<version>-linux-x86_64.AppImage`.
 
 If the build succeeds but the archive seems to vanish on Windows, check
 your antivirus: freshly built unsigned PyInstaller executables are

@@ -75,6 +75,14 @@
 - **Copy the Chronicle.** The Chronicle can now put your whole record on
   the system clipboard as plain text, ready to paste — press C anywhere
   in it, or pick the new "Copy the Chronicle to the clipboard" entry.
+- **Linux AppImage.** Releases now also ship a single-file
+  `Saltwake-<version>-linux-x86_64.AppImage` that runs on any modern
+  distribution — download it, mark it executable, and run it. Saves and
+  the music cache live in a `Saltwake` folder next to the AppImage (or
+  under `~/.local/share/saltwake` if that spot isn't writable), and the
+  pre-rendered soundtrack is copied there on first run so nothing has to
+  compose. Every AppImage is boot-tested on Fedora before release, so
+  non-Debian distributions are no longer a gamble.
 
 ### Changed
 - **Release gate, Freight Fate style.** Nightly developer snapshots now

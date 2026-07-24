@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Saltwake
+Comment=Audio-first watersports roguelite where the sea remembers
+Exec=Saltwake
+Icon=saltwake
+Categories=Game;
+Terminal=false
