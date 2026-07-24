@@ -74,8 +74,10 @@ non-Debian distributions (every AppImage is boot-tested on Fedora before
 release). Saves and the music cache live in a `Saltwake` folder next to
 the AppImage when that directory is writable, or under
 `~/.local/share/saltwake` otherwise; set `SALTWAKE_DATA_DIR` to choose
-your own spot. To update the AppImage, download the newer file from the
-releases page — the in-game updater is for the extracted-folder builds.
+your own spot. The in-game updater works here too: it downloads the new
+AppImage and swaps the file in place on restart (the folder holding the
+AppImage has to be writable; if it isn't, the game tells you where the
+downloaded update was saved instead).
 
 ## Run from source
 

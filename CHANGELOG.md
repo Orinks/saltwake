@@ -81,8 +81,12 @@
   the music cache live in a `Saltwake` folder next to the AppImage (or
   under `~/.local/share/saltwake` if that spot isn't writable), and the
   pre-rendered soundtrack is copied there on first run so nothing has to
-  compose. Every AppImage is boot-tested on Fedora before release, so
-  non-Debian distributions are no longer a gamble.
+  compose. The in-game updater understands AppImages too: it downloads
+  the new one and swaps the file in place on restart — and installs that
+  can't update themselves now tell you where the downloaded update was
+  saved instead of failing quietly. Every AppImage is boot-tested on
+  Fedora before release, so non-Debian distributions are no longer a
+  gamble.
 
 ### Changed
 - **Release gate, Freight Fate style.** Nightly developer snapshots now

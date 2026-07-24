@@ -14,12 +14,18 @@ nightly exists even though the project version number has not changed.
 
 Updates only apply to frozen (PyInstaller) builds. Source checkouts are
 managed by git and the updater stays out of the way.
+
+The Linux AppImage is a special case: the game runs from a read-only
+image, so instead of copying files over an install folder the updater
+downloads the new ``.AppImage`` and atomically swaps the file itself
+(see :func:`running_appimage` and :func:`write_appimage_swap_script`).
 """
 
 import json
 import logging
 import os
 import re
+import shlex
 import subprocess
 import sys
 import tempfile
@@ -60,6 +66,50 @@ def is_frozen() -> bool:
 def install_root() -> Path:
     """The folder holding the executable (and ``_internal``)."""
     return Path(sys.executable).resolve().parent
+
+
+def running_appimage(appimage_path: str | None = None) -> Path | None:
+    """The ``.AppImage`` file this process is running from, or None.
+
+    The AppImage runtime exports ``APPIMAGE`` with the file's absolute
+    path. That variable is the only trustworthy signal: the payload itself
+    executes from a transient mount or extraction directory under ``/tmp``,
+    so path heuristics on ``sys.executable`` would misread the deployment
+    (and writing into that payload directory is never possible or useful).
+    """
+    raw = appimage_path if appimage_path is not None else os.environ.get("APPIMAGE")
+    if not raw:
+        return None
+    path = Path(raw)
+    return path if path.is_file() else None
+
+
+def _dir_writable(directory: Path) -> bool:
+    """True when we can create files in ``directory`` (probe, not ACL math)."""
+    probe = directory / f".saltwake-update-probe-{os.getpid()}"
+    try:
+        probe.touch()
+        probe.unlink()
+        return True
+    except OSError:
+        return False
+
+
+def can_auto_apply() -> bool:
+    """Whether :func:`apply_and_restart` can actually swap this install.
+
+    AppImage runs need the directory holding the ``.AppImage`` file to be
+    writable (the swap is a rename next to it); folder installs need the
+    install root itself to be writable. Callers should check this before
+    promising a restart, and offer the downloaded file for manual install
+    when it returns False.
+    """
+    if not is_frozen():
+        return False
+    appimage = running_appimage()
+    if appimage is not None:
+        return _dir_writable(appimage.parent)
+    return _dir_writable(install_root())
 
 
 @lru_cache(maxsize=1)
@@ -125,6 +175,10 @@ def _platform_suffix() -> str:
         return "-windows-portable.zip"
     if sys.platform == "darwin":
         return "-macos.zip"
+    # An AppImage updates to the next AppImage; folder installs keep the
+    # tarball they came from.
+    if running_appimage() is not None:
+        return "-linux-x86_64.AppImage"
     return "-linux-x64.tar.gz"
 
 
@@ -295,6 +349,26 @@ rm -rf "{staging}"
 rm -f "$0"
 """
 
+_APPIMAGE_SCRIPT = """#!/bin/sh
+# Swap the running AppImage for the downloaded one once the game exits.
+# The new file is staged NEXT TO the target first so the final mv is an
+# atomic rename on the same filesystem; a half-written game is never left
+# behind. The relaunched AppImage's own AppRun re-derives the data
+# directory, so nothing here depends on inherited environment.
+PID={pid}
+NEW={new}
+TARGET={target}
+STAGING={staging}
+while kill -0 "$PID" 2>/dev/null; do sleep 1; done
+STAGED="$TARGET.update-new"
+cp "$NEW" "$STAGED" || exit 1
+chmod +x "$STAGED"
+mv -f "$STAGED" "$TARGET" || exit 1
+rm -rf "$STAGING"
+"$TARGET" &
+rm -f "$0"
+"""
+
 
 def write_apply_script(new_root: Path, install: Path, staging: Path,
                        pid: int) -> Path:
@@ -311,10 +385,24 @@ def write_apply_script(new_root: Path, install: Path, staging: Path,
     return script
 
 
-def apply_and_restart(new_root: Path, staging: Path) -> None:
-    """Spawn the detached apply script. The caller must then quit the game;
-    the script waits for this process to exit before touching files."""
-    script = write_apply_script(new_root, install_root(), staging, os.getpid())
+def write_appimage_swap_script(new_appimage: Path, target: Path,
+                               staging: Path, pid: int) -> Path:
+    """The helper script that replaces the running ``.AppImage`` file.
+
+    Paths are shell-quoted so spaces or metacharacters in the player's
+    folder names cannot break the swap.
+    """
+    text = _APPIMAGE_SCRIPT.format(pid=pid,
+                                   new=shlex.quote(str(new_appimage)),
+                                   target=shlex.quote(str(target)),
+                                   staging=shlex.quote(str(staging)))
+    script = staging.parent / f"{APP_NAME.lower()}-appimage-apply-{pid}.sh"
+    script.write_text(text, encoding="utf-8")
+    script.chmod(0o755)
+    return script
+
+
+def _spawn_detached(script: Path) -> None:
     if sys.platform == "win32":
         flags = (subprocess.CREATE_NO_WINDOW
                  | subprocess.CREATE_NEW_PROCESS_GROUP)
@@ -325,4 +413,50 @@ def apply_and_restart(new_root: Path, staging: Path) -> None:
         subprocess.Popen(["/bin/sh", str(script)], start_new_session=True,
                          stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
                          stderr=subprocess.DEVNULL, close_fds=True)
+
+
+def apply_and_restart(new_root: Path, staging: Path) -> None:
+    """Spawn the detached apply script. The caller must then quit the game;
+    the script waits for this process to exit before touching files.
+
+    ``new_root`` is the unpacked game folder for archive installs, or the
+    downloaded ``.AppImage`` file when running as an AppImage.
+    """
+    appimage = running_appimage()
+    if (appimage is not None and new_root.is_file()
+            and new_root.name.endswith(".AppImage")):
+        script = write_appimage_swap_script(new_root, appimage, staging,
+                                            os.getpid())
+    else:
+        script = write_apply_script(new_root, install_root(), staging,
+                                    os.getpid())
+    _spawn_detached(script)
     log.info("Update staged; apply script %s spawned", script)
+
+
+def keep_for_manual_install(update_file: Path) -> Path:
+    """Park a downloaded update somewhere the player can find it.
+
+    Used when :func:`can_auto_apply` says the install can't be swapped
+    automatically (for example a folder install in a read-only location).
+    Prefers ``~/Downloads``, falls back to home, and leaves the file where
+    it is when neither is writable. Returns the file's final location.
+    """
+    for candidate in (Path.home() / "Downloads", Path.home()):
+        if candidate.is_dir() and _dir_writable(candidate):
+            dest = candidate / update_file.name
+            try:
+                if dest.exists():
+                    dest.unlink()
+                update_file.replace(dest)
+                return dest
+            except OSError:
+                try:
+                    import shutil
+
+                    shutil.copy2(update_file, dest)
+                    update_file.unlink(missing_ok=True)
+                    return dest
+                except OSError:
+                    continue
+    return update_file
