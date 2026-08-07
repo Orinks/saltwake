@@ -8,6 +8,7 @@ callers get a bool and speak success or failure, never a crash.
 """
 
 import logging
+import sys
 
 log = logging.getLogger(__name__)
 
@@ -19,11 +20,17 @@ def _copy_scrap(text: str) -> bool:
         return False
     if not pygame.scrap.get_init():
         pygame.scrap.init()
+    if sys.platform == "win32":
+        # scrap stores bytes verbatim; Windows apps expect CRLF and show
+        # bare LF as one run-on line
+        text = text.replace("\n", "\r\n")
     pygame.scrap.put(pygame.SCRAP_TEXT, text.encode("utf-8"))
     return True
 
 
 def _copy_tk(text: str) -> bool:
+    # Tk applies the platform's line-ending convention itself, so it must
+    # be handed plain LF: CRLF in would paste as \r\r\n on Windows.
     import tkinter
 
     root = tkinter.Tk()
@@ -40,6 +47,7 @@ def _copy_tk(text: str) -> bool:
 def copy_text(text: str) -> bool:
     """Puts ``text`` on the system clipboard. Returns False when no
     clipboard is reachable rather than raising."""
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
     for backend in (_copy_scrap, _copy_tk):
         try:
             if backend(text):
