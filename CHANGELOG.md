@@ -2,6 +2,24 @@
 
 ## Unreleased
 
+## 0.2.1 — 2026-08-07
+
+### Fixed
+- **Clipboard copies paste line by line on Windows.** The Chronicle went
+  onto the clipboard with bare line feeds, which most Windows apps show
+  as one run-on line; copies now use each platform's line endings.
+- **The prologue grants one achievement instead of three.** Rule One of
+  My Harbor remains the quay's single opening mark. The two
+  prologue-choice secrets still require their early choices but now
+  unlock when the story pays them off: Old Pattern when the key finally
+  turns, Thirty-One when you learn what the number counted.
+- **Every relationship achievement is now earnable.** Her Light Rides
+  Home required more affinity than the story contained, and Knotted In
+  and Standing Orders demanded a perfect run of every once-only beat.
+  New affinity moments — the rescue itself, Sefton's two knot gifts,
+  the Keeper's lamp-code lesson — give each some headroom, and new data
+  lints keep every achievement reachable from here on.
+
 ## 0.2.0 — 2026-07-24
 
 ### Added
