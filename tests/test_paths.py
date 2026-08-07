@@ -34,3 +34,11 @@ def test_frozen_build_reads_bundled_data(monkeypatch):
 
 def test_saves_live_under_portable_root():
     assert paths.SAVE_DIR == os.path.join(paths.PROJECT_ROOT, "saves")
+
+
+def test_suite_never_touches_the_real_save_dir():
+    """Tests exercise scenes that call profile save for real (RunEndScene
+    settles, harbor embarks), so a test run against the checkout's own
+    saves/ pollutes the developer's actual profile — a leaked homecoming
+    once unlocked an achievement on a brand-new game."""
+    assert paths.SAVE_DIR != os.path.join(paths._SOURCE_ROOT, "saves")
