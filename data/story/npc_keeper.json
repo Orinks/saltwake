@@ -12,7 +12,7 @@
         "Tea in the lamp room, the beam going round above like a patient thought. Tonight Edras teaches you the code, because, he says, you invented half of it and it is embarrassing that the lamp knows it and the captain doesn't. 'Long, long, short: HOLDING. That's the lamp's word. It means the light is kept, the watch is stood, we are not done waiting. Short, short, long: RECEIVED, COMING. That's the boat's word. Yours.'",
         "'Liss learned it before her letters,' he says, trimming the wick that does not need trimming. 'The Jane used to run the late crossing in the dark of the year, and my girl would flash her lantern from the wheelhouse, and I'd answer from up here, and between us we'd hand the boat home across eleven miles of black water like two people carrying a table.' The lamp turns. 'Nineteen years I've sent HOLDING at the dark, captain. You are the first thing the water ever sent back that could learn the answer.'"
       ],
-      "effects": {"set": {"knows_lamp_code": 1}, "add": {"affinity_keeper": 1}}
+      "effects": {"set": {"knows_lamp_code": 1}, "add": {"affinity_keeper": 2}}
     },
     {
       "id": "keeper_03",
@@ -26,7 +26,7 @@
         "'You are not the first tideborn I went to look at,' Edras says, out of a long comfortable silence, the way lighthouse keepers say everything. 'Word would come up the coast: the sea gave one back, at Pelican Point, at the Neck, away south past the Flats. Three times in nineteen years I closed the lamp room, took the mail boat, and went to see with my own eyes.' He turns his cup a quarter turn, his one tell. 'Three times it was some other harbor's miracle. A good one, every time. Somebody's son. Somebody's wife. I stood at the back and was glad for them until I could not breathe, and then I came home and lit the lamp.'",
         "'The fourth time,' he says, 'I did not go. The fourth time, the sea washed its parcel up below my own headland, at the feet of the Jane's own deckhand, with the Jane's own key around its neck.' He looks at you over the cup, sixty years of weather and one intact ember of mischief. 'It knows I am old, captain. It saved me the boat fare.'"
       ],
-      "effects": {"add": {"affinity_keeper": 1}}
+      "effects": {"add": {"affinity_keeper": 2}}
     },
     {
       "id": "keeper_ambient_1",

@@ -176,7 +176,8 @@
               "answered_liss": 1
             },
             "add": {
-              "sea_grace": 1
+              "sea_grace": 1,
+              "affinity_liss": 1
             }
           },
           "response": [

@@ -11,6 +11,7 @@
         "She is eleven years old. She is nineteen years patient. She stands on the water as if it were a dock, holding her lantern, looking up at the wheelhouse with an expression you remember now in full, because it is the last thing you saw before the dark: total, unbudging confidence that you would come.",
         "'You took forever,' says Liss, lamp keeper's girl, the thirty-first soul of the Lantern Jane's last run, and holds up her arms to be lifted aboard, exactly as if no time has passed, because for her, held in the sea's unfinished sentence, none has."
       ],
+      "effects": {"add": {"affinity_liss": 2}},
       "choices": [
         {
           "label": "Lift her aboard and turn for home.",

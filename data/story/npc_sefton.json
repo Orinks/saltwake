@@ -81,7 +81,7 @@
         "Sefton knows you have been down in the green dark, because your boots dry differently, he claims, and he does not care to be doubted on the point. He takes a length of soft grey cord and ties, slowly this time, so you can follow, a knot like a small closed fist. 'Diver's tell,' he says. 'Old crews wore it at the wrist. It's not for the sea. It's for YOU.'",
         "'The second layer down, the cold stops being weather and starts being persuasion. It tells you you're warm. It tells you five more minutes. It lies the way only comfortable things lie.' He cinches the knot to your wrist and taps it once. 'Cord soaks, cord tightens, knot bites. When you feel the fist close, that's the true time talking, not the cold. My father wore one forty years. Died ashore, in bed, furious about it, which is the whole testimonial.' He waves off payment before your hand moves. 'The deep ones,' he says, 'are on the house. House rule older than the house.'"
       ],
-      "effects": {"add": {"affinity_sefton": 1}}
+      "effects": {"add": {"affinity_sefton": 2}}
     },
     {
       "id": "sefton_05",
@@ -96,7 +96,7 @@
         "'There's a knot for storms beaten,' Sefton says. 'A knot for fog, for family aboard, for mourning. There has never been a knot for a debt the sea paid BACK, because it never has before.' He turns the white ring in his fingers. 'We're inventing it. Slow work. A knot's a word, and you don't rush a new word into the language.' Aldous, from the window, in the family's other voice: 'He wanted it fancy. I hold that it should be plain. Plain things last.' The knot, you notice, is plain, which tells you how the argument went.",
         "They finish it that week, the two of them, and row out and tie it to the Lantern Jane's rail themselves, without asking, the way you deliver a verdict. When Liss demands to know its name, Sefton considers the horizon for a long moment and gets there first: 'Paid-in-full,' he says. 'Tied doubled, so the sea can read it from below.'"
       ],
-      "effects": {"add": {"affinity_sefton": 1}}
+      "effects": {"add": {"affinity_sefton": 2}}
     }
   ]
 }
