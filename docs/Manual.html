@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saltwake — Player's Manual</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+  }
+  h1 { font-size: 2rem; margin-bottom: 0.25rem; }
+  h2 { margin-top: 2.5rem; border-bottom: 1px solid; padding-bottom: 0.2rem; }
+  h3 { margin-top: 1.75rem; }
+  .subtitle { font-style: italic; margin-top: 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+  th, td { border: 1px solid; padding: 0.4rem 0.6rem; text-align: left; }
+  th { font-weight: bold; }
+  kbd {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 0.95em;
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 0 0.3em;
+  }
+  nav ol { margin: 0; }
+  footer { margin-top: 3rem; font-size: 0.95rem; font-style: italic; }
+</style>
+</head>
+<body>
+
+<h1>Saltwake</h1>
+<p class="subtitle">The player's manual. An accessible watersports roguelite.</p>
+
+<p>This same manual is available inside the game: choose <strong>How to
+play</strong> on the title menu for a paged spoken version. <kbd>Left</kbd> and
+<kbd>Right</kbd> change pages, <kbd>Up</kbd> and <kbd>Down</kbd> read line by
+line, <kbd>Enter</kbd> reads the whole page.</p>
+
+<nav aria-label="Contents">
+<h2 id="contents">Contents</h2>
+<ol>
+  <li><a href="#loop">The loop</a></li>
+  <li><a href="#menus">Menus</a></li>
+  <li><a href="#at-sea">At sea</a></li>
+  <li><a href="#contests">The six contests</a></li>
+  <li><a href="#quay">Greywater Quay</a></li>
+  <li><a href="#sound">Sound and speech</a></li>
+  <li><a href="#tips">Tips and tricks</a></li>
+</ol>
+</nav>
+
+<h2 id="loop">The loop</h2>
+
+<p>You are the Tideborn. From Greywater Quay you <strong>embark on tides</strong>
+— runs across reaches of open water. Each leg of the sea chart offers two or
+three headings: a contest, something on the water, a friendly beacon, drifting
+salvage, or rough water. Choose one and commit. At the end of a reach a warden
+waits; beat it and you can press deeper or turn for home.</p>
+
+<p>Salvage converts to pearls <strong>in full</strong> when you make it home,
+<strong>half</strong> if you wreck — and a wreck costs nothing else. Renown,
+story, almanac pages, and friendships all survive. Between tides, spend pearls
+at the quay and talk to people; every run moves the story.</p>
+
+<h2 id="menus">Menus</h2>
+
+<table>
+<caption>Menu controls</caption>
+<thead>
+<tr><th scope="col">Key</th><th scope="col">Action</th></tr>
+</thead>
+<tbody>
+<tr><td><kbd>Up</kbd> / <kbd>Down</kbd></td><td>Navigate</td></tr>
+<tr><td><kbd>Enter</kbd> / <kbd>Space</kbd></td><td>Select</td></tr>
+<tr><td><kbd>Escape</kbd></td><td>Back</td></tr>
+<tr><td><kbd>Home</kbd> / <kbd>End</kbd></td><td>First / last item</td></tr>
+<tr><td>Any letter</td><td>Jump to the next item starting with it</td></tr>
+<tr><td><kbd>H</kbd></td><td>What the focused item does</td></tr>
+<tr><td><kbd>R</kbd></td><td>Repeat the last speech</td></tr>
+</tbody>
+</table>
+
+<h2 id="at-sea">At sea</h2>
+
+<table>
+<caption>Controls at sea</caption>
+<thead>
+<tr><th scope="col">Key</th><th scope="col">Action</th></tr>
+</thead>
+<tbody>
+<tr><td>Arrow keys</td><td>Steer, carve, dive, brace — each contest speaks its rules first</td></tr>
+<tr><td><kbd>Enter</kbd> / <kbd>Space</kbd></td><td>Start a contest; grab; reel</td></tr>
+<tr><td><kbd>T</kbd></td><td>Status: hull, grit, salvage, position, weather</td></tr>
+<tr><td><kbd>R</kbd></td><td>Repeat the last speech</td></tr>
+<tr><td><kbd>Escape</kbd></td><td>Abandon a contest (a failure, never a trap)</td></tr>
+<tr><td><kbd>Page Up</kbd> / <kbd>Page Down</kbd></td><td>Speech rate, anywhere</td></tr>
+<tr><td><kbd>F2</kbd>, <kbd>F3</kbd> / <kbd>F4</kbd></td><td>Music on/off, volume down/up</td></tr>
+</tbody>
+</table>
+
+<p>Beacons are safe water: rest, patch the hull for a supply, or accept a
+Tiding — a boon that lasts the rest of the tide. Weather changes leg by leg
+and makes everything easier or harder, so press <kbd>T</kbd> before you
+commit.</p>
+
+<h2 id="contests">The six contests</h2>
+
+<p>Every contest begins with spoken rules; <kbd>Enter</kbd> starts,
+<kbd>H</kbd> repeats the rules, and three rising tones count you in. Cues are
+stereo-panned sound with a spoken twin — nothing is audio-only.</p>
+
+<h3>Boat race</h3>
+<p>Gates call from a side: answer <kbd>Left</kbd>, <kbd>Right</kbd>, or
+<kbd>Up</kbd> for dead ahead. Clean gates build speed; beat the pacer across
+the line.</p>
+
+<h3>Jet ski slalom</h3>
+<p>Buoys alternate sides and the tempo climbs. Carve with <kbd>Left</kbd> and
+<kbd>Right</kbd>; three misses washes you out.</p>
+
+<h3>Dive salvage</h3>
+<p>Sonar pings lean toward the cache; lower pitch means deeper than you.
+<kbd>Down</kbd> descends, <kbd>Up</kbd> ascends, <kbd>Left</kbd> and
+<kbd>Right</kbd> swim, <kbd>Space</kbd> grabs. Surface at depth zero before
+your breath runs out.</p>
+
+<h3>Storm crossing</h3>
+<p>Steer <em>into</em> the gusts: gust on the left, press <kbd>Right</kbd>;
+gust on the right, press <kbd>Left</kbd>; deep tone dead ahead, brace with
+<kbd>Down</kbd>. Mistakes cost hull.</p>
+
+<h3>Fishing</h3>
+<p>When the line sings high, reel with <kbd>Space</kbd>; when the tone drops
+low, hands off or give line with <kbd>Down</kbd>. Reel against a run and the
+line snaps.</p>
+
+<h3>Rescue tow</h3>
+<p>Answer the whistle's direction three times to come alongside, then keep the
+drifting tow tone centered; brace with <kbd>Down</kbd> when they panic.</p>
+
+<p>Reach wardens are harder, themed versions of these with their own music and
+their own opinions.</p>
+
+<h2 id="quay">Greywater Quay</h2>
+
+<p>The Brinehouse tavern (the regulars, whose stories deepen with your renown,
+your deeds, and your visits), the harbormaster's office (ledgers and the main
+story), the shipyard (vessels, each with its own handling), the chandlery
+(permanent gear), the Drowned Almanac (recovered lore, in five volumes), the
+Chronicle (your record, copyable to the clipboard with <kbd>C</kbd>), Ties
+(where you stand with everyone), Memories (re-read any story you've heard), and
+Achievements (129 marks, from first tide to legend).</p>
+
+<h2 id="sound">Sound and speech</h2>
+
+<p>Everything the sound tells you is also spoken; nothing is audio-only. Pan
+means position — left, center, right. Pitch means depth or tension. Music is
+atmosphere only and never carries information.</p>
+
+<p>Speech follows your screen reader through Prism: NVDA, JAWS, SAPI, and more.
+<kbd>Page Up</kbd> and <kbd>Page Down</kbd> change the speech rate anywhere in
+the game; audio volume and the rest live in Settings.</p>
+
+<h2 id="tips">Tips and tricks</h2>
+
+<ul>
+<li><strong>Talk to everyone between every tide.</strong> Story beats gate on
+your run count, deeds, and how well people know you — a quiet answer today is a
+new scene after your next homecoming.</li>
+<li><strong>Vary your contests.</strong> Different people care about different
+deeds: racers notice wins, the kitchen notices fish, the whole coast notices
+rescues. Playing one activity forever leaves stories locked.</li>
+<li><strong>Grit is the run's fuel.</strong> Contests spend it, exhaustion ends
+the tide. Rest at beacons, and treat a low-grit deep push with suspicion.</li>
+<li><strong>Carry a spare supply.</strong> Beacons patch three hull for one
+supply, and rough water can be skirted for a supply instead of risking the
+hull.</li>
+<li><strong>Check <kbd>T</kbd> before committing.</strong> Weather changes leg
+by leg; a dive in glass calm and a dive in a running sea are different
+propositions.</li>
+<li><strong>Take the Tiding.</strong> Beacon boons last the whole tide and
+stack. Listen to the water even when you don't need the rest.</li>
+<li><strong>Escape is always safe.</strong> Abandoning a contest costs the
+attempt — no reward, no shame, never a trap. If the weather turned mid-slalom,
+living to carve tomorrow is a strategy, not a defeat.</li>
+<li><strong>Buy gear early.</strong> Chandlery gear is permanent and works on
+every tide; the cheap pieces pay for themselves within a run or two, and the
+compass warns you which headings sound ugly.</li>
+<li><strong>Match the boat to the plan.</strong> Vessels trade hull, grit, and
+contest skills; a salvage tide and a race day want different hulls.</li>
+<li><strong>Wrecking is progress.</strong> Half the salvage still banks, the
+story reacts, and some things can only be learned by coming back. Don't play
+scared.</li>
+<li><strong>Bank before you're rich.</strong> Early on, coming home with a
+modest haul beats wrecking with a heavy one — renown and gear compound.</li>
+<li><strong>Loose Almanac pages ride along.</strong> Once you've met the right
+person at the tavern, pages wash up with dives, fishing hauls, and caches, and
+friendly beacons hold them for you. Collectors dive deep and stop for wax on
+the water.</li>
+<li><strong>Dive for keepsakes.</strong> Rarely, a dive brings up something
+personal the sea was keeping. Check the Sea chest at the quay for the hint
+about who might know it, then carry it home. Deliveries are their own reward,
+and also an actual reward.</li>
+<li><strong>After the credits, keep sailing.</strong> The post-game has its own
+beats, Tide Marks raise the difficulty for richer banking, and the sea still
+has things to say.</li>
+</ul>
+
+<footer>
+<p>Saltwake is free software under the MIT license. Source, releases, and issue
+tracker: <a href="https://github.com/Orinks/saltwake">github.com/Orinks/saltwake</a></p>
+</footer>
+
+</body>
+</html>

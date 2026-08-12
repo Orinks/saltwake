@@ -10,8 +10,8 @@ archives it for release:
 ``<label>`` is the project version from pyproject.toml, or the value of
 ``--tag`` (used for nightly developer snapshots). The bundle collects the
 game's data, the BASS libraries shipped inside sound_lib, Prism's native
-speech library, and the soundtrack pre-rendered into ``assets/music`` so
-first launch never has to compose.
+speech library, the player docs, and the soundtrack pre-rendered into
+``assets/music`` so first launch never has to compose.
 
 Run from the repository root: ``uv run python tools/build_release.py``
 """
@@ -75,6 +75,11 @@ def verify_release_dependencies() -> None:
         if not (ROOT / "data" / required).exists():
             raise RuntimeError(f"release data is missing: data/{required}")
 
+    for required in (ROOT / "docs" / "Manual.html", ROOT / "LICENSE"):
+        if not required.exists():
+            raise RuntimeError(
+                f"release documentation is missing: {required.relative_to(ROOT)}")
+
 
 def run_pyinstaller() -> Path:
     """Freeze the game; returns the onedir build directory."""
@@ -108,6 +113,102 @@ def prerender_soundtrack(build_dir: Path) -> None:
     if not rendered:
         raise RuntimeError("soundtrack pre-render produced no files")
     print(f"Soundtrack pre-rendered: {len(rendered)} tracks bundled.")
+
+
+def bundle_player_docs(build_dir: Path) -> None:
+    """Copy ``docs/`` next to the executable, for players and game managers.
+
+    Game managers such as AGNow offer a game's documentation by scanning
+    the installed folder for ``docs``, so the manual has to land there and
+    not inside PyInstaller's ``_internal``. Everything in ``docs/`` is
+    player-facing by contract — design notes live in ``DESIGN.md`` at the
+    repository root, and the licences ship extensionless at the bundle
+    root — so the folder is copied wholesale and a player never opens it
+    onto something only a developer would read.
+    """
+    source = ROOT / "docs"
+    manual = source / "Manual.html"
+    if not manual.exists():
+        raise RuntimeError(f"player manual is missing: {manual}")
+    shutil.copytree(source, build_dir / "docs", dirs_exist_ok=True)
+    shutil.copy2(ROOT / "LICENSE", build_dir / "LICENSE")
+    shipped = sorted(p.name for p in (build_dir / "docs").rglob("*") if p.is_file())
+    print(f"Player docs bundled: {', '.join(shipped)}")
+
+
+# What a documentation scanner will offer a player if it finds it.
+READER_SUFFIXES = {".txt", ".html", ".htm", ".md", ".rst"}
+# Names that mark a file as a licence rather than packaging bookkeeping.
+LICENSE_STEMS = ("LICENSE", "LICENCE", "COPYING", "NOTICE", "AUTHORS")
+
+
+def _is_license(path: Path) -> bool:
+    """Is this a licence text, as opposed to code or package data?
+
+    Checked against the suffix first: a module named ``authors.py`` is
+    not a notice, and this decides what gets deleted.
+    """
+    if path.suffix.lower() not in READER_SUFFIXES | {"", ".terms"}:
+        return False
+    if any(part.lower() == "licenses" for part in path.parts[:-1]):
+        return True
+    return any(stem in path.stem.upper() for stem in LICENSE_STEMS)
+
+
+def consolidate_third_party_licenses(build_dir: Path) -> None:
+    """Leave the manual as the only thing a scanner calls documentation.
+
+    Game managers such as AGNow list a game's documentation by scanning
+    the installed folder, and PyInstaller drags every dependency's
+    packaging metadata into ``_internal``: licence texts nested inside
+    ``.dist-info``, ``entry_points.txt``, ``top_level.txt``, a vendored
+    lorem ipsum. A player opening that list should find the manual and
+    nothing else — none of it is written for them.
+
+    The licences themselves have to ship — MIT, BSD and Apache all
+    require the notice to travel with the binary — so they are merged
+    into one ``Third-Party-Licenses`` file at the bundle root and the
+    originals removed. That name carries no extension on purpose:
+    AGNow lists ``.txt`` and ``.html``, so an extensionless file stays
+    in the bundle for anyone who goes looking without being offered to
+    a player as reading. The rest of the metadata is deleted outright;
+    nothing under ``_internal`` is read by the game at runtime, and the
+    smoke check boots the pruned build before it is archived.
+    """
+    internal = build_dir / "_internal"
+    licenses: list[tuple[str, str]] = []
+    pruned = 0
+
+    for path in sorted(internal.rglob("*")):
+        if not path.is_file():
+            continue
+        if _is_license(path):
+            text = path.read_text(encoding="utf-8", errors="replace").strip()
+            if text:
+                name = path.relative_to(internal).as_posix()
+                licenses.append((name, text))
+        elif path.suffix.lower() not in READER_SUFFIXES:
+            continue
+        path.unlink()
+        pruned += 1
+
+    for path in sorted(internal.rglob("*"), reverse=True):
+        if path.is_dir() and not any(path.iterdir()):
+            path.rmdir()
+
+    if not licenses:
+        raise RuntimeError(
+            f"no third-party licences found under {internal}; the bundle "
+            f"would ship without the notices its dependencies require")
+
+    out = build_dir / "Third-Party-Licenses"
+    with open(out, "w", encoding="utf-8") as f:
+        f.write("Saltwake bundles the libraries below. Their licences follow\n"
+                "in full; Saltwake's own licence is in the LICENSE file.\n")
+        for name, text in licenses:
+            f.write(f"\n\n{'=' * 70}\n{name}\n{'=' * 70}\n\n{text}\n")
+    print(f"Player-facing docs pruned: {pruned} files removed from _internal, "
+          f"{len(licenses)} notices kept in {out.name}.")
 
 
 def stamp_build_info(build_dir: Path, label: str) -> None:
@@ -178,6 +279,8 @@ def main() -> int:
         shutil.rmtree(ROOT / "build")
     build_dir = run_pyinstaller()
     stamp_build_info(build_dir, label)
+    bundle_player_docs(build_dir)
+    consolidate_third_party_licenses(build_dir)
     prerender_soundtrack(build_dir)
     if not args.skip_smoke:
         smoke_check(build_dir)
