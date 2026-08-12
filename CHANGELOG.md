@@ -2,6 +2,28 @@
 
 ## Unreleased
 
+## 0.2.2 — 2026-08-11
+
+### Added
+- **The player's manual ships with the game.** Releases now carry
+  `docs/Manual.html` next to the executable — the loop, every key, all six
+  contests, and the tips worth knowing — so game managers that offer a
+  game's documentation, like AGNow, find something a player would actually
+  read.
+
+### Changed
+- **The manual is the only document a release offers a player.** A game
+  manager scanning the install folder used to list numpy's
+  `entry_points.txt`, setuptools' vendored lorem ipsum and thirty-odd
+  dependency licenses buried in `_internal` alongside the manual. The
+  packaging bookkeeping is gone. The licenses still ship — they have to —
+  merged into a single extensionless `Third-Party-Licenses` file at the
+  bundle root, where the MIT license now also sits as `LICENSE`: present
+  for anyone who looks, never offered as something to read.
+- Design notes moved from `docs/DESIGN.md` to `DESIGN.md` at the
+  repository root, leaving `docs/` player-facing by contract. The README's
+  How to play section now points at the manual instead of duplicating it.
+
 ## 0.2.1 — 2026-08-07
 
 ### Fixed
