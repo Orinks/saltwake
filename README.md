@@ -1,7 +1,7 @@
 # Saltwake
 
-A watersports roguelite where the sea remembers. Audio-first, screen-reader-first,
-built on the Freight Fate stack: Python, Pygame, Prism speech output, and
+A watersports roguelite about taking runs across open water, built on the Freight
+Fate stack: Python, Pygame, Prism speech output, and
 BASS audio via sound_lib (with automatic pygame.mixer fallback).
 
 You are the Tideborn: washed up at Greywater Quay with no memory, a brass key,
@@ -13,8 +13,8 @@ with pages about who you were before the water took your memory.
 
 ## Features
 
-- **Six watersports activities**, all played by ear with arrow keys against
-  spoken and stereo-panned sound cues: boat racing, jet ski slalom, dive
+- **Six watersports activities** with arrow keys, spoken and stereo-panned
+  sound cues: boat racing, jet ski slalom, dive
   salvage, storm crossings, fishing, and rescue tows.
 - **Roguelite structure**: branching sea-chart headings, per-run Tidings
   (boons), permadeath that banks half and never erases story, pearls and
@@ -40,10 +40,9 @@ with pages about who you were before the water took your memory.
   cache as WAVs; `tools/render_soundtrack.py` pre-renders the lot. Music
   sits under the speech and cue layer by design: it sets scenes, never
   carries information.
-- **Accessibility is the design**, not a feature: everything is spoken via
-  Prism (NVDA, JAWS, SAPI, VoiceOver, Speech Dispatcher, and more), all cues
-  carry redundant speech, R repeats, T reads status, H explains, and a visual
-  mirror shows the last spoken line for sighted players. The Chronicle can
+- Speech uses Prism (NVDA, JAWS, SAPI, VoiceOver, Speech Dispatcher, and more);
+  all cues carry redundant speech, R repeats, T reads status, H explains, and a
+  visual mirror shows the last spoken line for sighted players. The Chronicle can
   copy your whole record to the clipboard for sharing.
 
 ## Download and play
