@@ -1,6 +1,6 @@
 # Saltwake
 
-A watersports roguelite about taking runs across open water, built on the Freight
+An audio watersports roguelite for blind and visually impaired players, about taking runs across open water, built on the Freight
 Fate stack: Python, Pygame, Prism speech output, and
 BASS audio via sound_lib (with automatic pygame.mixer fallback).
 
